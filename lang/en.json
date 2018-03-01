@@ -1,0 +1,12 @@
+{
+    "app-title": "Example Application",
+    "app-sub-title": "An example application with jquery.i18n",
+    "app-header-introduction": "Introduction",
+    "app-about": "About this application",
+    "app-footer": "Footer text",
+    "forgot-password-title" : "Password forgotten",
+    "forgot-password-question" : "Have you forgotten your password?",
+    "restore-question" : "You remember:",
+    "username" : "Username",
+    "email" : "E-mail"
+}
