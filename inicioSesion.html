@@ -9,39 +9,29 @@
 
 <body>
 
-   <a href="index.html">
+    <a href="index.html">
     <img src="images/logo_propio_01.svg" alt="LOGO">
     </a>
     <form action="#" method="get">
 
-        <div class="form-group col-md-6">
-            <label for="inputEmail4">Usuario</label>
-            <input type="email" class="form-control" id="inputEmail4" placeholder="Email"><br>
+        <div class="usuario col-md-6">
+            <label id="usuario">Usuario</label>
+            <input type="email" class="form-control" id="usuario" placeholder="Usuario...">
+            <br>
         </div>
-        <div class="form-group col-md-6">
-            <label for="inputPassword">Contraseña</label>
-            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+        <div class="contraseña col-md-6">
+            <label id="contraseña">Contraseña</label>
+            <input type="password" class="form-control" id="inputPassword4" placeholder="Contraseña...">
         </div>
 
         <a href="olvidado-contrasena.html">¿Olvidaste tu contraseña?</a>
         <p>Fallo de autenticación. Vuelve a intentarlo</p>
         <input class="btn btn-outline-primary" href="restaurarMedianteCorreo.html" role="button" data-i18n="username" type="submit">
     </form>
-    <!--
-    <form action="#" method="get">
-
-    
-        Usuario:
-        <input type="text" id="username" placeholder="Username...">
-        <label for="inputPassword5">Password</label>
-        <input type="password" id="contraseña" class="form-control" aria-describedby="passwordHelpBlock"><br>
-        <a href="#">¿Olvidaste tu contraseña?</a>
-        <p>Fallo de autenticación. Vuelve a intentarlo</p>
-        <input class="btn btn-outline-primary" href="restaurarMedianteCorreo.html" role="button" data-i18n="username" type="submit">
-    </form> -->
 
     <script>
         fetch('/login/?nombre=' + +'&password=' + ).then(); /* PARTE BASE DE DATOS */
+
     </script>
 
 
