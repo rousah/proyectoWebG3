@@ -2,41 +2,134 @@
 <html lang="es">
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <! -- anchura pantalla del dispositivo -- !>
+    <meta http-equiv="x-ua-compatible" content="ie-edge">
+    <! -- para que se vea bien en internet explorer y microsoft edge -- !>
     <title>CULTISENSE | Restaurar mediante Correo</title>
+
+    <script type="text/javascript">
+        
+        function intercambioPantalla() {
+            document.getElementById('mostrado').style.display = 'none';
+            document.getElementById('oculto').style.display = 'block';
+
+        }
+
+    </script>
+
+    <script>
+        function deshabilita(form) {
+            if (form.correo.value != "") {
+                form.mandar.disabled = false;
+            } else {
+                form.mandar.disabled = true;
+            }
+
+        }
+
+    </script>
+
+    <style>
+        .restaurarMedianteCorreo {
+            text-align: center;
+            max-width: 450px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+
+        .textoExplicatorio {
+            text-align: left;
+            max-width: 210px;
+            max-height: 90px;
+            margin: 0 auto;
+            display: flex;
+
+        }
+
+
+        .introducir_Correo {
+            align-content: left;
+            max-width: 300px;
+            max-height: 90px;
+            margin: 0 auto;
+            display: flex;
+
+        }
+
+
+        .botonMandar {
+            align-content: center;
+            max-width: 120px;
+            max-height: 30px;
+            margin: 30px auto;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .segunda_pag {
+            max-width: 120px;
+            margin: 200px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mensaje_exito {
+            color: darkgreen;
+        }
+
+    </style>
+
 </head>
 
 
 <body>
+    <section id="mostrado">
+        <header class="restaurarMedianteCorreo">
+            <h1><b><font size=6>Restaurar contraseña mediante correo electrónico</font></b></h1>
+        </header>
 
-    <header class="restaurarMedianteCorreo">
+        <div class="textoExplicatorio">
+            <p>Introduzca su correo electrónico y le mandaremos una contraseña por e-mail</p>
+        </div>
 
-        <h1><b>Restaurar contraseña mediante correo electrónico</b></h1>
+        <div class="form-wrapper offset-md-3 col-md-6">
 
-    </header>
+            <form action="#" method="get">
+                <div class="introducir_Correo">
 
-    <div class="texto_explicatorio">
+                    <input type="email" class="form-control" placeholder="e-mail" name="correo" onkeyup="deshabilita(this.form)" size="30" required>
+                </div>
 
-        <p>Introduzca su correo electrónico y le mandaremos una contraseña por e-mail.</p>
 
-    </div>
-    <div class="form-wrapper offset-md-3 col-md-6">
-        <form action="#" method="get">
-            <div class="usuario col-md-6">
-                <label id="usuario">Usuario</label>
-                <input type="email" class="form-control" id="usuario" placeholder="E-mail..." required>
-                <br>
-            </div>
-            <input class="btn btn-outline-primary" href= "inicioSesion.html" type="submit" value="Enviar">
-        </form>
-    </div>
-    
+                <div class="botonMandar">
+                    <input class="btn btn-outline-primary" href="inicioSesion.html" type="submit" name="mandar" value="Enviar" onClick="intercambioPantalla()" disabled>
+                </div>
+
+
+            </form>
+        </div>
+
+    </section>
+
+    <section class="segunda_pag" id='oculto' style='display:none;'>
+        <h2 class="mensaje_exito">
+            <font size=35>¡Éxito!</font>
+        </h2>
+        <br>
+        
+        <input class="btn btn-outline-primary" type="button" value="Volver al menú principal" a href="inicioSesion.html">
+    </section>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
