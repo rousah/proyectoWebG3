@@ -12,14 +12,15 @@
     <a href="index.html">
     <img src="images/logo_propio_01.svg" alt="LOGO">
     </a>
-    <form action="#" method="get">
+    <div class="form-wrapper offset-md-3 col-md-6">
+            <form action="#" method="get">
 
-        <div class="usuario col-md-6">
+        <div class="usuario ">
             <label id="usuario">Usuario</label>
             <input type="email" class="form-control" id="usuario" placeholder="Usuario...">
             <br>
         </div>
-        <div class="contraseña col-md-6">
+        <div class="contraseña">
             <label id="contraseña">Contraseña</label>
             <input type="password" class="form-control" id="inputPassword4" placeholder="Contraseña...">
         </div>
@@ -28,6 +29,8 @@
         <p>Fallo de autenticación. Vuelve a intentarlo</p>
         <input class="btn btn-outline-primary" href="restaurarMedianteCorreo.html" role="button" data-i18n="username" type="submit">
     </form>
+    </div>
+
 
     <script>
         fetch('/login/?nombre=' + +'&password=' + ).then(); /* PARTE BASE DE DATOS */
