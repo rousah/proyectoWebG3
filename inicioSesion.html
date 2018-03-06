@@ -8,6 +8,9 @@
     <style>
 
         #bootstrap-overwrite .btn {
+            background-color: #3F9482;
+            color: white;
+            border: none;
             
         }
 
@@ -17,9 +20,19 @@
             font-family: Montserrat-Light;
             src: url(fonts/Montserrat-Light.ttf);
         }
+        @font-face {
+            font-family: Montserrat-Bold;
+            src: url(fonts/Montserrat-Bold.ttf);
+        } 
 
         p {
             font-family: Montserrat-Light;
+        }
+        label {
+            font-family: Montserrat-Bold;
+        }
+        .placeholder {
+            font-family: Montserrat-Bold;
         }
 
     </style>
@@ -30,13 +43,13 @@
 
 <body id="bootstrap-overwrite">
     <a href="index.html">
-    <img src="images/logo_propio_01.svg" alt="LOGO">
+    <img src="images/logo_propio_03.svg" alt="LOGO">
     </a>
     <div class="form-wrapper offset-md-3 col-md-6">
         <form action="http://localhost:3000/login">
             <div class="usuario ">
-                <label id="usuario">Usuario</label>
-                <input type="email" class="form-control" id="usuario" placeholder="Usuario..." name="email" required>
+                <label id="usuario">Correo eletrónico</label>
+                <input type="email" class="form-control" id="usuario" placeholder="Email..." name="email" required>
                 <br>
             </div>
             <div class="contraseña">
