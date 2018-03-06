@@ -2,8 +2,8 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-tofit=no">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <! -- anchura pantalla del dispositivo -- !>
     <meta http-equiv="x-ua-compatible" content="ie-edge">
     <! -- para que se vea bien en internet explorer y microsoft edge -- !>
@@ -11,6 +11,7 @@
 </head>
 
 <script type="text/javascript">
+    
     function intercambioPantalla() {
         document.getElementById('mostrado').style.display = 'none';
         document.getElementById('oculto').style.display = 'block';
@@ -19,26 +20,87 @@
 </script>
 
 <script>
+    
     function deshabilita(form) {
         if (form.correo.value != "") {
             form.mandar.disabled = false;
         } else {
             form.mandar.disabled = true;
         }
-
     }
 
 </script>
 
+<style>
+    
+    .imagen1{
+        
+        height: 35px;
+        margin: 15px 7.5px auto;
+        background-color: cadetblue;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        border-radius: 35px;
+        
+        
+    }
+    
+    .imagen2{
+        
+        margin: 0 auto;
+        align-content: center;
+        width: 80%;
+        
+    }
+    
+    .texto_explicatorio{
+        text-align: center;
+    }
+    
+    
+    .introducir_Correo{
+        
+        max-width: 250px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .botonMandar{
+        max-width: 120px;
+        max-height: 40px;
+        margin: 30px auto;
+        display: flex;
+        justify-content: center;
+
+    }
+    
+    .mensaje_exito{
+        
+        max-width: 200px;
+        margin: 0 auto;
+        text-align: center;
+        
+    }
+    
+    
+    
+    
+</style>
 
 <body>
 
 
 
     <section class="Imagen_logo">
-
-        <img src="images/logoGTI.svg">
-        <div class="imagen">
+        
+        <div class="imagen1">
+            <img src="images/logoGTI_blanco.svg" width="90">
+        </div>
+        <br>
+        <div class="imagen2">
             <img src="images/logo_propio_03.svg">
         </div>
 
@@ -47,7 +109,7 @@
     <section class="cuerpo" id="mostrado">
 
         <div class="texto_explicatorio">
-            <p>Introduzca su correo para ponernos en contacto con usted</p>
+            <p><b>Introduzca su correo para ponernos en contacto con usted</b></p>
         </div>
         <div class="form-wrapper offset-md-3 col-md-6">
 
@@ -71,7 +133,7 @@
     <section class="segundapag" id="oculto" style="display: none">
         
         <h2 class="mensaje_exito">
-            <font size=18>El correo se ha enviado con éxito</font>
+            <font size=5>El correo se ha enviado con éxito</font>
         </h2>
         
     </section>
