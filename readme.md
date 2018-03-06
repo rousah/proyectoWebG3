@@ -10,11 +10,11 @@ Requiered software: npm and sqlite3
 
 Switch into `servidor` directory  
 Run `npm install` to install dependecies  
-Run `node servidor.js` to start the server  
+Run `node servidor.js` to start the server
 
 ## Re-/creating the database file
 open `sqlite3`  
-open or create the db file:  
-`.open cultisense.db`  
-read the script to create basic users:  
-`.read scripts/create_user_table.sql`  
+open or create the db file:
+`.open cultisense.db`
+read the script to create basic users:
+`.read scripts/create_user_table.sql`
