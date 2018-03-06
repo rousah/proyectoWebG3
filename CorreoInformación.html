@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-tofit=no">
+    <! -- anchura pantalla del dispositivo -- !>
+    <meta http-equiv="x-ua-compatible" content="ie-edge">
+    <! -- para que se vea bien en internet explorer y microsoft edge -- !>
+    <title>Correo para información</title>
+</head>
+
+<script type="text/javascript">
+    function intercambioPantalla() {
+        document.getElementById('mostrado').style.display = 'none';
+        document.getElementById('oculto').style.display = 'block';
+    }
+
+</script>
+
+<script>
+    function deshabilita(form) {
+        if (form.correo.value != "") {
+            form.mandar.disabled = false;
+        } else {
+            form.mandar.disabled = true;
+        }
+
+    }
+
+</script>
+
+
+<body>
+
+
+
+    <section class="Imagen_logo">
+
+        <img src="images/logoGTI.svg">
+        <div class="imagen">
+            <img src="images/logo_propio_03.svg">
+        </div>
+
+    </section>
+
+    <section class="cuerpo" id="mostrado">
+
+        <div class="texto_explicatorio">
+            <p>Introduzca su correo para ponernos en contacto con usted</p>
+        </div>
+        <div class="form-wrapper offset-md-3 col-md-6">
+
+            <form action="#" method="get">
+
+                <div class="introducir_Correo">
+                    <input type="email" class="form-control" placeholder="e-mail" name="correo" onkeyup="deshabilita(this.form)" size="30" required>
+                </div>
+
+
+                <div class="botonMandar">
+                    <input class="btn btn-outline-primary" href="inicioSesion.html" type="submit" name="mandar" value="Enviar" onClick="intercambioPantalla()" disabled>
+                </div>
+
+
+            </form>
+        </div>
+
+    </section>
+    
+    <section class="segundapag" id="oculto" style="display: none">
+        
+        <h2 class="mensaje_exito">
+            <font size=18>El correo se ha enviado con éxito</font>
+        </h2>
+        
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
