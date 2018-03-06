@@ -13,28 +13,26 @@
     <img src="images/logo_propio_01.svg" alt="LOGO">
     </a>
     <div class="form-wrapper offset-md-3 col-md-6">
-            <form action="#" method="get">
+        <form action="#" method="get">
 
-        <div class="usuario ">
-            <label id="usuario">Usuario</label>
-            <input type="email" class="form-control" id="usuario" placeholder="Usuario...">
-            <br>
-        </div>
-        <div class="contraseña">
-            <label id="contraseña">Contraseña</label>
-            <input type="password" class="form-control" id="inputPassword4" placeholder="Contraseña...">
-        </div>
+            <div class="usuario ">
+                <label id="usuario">Usuario</label>
+                <input type="email" class="form-control" id="usuario" placeholder="Usuario..." required>
+                <br>
+            </div>
+            <div class="contraseña">
+                <label id="contraseña">Contraseña</label>
+                <input type="password" class="form-control" id="inputPassword4" placeholder="Contraseña..." required>
+            </div>
 
-        <a href="olvidado-contrasena.html">¿Olvidaste tu contraseña?</a>
-        <p>Fallo de autenticación. Vuelve a intentarlo</p>
-        <input class="btn btn-outline-primary" href="restaurarMedianteCorreo.html" role="button" data-i18n="username" type="submit">
-    </form>
+            <a href="restaurarMedianteCorreo.html">¿Olvidaste tu contraseña?</a>
+            <p>Fallo de autenticación. Vuelve a intentarlo</p>
+            <input class="btn btn-outline-primary"  role="button" data-i18n="enviar" type="submit">
+        </form>
     </div>
-
 
     <script>
         fetch('/login/?nombre=' + +'&password=' + ).then(); /* PARTE BASE DE DATOS */
-
     </script>
 
 
