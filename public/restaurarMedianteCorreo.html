@@ -81,13 +81,37 @@
         .mensaje_exito {
             color: darkgreen;
         }
+        
+        #bootstrap-overwrite .btn {
+            background-color: #3F9482;
+            color: white;
+            border: none;
+        }
+
+        @font-face {
+            font-family: Montserrat-Light;
+            src: url(fonts/Montserrat-Light.ttf);
+        }
+
+        @font-face {
+            font-family: Montserrat-Bold;
+            src: url(fonts/Montserrat-Bold.ttf);
+        }
+
+        p {
+            font-family: Montserrat-Light;
+        }
+
+        label {
+            font-family: Montserrat-Bold;
+        }
 
     </style>
 
 </head>
 
 
-<body>
+<body id="bootstrap-overwrite">
     <section id="mostrado">
         <header class="restaurarMedianteCorreo">
             <h1><b><font size=6>Restaurar contraseña mediante correo electrónico</font></b></h1>
