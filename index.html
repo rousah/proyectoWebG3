@@ -10,16 +10,27 @@
             font-family: Montserrat-Light;
             src: url(fonts/Montserrat-Light.ttf);
         }
-
-        p {
+        @font-face {
+            font-family: Montserrat-Bold;
+            src: url(fonts/Montserrat-Bold.ttf);
+        } 
+        .descripcion {
             font-family: Montserrat-Light;
+        }
+        .pieDePagina  {
+            font-family: Montserrat-Bold;
+        }
+        #bootstrap-overwrite .btn {
+            background-color: #3F9482;
+            color: white;
+            border: none;
         }
        
     </style>
 </head>
 
 
-<body>
+<body id="bootstrap-overwrite">
 
     <div class="container">
         <section class="acceso">
@@ -33,7 +44,7 @@
             <h1>
                 Directamente del campo a tu móvil
             </h1>
-            <p>
+            <p class= "descripcion">
                 Una herramienta web que ofrece un servicio para que resulte más fácil el control diario sobre los productos de la tierra.
             </p>
             <br>
@@ -42,8 +53,8 @@
                 
         </section>
         <br><br>
-        <footer class=" pie de pagina" role="contentinfo">
-            <p>
+        <footer class="pieDePagina" role="contentinfo">
+            <p class="pie de pagina">
                 Copyright © 2018 Cultisense <br> Todos los derechos reservados | Términos de uso
             </p>
         </footer>
