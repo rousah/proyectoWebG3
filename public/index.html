@@ -27,20 +27,53 @@
             font-style: Bold;
 
         }
+
+        #logoGtiBanner {
+            background-color: #3F9482;
+            margin: 15px 7.5px auto;
+            position: relative;
+            height: 70px;
+            border-radius: 35px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            
+        }
+
+        #logoPropio {
+            width: 80%;
+            position: relative;
+            display: flex;
+            text-align: center;
+
+        }
+
+        #logoGTI {
+            width: 20%;
+            position: relative;
+            left: -10px;
+            display: flex;
+            
+
+
+        }
     </style>
 </head>
 
 
 <body id="bootstrap-overwrite">
 
-    <div class="container">
+    <div>
         <section class="acceso">
             <header class="logos">
+                <div id="logoGtiBanner">
+                    <img id="logoGTI" src="images/logoGTI_negro.png" alt="logo empresa">
+                </div>
 
-                <div class="p-3 mb-2 bg-dark text-white"><img src="images/logoGTI_blanco.svg" alt="logo empresa"> </div>
 
                 <br>
-                <img src="images/logo_propio_03.svg" alt="logo propio">
+                <img id="logoPropio" src="images/logo_propio_03.svg" alt="logo propio">
+                <br>
             </header>
             <h1>
                 Directamente del campo a tu móvil
