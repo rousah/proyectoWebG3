@@ -17,14 +17,23 @@
             src: url(fonts/Montserrat-regular.ttf);
         }
 
+        #h1 {
+            font-family: Montserrat;
+            font-style: Bold;
+            text-align: center;
+
+        }
+
         .descripcion {
             font-family: Montserrat;
             font-weight: 100;
+            text-align: center;
         }
 
         .pieDePagina {
             font-family: Montserrat;
             font-style: Bold;
+            text-align: center;
 
         }
 
@@ -37,24 +46,28 @@
             overflow: hidden;
             display: flex;
             align-items: center;
-            
+
         }
 
-        #logoPropio {
-            width: 80%;
-            position: relative;
-            display: flex;
-            text-align: center;
+        #logoPropio  {
+            width: 50%;
+            margin: 0 auto;
+            align-content: center;
+            
+
+
 
         }
 
         #logoGTI {
-            width: 20%;
+            background-color: #3F9482;
+            margin: 7px 7.5px auto;
             position: relative;
-            left: -10px;
+            height: 60px;
+            border-radius: 35px;
+            overflow: hidden;
             display: flex;
-            
-
+            align-items: center;
 
         }
     </style>
@@ -65,25 +78,29 @@
 
     <div>
         <section class="acceso">
-            <header class="logos">
+            <header>
                 <div id="logoGtiBanner">
                     <img id="logoGTI" src="images/logoGTI_blanco.svg" alt="logo empresa">
                 </div>
-
-
                 <br>
-                <img id="logoPropio" src="images/logo_propio_03.svg" alt="logo propio">
+                <div id="logoPropio">
+                    <img class="img-fluid" src="images/logo_propio_03.svg" alt="logo propio">
+                </div>
+
                 <br>
             </header>
-            <h1>
+            <h1 align="center">
                 Directamente del campo a tu móvil
             </h1>
             <p class="descripcion">
                 Una herramienta web que ofrece un servicio para que resulte más fácil el control diario sobre los productos de la tierra.
             </p>
             <br>
-            <button class="btn btn-outline-primary" onclick="">Información</button>
-            <a class="btn btn-outline-primary" href="inicioSesion.html" role="button" data-i18n="clientes">Clientes</a>
+            <div class="mx-auto" style="width: 200px;">
+                <button class="btn btn-outline-primary" onclick="">Información</button>
+                <a class="btn btn-outline-primary" href="inicioSesion.html" role="button" data-i18n="clientes">Clientes</a>
+            </div>
+
 
         </section>
         <br><br>
