@@ -18,6 +18,7 @@ $(document).ready(function() {
       },
       error: function(error) {
         console.log(error);
+        $('#fallo-aut').show(200);
       }
     });
   });
