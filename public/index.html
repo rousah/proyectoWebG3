@@ -39,38 +39,136 @@
 
         }
 
-        #logoGtiBanner {
-            background-color: #3F9482;
-            margin: 15px 7.5px auto;
-            position: relative;
-            height: 70px;
-            border-radius: 35px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
+        /* Banner Logo */
 
-        }
-
-        #logoPropio {
+        .logoPropio {
             width: 50%;
             margin: 0 auto;
             align-content: center;
+        }
+
+        @media (min-width: 500px) {
+            .logoGtiBanner {
+                height: 55px;
+                margin: 15px 7.5px auto;
+                background-color: #3F9482;
+                padding: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                border-radius: 55px;
+            }
+
+            #logoGTI {
+                width: 120px;
+            }
+        }
 
 
+        @media (min-width: 700px) {
+            .logoPropio {
+
+                margin: 0 auto;
+                align-content: center;
+                max-width: 80%;
+            }
+
+        }
+
+        @media (min-width: 1000px) {
+            .logoGtiBanner {
+                height: 75px;
+                margin: 15px 7.5px auto;
+                background-color: #3F9482;
+                padding: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                border-radius: 75px;
+            }
+
+            #logoGTI {
+                width: 150px;
+            }
+
+        }
+
+        .logoGtiBanner {
+
+            height: 35px;
+            margin: 15px 7.5px auto;
+            background-color: #3F9482;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            border-radius: 35px;
 
 
         }
 
-        #logoGTI {
+        /* Copyright*/
+
+        .pieDePagina {
+
+            height: 45px;
+            margin: 15px 7.5px auto;
             background-color: #3F9482;
-            margin: 7px 7.5px auto;
-            position: relative;
-            height: 60px;
-            border-radius: 35px;
-            overflow: hidden;
+            padding: 1rem;
             display: flex;
             align-items: center;
+            justify-content: center;
+            border-radius: 45px;
+            color: white;
+        }
 
+        .copyright {
+            font-size: 8pt;
+        }
+
+        @media (min-width: 500px) {
+            .pieDePagina {
+                height: 55px;
+                margin: 15px 7.5px auto;
+                background-color: #3F9482;
+                padding: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 55px;
+                color: white;
+            }
+
+            .copyright {
+                width: 500px;
+                display: flex;
+                justify-content: center;
+                font-size: 10pt;
+
+            }
+        }
+
+        @media (min-width: 1000px) {
+            .pieDePagina {
+                height: 55px;
+                margin: 15px 7.5px auto;
+                background-color: #3F9482;
+                padding: 1rem;
+                display: flex;
+                /*align-items: center;*/
+                justify-content: center;
+                border-radius: 55px;
+                color: white;
+            }
+
+            .copyright {
+                width: 500px;
+                display: flex;
+                justify-content: center;
+                color: white;
+                font-size: 12pt;
+
+            }
         }
     </style>
 </head>
@@ -81,11 +179,11 @@
     <div>
         <section class="acceso">
             <header>
-                <div id="logoGtiBanner">
-                    <img id="logoGTI" src="images/logoGTI_blanco.svg" alt="logo empresa">
+                <div class="logoGtiBanner">
+                    <img id="logoGTI" src="images/logoGTI_blanco.svg" alt="logo empresa" width="90">
                 </div>
                 <br>
-                <div id="logoPropio">
+                <div class="logoPropio">
                     <img class="img-fluid" src="images/logo_propio_03.svg" alt="logo propio">
                 </div>
 
@@ -107,7 +205,7 @@
         </section>
         <br><br>
         <footer class="pieDePagina" role="contentinfo">
-            <p class="pie de pagina">
+            <p class="copyright">
                 Copyright © 2018 Cultisense <br> Todos los derechos reservados | Términos de uso
             </p>
         </footer>
