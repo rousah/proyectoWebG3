@@ -1,12 +1,17 @@
 {
     "app-title": "Example Application",
     "app-sub-title": "An example application with jquery.i18n",
-    "app-header-introduction": "Introduction",
-    "app-about": "About this application",
-    "app-footer": "Footer text",
-    "forgot-password-title" :"Olvidado contraseña",
-    "forgot-password-question" : "¿Ha olvidado su contraseña?",
-    "restore-question" : "Se acuerda de su:",
-    "username" : "Usario",
-    "email" : "Correo electrónico"
+    "app-header-introduction": "Introducció",
+    "app-about": "Sobre esta aplicació",
+    "app-footer": "Peu de Pàgina",
+    "forgot-password-title": "Contrasenya Olvidà",
+    "forgot-password-question": "¿Has olvidat la contrasenya?",
+    "restore-question": "S'anrecorda del seu:",
+    "username": "Usari",
+    "email": "Correu electrónic",
+    "password": "Contrasenya",
+    "spanish": "Espanyol",
+    "catalan": "Català",
+    "english": "Anglés",
+    "send": "Enviar"
 }

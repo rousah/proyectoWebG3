@@ -44,6 +44,17 @@
             align-content: center;
         }
 
+        .cajaolvidar {
+            display: flex;
+            justify-content: flex-end;
+
+        }
+
+        .cajaenviar {
+            display: flex;
+            justify-content: center;
+        }
+
         /* Cppyright */
 
         .pieDePagina {
@@ -57,6 +68,7 @@
             justify-content: center;
             border-radius: 45px;
             color: white;
+            text-align: center;
 
         }
 
@@ -129,13 +141,21 @@
                 <label id="contrasena" data-i18n="password">Contraseña</label>
                 <input type="password" class="form-control" id="inputPassword4" name="password" required>
             </div>
-            <a data-i18n="forgot-password-question" href="restaurarMedianteCorreo.html">¿Olvidaste tu contraseña?</a>
+            <div class="cajaolvidar">
+                <a data-i18n="forgot-password-question" href="restaurarMedianteCorreo.html">¿Olvidaste tu contraseña?</a>
+            </div>
+
             <p id="fallo-aut" style="display: none">Fallo de autenticación. Vuelve a intentarlo</p>
-            <br>
-            <button data-i18n="send" class="cult-btn btn btn-outline-primary" role="button" type="submit"> Send
-      </button>
+            <br><br>
+            <div class="cajaenviar">
+                <button data-i18n="send" class="cult-btn btn btn-outline-primary" role="button" type="submit"> Enviar</button>
+            </div>
+
+
+
         </form>
     </div>
+    <br><br>
     <div>
         <div class="dropdown text-center">
             <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="languageMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -150,9 +170,11 @@
     </div>
     <br><br>
     <footer class="pieDePagina" role="contentinfo">
-        <p class="copyright">
-            Copyright © 2018 Cultisense <br> Todos los derechos reservados | Términos de uso
-        </p>
+        <p class="copyright">Copyright © 2018 Cultisense <br>Todos los derechos reservados | Términos de uso</p>
+
+
+
+
     </footer>
     <script src="https://code.jquery.com/jquery-3.2.1.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
