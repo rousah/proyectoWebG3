@@ -19,25 +19,20 @@
 
 </script>
 
-<script>
-    
-    function deshabilita(form) {
-        if (form.correo.value != "") {
-            form.mandar.disabled = false;
-        } else {
-            form.mandar.disabled = true;
-        }
-    }
 
-</script>
 
 <style>
+     #bootstrap-overwrite .btn {
+            background-color: #3F9482;
+            color: white;
+            border: none;
+        }
     
     .imagen1{
         
         height: 35px;
         margin: 15px 7.5px auto;
-        background-color: cadetblue;
+        background-color: #3F9482;
         padding: 1rem;
         display: flex;
         align-items: center;
@@ -109,8 +104,11 @@
             margin: 0 auto;
             align-content: center;
             max-width: 80%;
+            
+            
+            
         }
-
+        
     }
 
     @media (min-width: 1000px) {
@@ -125,7 +123,7 @@
             border-radius: 75px;
         }
 
-        .imagenlogogti {
+        .imagenlogogti{
             width: 150px;
         }
 
@@ -136,18 +134,20 @@
     
 </style>
 
-<body>
+<body id="bootstrap-overwrite">
 
 
 
     <section class="Imagen_logo">
         
         <div class="imagen1">
-            <img src="images/logoGTI_blanco.svg" width="90">
+            <img src="images/logoGTI_blanco.svg" width="90" class="imagenlogogti">
         </div>
         <br>
         <div class="imagen2">
-            <img src="images/logo_propio_03.svg">
+           <a href="index.html">
+            <img src="images/logo_propio_03.svg" class="logoPropio">
+            </a>
         </div>
 
     </section>
@@ -162,13 +162,15 @@
             <form action="#" method="get">
 
                 <div class="introducir_Correo">
-                    <input type="email" class="form-control" placeholder="e-mail" name="correo" onkeyup="deshabilita(this.form)" size="30" required>
+                    <input type="email" class="form-control" placeholder="e-mail" name="correo" size="30" required>
                 </div>
 
 
                 <div class="botonMandar">
-                    <a class="btn btn-outline-primary" href="CorreoInformacion.html" role="button" data-i18n="clientes">Enviar</a>
+                    <a class="btn btn-outline-primary" role="button" data-i18n="clientes" onClick="intercambioPantalla()" >Enviar</a>
                 </div>
+                
+                
 
 
             </form>
@@ -180,6 +182,9 @@
         
         <h2 class="mensaje_exito">
             <font size=5>El correo se ha enviado con éxito</font>
+            <br>
+            <br>
+            <a class="btn btn-outline-primary" role="button" data-i18n="clientes" href="index.html">Volver al menú principal</a>
         </h2>
         
     </section>

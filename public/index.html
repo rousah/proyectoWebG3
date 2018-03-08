@@ -14,7 +14,6 @@
         }
 
 
-
         .acceso h1 {
             font-family: Montserrat;
             padding: 1rem;
@@ -24,54 +23,159 @@
 
         }
 
+        .cajaDescripcion {
+            max-width: 500px;
+            display: flex;
+            margin: 0 auto;
+        }
+
+
         .descripcion {
-            font-family: Montserrat;
-            font-weight: 100;
+            font-family: Montserrat-Light.ttf;
+            font-size: 12pt;
             text-align: center;
             padding: 1rem;
         }
 
         .pieDePagina {
             font-family: Montserrat;
-            font-style: Bold;
             text-align: center;
             font-size: 8pt;
 
         }
 
-        #logoGtiBanner {
-            background-color: #3F9482;
-            margin: 15px 7.5px auto;
-            position: relative;
-            height: 70px;
-            border-radius: 35px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-
-        }
-
-        #logoPropio {
+        .logoPropio {
             width: 50%;
             margin: 0 auto;
             align-content: center;
+        }
+
+        /* Banner Logo */
+
+        @media (min-width: 500px) {
+            .logoGtiBanner {
+                height: 55px;
+                margin: 15px 7.5px auto;
+                background-color: #3F9482;
+                padding: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                border-radius: 55px;
+            }
+
+            #logoGTI {
+                width: 120px;
+            }
+        }
 
 
+        @media (min-width: 700px) {
+            .logoPropio {
 
+                margin: 0 auto;
+                align-content: center;
+                max-width: 80%;
+            }
 
         }
 
-        #logoGTI {
+        @media (min-width: 1000px) {
+            .logoGtiBanner {
+                height: 75px;
+                margin: 15px 7.5px auto;
+                background-color: #3F9482;
+                padding: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                border-radius: 75px;
+            }
+
+            #logoGTI {
+                width: 150px;
+            }
+
+        }
+
+        .logoGtiBanner {
+
+            height: 55px;
+            margin: 15px 7.5px auto;
             background-color: #3F9482;
-            margin: 7px 7.5px auto;
-            position: relative;
-            height: 60px;
-            border-radius: 35px;
-            overflow: hidden;
+            padding: 1rem;
             display: flex;
             align-items: center;
+            justify-content: flex-start;
+            border-radius: 55px;
+
 
         }
+
+        /* Copyright*/
+
+        .pieDePagina {
+
+            height: 45px;
+            margin: 15px 7.5px auto;
+            background-color: #3F9482;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 45px;
+            color: white;
+        }
+
+        .copyright {
+            font-size: 8pt;
+        }
+
+        @media (min-width: 500px) {
+            .pieDePagina {
+                height: 55px;
+                margin: 15px 7.5px auto;
+                background-color: #3F9482;
+                padding: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 55px;
+                color: white;
+            }
+
+            .copyright {
+                width: 500px;
+                display: flex;
+                justify-content: center;
+                font-size: 10pt;
+
+            }
+        }
+
+        @media (min-width: 1000px) {
+            .pieDePagina {
+                height: 55px;
+                margin: 15px 7.5px auto;
+                background-color: #3F9482;
+                padding: 1rem;
+                display: flex;
+                /*align-items: center;*/
+                justify-content: center;
+                border-radius: 55px;
+                color: white;
+            }
+
+            .copyright {
+                width: 500px;
+                display: flex;
+                justify-content: center;
+                color: white;
+                font-size: 12pt;
+
+            }
+        }
+
     </style>
 </head>
 
@@ -81,11 +185,11 @@
     <div>
         <section class="acceso">
             <header>
-                <div id="logoGtiBanner">
-                    <img id="logoGTI" src="images/logoGTI_blanco.svg" alt="logo empresa">
+                <div class="logoGtiBanner">
+                    <img id="logoGTI" src="images/logoGTI_blanco.svg" alt="logo empresa" width="130">
                 </div>
                 <br>
-                <div id="logoPropio">
+                <div class="logoPropio">
                     <img class="img-fluid" src="images/logo_propio_03.svg" alt="logo propio">
                 </div>
 
@@ -94,9 +198,11 @@
             <h1 align="center">
                 Directamente del campo a tu móvil
             </h1><br>
-            <p class="descripcion">
-                Cultisense es una <b>herramienta</b> web que ofrece un servicio de seguimiento a las principales características de los productos de la tierra, como la <b>humedad</b>, la <b>temperatura</b>, la <b>iluminación</b> - y muchos más, para que resulte más fácil el <b>control</b> diario.
-            </p>
+            <div class="cajaDescripcion">
+                <p class="descripcion">
+                    Cultisense es una <b>herramienta</b> web que ofrece un servicio de seguimiento a las principales características de los productos de la tierra, como la <b>humedad</b>, la <b>temperatura</b>, la <b>iluminación</b> - y muchos más, para que resulte más fácil el <b>control</b> diario.
+                </p>
+            </div>
             <br>
             <div class="mx-auto" style="width: 200px;">
                 <a class="btn btn-outline-primary" href="informacionProducto.html" role="button" data-i18n="clientes">Información</a>
@@ -107,7 +213,7 @@
         </section>
         <br><br>
         <footer class="pieDePagina" role="contentinfo">
-            <p class="pie de pagina">
+            <p class="copyright">
                 Copyright © 2018 Cultisense <br> Todos los derechos reservados | Términos de uso
             </p>
         </footer>

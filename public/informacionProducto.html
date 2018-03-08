@@ -13,50 +13,115 @@
             border: none;
         }
 
-        @font-face {
-            font-family: Montserrat-Light;
-            src: url(fonts/Montserrat-Light.ttf);
+        h1 {
+            font-family: Montserrat;
+            padding: 1rem;
+            text-align: center;
         }
 
         .Informacion {
-            font-family: Montserrat-Light;
+            font-family: Montserrat;
+            font-weight: 100;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .imagen1 {
+
+            height: 35px;
+            margin: 15px 7.5px auto;
+            background-color: #3F9482;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            border-radius: 35px;
+
+
+        }
+
+        .imagen2 {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 700px) {
+            .imagen2 {
+
+                margin: 0 auto;
+                align-content: center;
+                max-width: 80%;
+            }
+
+        }
+
+        @media (min-width: 1000px) {
+            .imagen1 {
+                height: 75px;
+                margin: 15px 7.5px auto;
+                background-color: #3F9482;
+                padding: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                border-radius: 75px;
+            }
+
+            .imagenlogogti {
+                width: 150px;
+            }
+
+        }
+        .cajaInformacion {
+            display: flex;
+            margin: 0 auto;
+            max-width: 500px;
         }
 
         .pieDePagina {
-            font-family: Montserrat-Bold;
-        }
+            font-family: Montserrat;
+            padding: 1rem;
+            text-align: center;
 
-        .boton {
-            font-family: Montserrat-Bold;
         }
     </style>
 </head>
 
 
 <body id="bootstrap-overwrite">
-    <div class="container">
-        <section class="información">
-            <header class="logo">
-                <img src="images/logoGTI.svg" alt="logo empresa"><br>
-                <img src="images/logo_propio_03.svg" alt="logo propio">
-            </header>
-            <h1>
-                Esto es un Título
-            </h1>
-            <p class="Informacion">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.
-            </p>
-            <div class="boton">
-                <a class="btn btn-outline-primary" href="CorreoInformacion.html" role="button" data-i18n="clientes">Contactar</a>
-            </div>
 
-        </section>
-        <footer class=" pieDePagina" role="contentinfo">
-            <p>
-                Copyright © 2018 Cultisense <br> Todos los derechos reservados | Términos de uso
-            </p>
-        </footer>
+    <section class="Imagen_logo">
+
+        <div class="imagen1">
+            <img src="images/logoGTI_blanco.svg" width="100" class="imagenlogogti">
+        </div>
+        <br>
+        <div class="imagen2">
+           <a href="/proyectoWebG3/public/index.html">
+            <img src="images/logo_propio_03.svg">
+            </a>
+        </div>
+
+    </section>
+    <h1>
+        Esto es un Título
+    </h1>
+    <div class="cajaInformacion">
+    <p class="Informacion">
+        Una tecnología avanzada que te permite  tener toda la información de tu campo en un click. Cultisense combina la comodidad con el trabajo, mediante una serie de herramientas que te permiten consultar el nivel de humedad, temperatura, iluminación mediante el uso de gráficas, tablas de datos, etc. Además no tendrás que preocuparte ya que puedes configurar una serie de alarmas para que te avisen
+    </p>
     </div>
+    <div class="mx-auto" style="width: 100px">
+        <a class="btn btn-outline-primary" href="CorreoInformacion.html" role="button" data-i18n="clientes">Contactar</a>
+    </div>
+    <br>
+    
+    <footer class="pieDePagina" role="contentinfo">
+        <p>
+            Copyright © 2018 Cultisense <br> Todos los derechos reservados | Términos de uso
+        </p>
+    </footer>
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
