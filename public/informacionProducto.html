@@ -13,33 +13,67 @@
             border: none;
         }
 
-        @font-face {
-            font-family: Montserrat-Light;
-            src: url(fonts/Montserrat-Light.ttf);
+        .informacion h1 {
+            color: red;
         }
 
-        .Informacion {
-            font-family: Montserrat-Light;
+        .imagen1 {
+
+            height: 35px;
+            margin: 15px 7.5px auto;
+            background-color: #3F9482;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            border-radius: 35px;
+
+
+        }
+        @media (min-width: 700px) {
+        .imagen2 {
+
+            margin: 0 auto;
+            align-content: center;
+            max-width: 80%;
         }
 
-        .pieDePagina {
-            font-family: Montserrat-Bold;
+    }
+
+    @media (min-width: 1000px) {
+        .imagen1 {
+            height: 75px;
+            margin: 15px 7.5px auto;
+            background-color: #3F9482;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            border-radius: 75px;
         }
 
-        .boton {
-            font-family: Montserrat-Bold;
+        .imagenlogogti {
+            width: 150px;
         }
+
+    }
     </style>
 </head>
 
 
 <body id="bootstrap-overwrite">
-    <div class="container">
-        <section class="información">
-            <header class="logo">
-                <img src="images/logoGTI.svg" alt="logo empresa"><br>
-                <img src="images/logo_propio_03.svg" alt="logo propio">
-            </header>
+    
+        <section class="Imagen_logo">
+        
+        <div class="imagen1">
+            <img src="images/logoGTI_blanco.svg" width="200">
+        </div>
+        <br>
+        <div class="imagen2">
+            <img src="images/logo_propio_03.svg">
+        </div>
+
+    </section>
             <h1>
                 Esto es un Título
             </h1>
@@ -50,13 +84,13 @@
                 <a class="btn btn-outline-primary" href="CorreoInformacion.html" role="button" data-i18n="clientes">Contactar</a>
             </div>
 
-        </section>
+        
         <footer class=" pieDePagina" role="contentinfo">
             <p>
                 Copyright © 2018 Cultisense <br> Todos los derechos reservados | Términos de uso
             </p>
         </footer>
-    </div>
+   
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
