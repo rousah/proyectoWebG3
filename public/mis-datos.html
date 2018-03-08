@@ -27,17 +27,16 @@
                 justify-content: flex-start;
                 border-radius: 55px;
             }
+
+            .iconoPerfil {
+                width: 20%;
+            }
         }
 
-
         @media (min-width: 700px) {
-            .logoPropio {
-
-                margin: 0 auto;
-                align-content: center;
-                max-width: 80%;
+            .iconoPerfil {
+                width: 30%;
             }
-
         }
 
         @media (min-width: 1000px) {
@@ -58,8 +57,9 @@
 
         }
 
-        .iconoPerfil {
-            max-width: 350px;
+
+        #iconoPerfil {
+            max-width: 20%;
         }
 
         .iconoBanner {
@@ -77,7 +77,19 @@
 
         .titulo {
             color: white;
+            display: flex;
         }
+
+        #datos-cuenta,
+        #datos-personales,
+        #foto-de-perfil,
+        #datos-password {
+            border: 1px solid rgb(114, 191, 175);
+            border-radius: 6px;
+            padding: 0px 8px 0px 8px;
+            margin: 12px;
+        }
+
     </style>
 </head>
 
@@ -96,58 +108,111 @@
         <br>
     </header>
 
-    <div>
-        <section id="datos-cuenta" class="usuario col-md-6">
-            <div class="email">
-                Correo electrónico actual es:
-                <p id="placeholder-email"> Email </p>
-            </div>
-            <form action="#">
-                <div class="contrasenya">
-                    Contraseña: <input type="password" placeholder="Max 15 caracteres" maxlength="15"><br> Repite contraseña:<input type="password" placeholder="Max 15 caracteres" maxlength="15">
+    <div class="offset-md-3 col-md-6">
+        <section id="datos-cuenta">
+            <form class="col-md-6">
+                <div class="form-group row email">
+                    <label for="placeholder-email" class="col-sm-4 col-form-label">Correo electrónico:</label>
+                    <div class="col-sm-8">
+                        <input type="text" readonly class="form-control-plaintext" id="placeholder-email" value="hola@email.es">
+                    </div>
+                </div>
+            </form>
+        </section>
+        <section id="datos-password">
+            <form id="password-form" class="col-md-6">
+                <div class="form-group">
+                    <label for="old_password">Contraseña antigua</label>
+                    <input type="password" class="form-control" id="old_password" name="old_password" required>
+
+                </div>
+                <div class="form-group">
+                    <label id="new_password">Contraseña nueva</label>
+                    <input type="password" class="form-control" id="new_password" name="new_password" required>
+
+                </div>
+                <div class="form-group">
+                    <label id="re_new_password">Repetir contraseña</label>
+                    <input type="password" class="form-control" id="re_new_password" name="re_new_password" required>
+
+                </div>
+                <div class="boton">
+                    <button data-i18n="send" class="cult-btn btn btn-outline-primary" role="button" type="submit"> Send </button>
                 </div>
             </form>
 
         </section>
 
-        <section id="datos-personales" class="usuario col-md-6">
-            <div class="nombre"> Nombre:
-                <p id="placeholder-username"> Username </p>
-            </div>
-            <div class="apellidos"> Apellidos:
-                <p id="placeholder-lastname"> Lastname </p>
-            </div>
-            <div class="sexo">
-                Sexo:
-                <p id="placeholder-sexo">Sexo </p>
-            </div>
-            <div class="pais"> País:
-                <p id="placeholder-pais">País</p>
-            </div>
-            <div class="ciudad"> Ciudad:
-                <p id="placeholder-ciudad">Ciudad</p>
-            </div>
-            <div class="calle"> Dirección:
-                <p id="placeholder-calle">Calle</p>
-            </div>
-            <div class="cod-postal"> Código postal:
-                <p id="placeholder-cod-postal">Código Postal</p>
-            </div>
-            <div class="telefono">Teléfono:
-                <p id="placeholder-telefono">Número teléfono</p>
-            </div>
+        <section id="datos-personales">
+            <form class="col-md-6">
+                <div class="form-group row name">
+                    <label for="placeholder-firstname" class="col-sm-4 col-form-label">Nombre:</label>
+                    <div class="col-sm-8">
+                        <input type="text" readonly class="form-control-plaintext" id="placeholder-firstname">
+                    </div>
+                </div>
+                <div class="form-group row ">
+                    <label for="placeholder-lastname" class="col-sm-4 col-form-label">Apellido:</label>
+                    <div class="col-sm-8">
+                        <input type="text" readonly class="form-control-plaintext" id="placeholder-lastname" value="hola@email.es">
+                    </div>
+                </div>
+                <div class="form-group row ">
+                    <label for="placeholder-sexo" class="col-sm-4 col-form-label">Sexo:</label>
+                    <div class="col-sm-8">
+                        <input type="text" readonly class="form-control-plaintext" id="placeholder-sexo">
+                    </div>
+                </div>
+                <div class="form-group row ">
+                    <label for="placeholder-pais" class="col-sm-4 col-form-label">Pais:</label>
+                    <div class="col-sm-8">
+                        <input type="text" readonly class="form-control-plaintext" id="placeholder-pais">
+                    </div>
+                </div>
+                <div class="form-group row ">
+                    <label for="placeholder-ciudad" class="col-sm-4 col-form-label">Ciudad:</label>
+                    <div class="col-sm-8">
+                        <input type="text" readonly class="form-control-plaintext" id="placeholder-ciudad">
+                    </div>
+                </div>
+                <div class="form-group row ">
+                    <label for="placeholder-direccion" class="col-sm-4 col-form-label">Dirección:</label>
+                    <div class="col-sm-8">
+                        <input type="text" readonly class="form-control-plaintext" id="placeholder-direccion">
+                    </div>
+                </div>
+                <div class="form-group row ">
+                    <label for="placeholder-cod-postal" class="col-sm-4 col-form-label">Código postal:</label>
+                    <div class="col-sm-8">
+                        <input type="text" readonly class="form-control-plaintext" id="placeholder-cod-postal">
+                    </div>
+                </div>
+                <div class="form-group row ">
+                    <label for="placeholder-telefono" class="col-sm-4 col-form-label">Teléfono:</label>
+                    <div class="col-sm-8">
+                        <input type="text" readonly class="form-control-plaintext" id="placeholder-telefono">
+                    </div>
+                </div>
+            </form>
         </section>
 
-        <section id="foto-de-perfil" class="usuario col-md-6">
+        <section id="foto-de-perfil" class="usuario">
             <br> Foto de perfil: <br>
-            <input type="file" accept=".png, .jpg, .jpeg"><br>
-            <img src="images/Ram%C3%B3n.jpg" id="preview" alt="Su foto de perfil">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Upload</span>
+                </div>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="inputGroupFile01">
+                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                </div>
+            </div>
         </section>
-        <input type="submit" value="GUARDAR">
 
     </div>
-
-    <input type="button" value="CONTINUAR">
+    <div class="usuario col-md-6">
+        <button data-i18n="Continuar" class="cult-btn btn btn-outline-primary" role="button" type="submit"> Continuar </button>
+    </div>
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
@@ -155,6 +220,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./js/member.js"></script>
+
+    <!-- Localization start-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.4/jquery.i18n.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.4/jquery.i18n.messagestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.4/jquery.i18n.parser.js"></script>
+    <script src="js/localize.js" type="text/javascript"></script>
+    <!-- Localization end-->
 
 </body>
 
