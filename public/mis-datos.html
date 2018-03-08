@@ -27,36 +27,24 @@
                 <div class="fecha-nacimiento"> Fecha Nacimiento: <input type="date"></div>
                 <div class="sexo">
                     Sexo:
-                    <input type="radio" name="sexo" value="mujer">Mujer <input type="radio" name="sexo" value="hombre">Hombre</div>
+                    <input type="radio" name="sexo" value="mujer">Mujer <input type="radio" name="sexo" value="hombre">Hombre <input Type=radio name="sexo" value="otro"> Otro
+                </div>
             </section>
         </form>
-        <form name='miFormulario'>
-            Otro: <input Type=radio name=radio1 onclick="habilitar()">
-            <input type="text" name=campo1 disabled>
-
-        </form>
-
-        <script>
-            function habilitar() {
-                document.miFormulario.campo1.disabled = !document.miFormulario.campo1.disabled
-                document.miFormulario.campo1.value = "Otro"
-            }
-        </script>
-
     </div>
-    <form>
-        <section>
-            <div class="pais"> País: <input type="text"></div>
-            <div class="ciudad"> Ciudad: <input type="text"></div>
-            <div class="telefono">Teléfono: <input type="tel" max="13"></div>
-        </section>
 
-        <section id="foto-de-perfil">
-            <br> Foto de perfil: <br>
-            <input type="file" accept=".png, .jpg, .jpeg"><br>
-            <img src="images/Ram%C3%B3n.jpg" id="preview" alt="Su foto de perfil">
-        </section>
-        <input type="submit" value="GUARDAR">
+    <section>
+        <div class="pais"> País: <input type="text"></div>
+        <div class="ciudad"> Ciudad: <input type="text"></div>
+        <div class="telefono">Teléfono: <input type="tel" max="13"></div>
+    </section>
+
+    <section id="foto-de-perfil">
+        <br> Foto de perfil: <br>
+        <input type="file" accept=".png, .jpg, .jpeg"><br>
+        <img src="images/Ram%C3%B3n.jpg" id="preview" alt="Su foto de perfil">
+    </section>
+    <input type="submit" value="GUARDAR">
     </form>
 
 
