@@ -6,7 +6,7 @@ const Sequelize = require('sequelize');
 var bodyParser = require('body-parser')
 
 var bcrypt = require('bcrypt');
-const sequelize = new Sequelize('sqlite:seq_cultisense.db');
+const sequelize = new Sequelize('sqlite:cultisense.db');
 const User = sequelize.import('models/user.js');
 const Token = sequelize.import('models/token.js');
 const saltRounds = 10;
@@ -24,13 +24,17 @@ function setup() {
   bcrypt.hash('123456', saltRounds).then(function(hash) {
     // Store hash in your password DB.
     User.findOrCreate({
-        where: { username: 'admin' },
+        where: { email: 'perez @clts.es' },
         defaults: {
-          lastname: 'Admin',
-          firstname: 'Armin',
-          email: 'admin@cultisense.es',
+          lastname: 'Ramón',
+          firstname: 'Pérez',
           password: hash,
-
+          sex: 'Hombre',
+          country: 'España',
+          city: 'Málaga',
+          zip: '29780',
+          street: 'C/ Condal 45',
+          telephone: '+34 665454432',
         }
       })
       .spread((user, created) => {
@@ -98,7 +102,9 @@ function procesar_user(req, res) {
   Token.findOne({ where: { token: req.headers.token }, include: [{ model: User }] }).then(token => {
     if (token !== null) {
       //TODO Check validity
-      return res.send({ username: token.user.username})
+      let user = token.user;
+      delete user.password;
+      return res.send({ user: user })
     } else {
       return res.status(404).send({ message: 'User not found' });
     }

@@ -10,7 +10,7 @@ $(document).ready(function() {
     success: function(data) {
       console.log(data);
       if (data) {
-        $('#placeholder-username').html(data.username);
+        $('#placeholder-username').html(data.user.firstname);
       } else {
         console.log('No data recieved');
       }
