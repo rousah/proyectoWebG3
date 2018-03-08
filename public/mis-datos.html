@@ -10,44 +10,43 @@
 
 
 <body>
-    <h2>Mi Perfil</h2>
+    <h1>Mis Datos</h1>
     <div>
-        <form action="#">
-
-            <section id="datos-cuenta" class="usuario col-md-6">
-                <div class="email">
-                    Su email actual es: prueba@email.es<br> Cambiar correo electrónico: <input type="email" placeholder="janedoe@cultisense.com"></div>
+        <section id="datos-cuenta" class="usuario col-md-6">
+            <div class="email">
+                Correo electrónico actual es: prueba@email.es<br></div>
+            <form action="#">
                 <div class="contrasenya">
-                    Contraseña: <input type="password" placeholder="Max 15 caracteres" maxlength="15"></div>
-
-            </section>
-
-            <section id="datos-personales">
-                <div class="nombre"> Nombre: <input type="text"></div>
-                <div class="apellidos"> Apellidos: <input type="text"></div>
-                <div class="fecha-nacimiento"> Fecha Nacimiento: <input type="date"></div>
-                <div class="sexo">
-                    Sexo:
-                    <input type="radio" name="sexo" value="mujer">Mujer <input type="radio" name="sexo" value="hombre">Hombre <input Type=radio name="sexo" value="otro"> Otro
+                    Contraseña: <input type="password" placeholder="Max 15 caracteres" maxlength="15"><br> Repite contraseña:<input type="password" placeholder="Max 15 caracteres" maxlength="15">
                 </div>
-            </section>
-        </form>
+            </form>
+
+        </section>
+
+        <section id="datos-personales" class="usuario col-md-6">
+            <div class="nombre"> Nombre: <input type="text"></div>
+            <div class="apellidos"> Apellidos: <input type="text"></div>
+            <div class="sexo">
+                Sexo:
+                <input type="radio" name="sexo" value="mujer">Mujer <input type="radio" name="sexo" value="hombre">Hombre <input Type=radio name="sexo" value="otro">Otro
+            </div>
+
+
+            <div class="pais"> País: <input type="text"></div>
+            <div class="ciudad"> Ciudad: <input type="text"></div>
+            <div class="calle"> Dirección: <input type="text"></div>
+            <div class="cod-postal"> Código postal: <input type="text"></div>
+            <div class="telefono">Teléfono: <input type="tel" max="13"></div>
+        </section>
+
+        <section id="foto-de-perfil" class="usuario col-md-6">
+            <br> Foto de perfil: <br>
+            <input type="file" accept=".png, .jpg, .jpeg"><br>
+            <img src="images/Ram%C3%B3n.jpg" id="preview" alt="Su foto de perfil">
+        </section>
+        <input type="submit" value="GUARDAR">
+
     </div>
-
-    <section>
-        <div class="pais"> País: <input type="text"></div>
-        <div class="ciudad"> Ciudad: <input type="text"></div>
-        <div class="telefono">Teléfono: <input type="tel" max="13"></div>
-    </section>
-
-    <section id="foto-de-perfil">
-        <br> Foto de perfil: <br>
-        <input type="file" accept=".png, .jpg, .jpeg"><br>
-        <img src="images/Ram%C3%B3n.jpg" id="preview" alt="Su foto de perfil">
-    </section>
-    <input type="submit" value="GUARDAR">
-    </form>
-
 
     <input type="button" value="CONTINUAR">
 
