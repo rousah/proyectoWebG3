@@ -8,13 +8,6 @@
     <title>CULTISENSE | Mis Datos</title>
 
     <style>
-        #bootstrap-overwrite .btn {
-            background-color: #3F9482;
-            color: white;
-            border: none;
-        }
-
-
         .acceso h1 {
             font-family: Montserrat;
             padding: 1rem;
@@ -24,7 +17,7 @@
         /* Banner Logo */
 
         @media (min-width: 500px) {
-            .logoGtiBanner {
+            .iconoBanner {
                 height: 55px;
                 margin: 15px 7.5px auto;
                 background-color: #3F9482;
@@ -33,10 +26,6 @@
                 align-items: center;
                 justify-content: flex-start;
                 border-radius: 55px;
-            }
-
-            #logoGTI {
-                width: 120px;
             }
         }
 
@@ -52,7 +41,7 @@
         }
 
         @media (min-width: 1000px) {
-            .logoGtiBanner {
+            .iconoBanner {
                 height: 75px;
                 margin: 15px 7.5px auto;
                 background-color: #3F9482;
@@ -63,13 +52,17 @@
                 border-radius: 75px;
             }
 
-            #logoGTI {
-                width: 150px;
+            #iconoPerfil {
+                width: 20%;
             }
 
         }
 
-        .logoGtiBanner {
+        .iconoPerfil {
+            max-width: 350px;
+        }
+
+        .iconoBanner {
 
             height: 55px;
             margin: 15px 7.5px auto;
@@ -79,6 +72,7 @@
             align-items: center;
             justify-content: space-between;
             border-radius: 55px;
+            max-height: 55px;
         }
 
         .titulo {
@@ -88,11 +82,12 @@
 </head>
 
 
-<body id="bootstrap-overwrite">
+<body>
     <header>
 
-        <div class="logoGtiBanner">
-            <img id="logoGTI" src="images/logoGTI_blanco.svg" alt="logo empresa" width="130">
+        <div class="iconoBanner">
+            <div class="iconoPerfil">
+                <img id="iconoPerfil" src="images/user.svg" alt="icono perfil"></div>
             <div class="titulo">
                 <h1>Mis datos</h1>
             </div>
