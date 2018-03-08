@@ -24,7 +24,7 @@ function setup() {
   bcrypt.hash('123456', saltRounds).then(function(hash) {
     // Store hash in your password DB.
     User.findOrCreate({
-        where: { email: 'perez @clts.es' },
+        where: { email: 'perez@clts.es' },
         defaults: {
           lastname: 'Ramón',
           firstname: 'Pérez',
@@ -63,6 +63,7 @@ app.use('/user', function(req, res, next) {
 
 app.post('/login', procesar_login);
 app.get('/user', procesar_user);
+app.post('/user/change_password', procesar_password);
 
 function procesar_login(req, res) {
   console.log(req);
@@ -101,15 +102,50 @@ function procesar_user(req, res) {
   console.log('Get user');
   Token.findOne({ where: { token: req.headers.token }, include: [{ model: User }] }).then(token => {
     if (token !== null) {
-      //TODO Check validity
+      
       let user = token.user;
-      delete user.password;
       return res.send({ user: user })
     } else {
       return res.status(404).send({ message: 'User not found' });
     }
   })
 };
+
+function procesar_password(req, res) {
+  console.log('Post change password');
+  Token.findOne({ where: { token: req.headers.token }, include: [{ model: User }] }).then(token => {
+    if (token !== null) {
+      
+      let user = token.user;
+      let old_password = req.body.old_password;
+      let new_password = req.body.new_password;
+      let re_new_password = req.body.re_new_password;
+
+      bcrypt.compare(old_password, user.password).then(comp_res => {
+        if (comp_res) {
+          console.log(new_password +'  '+ re_new_password);
+          if (new_password === re_new_password) {
+            bcrypt.hash(new_password, saltRounds).then(function(hash) {
+              user.password = hash;
+              user.save()
+              return res.send({ success: 'Password changed' });
+            });
+          } 
+          else {
+            return res.status(400).send({ message: 'Passwords different' });
+          }
+
+        } else {
+          return res.status(401).send({ message: 'Incorrect password' });
+        }
+      });
+
+    } else {
+      return res.status(404).send({ message: 'User not found' });
+    }
+  })
+};
+
 
 app.listen(port, () => {
   console.log('Running on ' + port)
