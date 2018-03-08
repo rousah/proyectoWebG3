@@ -11,5 +11,11 @@ module.exports = (sequelize, DataTypes) => {
     street: DataTypes.STRING,
     telephone: DataTypes.STRING,
   });
+
+  user.prototype.toJSON = function () {
+    var values = Object.assign({}, this.get());
+    delete values.password;
+    return values;
+  }
   return user;
 };
