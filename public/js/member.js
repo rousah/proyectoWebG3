@@ -51,11 +51,11 @@ $(document).ready(function () {
             data: $(this).serialize(),
             success: function (data) {
                 console.log(data);
-                // Do something here
+                $('#password-success-alert').show(200);
             },
             error: function (error) {
                 console.log(error);
-                // Do something here
+                $('#password-error-alert').show(200);
             }
         });
     });
