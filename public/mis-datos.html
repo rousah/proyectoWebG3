@@ -8,6 +8,12 @@
     <title>CULTISENSE | Mis Datos</title>
 
     <style>
+        #bootstrap-overwrite .btn {
+            background-color: #3F9482;
+            color: white;
+            border: none;
+        }
+
         .acceso h1 {
             font-family: Montserrat;
             padding: 1rem;
@@ -24,18 +30,20 @@
                 padding: 1rem;
                 display: flex;
                 align-items: center;
-                justify-content: flex-start;
+                justify-content: space-between;
                 border-radius: 55px;
             }
 
-            .iconoPerfil {
-                width: 20%;
+            .iconoPerfilClase {
+                width: 100%;
+                flex: 0 1 200px;
             }
         }
 
         @media (min-width: 700px) {
-            .iconoPerfil {
-                width: 30%;
+            .iconoPerfilClase {
+                width: 100%;
+                flex: 0 1 200px;
             }
         }
 
@@ -47,7 +55,7 @@
                 padding: 1rem;
                 display: flex;
                 align-items: center;
-                justify-content: flex-start;
+                justify-content: space-between;
                 border-radius: 75px;
             }
 
@@ -55,6 +63,17 @@
                 width: 20%;
             }
 
+        }
+
+        @media (max-width: 499px) {
+            .iconoBanner {
+                display: flex;
+                justify-content: space-between;
+            }
+            .iconoPerfilClase {
+                width: 100%;
+                flex: 0 1 200px;
+            }
         }
 
 
@@ -80,6 +99,11 @@
             display: flex;
         }
 
+        #email {
+            display: flex;
+            align-items: center;
+        }
+
         #datos-cuenta,
         #datos-personales,
         #foto-de-perfil,
@@ -90,29 +114,33 @@
             margin: 12px;
         }
 
+        #botones {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 7px;
+        }
+
     </style>
 </head>
 
 
-<body>
+<body id="bootstrap-overwrite">
     <header>
 
         <div class="iconoBanner">
-            <div class="iconoPerfil">
+            <div class="iconoPerfilClase">
                 <img id="iconoPerfil" src="images/user.svg" alt="icono perfil"></div>
             <div class="titulo">
-                <h1>Mis datos</h1>
+                <h1>Datos</h1>
             </div>
         </div>
-
-        <br>
     </header>
 
     <div class="offset-md-3 col-md-6">
         <section id="datos-cuenta">
             <form class="col-md-6">
                 <div class="form-group row email">
-                    <label for="placeholder-email" class="col-sm-4 col-form-label">Correo electrónico:</label>
+                    <label for="placeholder-email" class="col-sm-4 col-form-label"><b>Correo electrónico:</b></label>
                     <div class="col-sm-8">
                         <input type="text" readonly class="form-control-plaintext" id="placeholder-email" value="hola@email.es">
                     </div>
@@ -122,21 +150,21 @@
         <section id="datos-password">
             <form id="password-form" class="col-md-6">
                 <div class="form-group">
-                    <label for="old_password">Contraseña antigua</label>
+                    <label for="old_password"><b>Contraseña antigua:</b></label>
                     <input type="password" class="form-control" id="old_password" name="old_password" required>
 
                 </div>
                 <div class="form-group">
-                    <label id="new_password">Contraseña nueva</label>
+                    <label id="new_password"><b>Contraseña nueva:</b></label>
                     <input type="password" class="form-control" id="new_password" name="new_password" required>
 
                 </div>
                 <div class="form-group">
-                    <label id="re_new_password">Repetir contraseña</label>
+                    <label id="re_new_password"><b>Repetir contraseña:</b></label>
                     <input type="password" class="form-control" id="re_new_password" name="re_new_password" required>
 
                 </div>
-                <div class="boton">
+                <div class="boton" id="botones">
                     <button data-i18n="send" class="cult-btn btn btn-outline-primary" role="button" type="submit"> Send </button>
                 </div>
             </form>
@@ -144,51 +172,51 @@
         </section>
 
         <section id="datos-personales">
-            <form class="col-md-6">
+            <form class="col-md-8">
                 <div class="form-group row name">
-                    <label for="placeholder-firstname" class="col-sm-4 col-form-label">Nombre:</label>
+                    <label for="placeholder-firstname" class="col-sm-4 col-form-label"><b>Nombre:</b></label>
                     <div class="col-sm-8">
                         <input type="text" readonly class="form-control-plaintext" id="placeholder-firstname">
                     </div>
                 </div>
                 <div class="form-group row ">
-                    <label for="placeholder-lastname" class="col-sm-4 col-form-label">Apellido:</label>
+                    <label for="placeholder-lastname" class="col-sm-4 col-form-label"><b>Apellido:</b></label>
                     <div class="col-sm-8">
                         <input type="text" readonly class="form-control-plaintext" id="placeholder-lastname" value="hola@email.es">
                     </div>
                 </div>
                 <div class="form-group row ">
-                    <label for="placeholder-sexo" class="col-sm-4 col-form-label">Sexo:</label>
+                    <label for="placeholder-sexo" class="col-sm-4 col-form-label"><b>Sexo:</b></label>
                     <div class="col-sm-8">
                         <input type="text" readonly class="form-control-plaintext" id="placeholder-sexo">
                     </div>
                 </div>
                 <div class="form-group row ">
-                    <label for="placeholder-pais" class="col-sm-4 col-form-label">Pais:</label>
+                    <label for="placeholder-pais" class="col-sm-4 col-form-label"><b>País:</b></label>
                     <div class="col-sm-8">
                         <input type="text" readonly class="form-control-plaintext" id="placeholder-pais">
                     </div>
                 </div>
                 <div class="form-group row ">
-                    <label for="placeholder-ciudad" class="col-sm-4 col-form-label">Ciudad:</label>
+                    <label for="placeholder-ciudad" class="col-sm-4 col-form-label"><b>Ciudad:</b></label>
                     <div class="col-sm-8">
                         <input type="text" readonly class="form-control-plaintext" id="placeholder-ciudad">
                     </div>
                 </div>
                 <div class="form-group row ">
-                    <label for="placeholder-direccion" class="col-sm-4 col-form-label">Dirección:</label>
+                    <label for="placeholder-direccion" class="col-sm-4 col-form-label"><b>Dirección:</b></label>
                     <div class="col-sm-8">
                         <input type="text" readonly class="form-control-plaintext" id="placeholder-direccion">
                     </div>
                 </div>
                 <div class="form-group row ">
-                    <label for="placeholder-cod-postal" class="col-sm-4 col-form-label">Código postal:</label>
+                    <label for="placeholder-cod-postal" class="col-sm-4 col-form-label"><b>Código postal:</b></label>
                     <div class="col-sm-8">
                         <input type="text" readonly class="form-control-plaintext" id="placeholder-cod-postal">
                     </div>
                 </div>
                 <div class="form-group row ">
-                    <label for="placeholder-telefono" class="col-sm-4 col-form-label">Teléfono:</label>
+                    <label for="placeholder-telefono" class="col-sm-4 col-form-label"><b>Teléfono:</b></label>
                     <div class="col-sm-8">
                         <input type="text" readonly class="form-control-plaintext" id="placeholder-telefono">
                     </div>
@@ -197,7 +225,7 @@
         </section>
 
         <section id="foto-de-perfil" class="usuario">
-            <br> Foto de perfil: <br>
+            <b>Foto de perfil:</b>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Upload</span>
@@ -210,7 +238,7 @@
         </section>
 
     </div>
-    <div class="usuario col-md-6">
+    <div class="usuario col-md-6" id="botones">
         <button data-i18n="Continuar" class="cult-btn btn btn-outline-primary" role="button" type="submit"> Continuar </button>
     </div>
 
