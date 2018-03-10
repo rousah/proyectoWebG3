@@ -2,23 +2,16 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <! -- anchura pantalla del dispositivo -- !>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="x-ua-compatible" content="ie-edge">
-    <! -- para que se vea bien en internet explorer y microsoft edge -- !>
-    <title>Correo para información</title>
+    <title>NAME </title>
 </head>
 
 <style>
-     #bootstrap-overwrite .btn {
-            background-color: #3F9482;
-            color: white;
-            border: none;
-        }
     
-    .imagen1{
-        
+    .imagen1 {
+
         height: 35px;
         margin: 15px 7.5px auto;
         background-color: #3F9482;
@@ -27,42 +20,27 @@
         align-items: center;
         justify-content: flex-start;
         border-radius: 35px;
-        
-        
+
+
+
     }
-    
-    .imagen2{
-        
+
+    .imagen2 {
+
         margin: 0 auto;
         align-content: center;
         width: 80%;
-        
+
     }
     
-    .texto_explicatorio{
-        text-align: center;
-    }
-    
-    
-    .introducir_Correo{
-        
-        max-width: 250px;
+    .mensaje_exito {
+
+        max-width: 200px;
         margin: 0 auto;
-        display: flex;
-        justify-content: center;
-    }
-    
-    .botonMandar{
-        max-width: 120px;
-        max-height: 40px;
-        margin: 30px auto;
-        display: flex;
-        justify-content: center;
+        text-align: center;
 
     }
-    
 
-    
     @media (min-width: 500px) {
         .imagen1 {
             height: 55px;
@@ -94,7 +72,7 @@
             width: 558px;
             height: 344px;
         }
-        
+
     }
 
     @media (min-width: 1000px) {
@@ -109,9 +87,10 @@
             border-radius: 75px;
         }
 
-        .imagenlogogti{
+        .imagenlogogti {
             width: 150px;
         }
+        
         .imagen2{
             margin: 0 auto;
             align-content: center;
@@ -124,78 +103,33 @@
             height: 344px;
         }
 
+
     }
-    
-    
-    
     
 </style>
 
-<body id="bootstrap-overwrite">
 
-
+<body>
 
     <section class="Imagen_logo">
-        
+
         <div class="imagen1">
             <img src="images/logoGTI_blanco.svg" width="90" class="imagenlogogti">
         </div>
         <br>
         <div class="imagen2">
-           <a href="index.html">
             <img src="images/logo_propio_03.svg" class="imagenlogocultisense">
-            </a>
         </div>
 
     </section>
 
-    <section class="cuerpo" id="mostrado">
+    <section class="segundapag">
 
-        <div class="texto_explicatorio">
-            <p><b>Introduzca su correo para ponernos en contacto con usted</b></p>
-        </div>
-        <div class="form-wrapper offset-md-3 col-md-6">
-
-            <form method="GET" action="correoInformacion-segundapag.html">
-
-                <div class="introducir_Correo">
-                    <input type="email" class="form-control" placeholder="e-mail" name="correo" size="30" required>
-                </div>
-
-
-                <div class="botonMandar">
-                    <button class="btn btn-outline-primary" type="submit" name="mandar">Enviar</button>
-                </div>
-                
-                
-
-
-            </form>
-        </div>
-
-    </section>
-    
-<!--
-    <section class="segundapag" id="oculto" style="display: none">
-        
         <h2 class="mensaje_exito">
             <font size=5>El correo se ha enviado con éxito</font>
-            <br>
-            <br>
-            <a class="btn btn-outline-primary" role="button" data-i18n="clientes" href="index.html">Volver al menú principal</a>
         </h2>
-        
+
     </section>
--->
-
-
-
-
-
-
-
-
-
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
