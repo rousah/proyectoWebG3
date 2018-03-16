@@ -13,5 +13,24 @@
     "spanish": "Espanyol",
     "catalan": "Català",
     "english": "Anglés",
-    "send": "Enviar"
+    "send": "Enviar",
+
+    "mis-datos": "Les meves Dades",
+    "contrasenya-antigua": "Contrasenya antiga:",
+    "contrasenya-nueva": "Contrasenya nova:",
+    "repetir-contrasenya": "Repetix contrasenya nova:",
+    "pass-changed": "¡La seua contrasenya s'ha cambiat!",
+    "error": "¡Error!",
+    "name": "Nom: ",
+    "surname": "Cognoms: ",
+    "sex": "Sexe: ",
+    "pais": "País: ",
+    "city": "Ciutat: ",
+    "street": "Direcció: ",
+    "zip": "Codic Postal: ",
+    "phone": "Telèfon: ",
+    "foto": "Foto de perfil: ",
+    "upload": "Pujar",
+    "file": "Elegir archiu...",
+    "correo": "Correu electrònic: "
 }

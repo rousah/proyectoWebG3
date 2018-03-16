@@ -3,144 +3,44 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie-edge">
     <title>CULTISENSE | Mis Datos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="botones.css">
+    <link rel="stylesheet" href="banner.css">
 
-    <style>
-        #bootstrap-overwrite .btn {
-            background-color: #3F9482;
-            color: white;
-            border: none;
-        }
-
-        .acceso h1 {
-            font-family: Montserrat;
-            padding: 1rem;
-            text-align: center;
-        }
-
-        /* Banner Logo */
-
-        @media (min-width: 500px) {
-            .iconoBanner {
-                height: 55px;
-                margin: 15px 7.5px auto;
-                background-color: #3F9482;
-                padding: 1rem;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                border-radius: 55px;
-            }
-
-            .iconoPerfilClase {
-                width: 100%;
-                flex: 0 1 200px;
-            }
-        }
-
-        @media (min-width: 700px) {
-            .iconoPerfilClase {
-                width: 100%;
-                flex: 0 1 200px;
-            }
-        }
-
-        @media (min-width: 1000px) {
-            .iconoBanner {
-                height: 75px;
-                margin: 15px 7.5px auto;
-                background-color: #3F9482;
-                padding: 1rem;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                border-radius: 75px;
-            }
-
-            #iconoPerfil {
-                width: 20%;
-            }
-
-        }
-
-        @media (max-width: 499px) {
-            .iconoBanner {
-                display: flex;
-                justify-content: space-between;
-            }
-            .iconoPerfilClase {
-                width: 100%;
-                flex: 0 1 200px;
-            }
-        }
-
-
-        #iconoPerfil {
-            max-width: 20%;
-        }
-
-        .iconoBanner {
-
-            height: 55px;
-            margin: 15px 7.5px auto;
-            background-color: #3F9482;
-            padding: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-radius: 55px;
-            max-height: 55px;
-        }
-
-        .titulo {
-            color: white;
-            display: flex;
-        }
-
-        #email {
-            display: flex;
-            align-items: center;
-        }
-
-        #datos-cuenta,
-        #datos-personales,
-        #foto-de-perfil,
-        #datos-password {
-            border: 1px solid rgb(114, 191, 175);
-            border-radius: 6px;
-            padding: 0px 8px 0px 8px;
-            margin: 12px;
-        }
-
-        #botones {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 7px;
-        }
-
-    </style>
 </head>
+<style>
+    .bold {
+        font-family: Montserrat-bold;
+    }
 
+    #botones {
+        display: flex;
+        justify-content: center;
+        margin: 1rem auto;
+    }
+
+</style>
 
 <body id="bootstrap-overwrite">
-    <header>
-
-        <div class="iconoBanner">
-            <div class="iconoPerfilClase">
-                <img id="iconoPerfil" src="images/user.svg" alt="icono perfil"></div>
-            <div class="titulo">
-                <h1>Datos</h1>
-            </div>
+    <header class="encabezado">
+        <div id="icono">
+            <img src="images/user.svg" alt="icono perfil">
         </div>
+        <div id="titulo">
+            <h1 data-i18n="mis-datos">Mis Datos</h1>
+        </div>
+
     </header>
 
-    <div class="offset-md-3 col-md-6">
+
+    <div class="offset-md-3 col-md-10">
         <section id="datos-cuenta">
-            <form class="col-md-6">
+            <form class="col-md-8">
                 <div class="form-group row email">
-                    <label for="placeholder-email" class="col-sm-4 col-form-label"><b>Correo electrónico:</b></label>
+                    <label for="placeholder-email" class="col-sm-4 col-form-label bold" data-i18n="correo">Correo electrónico</label>
                     <div class="col-sm-8">
                         <input type="text" readonly class="form-control-plaintext" id="placeholder-email" value="hola@email.es">
                     </div>
@@ -148,30 +48,30 @@
             </form>
         </section>
         <section id="datos-password">
-            <form id="password-form" class="col-md-6">
+            <form id="password-form" class="col-md-6 col-sm-8">
                 <div class="form-group">
-                    <label for="old_password"><b>Contraseña antigua:</b></label>
+                    <label for="old_password" data-i18n="contrasenya-antigua" class="bold">Contraseña antigua:</label>
                     <input type="password" class="form-control" id="old_password" name="old_password" required>
 
                 </div>
                 <div class="form-group">
-                    <label id="new_password"><b>Contraseña nueva:</b></label>
+                    <label id="new_password" data-i18n="contrasenya-nueva" class="bold">Contraseña nueva:</label>
                     <input type="password" class="form-control" id="new_password" name="new_password" required>
 
                 </div>
                 <div class="form-group">
-                    <label id="re_new_password"><b>Repetir contraseña:</b></label>
+                    <label id="re_new_password" class="bold" data-i18n="repetir-contrasenya">Repetir contraseña nueva:</label>
                     <input type="password" class="form-control" id="re_new_password" name="re_new_password" required>
 
                 </div>
                 <div class="boton" id="botones">
                     <button data-i18n="send" class="cult-btn btn btn-outline-primary" role="button" type="submit"> Send </button>
                 </div>
-                <div style="display: none" class="alert alert-success" id="password-success-alert" role="alert">
-                ¡Contraseña cambiada!
+                <div style="display: none" class="alert alert-success" id="password-success-alert" role="alert" data-i18n="pass-changed">
+                    ¡Su contraseña se ha cambiado!
                 </div>
-                <div style="display: none" class="alert alert-danger" id="password-error-alert" role="alert">
-                ¡Error!
+                <div style="display: none" class="alert alert-danger" id="password-error-alert" role="alert" data-i18n="error">
+                    ¡Error!
                 </div>
             </form>
 
@@ -180,49 +80,49 @@
         <section id="datos-personales">
             <form class="col-md-8">
                 <div class="form-group row name">
-                    <label for="placeholder-firstname" class="col-sm-4 col-form-label"><b>Nombre:</b></label>
+                    <label for="placeholder-firstname" class="col-sm-4 col-form-label bold" data-i18n="name">Nombre:</label>
                     <div class="col-sm-8">
                         <input type="text" readonly class="form-control-plaintext" id="placeholder-firstname">
                     </div>
                 </div>
                 <div class="form-group row ">
-                    <label for="placeholder-lastname" class="col-sm-4 col-form-label"><b>Apellido:</b></label>
+                    <label for="placeholder-lastname" class="col-sm-4 col-form-label bold" data-i18n="surname">Apellido:</label>
                     <div class="col-sm-8">
-                        <input type="text" readonly class="form-control-plaintext" id="placeholder-lastname" value="hola@email.es">
+                        <input type="text" readonly class="form-control-plaintext" id="placeholder-lastname">
                     </div>
                 </div>
                 <div class="form-group row ">
-                    <label for="placeholder-sexo" class="col-sm-4 col-form-label"><b>Sexo:</b></label>
+                    <label for="placeholder-sexo" class="col-sm-4 col-form-label bold" data-i18n="sex">Sexo:</label>
                     <div class="col-sm-8">
                         <input type="text" readonly class="form-control-plaintext" id="placeholder-sexo">
                     </div>
                 </div>
                 <div class="form-group row ">
-                    <label for="placeholder-pais" class="col-sm-4 col-form-label"><b>País:</b></label>
+                    <label for="placeholder-pais" class="col-sm-4 col-form-label bold" data-i18n="pais">País:</label>
                     <div class="col-sm-8">
                         <input type="text" readonly class="form-control-plaintext" id="placeholder-pais">
                     </div>
                 </div>
                 <div class="form-group row ">
-                    <label for="placeholder-ciudad" class="col-sm-4 col-form-label"><b>Ciudad:</b></label>
+                    <label for="placeholder-ciudad" class="col-sm-4 col-form-label bold" data-i18n="city">Ciudad:</label>
                     <div class="col-sm-8">
                         <input type="text" readonly class="form-control-plaintext" id="placeholder-ciudad">
                     </div>
                 </div>
                 <div class="form-group row ">
-                    <label for="placeholder-direccion" class="col-sm-4 col-form-label"><b>Dirección:</b></label>
+                    <label for="placeholder-direccion" class="col-sm-4 col-form-label bold" data-i18n="street">Dirección:</label>
                     <div class="col-sm-8">
                         <input type="text" readonly class="form-control-plaintext" id="placeholder-direccion">
                     </div>
                 </div>
                 <div class="form-group row ">
-                    <label for="placeholder-cod-postal" class="col-sm-4 col-form-label"><b>Código postal:</b></label>
+                    <label for="placeholder-cod-postal" class="col-sm-4 col-form-label bold" data-i18n="zip">Código postal:</label>
                     <div class="col-sm-8">
                         <input type="text" readonly class="form-control-plaintext" id="placeholder-cod-postal">
                     </div>
                 </div>
                 <div class="form-group row ">
-                    <label for="placeholder-telefono" class="col-sm-4 col-form-label"><b>Teléfono:</b></label>
+                    <label for="placeholder-telefono" class="col-sm-4 col-form-label bold" data-i18n="phone">Número de teléfono:</label>
                     <div class="col-sm-8">
                         <input type="text" readonly class="form-control-plaintext" id="placeholder-telefono">
                     </div>
@@ -231,14 +131,14 @@
         </section>
 
         <section id="foto-de-perfil" class="usuario">
-            <b>Foto de perfil:</b>
-            <div class="input-group mb-3">
+            <div class="col-md-8"><b data-i18n="foto">Foto de perfil:</b></div>
+            <div class="input-group mb-3 col-md-6">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Upload</span>
+                    <span class="input-group-text" data-i18n="upload">Upload</span>
                 </div>
                 <div class="custom-file">
                     <input type="file" class="custom-file-input" id="inputGroupFile01">
-                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                    <label class="custom-file-label" for="inputGroupFile01" data-i18n="file">Choose file</label>
                 </div>
             </div>
         </section>
@@ -248,10 +148,23 @@
         <button data-i18n="Continuar" class="cult-btn btn btn-outline-primary" role="button" type="submit"> Continuar </button>
     </div>
 
+    <div>
+        <div class="dropdown text-center">
+            <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="languageMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Language
+      </button>
+            <div class="dropdown-menu" id="languageMenu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" value="en" data-i18n="english">English</a>
+                <a class="dropdown-item" value="es" data-i18n="spanish">Español</a>
+                <a class="dropdown-item" value="ca-es" data-i18n="catalan">Catalá</a>
+            </div>
+        </div>
+    </div>
+
 
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./js/member.js"></script>
 

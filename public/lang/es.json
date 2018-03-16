@@ -13,5 +13,24 @@
     "spanish": "Español",
     "catalan": "Catalan",
     "english": "Ingles",
-    "send": "Enviar"
+    "send": "Enviar",
+
+    "mis-datos": "Mis Datos",
+    "contrasenya-antigua": "Contraseña antigua:",
+    "contrasenya-nueva": "Contraseña nueva:",
+    "repetir-contrasenya": "Repite contraseña nueva:",
+    "pass-changed": "¡Su contraseña se ha cambiado!",
+    "error": "¡Error!",
+    "name": "Nombre: ",
+    "surname": "Apellidos: ",
+    "sex": "Sexo: ",
+    "pais": "País: ",
+    "city": "Ciudad: ",
+    "street": "Dirección: ",
+    "zip": "Código Postal: ",
+    "phone": "Número de teléfono: ",
+    "foto": "Foto de perfil: ",
+    "upload": "Subir",
+    "file": "Elegir archivo...",
+    "correo": "Correo electrónico: "
 }

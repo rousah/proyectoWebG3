@@ -2,23 +2,18 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <! -- anchura pantalla del dispositivo -- !>
     <meta http-equiv="x-ua-compatible" content="ie-edge">
     <! -- para que se vea bien en internet explorer y microsoft edge -- !>
     <title>Correo para información</title>
+    <link rel="stylesheet" href="botones.css">
 </head>
 
 <style>
-     #bootstrap-overwrite .btn {
-            background-color: #3F9482;
-            color: white;
-            border: none;
-        }
-    
-    .imagen1{
-        
+    .imagen1 {
+
         height: 35px;
         margin: 15px 7.5px auto;
         background-color: #3F9482;
@@ -26,33 +21,32 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        border-radius: 35px;
-        
-        
+
+
     }
-    
-    .imagen2{
-        
+
+    .imagen2 {
+
         margin: 0 auto;
         align-content: center;
         width: 80%;
-        
+
     }
-    
-    .texto_explicatorio{
+
+    .texto_explicatorio {
         text-align: center;
     }
-    
-    
-    .introducir_Correo{
-        
+
+
+    .introducir_Correo {
+
         max-width: 250px;
         margin: 0 auto;
         display: flex;
         justify-content: center;
     }
-    
-    .botonMandar{
+
+    .botonMandar {
         max-width: 120px;
         max-height: 40px;
         margin: 30px auto;
@@ -60,9 +54,9 @@
         justify-content: center;
 
     }
-    
 
-    
+
+
     @media (min-width: 500px) {
         .imagen1 {
             height: 55px;
@@ -72,7 +66,6 @@
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            border-radius: 55px;
         }
 
         .imagenlogogti {
@@ -90,11 +83,11 @@
             display: flex;
             justify-content: center;
         }
-        .imagenlogocultisense{
+        .imagenlogocultisense {
             width: 558px;
             height: 344px;
         }
-        
+
     }
 
     @media (min-width: 1000px) {
@@ -106,29 +99,24 @@
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            border-radius: 75px;
         }
 
-        .imagenlogogti{
+        .imagenlogogti {
             width: 150px;
         }
-        .imagen2{
+        .imagen2 {
             margin: 0 auto;
             align-content: center;
             max-width: 80%;
             display: flex;
             justify-content: center;
         }
-        .imagenlogocultisense{
+        .imagenlogocultisense {
             width: 558px;
             height: 344px;
         }
 
     }
-    
-    
-    
-    
 </style>
 
 <body id="bootstrap-overwrite">
@@ -136,13 +124,13 @@
 
 
     <section class="Imagen_logo">
-        
+
         <div class="imagen1">
             <img src="images/logoGTI_blanco.svg" width="90" class="imagenlogogti">
         </div>
         <br>
         <div class="imagen2">
-           <a href="index.html">
+            <a href="index.html">
             <img src="images/logo_propio_03.svg" class="imagenlogocultisense">
             </a>
         </div>
@@ -166,16 +154,16 @@
                 <div class="botonMandar">
                     <button class="btn btn-outline-primary" type="submit" name="mandar">Enviar</button>
                 </div>
-                
-                
+
+
 
 
             </form>
         </div>
 
     </section>
-    
-<!--
+
+    <!--
     <section class="segundapag" id="oculto" style="display: none">
         
         <h2 class="mensaje_exito">

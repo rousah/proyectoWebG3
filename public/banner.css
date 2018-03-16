@@ -1,0 +1,24 @@
+header {
+    background-color: #3f9482;
+    color: white;
+    font-family: Montserrat-Bold;
+    display: flex;
+    height: 55px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#icono {
+    flex-basis: 0;
+    flex: 0 1 75px;
+    padding: 1rem;
+}
+
+#titulo {
+    padding: 1rem;
+}
+
+header div img {
+    width: 100%;
+}

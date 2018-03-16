@@ -9,41 +9,18 @@
     <! -- para que se vea bien en internet explorer y microsoft edge -- !>
     <title>CULTISENSE | Restaurar mediante Correo</title>
 
-    <script type="text/javascript">
-        function intercambioPantalla() {
-            document.getElementById('mostrado').style.display = 'none';
-            document.getElementById('oculto').style.display = 'block';
-
-        }
-
-    </script>
-
-    <script>
-        function deshabilita(form) {
-            if (form.correo.value != "") {
-                form.mandar.disabled = false;
-            } else {
-                form.mandar.disabled = true;
-            }
-
-        }
-
-    </script>
-
     <style>
+        
+        
 
         .restaurarMedianteCorreo {
             text-align: center;
             max-width: 450px;
             margin: 0 auto;
-            
-            
-        }
-        
-        .restaurarMedianteCorreo {
             justify-content: space-around;
+            
+            
         }
-
 
         .textoExplicatorio {
             text-align: center;
@@ -75,6 +52,7 @@
 
         }
 
+/*
         .segunda_pag {
             max-width: 120px;
             margin: 200px auto;
@@ -86,6 +64,7 @@
         .mensaje_exito {
             color: darkgreen;
         }
+*/
 
         #bootstrap-overwrite .btn {
             background-color: #3F9482;
@@ -117,12 +96,13 @@
         }
 
     </style>
+    <link rel="stylesheet" href="botones.css">
 
 </head>
 
 
 <body id="bootstrap-overwrite">
-    <section id="mostrado">
+    <section>
         <header class="restaurarMedianteCorreo">
            
            <a href="inicioSesion.html">
@@ -141,15 +121,15 @@
 
         <div class="form-wrapper offset-md-3 col-md-6">
 
-            <form action="#" method="get">
+            <form method="GET" action="restaurarMedianteCorreo-segundapag.html">
                 <div class="introducir_Correo">
 
-                    <input type="email" class="form-control" placeholder="E-mail" name="correo" onkeyup="deshabilita(this.form)" size="30" required>
+                    <input type="email" class="form-control" placeholder="E-mail" name="correo" size="30" required>
                 </div>
 
 
                 <div class="botonMandar">
-                    <a class="btn btn-outline-primary" role="button" data-i18n="clientes" onClick="intercambioPantalla()">Enviar</a>
+                    <button class="btn btn-outline-primary" type="submit" name="mandar">Enviar</button>
                 </div>
 
 
@@ -158,6 +138,7 @@
 
     </section>
 
+<!--
     <section class="segunda_pag" id='oculto' style='display:none;'>
         <h2 class="mensaje_exito">
             <font size=35>¡Éxito!</font>
@@ -167,6 +148,7 @@
 
         <a class="btn btn-outline-primary" role="button" data-i18n="clientes" href="index.html">Volver al menú principal</a>
     </section>
+-->
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
