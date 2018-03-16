@@ -5,10 +5,12 @@ const moment = require('moment');
 const Sequelize = require('sequelize');
 var bodyParser = require('body-parser')
 
+var email = require('./helper/mail');
+
 var bcrypt = require('bcrypt');
 const sequelize = new Sequelize('sqlite:cultisense.db');
-const User = sequelize.import('models/user.js');
-const Token = sequelize.import('models/token.js');
+const User = sequelize.import('./models/user.js');
+const Token = sequelize.import('./models/token.js');
 const saltRounds = 10;
 const port = 3000;
 const app = express();
@@ -74,6 +76,11 @@ app.use('/user', function(req, res, next) {
 app.post('/login', procesar_login);
 app.get('/user', procesar_user);
 app.post('/user/change_password', procesar_password);
+app.get('/pw_reset', procesar_pw_reset);
+
+function procesar_pw_reset(req, res) {
+  email.send();
+}
 
 function procesar_login(req, res) {
   console.log(req);

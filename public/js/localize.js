@@ -10,7 +10,7 @@ function applyLanguage(locale_string = null) {
   }
 
   i18n.load('lang/' + i18n.locale + '.json', i18n.locale).done(() => {
-    
+
     $('head').i18n();
     $('body').i18n();
 
