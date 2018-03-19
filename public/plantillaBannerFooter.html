@@ -3,13 +3,15 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie-edge">
     <title>CULTISENSE | Acceso Web</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="botones.css">
     <link rel="stylesheet" href="banner.css">
+
 </head>
+
 
 <style>
     body {
@@ -18,18 +20,6 @@
 
     .container {
         max-width: 40%;
-    }
-
-    .descripcion {
-        font-family: Montserrat;
-        font-weight: 100;
-        text-align: center;
-        padding: 1rem;
-        margin: 0;
-    }
-
-    body div a {
-        margin: 0.5rem;
     }
 
     @media (max-width: 767.98px) {
@@ -41,6 +31,7 @@
             font-size: 0.6rem;
         }
     }
+
 </style>
 
 <body id="bootstrap-overwrite">
@@ -50,22 +41,14 @@
             <img src="images/logoGTI_blanco.svg" alt="logo GTI">
         </div>
         <div id="iconoCultisense">
+            <a href="index.html">
             <img src="images/logo_propio_03.svg" alt="icono Cultisense">
+            </a>
         </div>
     </header>
 
     <div class="container">
-        <div class="logoPropio">
-            <img class="img-fluid" id="logocultisense" src="images/logo_propio_03.svg" alt="logo Cultisense">
-        </div>
-        <h1 align="center">
-            Directamente del campo a tu móvil
-        </h1>
-        <p class="descripcion">Cultisense es una herramienta web que proporciona un servicio de seguimiento y control de los productos de la tierra.</p>
-        <div class="botonescentrados">
-            <a class="btn btn-outline-primary col-md-5" href="informacionProducto.html" role="button" data-i18n="clientes">Información</a>
-            <a class="btn btn-outline-primary col-md-5" href="inicioSesion.html" role="button" data-i18n="clientes">Clientes</a>
-        </div>
+
     </div>
 
     <footer class="footer" role="contentinfo">
@@ -82,5 +65,3 @@
     <!-- Localization end-->
 
 </body>
-
-</html>

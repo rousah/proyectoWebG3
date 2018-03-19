@@ -9,3 +9,8 @@
     color: white;
     border: none;
 }
+
+.botonescentrados {
+    display: flex;
+    justify-content: center;
+}

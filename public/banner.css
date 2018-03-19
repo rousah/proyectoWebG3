@@ -15,10 +15,82 @@ header {
     padding: 1rem;
 }
 
+#iconoGTI {
+    flex-basis: 0;
+    flex: 0 0 110px;
+    /* top right bottom left */
+    padding: 2rem 0rem 2rem 0.5rem;
+    margin: 0;
+}
+
+#iconoCultisense {
+    flex-basis: 0;
+    flex: 0 0 110px;
+    /* top right bottom left */
+    padding: 0.5rem 0.5rem 0.5rem 0rem;
+    margin: 0;
+}
+
 #titulo {
     padding: 1rem;
 }
 
 header div img {
     width: 100%;
+}
+
+.logoPropio {
+    flex-basis: 0;
+    flex: 0 1 20px;
+    margin: 1rem;
+}
+
+#logocultisense {
+    width: 100%;
+}
+
+/* Sticky footer styles bootstrap
+-------------------------------------------------- */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    /* Margin bottom by footer height */
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    /* Set the fixed height of the footer here */
+    line-height: 60px;
+    /* Vertically center the text there */
+    background-color: #f5f5f5;
+}
+
+
+/* Footer nuestro */
+
+footer {
+    text-align: center;
+}
+
+footer span {
+    font-family: Montserrat-light;
+    font-size: 0.6rem;
+}
+
+@media (max-width: 767.98px) {
+    .container {
+        max-width: 90%;
+    }
+
+    footer span {
+        font-size: 0.6rem;
+    }
 }
