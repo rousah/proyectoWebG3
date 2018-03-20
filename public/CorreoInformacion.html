@@ -2,193 +2,96 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <! -- anchura pantalla del dispositivo -- !>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie-edge">
-    <! -- para que se vea bien en internet explorer y microsoft edge -- !>
-    <title>Correo para información</title>
+    <title>CULTISENSE | Acceso Web</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="botones.css">
+    <link rel="stylesheet" href="banner.css">
+
 </head>
 
+
 <style>
-    .imagen1 {
-
-        height: 35px;
-        margin: 15px 7.5px auto;
-        background-color: #3F9482;
-        padding: 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-
-
+    body {
+        font-family: Montserrat;
     }
 
-    .imagen2 {
-
-        margin: 0 auto;
-        align-content: center;
-        width: 80%;
-
+    .container {
+        max-width: 40%;
     }
 
-    .texto_explicatorio {
-        text-align: center;
+    h1 {
+        margin: 2rem auto;
     }
 
-
-    .introducir_Correo {
-
-        max-width: 250px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-    }
-
-    .botonMandar {
-        max-width: 120px;
-        max-height: 40px;
-        margin: 30px auto;
-        display: flex;
-        justify-content: center;
-
-    }
-
-
-
-    @media (min-width: 500px) {
-        .imagen1 {
-            height: 55px;
-            margin: 15px 7.5px auto;
-            background-color: #3F9482;
-            padding: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
+    @media (max-width: 767.98px) {
+        .container {
+            max-width: 90%;
         }
 
-        .imagenlogogti {
-            width: 120px;
+        footer span {
+            font-size: 0.6rem;
         }
     }
 
-
-    @media (min-width: 700px) {
-        .imagen2 {
-
-            margin: 0 auto;
-            align-content: center;
-            max-width: 80%;
-            display: flex;
-            justify-content: center;
-        }
-        .imagenlogocultisense {
-            width: 558px;
-            height: 344px;
-        }
-
-    }
-
-    @media (min-width: 1000px) {
-        .imagen1 {
-            height: 75px;
-            margin: 15px 7.5px auto;
-            background-color: #3F9482;
-            padding: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-        }
-
-        .imagenlogogti {
-            width: 150px;
-        }
-        .imagen2 {
-            margin: 0 auto;
-            align-content: center;
-            max-width: 80%;
-            display: flex;
-            justify-content: center;
-        }
-        .imagenlogocultisense {
-            width: 558px;
-            height: 344px;
-        }
-
-    }
 </style>
 
 <body id="bootstrap-overwrite">
 
-
-
-    <section class="Imagen_logo">
-
-        <div class="imagen1">
-            <img src="images/logoGTI_blanco.svg" width="90" class="imagenlogogti">
+    <header class="encabezado">
+        <div id="iconoGTI">
+            <img src="images/logoGTI_blanco.svg" alt="logo GTI">
         </div>
-        <br>
-        <div class="imagen2">
+        <div id="iconoCultisense">
             <a href="index.html">
-            <img src="images/logo_propio_03.svg" class="imagenlogocultisense">
+            <img src="images/logo_C.svg" alt="icono Cultisense">
             </a>
         </div>
+    </header>
 
-    </section>
+    <div class="container">
 
-    <section class="cuerpo" id="mostrado">
+        <a href="index.html">
+    <img src="images/logo_propio_03.svg" class="imagenlogocultisense">
+    </a>
 
-        <div class="texto_explicatorio">
-            <p><b>Introduzca su correo para ponernos en contacto con usted</b></p>
-        </div>
-        <div class="form-wrapper offset-md-3 col-md-6">
+        <section class="cuerpo" id="mostrado">
 
-            <form method="GET" action="correoInformacion-segundapag.html">
+            <div class="texto_explicatorio">
+                <p>Introduzca su correo para ponernos en contacto con usted</p>
+            </div>
+            <div class="form-wrapper offset-md-2 col-md-6">
 
-                <div class="introducir_Correo">
-                    <input type="email" class="form-control" placeholder="e-mail" name="correo" size="30" required>
-                </div>
+                <form method="GET" action="correoInformacion-segundapag.html">
 
+                    <div class="introducir_Correo">
+                        <input type="email" class="form-control" placeholder="E-mail" name="correo" size="30" required>
+                    </div>
 
-                <div class="botonMandar">
-                    <button class="btn btn-outline-primary" type="submit" name="mandar">Enviar</button>
-                </div>
+                    <div class="mx-auto" style="width: 100px">
+                        <button class="btn btn-outline-primary" type="submit" name="enviar">Enviar</button>
+                    </div>
 
+                </form>
+            </div>
 
-
-
-            </form>
-        </div>
-
-    </section>
-
-    <!--
-    <section class="segundapag" id="oculto" style="display: none">
-        
-        <h2 class="mensaje_exito">
-            <font size=5>El correo se ha enviado con éxito</font>
-            <br>
-            <br>
-            <a class="btn btn-outline-primary" role="button" data-i18n="clientes" href="index.html">Volver al menú principal</a>
-        </h2>
-        
-    </section>
--->
+        </section>
+    </div>
 
 
-
-
-
-
-
-
-
-
+    <footer class="footer" role="contentinfo">
+        <span>Copyright © 2018 Cultisense</span><span> Todos los derechos reservados | Términos de uso</span>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
+    <!-- Localization start-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.4/jquery.i18n.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.4/jquery.i18n.messagestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.4/jquery.i18n.parser.js"></script>
+    <script src="js/localize.js" type="text/javascript"></script>
+    <!-- Localization end-->
 
-</html>
+</body>
