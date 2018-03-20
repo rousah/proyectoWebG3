@@ -8,170 +8,156 @@
     <title>Seleccion de campo </title>
 </head>
 <style>
-
-
-    .header{
-        
+    .header {
         margin: 15px 7.5px;
         margin-bottom: 0;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: baseline;
-        
-        
-        
-        
     }
-    
-    .header_derecha{
+
+    .header_derecha {
         display: flex;
         flex-direction: row;
         align-items: baseline;
     }
 
-    .logoPropio{
+    .logoPropio {
         height: 75px;
         margin: 0;
         display: flex;
         align-items: center;
         justify-content: flex-start;
     }
-    
-    .nombre_usuario{
 
-    }
-    
-    .foto_usuario{
-       
-        
+    .nombre_usuario {}
+
+    .foto_usuario {
+
+
         height: 75px;
         margin: 0;
         display: flex;
         align-items: center;
         justify-content: flex-end;
 
-        
+
     }
-    
-    .linea_separadora{
+
+    .linea_separadora {
         border-top: 3px solid #3F9482;
         margin-bottom: 30px;
     }
-    
-    section h3{
+
+    section h3 {
         display: flex;
         justify-content: center;
     }
-    
-    .boton_nombre_usuario{
+
+    .boton_nombre_usuario {
         background: white;
         border: white;
         cursor: pointer;
     }
 
-    
-    .campos_a_elegir{
-        
+
+    .campos_a_elegir {
+
         border-bottom: 3px solid #3F9482;
     }
-    
-    .campos{
-        
+
+    .campos {
+
         max-width: 480px;
         margin: 15px auto;
         display: flex;
         justify-content: space-between;
-        /*border: 3px solid red;*/ 
-/*     con el border pues ver los límites     */
-        
+        /*border: 3px solid red;*/
+        /*     con el border pues ver los límites     */
     }
-    
-    .columna_izquierda{
+
+    .columna_izquierda {
         width: 240px;
         display: flex;
         justify-content: center;
         flex-direction: column;
         text-align: center;
-        
+
         /*border: 1px solid blue;*/
-/*     con el border pues ver los límites     */
-        
+        /*     con el border pues ver los límites     */
     }
-    
-    .columna_derecha{
+
+    .columna_derecha {
         width: 240px;
         display: flex;
         justify-content: center;
         text-align: center;
-        
+
         /*border: 1px solid blue;*/
-/*     con el border pues ver los límites     */
-        
+        /*     con el border pues ver los límites     */
     }
-    
-    section section a{
+
+    section section a {
         color: black;
         text-decoration: none;
     }
-    
-    
-    section section img{
+
+
+    section section img {
         width: 50%;
     }
-    
-    
-    #cerrar_sesion{
+
+
+    #cerrar_sesion {
         width: 100%;
         cursor: pointer;
     }
 
-    
 </style>
 
 <body>
-   
-   
-   <section class="header">
-       
-           <img src="images/logo_C.svg" alt="logo" class="logoPropio">
-           <div class="header_derecha">
-               <button class="boton_nombre_usuario"><h3 class="nombre_usuario">Ramón</h3></button>
-               <a href="#"><img src="images/logo_C.svg" alt="Ramón" class="foto_usuario"></a>
-           </div>
-   </section>
-   
-   <section class="linea_separadora"></section>
-   
-   <section class="campos_a_elegir">
-       <h3>Seleccionar campo</h3>
-       <section class="campos" style="font-size: 25px;">
-           <section class="columna_izquierda">
-               <div class="campo1"><a href="#"><img src="" alt=""><p>Safor</p></a></div>
-               <div class="campo2"><a href="#"><img src="" alt=""><p>Almería</p></a></div>
-           </section>
-           <section class="columna_derecha">
-               <div class="campo2"><a href="#"><img src="" alt=""><p>La Marina</p></a></div>
-           </section>
-       </section>
-   </section>
-   
-   <section class="footer">
-       <footer>
-           <button  id="cerrar_sesion"  type="submit"><b>Cerrar sesión </b></button>
-       </footer>
-   </section>
-   
- 
-   
-   
-   
-   
-   
-   
-   
-   
-   
+
+
+    <section class="header">
+
+        <img src="images/logo_C.svg" alt="logo" class="logoPropio">
+        <div class="header_derecha">
+            <button class="boton_nombre_usuario"><h3 class="nombre_usuario">Ramón</h3></button>
+            <a href="#"><img src="images/logo_C.svg" alt="Ramón" class="foto_usuario"></a>
+        </div>
+    </section>
+
+    <section class="linea_separadora"></section>
+
+    <section class="campos_a_elegir">
+        <h3>Seleccionar campo</h3>
+        <section class="campos" style="font-size: 25px;">
+            <section class="columna_izquierda">
+                <div class="campo1"><a href="#"><img src="" alt=""><p>Safor</p></a></div>
+                <div class="campo2"><a href="#"><img src="" alt=""><p>Almería</p></a></div>
+            </section>
+            <section class="columna_derecha">
+                <div class="campo2"><a href="#"><img src="" alt=""><p>La Marina</p></a></div>
+            </section>
+        </section>
+    </section>
+
+    <section class="footer">
+        <footer>
+            <button id="cerrar_sesion" type="submit"><b>Cerrar sesión </b></button>
+        </footer>
+    </section>
+
+
+
+
+
+
+
+
+
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
