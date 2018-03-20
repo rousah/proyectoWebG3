@@ -22,9 +22,9 @@ const sequelize = new Sequelize('sqlite:cultisense.db');
 
 const User = sequelize.import('models/user.js');
 
-const Token = sequelize.import('models/token.js’);
+const Token = sequelize.import('models/token.js');
 
-const sensores = sequelize.import('models/sensores.js’);
+const sensores = sequelize.import('models/sensores.js');
 
 const saltRounds = 10;
 
