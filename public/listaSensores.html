@@ -17,7 +17,31 @@
     }
 
     .container {
-        max-width: 40%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .divSensores {
+        margin: 1rem auto;
+        padding: 0.5rem;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 70%;
+    }
+
+    .sens1,
+    .sens2,
+    .sens3 {
+        margin: 1rem;
+    }
+
+    .botonEnviar {
+        margin: 0.5rem auto;
     }
 
     @media (max-width: 767.98px) {
@@ -46,7 +70,20 @@
     </header>
 
     <div class="container">
+        <div class="divSensores">
+            <div class="custom-control custom-checkbox sens1">
+                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <label class="custom-control-label" for="customCheck1">Sensor 1</label>
+            </div>
+            <div class="custom-control custom-checkbox sens2">
+                <input type="checkbox" class="custom-control-input" id="customCheck2">
+                <label class="custom-control-label" for="customCheck2">Sensor 2</label></div>
+            <div class="custom-control custom-checkbox sens3">
+                <input type="checkbox" class="custom-control-input" id="customCheck3">
+                <label class="custom-control-label" for="customCheck3">Sensor 3</label></div>
 
+        </div>
+        <button type="button" class="btn btn-primary botonEnviar">Siguiente</button>
     </div>
 
     <footer class="footer" role="contentinfo">
