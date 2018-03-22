@@ -43,25 +43,15 @@ const app = express();
 
 
 Token.belongsTo(sensores);
-
   sequelize.sync().then(console.log('models synced.'));
-
- 
-
     sensores.findOrCreate({
-
         where: {
-
-          MAC: ’56:8F:AD:34:F6:50:00'
-
+          MAC: '56:8F:AD:34:F6:50:00'
         },
-
         defaults: {
-
           lng: '-0.4323981045',
 
 	      lat: '32.89894354', 
-
         }
 
       })
@@ -77,9 +67,7 @@ Token.belongsTo(sensores);
         console.log(created);
 
       });
+});
 
-  });
 
-};
-
-setup();
+  
