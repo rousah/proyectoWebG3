@@ -90,12 +90,12 @@
                 puntosPorDia: [0, 5, 0, 6, 4, 10, 7, 6, 5, 7]
             };
 
-            var inicio = moment('2018-03-22');
+            var inicio = moment('00:00');
 
             var ejeX = {
                 ticks: {
-                    min: -10,
-                    max: 50,
+                    min: inicio,
+                    max: 24,
                     stepSize: 2
                 }
             };
@@ -128,22 +128,6 @@
                 labels: [],
                 datasets: []
             };
-
-            var contHoras = 0;
-            for (var contHoras = 0;
-                var contHoras <= 24,
-                    var contHoras++) {
-                var hora = moment(inicio).add(contHoras, 'd');
-                datos.labels.push(hora.format('LT'));
-            }
-
-            while (datos.labels.length < sprint.duracion) {
-                var dia = moment(inicio).add(contDias, 'd');
-                if (dia.day() != 0 && dia.day() != 6) {
-                    datos.labels.push(dia.format('DD MMM'));
-                } /* que no sea ni domingo ni sábado */
-                contDias++;
-            }
 
             var avanceReal = {
                 label: 'Real',
