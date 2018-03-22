@@ -38,20 +38,12 @@
         justify-content: flex-start;
     }
     
-    .nombre_usuario{
-
-    }
-    
     .foto_usuario{
-       
-        
         height: 75px;
         margin: 0;
         display: flex;
         align-items: center;
         justify-content: flex-end;
-
-        
     }
     
     .linea_separadora{
@@ -59,7 +51,7 @@
         margin-bottom: 30px;
     }
     
-    section h3{
+    .titulo_tabla{
         display: flex;
         justify-content: center;
     }
@@ -71,55 +63,34 @@
     }
 
     
-    .campos_a_elegir{
-        
-        border-bottom: 3px solid #3F9482;
-    }
     
-    .campos{
+    
+    table thead{
         
-        max-width: 480px;
+        max-width: 800px;
         margin: 15px auto;
         display: flex;
         justify-content: space-between;
-        /*border: 3px solid red;*/ 
-/*     con el border pues ver los límites     */
         
     }
-    
-    .columna_izquierda{
-        width: 240px;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
+    table thead tr th{
         text-align: center;
-        
-        /*border: 1px solid blue;*/
-/*     con el border pues ver los límites     */
-        
+        font-size: 25px;
     }
     
-    .columna_derecha{
-        width: 240px;
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        
-        /*border: 1px solid blue;*/
-/*     con el border pues ver los límites     */
-        
-    }
-    
-    section section a{
+    table thead tr th a{
         color: black;
         text-decoration: none;
     }
     
     
-    section section img{
-        width: 50%;
+    table thead tr th img{
+        width: 40%;
     }
     
+    .footer{
+        border-top: 3px solid #3F9482;
+    }
     
     #cerrar_sesion{
         width: 100%;
@@ -143,22 +114,29 @@
    
    <section class="linea_separadora"></section>
    
-   <section class="campos_a_elegir">
-       <h3>Seleccionar campo</h3>
-       <section class="campos" style="font-size: 25px;">
-           <section class="columna_izquierda">
-               <div class="campo1"><a href="#"><img src="" alt=""><p>Safor</p></a></div>
-               <div class="campo2"><a href="#"><img src="" alt=""><p>Almería</p></a></div>
-           </section>
-           <section class="columna_derecha">
-               <div class="campo2"><a href="#"><img src="" alt=""><p>La Marina</p></a></div>
-           </section>
-       </section>
-   </section>
+   
+   <table class="table table-responsive">
+      <h3 class="titulo_tabla">Seleccionar campo</h3>
+       <thead>
+           <tr>
+               <th scope="col"><a href="#"><img src="" alt="campo_Safor"><p>Safor</p></a></th>
+               <th scope="col"><a href="#"><img src="" alt="campo_Almería"><p>Almería</p></a></th>
+           </tr>
+       </thead>
+       <thead>
+           <tr>
+               <th scope=col><a href="#"><img src="" alt="campo_La_Marina"><p>La Marina </p></a></th>
+               
+           </tr>
+       </thead>
+   </table>
+   
+   
+   
    
    <section class="footer">
        <footer>
-           <button  id="cerrar_sesion"  type="submit"><b>Cerrar sesión </b></button>
+           <button id="cerrar_sesion" type="submit" class="btn btn-primary btn-lg btn-block"><b>Cerrar sesión </b></button>
        </footer>
    </section>
    

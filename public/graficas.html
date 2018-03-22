@@ -5,13 +5,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie-edge">
-    <title>CULTISENSE | Acceso Web</title>
+    <title>CULTISENSE | Gráficas</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/botones.css">
     <link rel="stylesheet" href="css/banner.css">
 
-</head>
+    <!--
+        Librería de gráficos
+                            -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/locale/es.js"></script>
+</head>
 
 <style>
     body {
@@ -47,17 +54,60 @@
         </div>
     </header>
 
-    <div class="container">
-        <img src="images/logo_propio_03.svg">
-        <h2>
-            <font>El correo se ha enviado con éxito</font>
-        </h2>
-        <br>
-        <div class="mx-auto" style="width: 200px;">
-        <a class="cult-btn btn btn-outline-primary" role="button" data-i18n="clientes" href="index.html">Volver al menú principal</a>
-        </div>
+    <div class="container" style="border: solid 1px #ccc; height: 300px">
+        <ul>
 
+        </ul>
+
+        <canvas id="gráfica" width="500" height="400"></canvas>
     </div>
+    <script>
+        var datos = {};
+        var opciones = {};
+
+        var ctx = document.getElementById('gráfica').getContext('2d');
+
+        var chart = new Chart(ctx, {
+            type: 'line',
+            data: datos,
+            options: opciones
+        });
+
+        //TODO: Cargar lista de sensores del servidor
+        //fetch("http://localhost:3000/sensores?usuario=789")
+
+        var sensores = [{
+            mac: "56:8F:AD:34:F6:50:00",
+            lat: 3.384740,
+            lng: -0.3748392
+        }, {
+            mac: "56:8F:AD:34:F6:50:01",
+            lat: 3.384747680,
+            lng: -0.37392
+        }, {
+            mac: "56:8F:AD:34:F6:50:02",
+            lat: 3.3847407976,
+            lng: -0.3748748392
+        }];
+
+        function crearListaSondas(info, donde) {
+            info.forEach(function(item) {
+
+                //Puedo meter saltos de línea por usar las comillas `
+                //Hay que usar estas comillas para poder interpretar el item.mac
+                var contenido = `
+                    <li style="color:red">
+                        ${item.mac}
+                    </li>`;
+
+                donde.innerHTML += contenido;
+            })
+        }
+
+        crearListaSondas(sensores, document.querySelector("body>div>ul"));
+
+    </script>
+
 
     <footer class="footer" role="contentinfo">
         <span>Copyright © 2018 Cultisense</span><span> Todos los derechos reservados | Términos de uso</span>
