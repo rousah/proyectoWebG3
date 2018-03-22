@@ -5,10 +5,19 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie-edge">
-    <title>CULTISENSE | Sensores</title>
+    <title>CULTISENSE | Sondas</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/botones.css">
     <link rel="stylesheet" href="css/banner.css">
+    <!--
+        Librería de gráficos
+                            -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/locale/es.js"></script>
+
 </head>
 
 <style>
@@ -70,24 +79,80 @@
     </header>
 
     <div class="container">
-        <div class="divSensores">
-            <div class="custom-control custom-checkbox sens1">
-                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                <label class="custom-control-label" for="customCheck1">Sensor 1</label>
-            </div>
-            <div class="custom-control custom-checkbox sens2">
-                <input type="checkbox" class="custom-control-input" id="customCheck2">
-                <label class="custom-control-label" for="customCheck2">Sensor 2</label></div>
-            <div class="custom-control custom-checkbox sens3">
-                <input type="checkbox" class="custom-control-input" id="customCheck3">
-                <label class="custom-control-label" for="customCheck3">Sensor 3</label></div>
+        <canvas id="gráfica" width="500" height="600"></canvas>
 
-        </div>
-        <button type="button" class="btn btn-primary botonEnviar">Siguiente</button>
+        <script>
+            var sprint = {
+                nombre: 'Temperatura',
+                fechaInicio: '2018-02-26',
+                duracion: 10,
+                puntos: 50,
+                puntosPorDia: [0, 5, 0, 6, 4, 10, 7, 6, 5, 7]
+            };
+
+            var inicio = moment('00:00');
+
+            var ejeX = {
+                ticks: {
+                    min: inicio,
+                    max: 24,
+                    stepSize: 2
+                }
+            };
+
+            var ejeY = {
+                ticks: {
+                    min: -10,
+                    max: 50,
+                    stepSize: 2
+                }
+            };
+
+            var opciones = {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    yAxes: [ejeY],
+                    xAxes: [ejeX]
+                }
+            };
+
+            /*         
+                        = A PONER: 
+            opciones.responsive = true;
+            opciones.maintainAspectRatio = false; 
+                        FUERA DEL OBJETO
+                                                    */
+
+            var datos = {
+                labels: [],
+                datasets: []
+            };
+
+            var avanceReal = {
+                label: 'Real',
+                backgroundColor: 'rgb(216, 0, 0)',
+                borderColor: 'rgb(216, 0, 0)',
+                fill: false,
+                lineTension: 0,
+                data: [10, 11, 14, 18, 20, 21, 21, 30, 21, 15, 13, 10, 7]
+            };
+
+            datos.datasets = [avanceReal];
+
+            var ctx = document.getElementById('gráfica').getContext('2d');
+
+            var chart = new Chart(ctx, {
+                type: 'line',
+                data: datos,
+                options: opciones
+            });
+
+        </script>
     </div>
 
     <footer class="footer" role="contentinfo">
-        <span>Copyright © 2018 Cultisense</span><span> Todos los derechos reservados | Términos de uso</span>
+        <span>Copyright © 2018 Cultisense Todos los derechos reservados | Términos de uso</span>
     </footer>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
