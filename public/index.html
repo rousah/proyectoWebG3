@@ -18,7 +18,12 @@
 
     .container {
         margin-top: 30px;
+        max-width: 100%;
+    }
+    
+    .contenedor2{
         max-width: 40%;
+        margin: auto;
     }
 
     .descripcion {
@@ -32,6 +37,14 @@
     body div a {
         margin: 0.5rem;
     }
+    
+    .carousel img {
+        min-width: 100%;
+    }
+
+    footer img {
+        width: 2rem;
+    }
 
     @media (max-width: 767.98px) {
         .container {
@@ -42,7 +55,6 @@
             font-size: 0.6rem;
         }
     }
-
 </style>
 
 <body id="bootstrap-overwrite">
@@ -58,26 +70,27 @@
 
     <div class="container">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner" role="listbox">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="images/santi.jpg" data-src="holder.js/900x400?theme=social" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="images/rosa.jpg" data-src="holder.js/900x400?theme=industrial" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="images/joan.jpg" data-src="holder.js/900x400?theme=industrial" alt="Third slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="images/carrousel1-1.jpg" data-src="holder.js/900x400?theme=social" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="images/carrousel2-2.jpg" data-src="holder.js/900x400?theme=industrial" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="images/carrousel3-3.jpg" data-src="holder.js/900x400?theme=industrial" alt="Third slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-</div>
+        </div>
+        <div class="contenedor2">
         <h1 align="center">
             Directamente del campo a tu móvil
         </h1>
@@ -86,10 +99,15 @@
             <a class="btn btn-outline-primary col-md-5" href="informacionProducto.html" role="button" data-i18n="clientes">Información</a>
             <a class="btn btn-outline-primary col-md-5" href="inicioSesion.html" role="button" data-i18n="clientes">Clientes</a>
         </div>
+        </div>
     </div>
 
     <footer class="footer" role="contentinfo">
         <span>Copyright © 2018 Cultisense</span><span> Todos los derechos reservados | Términos de uso</span>
+        <a href="#">
+            <img src="images/logo_facebook.svg" alt="logoFacebook">
+            <img src="images/logo_twitter.svg" alt="logoTwitter">
+        </a>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
