@@ -3,12 +3,21 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie-edge">
-    <title>CULTISENSE | Acceso Web</title>
+    <title>CULTISENSE | Gráficas</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/botones.css">
     <link rel="stylesheet" href="css/banner.css">
+
+    <!--
+        Librería de gráficos
+                            -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/locale/es.js"></script>
 </head>
 
 <style>
@@ -18,18 +27,6 @@
 
     .container {
         max-width: 40%;
-    }
-
-    .descripcion {
-        font-family: Montserrat;
-        font-weight: 100;
-        text-align: center;
-        padding: 1rem;
-        margin: 0;
-    }
-
-    body div a {
-        margin: 0.5rem;
     }
 
     @media (max-width: 767.98px) {
@@ -51,28 +48,70 @@
             <img src="images/logoGTI_blanco.svg" alt="logo GTI">
         </div>
         <div id="iconoCultisense">
+            <a href="index.html">
             <img src="images/logo_C.svg" alt="icono Cultisense">
+            </a>
         </div>
     </header>
 
-    <div class="container">
-        <div class="logoPropio">
-            <img class="img-fluid" id="logocultisense" src="images/logo_propio_03.svg" alt="logo Cultisense">
-        </div>
-        <h1 align="center">
-            Directamente del campo a tu móvil
-        </h1>
-        <p class="descripcion">Cultisense es una herramienta web que proporciona un servicio de seguimiento y control de los productos de la tierra.</p>
-        <div class="botonescentrados">
-            <a class="btn btn-outline-primary col-md-5" href="informacionProducto.html" role="button" data-i18n="clientes">Información</a>
-            <a class="btn btn-outline-primary col-md-5" href="inicioSesion.html" role="button" data-i18n="clientes">Clientes</a>
-        </div>
+    <div class="container" style="border: solid 1px #ccc; height: 300px">
+        <ul>
+
+        </ul>
+
+        <canvas id="gráfica" width="500" height="400"></canvas>
     </div>
+    <script>
+        var datos = {};
+        var opciones = {};
+
+        var ctx = document.getElementById('gráfica').getContext('2d');
+
+        var chart = new Chart(ctx, {
+            type: 'line',
+            data: datos,
+            options: opciones
+        });
+
+        //TODO: Cargar lista de sensores del servidor
+        //fetch("http://localhost:3000/sensores?usuario=789")
+
+        var sensores = [{
+            mac: "56:8F:AD:34:F6:50:00",
+            lat: 3.384740,
+            lng: -0.3748392
+        }, {
+            mac: "56:8F:AD:34:F6:50:01",
+            lat: 3.384747680,
+            lng: -0.37392
+        }, {
+            mac: "56:8F:AD:34:F6:50:02",
+            lat: 3.3847407976,
+            lng: -0.3748748392
+        }];
+
+        function crearListaSondas(info, donde) {
+            info.forEach(function(item) {
+
+                //Puedo meter saltos de línea por usar las comillas `
+                //Hay que usar estas comillas para poder interpretar el item.mac
+                var contenido = `
+                    <li style="color:red">
+                        ${item.mac}
+                    </li>`;
+
+                donde.innerHTML += contenido;
+            })
+        }
+
+        crearListaSondas(sensores, document.querySelector("body>div>ul"));
+
+    </script>
+
 
     <footer class="footer" role="contentinfo">
         <span>Copyright © 2018 Cultisense</span><span> Todos los derechos reservados | Términos de uso</span>
     </footer>
-
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -84,5 +123,3 @@
     <!-- Localization end-->
 
 </body>
-
-</html>

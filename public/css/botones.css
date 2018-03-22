@@ -10,6 +10,12 @@
     border: none;
 }
 
+#bootstrap-overwrite .botonDeshabilitado:hover {
+    background-color: #3F9482;
+    color: white;
+    border: none;
+}
+
 .botonescentrados {
     display: flex;
     justify-content: center;

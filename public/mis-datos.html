@@ -7,13 +7,17 @@
     <meta http-equiv="x-ua-compatible" content="ie-edge">
     <title>CULTISENSE | Mis Datos</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="botones.css">
-    <link rel="stylesheet" href="banner.css">
+    <link rel="stylesheet" href="css/botones.css">
+    <link rel="stylesheet" href="css/banner.css">
 
 </head>
 <style>
     .bold {
         font-family: Montserrat-bold;
+    }
+
+    .container {
+        margin-top: rem;
     }
 
     #botones {
@@ -36,7 +40,7 @@
     </header>
 
 
-    <div class="offset-md-3 col-md-10">
+    <div class="offset-md-3 col-md-10 container">
         <section id="datos-cuenta">
             <form class="col-md-8">
                 <div class="form-group row email">
@@ -145,7 +149,7 @@
 
     </div>
     <div class="usuario col-md-6" id="botones">
-        <button data-i18n="Continuar" class="cult-btn btn btn-outline-primary" role="button" type="submit"> Continuar </button>
+        <a href="listaSensores.html"><button data-i18n="Continuar" class="cult-btn btn btn-outline-primary botonDeshabilitado" role="button" type="submit" href="listaSensores.html" disabled> Continuar </button></a>
     </div>
 
     <div>
