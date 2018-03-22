@@ -19,6 +19,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/locale/es.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script src="js/grafica.js"></script>
 </head>
 
 <style>
@@ -91,7 +92,7 @@
 
     <div class="container">
 
-        <div class="divSensores col-sm-5">
+        <div class="divSensores col-sm-5" id="sensoresCheck">
             <p>Paso 1: Elige los sensores que quiere ver.</p>
             <div class="checkSondas">
                 <div class="custom-control custom-checkbox sens1">
@@ -106,86 +107,18 @@
                     <label class="custom-control-label" for="customCheck3">Sonda 3</label></div>
             </div>
         </div>
-        <button type="button" class="btn btn-primary botonEnviar" onclick="visualizarGrafica()">Siguiente</button>
-
-        <script>
-            function visualizarGrafica() {
-                document.getElementById("gráfica").hidden = false;
-            }
-
-        </script>
+        <button type="button" class="btn btn-primary botonEnviar" onclick="visualizarGrafica()" id="boton-siguiente" hidden>Siguiente</button>
 
         <div id="graph" class="container">
-            <canvas id="gráfica" width="500" height="400" class="chartjs-render-monitor"></canvas>
+            <canvas id="grafica" width="500" height="400" class="chartjs-render-monitor"></canvas>
 
-            <script>
-                var inicio = moment('00:00');
-
-                var opciones = {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        xAxes: [{
-                            display: true,
-                            scaleLabel: {
-                                display: true,
-                                labelString: 'Horas'
-                            }
-                        }],
-                        yAxes: [{
-                            display: true,
-                            scaleLabel: {
-                                display: true,
-                                labelString: 'ºC'
-                            },
-                            ticks: {
-                                min: 0,
-                                max: 30,
-                                stepSize: 2
-                            }
-                        }]
-                    }
-                };
-
-                /*         
-                            = A PONER: 
-                opciones.responsive = true;
-                opciones.maintainAspectRatio = false; 
-                            FUERA DEL OBJETO
-                                                        */
-
-                var datos = {
-                    labels: ['00: 00', '01: 00', '02:00', '03:00', '04:00', '05: 00', '06: 00', '07:00', '08:00', '09:00', '10: 00', '11: 00', '12:00', '13:00', '14:00', '15: 00', '16: 00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '24:00'],
-                    datasets: []
-                };
-
-                var avanceReal = {
-                    label: 'Temperatura',
-                    backgroundColor: 'rgb(4, 136, 39)',
-                    borderColor: 'rgb(4, 136, 39)',
-                    fill: false,
-                    lineTension: 0,
-                    data: [11, 10, 10, 10, 10, 10, 11, 11, 11, 12, 13, 14, 15, 16, 16, 16, 16, 15, 14, 13, 13, 13, 13, 13, 13]
-                };
-
-                datos.datasets = [avanceReal];
-
-                var ctx = document.getElementById('gráfica').getContext('2d');
-
-                var chart = new Chart(ctx, {
-                    type: 'line',
-                    data: datos,
-                    options: opciones
-                });
-
-            </script>
         </div>
     </div>
 
     <footer class="footer" role="contentinfo">
         <span>Copyright © 2018 Cultisense Todos los derechos reservados | Términos de uso</span>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <!-- Localization start-->
