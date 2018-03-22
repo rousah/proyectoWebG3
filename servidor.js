@@ -12,6 +12,7 @@ const sequelize  = new Sequelize('sqlite:cultisense.db');
 const User       = sequelize.import('./models/user.js');
 const Token      = sequelize.import('./models/token.js');
 const Sensor     = sequelize.import('./models/sensor.js');
+const Dato       = sequelize.import('./models/dato.js');
 const saltRounds = 10;
 const port       = 3000;
 const app        = express();
@@ -26,6 +27,7 @@ function setup() {
 
     Token.belongsTo(User);
     Sensor.belongsTo(User);
+    Dato.belongsTo(Sensor);
     sequelize.sync().then(() => {
         bcrypt.hash('123456', saltRounds).then(function (hash) {
             // Store hash in your password DB.
@@ -96,10 +98,15 @@ function setup() {
                                     });
 
                           });
-                })
+                });
+            Dato.create({temperatura: 33, humedad: 89, tiempo: new Date(), sensorId: 1}).then(dato => {
+                Dato.create({temperatura: 34, humedad: 79, tiempo: new Date(), sensorId: 1}).then(dato => {
+                    Dato.create({temperatura: 35, humedad: 99, tiempo: new Date(), sensorId: 1}).then(dato => {
+                        console.log('dato created');
+                    });
+                });
+            });
         });
-
-
     });
 }
 
@@ -130,6 +137,7 @@ app.post('/login', procesar_login);
 app.get('/user', procesar_user);
 app.post('/user/change_password', procesar_password);
 app.get('/user/sensores', procesar_sensores);
+app.get('/user/temperatura', procesar_temperatura);
 app.get('/pw_reset', procesar_pw_reset);
 
 function procesar_pw_reset(req, res) {
@@ -186,7 +194,7 @@ function procesar_login(req, res) {
             });
         }
     });
-};
+}
 
 function procesar_user(req, res) {
     console.log('Get user');
@@ -243,8 +251,47 @@ function procesar_sensores(req, res) {
             });
         }
     })
+}
 
-};
+function procesar_temperatura(req, res) {
+    console.log('Get temperatura');
+    Token.findOne({
+        where:   {
+            token: req.headers.token
+        },
+        include: [
+            {
+                model: User
+            }
+        ]
+    }).then(token => {
+        if (token !== null) {
+            let user = token.user;
+            let mac  = req.query.mac;
+
+            console.log(mac);
+            Sensor.find({where: {mac: mac}}).then(sensor => {
+
+                if (sensor !== null) {
+                    Dato.findAll({where: {sensorId: sensor.id}}).then(datos => {
+                        return res.send(datos);
+                    })
+                }
+                else {
+                    return res.status(404).send({
+                        message: 'Sensor not found'
+                    });
+                }
+
+            });
+        }
+        else {
+            return res.status(404).send({
+                message: 'User not found'
+            });
+        }
+    })
+}
 
 function procesar_password(req, res) {
     console.log('Post change password');
@@ -298,9 +345,9 @@ function procesar_password(req, res) {
             });
         }
     })
-};
+}
 
 
 app.listen(port, (e) => {
     console.log(e);
-})
+});
