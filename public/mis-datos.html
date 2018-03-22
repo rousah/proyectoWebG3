@@ -17,7 +17,7 @@
     }
 
     .container {
-        margin-top: rem;
+        margin-top: 2rem;
     }
 
     #botones {
@@ -71,9 +71,18 @@
                 <div class="boton" id="botones">
                     <button data-i18n="send" class="cult-btn btn btn-outline-primary" role="button" type="submit"> Send </button>
                 </div>
-                <div style="display: none" class="alert alert-success" id="password-success-alert" role="alert" data-i18n="pass-changed">
+
+
+                <div style="display: none" class="alert alert-success" id="password-success-alert" role="alert" data-i18n="pass-changed" on="habilitar()">
                     ¡Su contraseña se ha cambiado!
                 </div>
+
+                <script>
+                    function habilitar() {
+                        document.getElementById("continuar").disabled = false;
+                    }
+
+                </script>
                 <div style="display: none" class="alert alert-danger" id="password-error-alert" role="alert" data-i18n="error">
                     ¡Error!
                 </div>
@@ -149,7 +158,7 @@
 
     </div>
     <div class="usuario col-md-6" id="botones">
-        <a href="listaSensores.html"><button data-i18n="Continuar" class="cult-btn btn btn-outline-primary botonDeshabilitado" role="button" type="submit" href="listaSensores.html" disabled> Continuar </button></a>
+        <a href="listaSensores.html"><button data-i18n="Continuar" class="cult-btn btn btn-outline-primary botonDeshabilitado" role="button" type="submit" href="listaSondas.html" id="continuar" disabled> Continuar </button></a>
     </div>
 
     <div>

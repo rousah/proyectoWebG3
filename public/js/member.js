@@ -52,6 +52,7 @@ $(document).ready(function () {
             success: function (data) {
                 console.log(data);
                 $('#password-success-alert').show(200);
+                $('#continuar').prop('disabled', false)
             },
             error: function (error) {
                 console.log(error);
