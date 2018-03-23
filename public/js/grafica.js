@@ -53,8 +53,8 @@ var avanceReal2 = {
 
 var avanceReal3 = {
     label: 'Temp sonda 3',
-    backgroundColor: 'rgb(3, 136, 39)',
-    borderColor: 'rgb(4, 136, 39)',
+    backgroundColor: 'rgb(0, 245, 66)',
+    borderColor: 'rgb(0, 245, 66)',
     fill: false,
     lineTension: 0,
     hidden: true,
