@@ -1,0 +1,23 @@
+#C {
+      width: 20%;
+    }
+    body {
+        font-family: Montserrat;
+    }
+    nav{
+        background-color: #3f9482;
+    }
+
+    .container {
+        max-width: 40%;
+    }
+
+    @media (max-width: 767.98px) {
+        .container {
+            max-width: 90%;
+        }
+
+        footer span {
+            font-size: 0.6rem;
+        }
+    }
