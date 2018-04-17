@@ -8,7 +8,6 @@
     <title>CULTISENSE | Sondas</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/botones.css">
-    <link rel="stylesheet" href="css/banner.css">
     <link rel="stylesheet" href="css/footer.css">
 
     <!--
@@ -25,6 +24,48 @@
 </head>
 
 <style>
+    #C {
+        width: 80%;
+        height: auto;
+    }
+
+    body {
+        font-family: Montserrat;
+    }
+
+    nav {
+        /*background-color: #3f9482;*/
+    }
+
+    .navbar {
+        padding: 0;
+    }
+
+    .titulo {
+        color: #55c5ff;
+        font-family: Montserrat-Bold;
+        margin-bottom: 0;
+        display: none;
+    }
+
+    header nav a {
+        max-width: inherit;
+    }
+
+    .container {
+        max-width: 40%;
+    }
+
+    @media (max-width: 767.98px) {
+        .container {
+            max-width: 90%;
+        }
+
+        footer span {
+            font-size: 0.6rem;
+        }
+    }
+
     body {
         font-family: Montserrat;
     }
@@ -72,6 +113,15 @@
             max-width: 90%;
         }
 
+        .titulo {
+            display: block;
+        }
+
+        .navbar-collapse {
+            background-color: #55c5ff;
+            padding: 0.5rem 1rem;
+        }
+
         footer span {
             font-size: 0.6rem;
         }
@@ -82,14 +132,41 @@
 <body id="bootstrap-overwrite">
 
     <header class="encabezado">
-        <div id="iconoGTI">
-            <img src="images/logoGTI_blanco.svg" alt="logo GTI">
-        </div>
-        <div id="iconoCultisense">
-            <a href="index.html">
-            <img src="images/logo_C.svg" alt="icono Cultisense">
+        <nav class="navbar navbar-dark navbar-expand-md bg-dark">
+            <a class="navbar-brand" href="#" style="width: 50px; margin: 0.5rem 1rem;"><img id="C" src="images/logo_C.svg"></a>
+            <a href="#">
+                <h4 class="titulo">Gráficas</h4>
             </a>
-        </div>
+
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation" style="margin: 0.5rem 1rem;">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+            <div class="navbar-collapse collapse" id="navbarsExample01">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link itemsMenu" href="#">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="listaSondas.html">Gráficas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mapa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Alertas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Soporte Técnico</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mis-datos.html">Perfil</a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
     </header>
 
     <div class="container">
@@ -119,6 +196,12 @@
 
     <footer class="footer" role="contentinfo">
         <span>Copyright © 2018 Cultisense Todos los derechos reservados | Términos de uso</span>
+
+        <div>
+            <img src="images/logo_facebook.svg" alt="logoFacebook">
+            <img src="images/logo_twitter.svg" alt="logoTwitter">
+        </div>
+
     </footer>
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
