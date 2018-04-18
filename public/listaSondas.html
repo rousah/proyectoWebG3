@@ -126,7 +126,21 @@
             font-size: 0.6rem;
         }
     }
+    
+    /* ---------------- MAPA ------------------*/
+ 
+    .botones {
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    .parteDelMapa {
+        display: flex;
+        align-items: center;
+    }
+     
 
+    
 </style>
 
 <body id="bootstrap-overwrite">
@@ -168,9 +182,116 @@
         </nav>
 
     </header>
+    
+    <!------------------ MAPA --------------------->
 
     <div class="container">
+        
+        <div class="parteDelMapa">
+            <div class="botones">
+                <a class="btn btn-outline-primary col-md-5" role="button" onclick="editarZona()">Editar</a>
+                <a class="btn btn-outline-primary col-md-7" role="button" onclick="guardarZona()">Guardar</a>
+            </div>
+            <div id="mapa" style="width: 800px; height: 600px; border: solid 1px #ccc;"></div>
+        </div>
 
+    <script>
+        var mapa;
+
+        var zona;
+
+        function initMap() {
+            // pasamos como primer parámetro el mapa (con el id)
+            // y como segundo parámetro las opciones del mapa en forma de objeto:
+            // zoom es el valor de zoom del mapa
+            // center es un objeto con los valores de latitud y longitud donde tiene q tener el centro al cargarlo
+            // streetViewControl false para quitar el muñequito de street view
+            mapa = new google.maps.Map(
+                document.getElementById('mapa'), {
+                    zoom: 16,
+                    center: {
+                        lat: 38.9922807,
+                        lng: -0.1735785
+                    },
+                    streetViewControl: false
+                });
+
+            // especificar el tipo de mapa (tmb se podria especificar en las opciones en mapa = ....)
+            mapa.setMapTypeId('satellite');
+
+            cargarZonas();
+        }
+
+        // creamos esta función para poder recargar las zonas sin tener que volver a crear el mapa
+        // con fetch obtenemos las coordenadas de las zonas
+        // los pasamos a json
+        // creamos las zonas con Polygon() de google maps, recibe un objeto con los paths 
+        function cargarZonas() {
+            fetch('http://dapasa.webs.upv.es/proyectoGTI1b/api/getZona.php').then(function(respuesta) {
+                //console.log(respuesta);
+                return respuesta.json();
+            }).then(function(datos) {
+                console.log(datos[0]);
+
+                // Especificar los límites del mapa para que quepa todo
+                var limites = new google.maps.LatLngBounds()
+
+                // Convertimos los valores de los vertices de strings a números
+                datos[0].vertices.forEach(function(vertice) {
+                    vertice.lat = parseFloat(vertice.lat);
+                    vertice.lng = parseFloat(vertice.lng);
+
+                    // Especificamos los límites a los vértices de la zona
+                    limites.extend(vertice);
+                })
+
+                zona = {};
+
+                zona.id = datos[0].id;
+                zona.nombre = datos[0].nombre;
+                zona.color = datos[0].color;
+
+                zona.poligono = new google.maps.Polygon({
+                    paths: datos[0].vertices,
+                    strokeColor: datos[0].color,
+                    fillColor: datos[0].color,
+                    fillOpacity: 0.2
+                })
+
+                zona.poligono.setMap(mapa);
+
+                // Aquí llamamos a fitBounds para que se ajuste a los límites, e indicamos el margen 
+                mapa.fitBounds(limites, 20);
+            })
+
+        }
+
+        function editarZona() {
+            // pasa de editable a no editable y viceversa
+            zona.poligono.setEditable(!zona.poligono.getEditable());
+        }
+
+        // FALLA
+        function guardarZona() {
+            var datosParaEnviar = {};
+            datosParaEnviar.color = zona.color;
+            datosParaEnviar.id = zona.id;
+            datosParaEnviar.nombre = zona.nombre;
+            datosParaEnviar.vertices = zona.poligono.getPath().toArray();
+
+            console.log(datosParaEnviar)
+        }
+
+    </script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAb24jHOG5TNONnZFGrHXCfnkoEnhfpKxc&callback=initMap">
+
+
+    </script>
+
+<!-- FINAL MAPA -->
+       
+       <!-- SONDAS -->
         <div class="divSensores col-sm-5" id="sensoresCheck">
             <p>Paso 1: Elige los sensores que quiere ver.</p>
             <div class="checkSondas">
@@ -186,16 +307,22 @@
                     <label class="custom-control-label" for="customCheck3">Sonda 3</label></div>
             </div>
         </div>
+        
+        
         <button type="button" class="btn btn-primary botonEnviar" onclick="visualizarGrafica()" id="boton-siguiente" hidden>Siguiente</button>
+        
+        <!-- GRAFICA -->
 
         <div id="graph" class="container">
             <canvas id="grafica" width="500" height="400" class="chartjs-render-monitor"></canvas>
 
         </div>
     </div>
-
+    
+    <!-- FINAL GRAFICA -->
     <footer class="footer" role="contentinfo">
-        <span>Copyright © 2018 Cultisense <br>Todos los derechos reservados | Términos de uso</span>
+        +        <span>Copyright © 2018 Cultisense <br>Todos los derechos reservados | Términos de uso</span>
+
 
         <div>
             <img src="images/logo_facebook.svg" alt="logoFacebook">
@@ -214,3 +341,4 @@
     <!-- Localization end-->
 
 </body>
+
