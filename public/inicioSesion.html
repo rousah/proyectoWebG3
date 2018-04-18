@@ -41,7 +41,6 @@
         #logoPropio {
             width: 100%;
             margin: 0 auto;
-            align-content: center;
         }
 
         .cajaolvidar {
@@ -58,7 +57,6 @@
             #logoPropio {
                 max-width: 40%;
                 margin: 0 auto;
-
             }
         }
 
@@ -74,7 +72,7 @@
     <div id="logoPropio">
         <a href="index.html">
             <div class="logoPropio">
-                <img class="img-fluid" id="logocultisense" src="images/logo_propio_03.svg" alt="logo Cultisense">
+                <img id="logocultisense" src="images/logo_propio_03.svg" alt="logo Cultisense" style="display: block; margin: auto;">
             </div>
         </a>
     </div>
@@ -95,8 +93,8 @@
             <div id="fallo-aut" class="alert alert-danger" style="display: none" role="alert">
                 Fallo de autenticación. Vuelve a intentarlo
             </div>
-            <br><br>
-            <div class="cajaenviar">
+
+            <div class="cajaenviar" style="margin-top: 12px;">
                 <button data-i18n="send" class="cult-btn btn btn-outline-primary" role="button" type="submit"> Enviar</button>
             </div>
             <div style="text-align: center; font-size: 0.7rem; margin: 1rem; justify-content: center;"><a href="index.html"><span>Volver a la página principal</span></a></div>
@@ -117,7 +115,7 @@
     <br><br>
 
     <footer class="footer" role="contentinfo">
-        <span>Copyright © 2018 Cultisense</span><span> Todos los derechos reservados | Términos de uso</span>
+        <span>Copyright © 2018 Cultisense</span><br><span> Todos los derechos reservados | Términos de uso</span>
         <div>
             <img src="images/logo_facebook.svg" alt="logoFacebook">
             <img src="images/logo_twitter.svg" alt="logoTwitter">

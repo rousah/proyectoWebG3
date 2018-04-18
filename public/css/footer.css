@@ -35,13 +35,13 @@ footer span {
 }
 
 footer div img {
-    width: 3rem;
+    width: 1.5rem;
     align-self: center;
 }
 
 @media (min-width: 576px) {
     .footer {
-        height: 100px;
+        height: 75px;
     }
 }
 

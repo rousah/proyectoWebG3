@@ -47,5 +47,6 @@ header div img {
 
 #logocultisense {
     width: 100%;
+    max-width: 300px;
+    margin: auto;
 }
-
