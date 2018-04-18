@@ -10,16 +10,13 @@
     <title>CULTISENSE | Restaurar mediante Correo</title>
 
     <style>
-        
-        
-
         .restaurarMedianteCorreo {
             text-align: center;
             max-width: 450px;
             margin: 0 auto;
             justify-content: space-around;
-            
-            
+
+
         }
 
         .textoExplicatorio {
@@ -52,7 +49,7 @@
 
         }
 
-/*
+        /*
         .segunda_pag {
             max-width: 120px;
             margin: 200px auto;
@@ -71,10 +68,11 @@
             color: white;
             border: none;
         }
+
         #bootstrap-overwrite .img-thumbnail {
             border: none;
             width: 10%;
-            
+
         }
 
         @font-face {
@@ -104,16 +102,13 @@
 <body id="bootstrap-overwrite">
     <section>
         <header class="restaurarMedianteCorreo">
-           
-           <a href="inicioSesion.html">
-            <img src="images/volvernegro.svg" class="img-thumbnail rounded float-right" alt="volver">
-            </a>
-            
-            <h1><br><font size=5>Restaurar contraseña mediante correo electrónico</font></h1>
-            
+            <h1><br>
+                <font size=5>Restaurar contraseña mediante correo electrónico</font>
+            </h1>
+
         </header>
         <br>
-        
+
         <div class="textoExplicatorio">
             <p>Introduzca su correo electrónico y le mandaremos una contraseña por e-mail</p>
         </div>
@@ -123,7 +118,6 @@
 
             <form method="GET" action="restaurarMedianteCorreo-segundapag.html">
                 <div class="introducir_Correo">
-
                     <input type="email" class="form-control" placeholder="E-mail" name="correo" size="30" required>
                 </div>
 
@@ -131,6 +125,7 @@
                 <div class="botonMandar">
                     <button class="btn btn-outline-primary" type="submit" name="mandar">Enviar</button>
                 </div>
+                <div style="text-align: center; font-size: 0.7rem; margin: 1rem; justify-content: center;"><a href="inicioSesion.html"><span>Volver al inicio de sesión</span></a></div>
 
 
             </form>
@@ -138,7 +133,7 @@
 
     </section>
 
-<!--
+    <!--
     <section class="segunda_pag" id='oculto' style='display:none;'>
         <h2 class="mensaje_exito">
             <font size=35>¡Éxito!</font>
