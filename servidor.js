@@ -172,8 +172,6 @@ function setup() {
                 }
             })
                 .spread((user, created) => {
-                    console.log(user);
-                    console.log(created);
 
                     if (created) {
                         let promises = [];
