@@ -78,7 +78,8 @@
         padding: 0;
     }
 
-    .divSensores {
+    .divSensores,
+    .divZonas {
         margin: 0.5rem 0.5rem;
         padding: 0.2rem;
         border: 1px solid #eee;
@@ -89,14 +90,18 @@
         max-width: 100%;
     }
 
-    .checkSondas {
+    .checkSondas,
+    .checkZonas {
         display: flex;
         flex-direction: row;
     }
 
     .sens1,
     .sens2,
-    .sens3 {
+    .sens3,
+    .zona1,
+    .zona2,
+    .zona3 {
         margin: 0 0.5rem 0 0.5rem;
     }
 
@@ -133,6 +138,8 @@
         display: flex;
         flex-direction: column;
         align-self: flex-start;
+        /*align-items: stretch;*/
+        align-content: stretch;
     }
 
     .botones a {
@@ -140,8 +147,39 @@
     }
 
     .parteDelMapa {
+        padding: 1rem;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+
+    .divSensores,
+    .divZonas {
+        margin: 0.5rem auto;
+    }
+
+    #mapa {
+        margin: auto 1rem;
+        width: 450px;
+        height: 700px;
+        border: solid 1px #ccc;
+    }
+
+    @media (max-width: 767.98px) {
+        #mapa {
+            margin: 1rem;
+            order: 1;
+            height: 400px;
+        }
+
+        .botones {
+            order: 2;
+        }
+
+        .divZonas {
+            order: 0;
+        }
     }
 
 </style>
@@ -192,11 +230,29 @@
 
         <div class="parteDelMapa">
             <div class="botones">
-                <a class="btn btn-outline-primary col-md-11" role="button" onclick="editarZona()">Editar</a>
-                <a class="btn btn-outline-primary col-md-11" role="button" onclick="guardarZona()">Guardar</a>
+                <a class="btn btn-outline-primary" role="button" onclick="editarZona()">Editar</a>
+                <a class="btn btn-outline-primary" role="button" onclick="guardarZona()">Guardar</a>
+                <!-- ZONAS -->
+                <div class="divZonas col-sm-5" id="zonasCheck">
+                    <p>Paso 1: Elige la zona que quiere ver.</p>
+                    <div class="checkZonas">
+                        <div class="custom-control custom-radio zona1">
+                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio1">Zona 1</label>
+                        </div>
+                        <div class="custom-control custom-radio zona2">
+                            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio2">Zona 2</label>
+                        </div>
+                        <div class="custom-control custom-radio zona3">
+                            <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio3">Zona 3</label>
+                        </div>
+                    </div>
+                </div>
                 <!-- SONDAS -->
                 <div class="divSensores col-sm-5" id="sensoresCheck">
-                    <p>Paso 1: Elige los sensores que quiere ver.</p>
+                    <p>Paso 2: Elige las sondas que quiere ver.</p>
                     <div class="checkSondas">
                         <div class="custom-control custom-checkbox sens1">
                             <input type="checkbox" class="custom-control-input" id="customCheck1">
@@ -210,8 +266,14 @@
                             <label class="custom-control-label" for="customCheck3">Sonda 3</label></div>
                     </div>
                 </div>
+                <!-- GRAFICA -->
+
+                <div id="graph" class="container">
+                    <canvas id="grafica" width="500" height="400" class="chartjs-render-monitor"></canvas>
+
+                </div>
             </div>
-            <div id="mapa" style="width: 600px; height: 600px; border: solid 1px #ccc;"></div>
+            <div id="mapa"></div>
         </div>
 
 
@@ -326,18 +388,9 @@
         <!-- FINAL MAPA -->
 
         <button type="button" class="btn btn-primary botonEnviar" onclick="visualizarGrafica()" id="boton-siguiente" hidden>Siguiente</button>
-
-        <!-- GRAFICA -->
-
-        <div id="graph" class="container">
-            <canvas id="grafica" width="500" height="400" class="chartjs-render-monitor"></canvas>
-
-        </div>
     </div>
-
-    <!-- FINAL GRAFICA -->
     <footer class="footer" role="contentinfo">
-        + <span>Copyright © 2018 Cultisense <br>Todos los derechos reservados | Términos de uso</span>
+        <span>Copyright © 2018 Cultisense <br>Todos los derechos reservados | Términos de uso</span>
 
 
         <div>
