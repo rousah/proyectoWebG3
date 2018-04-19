@@ -14,10 +14,123 @@ const User       = sequelize.import('./models/user.js');
 const Token      = sequelize.import('./models/token.js');
 const Sensor     = sequelize.import('./models/sensor.js');
 const Dato       = sequelize.import('./models/dato.js');
+const Zona       = sequelize.import('./models/zona.js');
+const Vertice    = sequelize.import('./models/vertice.js');
 const saltRounds = 10;
 const port       = 3000;
 const app        = express();
 
+const sensores = [
+    {
+        mac:    '56:8F:AD:34:F6:50:00',
+        lng:    '-0.17816305161',
+        lat:    '38.99522308750',
+        userId: 1
+    },
+    {
+        mac:    '57:8F:AD:34:F6:50:00',
+        lng:    '-0.17717599869',
+        lat:    '38.99352202642',
+        userId: 1,
+    },
+    {
+        mac:    '58:8F:AD:34:F6:50:00',
+        lng:    '-0.17204761505',
+        lat:    '38.99405569704',
+        userId: 1,
+    }
+];
+
+const zonas = [
+    {
+        "name":   "Campo de alcachofas",
+        "color":  "#8336c9",
+        "userId": 1
+    },
+    {
+        "name":   "Campo de trigo",
+        "color":  "#ff8000",
+        "userId": 1
+    }
+];
+
+const vertices = [
+    {
+        "lat":    "38.99574370819",
+        "lng":    "-0.17884278223",
+        "zonaId": 1
+    },
+    {
+        "lat":    "38.99557694053",
+        "lng":    "-0.16709113046",
+        "zonaId": 1
+    },
+    {
+        "lat":    "38.99357013889",
+        "lng":    "-0.16756319925",
+        "zonaId": 1
+    },
+    {
+        "lat":    "38.99314486752",
+        "lng":    "-0.17780208513",
+        "zonaId": 1
+    },
+    {
+        "lat":    "38.99352010710",
+        "lng":    "-0.17782711908",
+        "zonaId": 1
+    },
+    {
+        "lat":    "39.03081634558",
+        "lng":    "-0.23717880249",
+        "zonaId": 2
+    },
+    {
+        "lat":    "39.03073717026",
+        "lng":    "-0.23545324802",
+        "zonaId": 2
+    },
+    {
+        "lat":    "39.03161434444",
+        "lng":    "-0.23424714804",
+        "zonaId": 2
+    },
+    {
+        "lat":    "39.03160809384",
+        "lng":    "-0.23295521737",
+        "zonaId": 2
+    },
+    {
+        "lat":    "39.03236649702",
+        "lng":    "-0.23117780685",
+        "zonaId": 2
+    },
+    {
+        "lat":    "39.03050519998",
+        "lng":    "-0.23063063621",
+        "zonaId": 2
+    },
+    {
+        "lat":    "39.02909669337",
+        "lng":    "-0.23297309875",
+        "zonaId": 2
+    },
+    {
+        "lat":    "39.02913836556",
+        "lng":    "-0.23335218429",
+        "zonaId": 2
+    },
+    {
+        "lat":    "39.02845493844",
+        "lng":    "-0.23529767990",
+        "zonaId": 2
+    },
+    {
+        "lat":    "39.02848827650",
+        "lng":    "-0.23595571518",
+        "zonaId": 2
+    }
+];
 
 app.use(bodyParser.urlencoded({
     extended: false
@@ -32,6 +145,11 @@ function setup() {
     Sensor.belongsTo(User);
     Sensor.hasMany(Dato, {as: 'data'});
     Dato.belongsTo(Sensor);
+    User.hasMany(Zona);
+    Zona.belongsTo(User);
+    Zona.hasMany(Vertice);
+    Vertice.belongsTo(Zona);
+
     sequelize.sync().then(() => {
         bcrypt.hash('123456', saltRounds).then(function (hash) {
             // Store hash in your password DB.
@@ -54,72 +172,49 @@ function setup() {
                 }
             })
                 .spread((user, created) => {
-                    console.log(user.get({
-                        plain: true
-                    }));
-                    console.log('created user ' + created);
+                    console.log(user);
+                    console.log(created);
 
-                    Sensor.findOrCreate({
-                        where:    {
-                            mac: '56:8F:AD:34:F6:50:00'
-                        },
-                        defaults: {
-                            lng:    '-0.17816305161',
-                            lat:    '38.99522308750',
-                            userId: 1,
-                        }
-                    })
-                          .spread((sensor, created) => {
-                              console.log(created);
-                              Sensor.findOrCreate({
-                                  where:    {
-                                      mac: '57:8F:AD:34:F6:50:00'
-                                  },
-                                  defaults: {
-                                      lng:    '-0.17717599869',
-                                      lat:    '38.99352202642',
-                                      userId: 1,
-                                  }
-                              })
-                                    .spread((sensor, created) => {
-                                        console.log(created);
-                                        Sensor.findOrCreate({
-                                            where:    {
-                                                mac: '58:8F:AD:34:F6:50:00'
-                                            },
-                                            defaults: {
-                                                lng:    '-0.17204761505',
-                                                lat:    '38.99405569704',
-                                                userId: 1,
-                                            }
-                                        })
-                                              .spread((sensor, created) => {
-                                                Dato.find().then((data) => { if(data === null) {
+                    if (created) {
+                        let promises = [];
 
-                                                    for (i = 1; i < 4; i++) {
-                                                        date = new Moment();
-                                                        for (j = 1; j < 20; j++) {
-                                                            Dato.create({
-                                                                temperatura: Math.floor(Math.random() * (
-                                                                                        30 - 10 + 1
-                                                                ) + 10),
-                                                                humedad:     Math.floor(Math.random() * (
-                                                                                        95 - 60 + 1
-                                                                ) + 60),
-                                                                tiempo:      date.add(1, 'hours').toDate(),
-                                                                sensorId:    i
-                                                            });
-                                                        }
-                                                    }
-                                                }})
+                        sensores.forEach((sensor) => {
+                            promises.push(Sensor.create(sensor));
+                        });
 
+                        Sequelize.Promise.all(promises).then(() => {
 
-                                              });
+                            for (i = 1; i < 4; i++) {
+                                date = new Moment();
+                                for (j = 1; j < 20; j++) {
+                                    Dato.create({
+                                        temperatura: Math.floor(Math.random() * (
+                                                                30 - 10 + 1
+                                        ) + 10),
+                                        humedad:     Math.floor(Math.random() * (
+                                                                95 - 60 + 1
+                                        ) + 60),
+                                        tiempo:      date.add(1, 'hours').toDate(),
+                                        sensorId:    i
                                     });
+                                }
+                            }
+                        });
 
-                          });
-                });
+                        promises = [];
 
+                        zonas.forEach((zona) => {
+                            promises.push(Zona.create(zona));
+                        });
+
+                        Sequelize.Promise.all(promises).then(() => {
+                            vertices.forEach((vertice) => {
+                                Vertice.create(vertice);
+                            })
+                        });
+
+                    }
+                })
         });
     });
 }
@@ -151,6 +246,7 @@ app.post('/login', procesar_login);
 app.get('/user', procesar_user);
 app.post('/user/change_password', procesar_password);
 app.get('/user/sensores', procesar_sensores);
+app.get('/user/zonas', procesar_zonas);
 app.get('/user/temperatura', procesar_temperatura);
 app.get('/pw_reset', procesar_pw_reset);
 
@@ -255,29 +351,46 @@ function procesar_sensores(req, res) {
             let user = token.user;
 
             Sensor.findAll({
-                where: {userId: user.id},
+                where:   {userId: user.id},
                 include: [
                     {model: Dato, as: 'data'}
                 ],
-                order: [[{model:Dato, as: 'data'}, 'tiempo']]
+                order:   [[{model: Dato, as: 'data'}, 'tiempo']]
             }).then(sensores => {
-
-                /*let datos = sensores.map((sensor) => {
-                    return new Promise((resolve) => {
-                        Dato.findAll({where: {sensorId: sensor.id}}).then(datos => {
-                            console.log(datos.length);
-                            sensor.datos = datos;
-                            //console.log(sensor.datos);
-                            console.log('done1');
-                            resolve();
-                        })
-                    });
-                });
-                Promise.all(datos).then(() => {
-                    console.log(sensores);
-                    console.log('done2');*/
                 return res.send(sensores);
-                // });
+            });
+        }
+        else {
+            return res.status(404).send({
+                message: 'User not found'
+            });
+        }
+    })
+}
+
+function procesar_zonas(req, res) {
+    Token.findOne({
+        where:   {
+            token: req.headers.token
+        },
+        include: [
+            {
+                model: User
+            }
+        ]
+    }).then(token => {
+        if (token !== null) {
+
+            let user = token.user;
+
+            Zona.findAll({
+                where:   {userId: user.id},
+                include: [
+                    {model: Vertice}
+                ],
+                order:   [[{model: Vertice}, 'id']]
+            }).then(zonas => {
+                return res.send(zonas);
             });
         }
         else {

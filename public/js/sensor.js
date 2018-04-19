@@ -1,4 +1,5 @@
 var tempHeatMapData = [];
+var listaSensores   = [];
 
 var humHeatMapData = [];
 var humHeatMap;
@@ -10,9 +11,9 @@ const baseURI = 'http://localhost:3000/';
 
 function loadSensores() {
     $.ajax({
-        url: baseURI + 'user/sensores',
+        url:      baseURI + 'user/sensores',
         dataType: "json",
-        headers: {
+        headers:  {
             'token': localStorage.getItem('token'),
         },
     }).done(function (r) {
@@ -28,7 +29,7 @@ function loadSensores() {
                 }),
                 map:      mapa,
                 label:    item.id,
-                icon: '../images/logo_marker.png'
+                icon:     '../images/logo_marker.png'
             });
             var infowindow = new google.maps.InfoWindow({
                 content: 'Última lectura<br><i class="fa fa-tint"></i> <a href="javascript:showSensorHumData(' +
@@ -37,7 +38,7 @@ function loadSensores() {
                          ')">Temperatura</a>: ' + parseFloat(item.data[0].temperatura) + 'º'
             });
             infowindow.addListener('closeclick', function () {
-                currentInfoWindow     = null;
+                currentInfoWindow   = null;
                 chart.data.datasets = [];
                 chart.update();
             });
@@ -45,7 +46,7 @@ function loadSensores() {
             marker.addListener('click', function () {
                 if (currentInfoWindow != null) currentInfoWindow.close();
                 infowindow.open(mapa, marker);
-                currentInfoWindow     = infowindow;
+                currentInfoWindow   = infowindow;
                 chart.data.datasets = [];
                 chart.update();
             });
@@ -161,9 +162,9 @@ function showSensorHumData(id) {
 }
 
 
-var ctx = window.document.getElementById('grafica').getContext('2d');
+var ctx        = window.document.getElementById('grafica').getContext('2d');
 var timeFormat = 'YYYY-MM-DD HH:mm:ss';
-var chart = new Chart(ctx, {
+var chart      = new Chart(ctx, {
     type:    'line',
     options: {
         responsive:          true,
@@ -190,6 +191,3 @@ var chart = new Chart(ctx, {
         }
     }
 });
-
-
-loadSensores();
