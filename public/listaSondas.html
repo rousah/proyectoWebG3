@@ -149,6 +149,10 @@
         border: solid 1px #ccc;
     }
 
+    #graph {
+        margin: 0;
+    }
+
 </style>
 
 <body id="bootstrap-overwrite">
@@ -207,12 +211,14 @@
                 </div>
             </div>
         </div>
+
         <!-- MAPA -->
         <div id="mapa"></div>
         <div class="botones">
             <a class="btn btn-outline-primary" role="button" onclick="editarZona()">Editar</a>
             <a class="btn btn-outline-primary" role="button" onclick="guardarZona()">Guardar</a>
         </div>
+
         <!-- SONDAS -->
         <div class="divSensores col-sm-5" id="sensoresCheck">
             <p>Paso 2: Elige las sondas que quiere ver.</p>
@@ -229,15 +235,16 @@
                             <label class="custom-control-label" for="customCheck3">Sonda 3</label></div>-->
             </div>
         </div>
-        <!-- GRAFICA -->
 
+        <!-- GRAFICA -->
         <div id="graph" class="container">
             <canvas id="grafica" width="500" height="400" class="chartjs-render-monitor"></canvas>
-
         </div>
 
     </div>
 
+
+    <!-- SCRIPT MAPA -->
     <script>
         var mapa;
 
@@ -321,7 +328,6 @@
 
                 
         function editarZona() {             // pasa de editable a no editable y viceversa
-                        
             zona.poligono.setEditable(!zona.poligono.getEditable());        
         }
 
@@ -333,8 +339,6 @@
             datosParaEnviar.id = zona.id;            
             datosParaEnviar.nombre = zona.nombre;            
             datosParaEnviar.vertices = zona.poligono.getPath().toArray();
-
-                        
             console.log(datosParaEnviar)        
         }
 
@@ -351,14 +355,11 @@
     <button type="button" class="btn btn-primary botonEnviar" onclick="visualizarGrafica()" id="boton-siguiente" hidden>Siguiente</button>
 
     <footer class="footer" role="contentinfo">
-        <span>Copyright © 2018 Cultisense <br>Todos los derechos reservados | Términos de uso</span>
-
-
+        <span>Copyright © 2018 Cultisense<br>Todos los derechos reservados | Términos de uso</span>
         <div>
             <img src="images/logo_facebook.svg" alt="logoFacebook">
             <img src="images/logo_twitter.svg" alt="logoTwitter">
         </div>
-
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
