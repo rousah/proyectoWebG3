@@ -27,7 +27,8 @@ function loadSensores() {
                     lng: parseFloat(item.lng)
                 }),
                 map:      mapa,
-                label:    item.id
+                label:    item.id,
+                icon: '../images/logo_marker.png'
             });
             var infowindow = new google.maps.InfoWindow({
                 content: 'Última lectura<br><i class="fa fa-tint"></i> <a href="javascript:showSensorHumData(' +
