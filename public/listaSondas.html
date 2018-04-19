@@ -80,8 +80,7 @@
 
     .divSensores,
     .divZonas {
-        margin: 0.5rem 0.5rem;
-        padding: 0.2rem;
+        margin: 0.5rem;
         border: 1px solid #eee;
         border-radius: 10px;
         display: flex;
@@ -132,12 +131,10 @@
         }
     }
 
-    /* ---------------- MAPA ------------------*/
-
     .botones {
         display: flex;
-        flex-direction: column;
-        align-self: flex-start;
+        flex-direction: row;
+        align-self: center;
         /*align-items: stretch;*/
         align-content: stretch;
     }
@@ -146,40 +143,10 @@
         margin: 0.3rem;
     }
 
-    .parteDelMapa {
-        padding: 1rem;
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        align-items: stretch;
-    }
-
-    .divSensores,
-    .divZonas {
-        margin: 0.5rem auto;
-    }
-
     #mapa {
-        margin: auto 1rem;
-        width: 450px;
-        height: 700px;
+        width: inherit;
+        height: 400px;
         border: solid 1px #ccc;
-    }
-
-    @media (max-width: 767.98px) {
-        #mapa {
-            margin: 1rem;
-            order: 1;
-            height: 400px;
-        }
-
-        .botones {
-            order: 2;
-        }
-
-        .divZonas {
-            order: 0;
-        }
     }
 
 </style>
@@ -203,12 +170,6 @@
                         <a class="nav-link itemsMenu" href="#">Home<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="listaSondas.html">Gráficas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Mapa</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#">Alertas</a>
                     </li>
                     <li class="nav-item">
@@ -217,6 +178,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="mis-datos.html">Perfil</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mis-datos.html">Cerrar sesión</a>
+                    </li>
                 </ul>
 
             </div>
@@ -224,37 +188,36 @@
 
     </header>
 
-    <!------------------ MAPA --------------------->
-
     <div class="container">
-
-        <div class="parteDelMapa">
-            <div class="botones">
-                <a class="btn btn-outline-primary" role="button" onclick="editarZona()">Editar</a>
-                <a class="btn btn-outline-primary" role="button" onclick="guardarZona()">Guardar</a>
-                <!-- ZONAS -->
-                <div class="divZonas col-sm-5" id="zonasCheck">
-                    <p>Paso 1: Elige la zona que quiere ver.</p>
-                    <div class="checkZonas">
-                        <div class="custom-control custom-radio zona1">
-                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio1">Zona 1</label>
-                        </div>
-                        <div class="custom-control custom-radio zona2">
-                            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio2">Zona 2</label>
-                        </div>
-                        <div class="custom-control custom-radio zona3">
-                            <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio3">Zona 3</label>
-                        </div>
-                    </div>
+        <!-- ZONAS -->
+        <div class="divZonas col-sm-5 d-lg-table-row" id="zonasCheck">
+            <p>Paso 1: Elige la zona que quiere ver.</p>
+            <div class="checkZonas">
+                <div class="custom-control custom-radio zona1">
+                    <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadio1">Zona 1</label>
                 </div>
-                <!-- SONDAS -->
-                <div class="divSensores col-sm-5" id="sensoresCheck">
-                    <p>Paso 2: Elige las sondas que quiere ver.</p>
-                    <div class="checkSondas" id="sensores-list">
-                        <!--<div class="custom-control custom-checkbox sens1">
+                <div class="custom-control custom-radio zona2">
+                    <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadio2">Zona 2</label>
+                </div>
+                <div class="custom-control custom-radio zona3">
+                    <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadio3">Zona 3</label>
+                </div>
+            </div>
+        </div>
+        <!-- MAPA -->
+        <div id="mapa"></div>
+        <div class="botones">
+            <a class="btn btn-outline-primary" role="button" onclick="editarZona()">Editar</a>
+            <a class="btn btn-outline-primary" role="button" onclick="guardarZona()">Guardar</a>
+        </div>
+        <!-- SONDAS -->
+        <div class="divSensores col-sm-5" id="sensoresCheck">
+            <p>Paso 2: Elige las sondas que quiere ver.</p>
+            <div class="checkSondas" id="sensores-list">
+                <!--<div class="custom-control custom-checkbox sens1">
                             <input type="checkbox" class="custom-control-input" id="customCheck1">
                             <label class="custom-control-label" for="customCheck1">Sonda 1</label>
                         </div>
@@ -264,131 +227,129 @@
                         <div class="custom-control custom-checkbox sens3">
                             <input type="checkbox" class="custom-control-input" id="customCheck3">
                             <label class="custom-control-label" for="customCheck3">Sonda 3</label></div>-->
-                    </div>
-                </div>
-                <!-- GRAFICA -->
-
-                <div id="graph" class="container">
-                    <canvas id="grafica" width="500" height="400" class="chartjs-render-monitor"></canvas>
-
-                </div>
             </div>
-            <div id="mapa"></div>
+        </div>
+        <!-- GRAFICA -->
+
+        <div id="graph" class="container">
+            <canvas id="grafica" width="500" height="400" class="chartjs-render-monitor"></canvas>
+
         </div>
 
+    </div>
 
-        <script>
-            var mapa;
+    <script>
+        var mapa;
 
-                    
-            var zona;
+                
+        var zona;
 
-                    
-            function initMap() {             // pasamos como primer parámetro el mapa (con el id)
-                             // y como segundo parámetro las opciones del mapa en forma de objeto:
-                             // zoom es el valor de zoom del mapa
-                             // center es un objeto con los valores de latitud y longitud donde tiene q tener el centro al cargarlo
-                             // streetViewControl false para quitar el muñequito de street view
-                            
-                mapa = new google.maps.Map(                document.getElementById('mapa'), {                    
-                    zoom: 16,
-                                        center: {                        
-                        lat: 38.9922807,
-                                                lng: -0.1735785                    
-                    },
-                                        streetViewControl: false                
-                });
+                
+        function initMap() {             // pasamos como primer parámetro el mapa (con el id)
+                         // y como segundo parámetro las opciones del mapa en forma de objeto:
+                         // zoom es el valor de zoom del mapa
+                         // center es un objeto con los valores de latitud y longitud donde tiene q tener el centro al cargarlo
+                         // streetViewControl false para quitar el muñequito de street view
+                        
+            mapa = new google.maps.Map(                document.getElementById('mapa'), {                    
+                zoom: 16,
+                                    center: {                        
+                    lat: 38.9922807,
+                                            lng: -0.1735785                    
+                },
+                                    streetViewControl: false                
+            });
 
-                             // especificar el tipo de mapa (tmb se podria especificar en las opciones en mapa = ....)
-                            
-                mapa.setMapTypeId('satellite');
+                         // especificar el tipo de mapa (tmb se podria especificar en las opciones en mapa = ....)
+                        
+            mapa.setMapTypeId('satellite');
 
-                            
-                cargarZonas();        
-            }
+                        
+            cargarZonas();        
+        }
 
-                     // creamos esta función para poder recargar las zonas sin tener que volver a crear el mapa
-                     // con fetch obtenemos las coordenadas de las zonas
-                     // los pasamos a json
-                     // creamos las zonas con Polygon() de google maps, recibe un objeto con los paths 
-                    
-            function cargarZonas() {            
-                fetch('http://dapasa.webs.upv.es/proyectoGTI1b/api/getZona.php').then(function(respuesta) {                 //console.log(respuesta);
-                                    
-                    return respuesta.json();            
-                }).then(function(datos) {                
-                    console.log(datos[0]);
+                 // creamos esta función para poder recargar las zonas sin tener que volver a crear el mapa
+                 // con fetch obtenemos las coordenadas de las zonas
+                 // los pasamos a json
+                 // creamos las zonas con Polygon() de google maps, recibe un objeto con los paths 
+                
+        function cargarZonas() {            
+            fetch('http://dapasa.webs.upv.es/proyectoGTI1b/api/getZona.php').then(function(respuesta) {                 //console.log(respuesta);
+                                
+                return respuesta.json();            
+            }).then(function(datos) {                
+                console.log(datos[0]);
 
-                                     // Especificar los límites del mapa para que quepa todo
-                                    
-                    var limites = new google.maps.LatLngBounds()
+                                 // Especificar los límites del mapa para que quepa todo
+                                
+                var limites = new google.maps.LatLngBounds()
 
-                                     // Convertimos los valores de los vertices de strings a números
-                                     datos[0].vertices.forEach(function(vertice) {                    
-                        vertice.lat = parseFloat(vertice.lat);                    
-                        vertice.lng = parseFloat(vertice.lng);
+                                 // Convertimos los valores de los vertices de strings a números
+                                 datos[0].vertices.forEach(function(vertice) {                    
+                    vertice.lat = parseFloat(vertice.lat);                    
+                    vertice.lng = parseFloat(vertice.lng);
 
-                                             // Especificamos los límites a los vértices de la zona
-                                            
-                        limites.extend(vertice);                
-                    })
-
-                                     zona = {};
-
-                                    
-                    zona.id = datos[0].id;                
-                    zona.nombre = datos[0].nombre;                
-                    zona.color = datos[0].color;
-
-                                    
-                    zona.poligono = new google.maps.Polygon({                    
-                        paths: datos[0].vertices,
-                                            strokeColor: datos[0].color,
-                                            fillColor: datos[0].color,
-                                            fillOpacity: 0.2                
-                    })
-
-                                     zona.poligono.setMap(mapa);
-
-                                     // Aquí llamamos a fitBounds para que se ajuste a los límites, e indicamos el margen 
-                                    
-                    mapa.fitBounds(limites, 20);            
+                                         // Especificamos los límites a los vértices de la zona
+                                        
+                    limites.extend(vertice);                
                 })
 
-                        
-            }
+                                 zona = {};
+
+                                
+                zona.id = datos[0].id;                
+                zona.nombre = datos[0].nombre;                
+                zona.color = datos[0].color;
+
+                                
+                zona.poligono = new google.maps.Polygon({                    
+                    paths: datos[0].vertices,
+                                        strokeColor: datos[0].color,
+                                        fillColor: datos[0].color,
+                                        fillOpacity: 0.2                
+                })
+
+                                 zona.poligono.setMap(mapa);
+
+                                 // Aquí llamamos a fitBounds para que se ajuste a los límites, e indicamos el margen 
+                                
+                mapa.fitBounds(limites, 20);            
+            })
 
                     
-            function editarZona() {             // pasa de editable a no editable y viceversa
-                            
-                zona.poligono.setEditable(!zona.poligono.getEditable());        
-            }
+        }
 
-                     // FALLA
-                    
-            function guardarZona() {            
-                var datosParaEnviar = {};            
-                datosParaEnviar.color = zona.color;            
-                datosParaEnviar.id = zona.id;            
-                datosParaEnviar.nombre = zona.nombre;            
-                datosParaEnviar.vertices = zona.poligono.getPath().toArray();
+                
+        function editarZona() {             // pasa de editable a no editable y viceversa
+                        
+            zona.poligono.setEditable(!zona.poligono.getEditable());        
+        }
 
-                            
-                console.log(datosParaEnviar)        
-            }
+                 // FALLA
+                
+        function guardarZona() {            
+            var datosParaEnviar = {};            
+            datosParaEnviar.color = zona.color;            
+            datosParaEnviar.id = zona.id;            
+            datosParaEnviar.nombre = zona.nombre;            
+            datosParaEnviar.vertices = zona.poligono.getPath().toArray();
 
-        </script>
+                        
+            console.log(datosParaEnviar)        
+        }
+
+    </script>
 
 
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAb24jHOG5TNONnZFGrHXCfnkoEnhfpKxc&callback=initMap&libraries=visualization">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAb24jHOG5TNONnZFGrHXCfnkoEnhfpKxc&callback=initMap&libraries=visualization">
 
 
-        </script>
+    </script>
 
-        <!-- FINAL MAPA -->
+    <!-- FINAL MAPA -->
 
-        <button type="button" class="btn btn-primary botonEnviar" onclick="visualizarGrafica()" id="boton-siguiente" hidden>Siguiente</button>
-    </div>
+    <button type="button" class="btn btn-primary botonEnviar" onclick="visualizarGrafica()" id="boton-siguiente" hidden>Siguiente</button>
+
     <footer class="footer" role="contentinfo">
         <span>Copyright © 2018 Cultisense <br>Todos los derechos reservados | Términos de uso</span>
 
@@ -401,8 +362,8 @@
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="js/sensor.js"></script>
     <!-- Localization start-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.4/jquery.i18n.js"></script>
