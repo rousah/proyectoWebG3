@@ -1,5 +1,5 @@
 var tempHeatMapData = [];
-var listaSensores   = [];
+var listaSensores = [];
 
 var humHeatMapData = [];
 var humHeatMap;
@@ -11,9 +11,9 @@ const baseURI = 'http://localhost:3000/';
 
 function loadSensores() {
     $.ajax({
-        url:      baseURI + 'user/sensores',
+        url: baseURI + 'user/sensores',
         dataType: "json",
-        headers:  {
+        headers: {
             'token': localStorage.getItem('token'),
         },
     }).done(function (r) {
@@ -22,23 +22,23 @@ function loadSensores() {
 
         listaSensores = r;
         listaSensores.forEach(function (item) {
-            var marker     = new google.maps.Marker({
+            var marker = new google.maps.Marker({
                 position: new google.maps.LatLng({
                     lat: parseFloat(item.lat),
                     lng: parseFloat(item.lng)
                 }),
-                map:      mapa,
-                label:    item.id,
-                icon:     '../images/logo_marker.png'
+                map: mapa,
+                label: item.id,
+                icon: '../images/logo_marker.png'
             });
             var infowindow = new google.maps.InfoWindow({
                 content: 'Última lectura<br><i class="fa fa-tint"></i> <a href="javascript:showSensorHumData(' +
-                         item.id + ')">Humedad</a>: ' + parseFloat(item.data[0].humedad) +
-                         '%<br><i class="fa fa-thermometer"></i> <a href="javascript:showSensorTempData(' + item.id +
-                         ')">Temperatura</a>: ' + parseFloat(item.data[0].temperatura) + 'º'
+                    item.id + ')">Humedad</a>: ' + parseFloat(item.data[0].humedad) +
+                    '%<br><i class="fa fa-thermometer"></i> <a href="javascript:showSensorTempData(' + item.id +
+                    ')">Temperatura</a>: ' + parseFloat(item.data[0].temperatura) + 'º'
             });
             infowindow.addListener('closeclick', function () {
-                currentInfoWindow   = null;
+                currentInfoWindow = null;
                 chart.data.datasets = [];
                 chart.update();
             });
@@ -46,7 +46,7 @@ function loadSensores() {
             marker.addListener('click', function () {
                 if (currentInfoWindow != null) currentInfoWindow.close();
                 infowindow.open(mapa, marker);
-                currentInfoWindow   = infowindow;
+                currentInfoWindow = infowindow;
                 chart.data.datasets = [];
                 chart.update();
             });
@@ -56,17 +56,17 @@ function loadSensores() {
 
             tempHeatMapData.push({
                 location: marker.position,
-                weight:   item.data[0].temperatura
+                weight: item.data[0].temperatura
             });
 
             humHeatMapData.push({
                 location: marker.position,
-                weight:   item.data[0].humedad
+                weight: item.data[0].humedad
             });
 
             var str = sensorTemplate.replace('{lat}', item.lat);
-            str     = str.replace('{lng}', item.lng);
-            str     = str.replace(/{id}/g, item.id);
+            str = str.replace('{lng}', item.lng);
+            str = str.replace(/{id}/g, item.id);
 
             $('#sensores-list').append(str);
 
@@ -76,16 +76,16 @@ function loadSensores() {
         mapa.fitBounds(bounds);
 
         tempHeatMap = new google.maps.visualization.HeatmapLayer({
-            data:         tempHeatMapData,
-            radius:       40,
+            data: tempHeatMapData,
+            radius: 40,
             maxIntensity: 50
         });
 
         humHeatMap = new google.maps.visualization.HeatmapLayer({
-            data:         humHeatMapData,
-            radius:       40,
+            data: humHeatMapData,
+            radius: 40,
             maxIntensity: 100,
-            gradient:     [
+            gradient: [
                 'rgba(0,255,255,0)',
                 'rgba(0,255,255,1)',
                 'rgba(0,0,255,1)'
@@ -109,9 +109,10 @@ function showSensorTempData(id) {
     listaSensores.forEach(function (item) {
         if (item.id == id) {
             dataset = {
-                label:           "Temp. sen. " + id, data: [],
+                label: "Temp. sen. " + id,
+                data: [],
                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                borderColor:     'rgb(255,99,132)'
+                borderColor: 'rgb(255,99,132)'
             }
 
             item.data.forEach(function (d) {
@@ -139,9 +140,10 @@ function showSensorHumData(id) {
         if (item.id == id) {
             //item.marker
             dataset = {
-                label:           "Hum. sen. " + id, data: [],
+                label: "Hum. sen. " + id,
+                data: [],
                 backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                borderColor:     'rgb(54, 162, 235)'
+                borderColor: 'rgb(54, 162, 235)'
             }
 
             item.data.forEach(function (d) {
@@ -162,19 +164,19 @@ function showSensorHumData(id) {
 }
 
 
-var ctx        = window.document.getElementById('grafica').getContext('2d');
+var ctx = window.document.getElementById('grafica').getContext('2d');
 var timeFormat = 'YYYY-MM-DD HH:mm:ss';
-var chart      = new Chart(ctx, {
-    type:    'line',
+var chart = new Chart(ctx, {
+    type: 'line',
     options: {
-        responsive:          true,
+        responsive: true,
         maintainAspectRatio: false,
-        scales:              {
+        scales: {
             xAxes: [
                 {
                     type: "time",
                     time: {
-                        parser:        timeFormat,
+                        parser: timeFormat,
                         // round: 'day'
                         tooltipFormat: 'll HH:mm'
                     }
