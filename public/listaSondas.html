@@ -20,7 +20,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/locale/es.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-    <script src="js/grafica.js"></script>
+    <!--<script src="js/grafica.js"></script>-->
 </head>
 
 <style>
@@ -253,8 +253,8 @@
                 <!-- SONDAS -->
                 <div class="divSensores col-sm-5" id="sensoresCheck">
                     <p>Paso 2: Elige las sondas que quiere ver.</p>
-                    <div class="checkSondas">
-                        <div class="custom-control custom-checkbox sens1">
+                    <div class="checkSondas" id="sensores-list">
+                        <!--<div class="custom-control custom-checkbox sens1">
                             <input type="checkbox" class="custom-control-input" id="customCheck1">
                             <label class="custom-control-label" for="customCheck1">Sonda 1</label>
                         </div>
@@ -263,7 +263,7 @@
                             <label class="custom-control-label" for="customCheck2">Sonda 2</label></div>
                         <div class="custom-control custom-checkbox sens3">
                             <input type="checkbox" class="custom-control-input" id="customCheck3">
-                            <label class="custom-control-label" for="customCheck3">Sonda 3</label></div>
+                            <label class="custom-control-label" for="customCheck3">Sonda 3</label></div>-->
                     </div>
                 </div>
                 <!-- GRAFICA -->
@@ -380,7 +380,7 @@
         </script>
 
 
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAb24jHOG5TNONnZFGrHXCfnkoEnhfpKxc&callback=initMap">
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAb24jHOG5TNONnZFGrHXCfnkoEnhfpKxc&callback=initMap&libraries=visualization">
 
 
         </script>
@@ -399,9 +399,11 @@
         </div>
 
     </footer>
+
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
+    <script src="js/sensor.js"></script>
     <!-- Localization start-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.4/jquery.i18n.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.4/jquery.i18n.messagestore.js"></script>

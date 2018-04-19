@@ -3,7 +3,8 @@ const sqlite3   = require('sqlite3');
 const crypto    = require('crypto');
 const moment    = require('moment');
 const Sequelize = require('sequelize');
-var bodyParser  = require('body-parser')
+const Moment    = require('moment');
+var bodyParser  = require('body-parser');
 
 var email = require('./helper/mail');
 
@@ -25,8 +26,11 @@ app.use(bodyParser.json());
 
 function setup() {
 
+    User.hasOne(Token);
     Token.belongsTo(User);
+    User.hasMany(Sensor);
     Sensor.belongsTo(User);
+    Sensor.hasMany(Dato, {as: 'data'});
     Dato.belongsTo(Sensor);
     sequelize.sync().then(() => {
         bcrypt.hash('123456', saltRounds).then(function (hash) {
@@ -60,8 +64,8 @@ function setup() {
                             mac: '56:8F:AD:34:F6:50:00'
                         },
                         defaults: {
-                            lng:    '-0.4323981045',
-                            lat:    '32.89894354',
+                            lng:    '-0.17816305161',
+                            lat:    '38.99522308750',
                             userId: 1,
                         }
                     })
@@ -72,8 +76,8 @@ function setup() {
                                       mac: '57:8F:AD:34:F6:50:00'
                                   },
                                   defaults: {
-                                      lng:    '-0.5323981045',
-                                      lat:    '32.99894354',
+                                      lng:    '-0.17717599869',
+                                      lat:    '38.99352202642',
                                       userId: 1,
                                   }
                               })
@@ -84,28 +88,38 @@ function setup() {
                                                 mac: '58:8F:AD:34:F6:50:00'
                                             },
                                             defaults: {
-                                                lng:    '-0.6323981045',
-                                                lat:    '32.79894354',
+                                                lng:    '-0.17204761505',
+                                                lat:    '38.99405569704',
                                                 userId: 1,
                                             }
                                         })
                                               .spread((sensor, created) => {
-                                                  console.log(sensor.get({
-                                                      plain: true
-                                                  }));
-                                                  console.log(created);
+                                                Dato.find().then((data) => { if(data === null) {
+
+                                                    for (i = 1; i < 4; i++) {
+                                                        date = new Moment();
+                                                        for (j = 1; j < 20; j++) {
+                                                            Dato.create({
+                                                                temperatura: Math.floor(Math.random() * (
+                                                                                        30 - 10 + 1
+                                                                ) + 10),
+                                                                humedad:     Math.floor(Math.random() * (
+                                                                                        95 - 60 + 1
+                                                                ) + 60),
+                                                                tiempo:      date.add(1, 'hours').toDate(),
+                                                                sensorId:    i
+                                                            });
+                                                        }
+                                                    }
+                                                }})
+
+
                                               });
                                     });
 
                           });
                 });
-            Dato.create({temperatura: 33, humedad: 89, tiempo: new Date(), sensorId: 1}).then(dato => {
-                Dato.create({temperatura: 34, humedad: 79, tiempo: new Date(), sensorId: 1}).then(dato => {
-                    Dato.create({temperatura: 35, humedad: 99, tiempo: new Date(), sensorId: 1}).then(dato => {
-                        console.log('dato created');
-                    });
-                });
-            });
+
         });
     });
 }
@@ -240,10 +254,31 @@ function procesar_sensores(req, res) {
 
             let user = token.user;
 
-            Sensor.findAll({where: {userId: user.id}}).then(sensores => {
-                return res.send(sensores);
-            });
+            Sensor.findAll({
+                where: {userId: user.id},
+                include: [
+                    {model: Dato, as: 'data'}
+                ],
+                order: [[{model:Dato, as: 'data'}, 'tiempo']]
+            }).then(sensores => {
 
+                /*let datos = sensores.map((sensor) => {
+                    return new Promise((resolve) => {
+                        Dato.findAll({where: {sensorId: sensor.id}}).then(datos => {
+                            console.log(datos.length);
+                            sensor.datos = datos;
+                            //console.log(sensor.datos);
+                            console.log('done1');
+                            resolve();
+                        })
+                    });
+                });
+                Promise.all(datos).then(() => {
+                    console.log(sensores);
+                    console.log('done2');*/
+                return res.send(sensores);
+                // });
+            });
         }
         else {
             return res.status(404).send({

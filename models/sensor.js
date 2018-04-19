@@ -7,7 +7,6 @@ module.exports = (sequelize, DataTypes) => {
 
     sensor.prototype.toJSON = function () {
         let values = Object.assign({}, this.get());
-        delete values.id;
         delete values.createdAt;
         delete values.updatedAt;
         delete values.userId;
