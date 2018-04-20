@@ -22,6 +22,13 @@ function loadSensores() {
 
         listaSensores = r;
         listaSensores.forEach(function (item) {
+            var icon = {
+                url: "../images/pin_mapa.svg", // url
+                scaledSize: new google.maps.Size(50, 50), // scaled size
+                origin: new google.maps.Point(0, 0), // origin
+                anchor: new google.maps.Point(0, 0) // anchor
+            };
+
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng({
                     lat: parseFloat(item.lat),
@@ -29,12 +36,15 @@ function loadSensores() {
                 }),
                 map: mapa,
                 label: item.id,
-                icon: '../images/logo_marker.png'
+                icon: icon,
+                icon: new google.maps.MarkerImage('../images/pin_mapa.png',
+                    null, null, null, new google.maps.Size(35, 35)),
             });
+
             var infowindow = new google.maps.InfoWindow({
-                content: 'Última lectura<br><i class="fa fa-tint"></i> <a href="javascript:showSensorHumData(' +
+                content: 'Última lectura<br><i class="fas fa-tint"></i> <a href="javascript:showSensorHumData(' +
                     item.id + ')">Humedad</a>: ' + parseFloat(item.data[0].humedad) +
-                    '%<br><i class="fa fa-thermometer"></i> <a href="javascript:showSensorTempData(' + item.id +
+                    '%<br><i class="fas fa-thermometer-three-quarters"></i> <a href="javascript:showSensorTempData(' + item.id +
                     ')">Temperatura</a>: ' + parseFloat(item.data[0].temperatura) + 'º'
             });
             infowindow.addListener('closeclick', function () {

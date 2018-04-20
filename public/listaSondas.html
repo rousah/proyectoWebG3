@@ -266,13 +266,10 @@
             // especificar el tipo de mapa (tmb se podria especificar en las opciones en mapa = ....)
 
             mapa.setMapTypeId('satellite');
-
-
         }
 
 
         function editarZona() {             // pasa de editable a no editable y viceversa
-
             zona.poligono.setEditable(!zona.poligono.getEditable());
         }
 
@@ -284,7 +281,6 @@
             datosParaEnviar.id = zona.id;
             datosParaEnviar.nombre = zona.nombre;
             datosParaEnviar.vertices = zona.poligono.getPath().toArray();
-
 
             console.log(datosParaEnviar)
         }
