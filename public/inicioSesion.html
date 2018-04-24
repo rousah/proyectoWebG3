@@ -53,6 +53,16 @@
             justify-content: center;
         }
 
+        .imagenesFooter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #languageMenuButton {
+            margin: 0 0.5rem;
+        }
+
         @media (min-width: 768px) {
             #logoPropio {
                 max-width: 40%;
@@ -100,26 +110,26 @@
             <div style="text-align: center; font-size: 0.7rem; margin: 1rem; justify-content: center;"><a href="index.html"><span>Volver a la página principal</span></a></div>
         </form>
     </div>
-    <div>
-        <div class="dropdown text-center">
-            <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="languageMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Language
-      </button>
-            <div class="dropdown-menu" id="languageMenu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" value="en" data-i18n="english">English</a>
-                <a class="dropdown-item" value="es" data-i18n="spanish">Spanish</a>
-                <a class="dropdown-item" value="ca-es" data-i18n="catalan">Catalan</a>
+
+    <footer class="footer" role="contentinfo" style="height: 65px;">
+        <span>Copyright © 2018 Cultisense</span><br><span> Todos los derechos reservados | Términos de uso</span>
+        <div class="imagenesFooter">
+            <div>
+                <img src="images/logo_facebook.svg" alt="logoFacebook">
+                <img src="images/logo_twitter.svg" alt="logoTwitter">
+            </div>
+            <div class="dropdown text-center">
+                <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="languageMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Language
+                    </button>
+                <div class="dropdown-menu" id="languageMenu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" value="en" data-i18n="english">English</a>
+                    <a class="dropdown-item" value="es" data-i18n="spanish">Spanish</a>
+                    <a class="dropdown-item" value="ca-es" data-i18n="catalan">Catalan</a>
+                </div>
             </div>
         </div>
-    </div>
-    <br><br>
 
-    <footer class="footer" role="contentinfo">
-        <span>Copyright © 2018 Cultisense</span><br><span> Todos los derechos reservados | Términos de uso</span>
-        <div>
-            <img src="images/logo_facebook.svg" alt="logoFacebook">
-            <img src="images/logo_twitter.svg" alt="logoTwitter">
-        </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.2.1.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
