@@ -30,7 +30,8 @@ footer {
 }
 
 footer span {
-    font-family: Montserrat-light;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
     font-size: 0.6rem;
 }
 
