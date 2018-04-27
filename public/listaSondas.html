@@ -74,6 +74,10 @@
         align-items: center;
         padding: 0;
     }
+    
+    p {
+        margin-top: 5px;
+    }
 
     .divSensores,
     .divZonas {
@@ -192,9 +196,9 @@
     <div class="container">
 
         <!-- ZONAS -->
-
+        <div class="divZonas col-sm-5">
         <p>Paso 1: Elige la zona que quiere ver.</p>
-        <div class="divZonas">
+        
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Zonas
@@ -208,11 +212,11 @@
 
         <!-- MAPA -->
         <div id="mapa"></div>
-        <div class="botones">
+      <!--  <div class="botones">
             <a class="btn btn-outline-primary" role="button" onclick="editarZona()">Editar</a>
             <a class="btn btn-outline-primary" role="button" onclick="guardarZona()">Guardar</a>
         </div>
-
+-->
         <!-- SONDAS -->
         <div class="divSensores col-sm-5" id="sensoresCheck">
             <p>Paso 2: Elige las sondas que quiere ver.</p>
