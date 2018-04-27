@@ -87,10 +87,8 @@
         max-width: 100%;
     }
 
-    .checkSondas,
-    .checkZonas {
-        display: flex;
-        flex-direction: row;
+    #bootstrap-overwrite .dropdown-menu {
+        min-width: 0px;
     }
 
     .sens1,
@@ -192,22 +190,19 @@
     </header>
 
     <div class="container">
+
         <!-- ZONAS -->
-        <div class="divZonas col-sm-5" id="zonasCheck">
-            <p>Paso 1: Elige la zona que quiere ver.</p>
-            <div class="checkZonas" id="zonas-list">
-                <!--   <div class="custom-control custom-radio zona1">
-                       <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                       <label class="custom-control-label" for="customRadio1">Zona 1</label>
-                   </div>
-                   <div class="custom-control custom-radio zona2">
-                       <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                       <label class="custom-control-label" for="customRadio2">Zona 2</label>
-                   </div>
-                   <div class="custom-control custom-radio zona3">
-                       <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
-                       <label class="custom-control-label" for="customRadio3">Zona 3</label>
-                   </div> -->
+
+        <p>Paso 1: Elige la zona que quiere ver.</p>
+        <div class="divZonas">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Zonas
+            </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <div id="zonas-list">
+                    </div>
+                </div>
             </div>
         </div>
 
