@@ -74,6 +74,10 @@
         align-items: center;
         padding: 0;
     }
+    
+    p {
+        margin-top: 5px;
+    }
 
     .divSensores,
     .divZonas {
@@ -87,10 +91,8 @@
         max-width: 100%;
     }
 
-    .checkSondas,
-    .checkZonas {
-        display: flex;
-        flex-direction: row;
+    #bootstrap-overwrite .dropdown-menu {
+        min-width: 0px;
     }
 
     .sens1,
@@ -192,32 +194,29 @@
     </header>
 
     <div class="container">
+
         <!-- ZONAS -->
-        <div class="divZonas col-sm-5" id="zonasCheck">
-            <p>Paso 1: Elige la zona que quiere ver.</p>
-            <div class="checkZonas" id="zonas-list">
-                <!--   <div class="custom-control custom-radio zona1">
-                       <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                       <label class="custom-control-label" for="customRadio1">Zona 1</label>
-                   </div>
-                   <div class="custom-control custom-radio zona2">
-                       <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                       <label class="custom-control-label" for="customRadio2">Zona 2</label>
-                   </div>
-                   <div class="custom-control custom-radio zona3">
-                       <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
-                       <label class="custom-control-label" for="customRadio3">Zona 3</label>
-                   </div> -->
+        <div class="divZonas col-sm-5">
+        <p>Paso 1: Elige la zona que quiere ver.</p>
+        
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Zonas
+            </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <div id="zonas-list">
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- MAPA -->
         <div id="mapa"></div>
-        <div class="botones">
+      <!--  <div class="botones">
             <a class="btn btn-outline-primary" role="button" onclick="editarZona()">Editar</a>
             <a class="btn btn-outline-primary" role="button" onclick="guardarZona()">Guardar</a>
         </div>
-
+-->
         <!-- SONDAS -->
         <div class="divSensores col-sm-5" id="sensoresCheck">
             <p>Paso 2: Elige las sondas que quiere ver.</p>
