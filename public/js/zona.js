@@ -65,7 +65,7 @@ function focusZona(id) {
             item.zona.getPath().getArray().forEach(function (v) {
                 bounds.extend(v);
             });
-            map.fitBounds(bounds);
+            mapa.fitBounds(bounds);
         }
     });
 }
