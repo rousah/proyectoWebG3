@@ -7,7 +7,8 @@ var humHeatMap;
 var sensorTemplate = `<button class="btn btn-secondary" style="margin-bottom: 5px; margin-right: 5px" onclick="focusSensor({id})"><i class="fa fa-map-pin"></i> Sensor {id}</button>`;
 
 var currentInfoWindow;
-const baseURI = 'http://localhost:3000/';
+const baseURI = 'http://localhost:3000/'; // local develop
+//const baseURI = 'http://luglo1.upv.edu.es/'; //LIVE
 
 function loadSensores() {
     $.ajax({

@@ -1,4 +1,5 @@
-const baseURI = 'http://localhost:3000/';
+const baseURI = 'http://localhost:3000/'; // local develop
+//const baseURI = 'http://luglo1.upv.edu.es/'; //LIVE
 
 
 $(document).ready(function () {
