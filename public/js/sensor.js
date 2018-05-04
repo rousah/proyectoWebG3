@@ -115,8 +115,9 @@ function focusSensor(id) {
 
 function showSensorTempData(id) {
 
+    $('#graphModalLabel').text("Temperatura sensor " + id);
+    $('#graphModal').modal('show');
     chart.data.datasets = [];
-
     listaSensores.forEach(function (item) {
         if (item.id == id) {
             dataset = {
@@ -124,7 +125,7 @@ function showSensorTempData(id) {
                 data: [],
                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
                 borderColor: 'rgb(255,99,132)'
-            }
+            };
 
             item.data.forEach(function (d) {
                 dataset.data.push({
@@ -145,6 +146,8 @@ function showSensorTempData(id) {
 
 function showSensorHumData(id) {
 
+    $('#graphModalLabel').text("Humedad sensor " + id);
+    $('#graphModal').modal('show');
     chart.data.datasets = [];
 
     listaSensores.forEach(function (item) {
@@ -155,7 +158,7 @@ function showSensorHumData(id) {
                 data: [],
                 backgroundColor: 'rgba(54, 162, 235, 0.2)',
                 borderColor: 'rgb(54, 162, 235)'
-            }
+            };
 
             item.data.forEach(function (d) {
                 dataset.data.push({

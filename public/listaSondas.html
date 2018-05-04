@@ -74,7 +74,7 @@
         align-items: center;
         padding: 0;
     }
-    
+
     p {
         margin-top: 5px;
     }
@@ -114,7 +114,7 @@
 
     @media (max-width: 767.98px) {
         .container {
-            max-width: 90%;
+            /*max-width: 90%;*/
         }
 
         .titulo {
@@ -130,6 +130,11 @@
             font-size: 0.6rem;
         }
     }
+
+    @media (min-width: 576px) {
+        .modal-dialog {
+            max-width: 90%;
+        }
 
     .botones {
 
@@ -152,6 +157,7 @@
 
     #graph {
         margin: 0;
+        min-height: 400px;
     }
 
 </style>
@@ -198,7 +204,7 @@
         <!-- ZONAS -->
         <div class="divZonas col-sm-5">
         <p>Paso 1: Elige la zona que quiere ver.</p>
-        
+
             <div class="dropdown" style="margin-bottom: 1rem">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Zonas
@@ -234,12 +240,32 @@
             </div>
         </div>
 
-        <!-- GRAFICA -->
-        <div id="graph" class="container">
-            <canvas id="grafica" width="500" height="400" class="chartjs-render-monitor"></canvas>
-        </div>
 
     </div>
+
+    <div class="modal fade" id="graphModal" tabindex="-1" role="dialog" aria-labelledby="graphModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="graphModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- GRAFICA -->
+                    <div id="graph" class="container">
+                        <canvas id="grafica" width="500" height="400" class="chartjs-render-monitor"></canvas>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script>
         var mapa;
