@@ -7,6 +7,7 @@
     <meta http-equiv="x-ua-compatible" content="ie-edge">
     <title>CULTISENSE | Sondas</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     <link rel="stylesheet" href="css/botones.css">
     <link rel="stylesheet" href="css/footer.css">
@@ -31,7 +32,7 @@
     }
 
     body {
-        font-family: Montserrat;
+        font-family: 'Montserrat', sans-serif;
     }
 
     .navbar {
@@ -40,7 +41,7 @@
 
     .titulo {
         color: #55c5ff;
-        font-family: Montserrat-Bold;
+        font-weight: 700;
         margin-bottom: 0;
         display: none;
     }
@@ -58,14 +59,24 @@
             max-width: 90%;
         }
 
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .titulo {
+            display: block;
+        }
+
+        .navbar-collapse {
+            background-color: #55c5ff;
+            padding: 0.5rem 1rem;
+        }
+
         footer span {
             font-size: 0.6rem;
         }
     }
 
-    body {
-        font-family: Montserrat;
-    }
 
     .container {
         max-width: 100%;
@@ -74,14 +85,13 @@
         align-items: center;
         padding: 0;
     }
-    
+
     p {
         margin-top: 5px;
     }
 
     .divSensores,
     .divZonas {
-
         margin: 0.5rem;
         border: 1px solid #eee;
         border-radius: 10px;
@@ -112,27 +122,7 @@
         display: block;
     }
 
-    @media (max-width: 767.98px) {
-        .container {
-            max-width: 90%;
-        }
-
-        .titulo {
-            display: block;
-        }
-
-        .navbar-collapse {
-            background-color: #55c5ff;
-            padding: 0.5rem 1rem;
-        }
-
-        footer span {
-            font-size: 0.6rem;
-        }
-    }
-
     .botones {
-
         display: flex;
         flex-direction: row;
         align-self: center;
@@ -197,8 +187,8 @@
 
         <!-- ZONAS -->
         <div class="divZonas col-sm-5">
-        <p>Paso 1: Elige la zona que quiere ver.</p>
-        
+            <p>Paso 1: Elige la zona que quiere ver.</p>
+
             <div class="dropdown" style="margin-bottom: 1rem">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Zonas
@@ -212,7 +202,7 @@
 
         <!-- MAPA -->
         <div id="mapa"></div>
-      <!--  <div class="botones">
+        <!--  <div class="botones">
             <a class="btn btn-outline-primary" role="button" onclick="editarZona()">Editar</a>
             <a class="btn btn-outline-primary" role="button" onclick="guardarZona()">Guardar</a>
         </div>
