@@ -7,8 +7,8 @@
     <meta http-equiv="x-ua-compatible" content="ie-edge">
     <title>CULTISENSE | Sondas</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/botones.css">
     <link rel="stylesheet" href="css/footer.css">
 
@@ -51,39 +51,11 @@
     }
 
     .container {
-        max-width: 40%;
-    }
-
-    @media (max-width: 767.98px) {
-        body {
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .titulo {
-            display: block;
-        }
-
-        .navbar-collapse {
-            background-color: #55c5ff;
-            padding: 0.5rem 1rem;
-        }
-
-        footer span {
-            font-size: 0.6rem;
-        }
-    }
-
-
-    .container {
         max-width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 0;
-    }
-
-    p {
-        margin-top: 5px;
     }
 
     .divSensores,
@@ -92,22 +64,34 @@
         border: 1px solid #eee;
         border-radius: 10px;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: center;
         align-items: center;
         max-width: 100%;
+    }
+
+    .divSensores p,
+    .divZonas p {
+        margin-bottom: 0.5rem;
+    }
+
+    .dropZonas,
+    .pasoZonas,
+    .pasoSondas,
+    .dropSondas {
+        margin: 0.5rem;
     }
 
     #bootstrap-overwrite .dropdown-menu {
         min-width: 0px;
     }
 
-    .sens1,
-    .sens2,
-    .sens3,
-    .zona1,
-    .zona2,
-    .zona3 {
-        margin: 0 0.5rem 0 0.5rem;
+    #sensores-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
     }
 
     .botonEnviar {
@@ -117,13 +101,6 @@
     .canvas {
         display: block;
     }
-
-    @media (min-width: 576px) {
-        .modal-dialog {
-            max-width: 90%;
-        }
-    }
-
 
     .botones {
         display: flex;
@@ -146,6 +123,27 @@
     #graph {
         margin: 0;
         min-height: 400px;
+    }
+
+    @media (max-width: 767.98px) {
+        .titulo {
+            display: block;
+        }
+
+        .navbar-collapse {
+            background-color: #55c5ff;
+            padding: 0.5rem 1rem;
+        }
+
+        footer span {
+            font-size: 0.6rem;
+        }
+    }
+
+    @media (min-width: 576px) {
+        .modal-dialog {
+            max-width: 90%;
+        }
     }
 
 </style>
@@ -191,13 +189,11 @@
 
         <!-- ZONAS -->
         <div class="divZonas col-sm-5">
-            <p>Paso 1: Elige la zona que quiere ver.</p>
-
-
-            <div class="dropdown" style="margin-bottom: 1rem">
+            <p class="pasoZonas">Paso 1: Elige la zona que quiere ver.</p>
+            <div class="dropdown dropZonas">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Zonas
-            </button>
+                    Zonas
+                </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                     <div id="zonas-list">
                     </div>
@@ -214,27 +210,27 @@
 -->
         <!-- SONDAS -->
         <div class="divSensores col-sm-5" id="sensoresCheck">
-            <p>Paso 2: Elige las sondas que quiere ver.</p>
-            <div class="checkSondas" id="sensores-list">
-                <!--<div class="custom-control custom-checkbox sens1">
-                            <input type="checkbox" class="custom-control-input" id="customCheck1">
-                            <label class="custom-control-label" for="customCheck1">Sonda 1</label>
-                        </div>
-                        <div class="custom-control custom-checkbox sens2">
-                            <input type="checkbox" class="custom-control-input" id="customCheck2">
-                            <label class="custom-control-label" for="customCheck2">Sonda 2</label></div>
-                        <div class="custom-control custom-checkbox sens3">
-                            <input type="checkbox" class="custom-control-input" id="customCheck3">
-                            <label class="custom-control-label" for="customCheck3">Sonda 3</label></div>-->
+            <p class="pasoSondas">Paso 2: Elige las sondas que quiere ver.</p>
+            <div class="dropdown dropSondas">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Sondas
+                </button>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu3">
+                    <div id="sensores-list">
+                    </div>
+                </div>
             </div>
+
+
         </div>
+    </div>
 
 
     </div>
 
-    <div class="modal fade" id="graphModal" tabindex="-1" role="dialog" aria-labelledby="graphModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog" role="document">
+    <div class="modal fade" id="graphModal" tabindex="-1" role="dialog" aria-labelledby="graphModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="graphModalLabel">Modal title</h5>

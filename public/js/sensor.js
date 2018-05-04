@@ -4,7 +4,7 @@ var listaSensores = [];
 var humHeatMapData = [];
 var humHeatMap;
 
-var sensorTemplate = `<button class="btn btn-secondary" style="margin-bottom: 5px; margin-right: 5px" onclick="focusSensor({id})"><i class="fa fa-map-pin"></i> Sensor {id}</button>`;
+var sensorTemplate = `<button class="btn btn-secondary" style="margin: 5px" onclick="focusSensor({id})"><i class="fa fa-map-pin"></i> Sonda {id}</button>`;
 
 var currentInfoWindow;
 const baseURI = 'http://localhost:3000/'; // local develop
@@ -43,10 +43,10 @@ function loadSensores() {
             });
 
             var infowindow = new google.maps.InfoWindow({
-                content: 'Última lectura<br><i class="fas fa-tint"></i> <a href="javascript:showSensorHumData(' +
-                    item.id + ')">Humedad</a>: ' + parseFloat(item.data[0].humedad) +
-                    '%<br><i class="fas fa-thermometer-three-quarters"></i> <a href="javascript:showSensorTempData(' + item.id +
-                    ')">Temperatura</a>: ' + parseFloat(item.data[0].temperatura) + 'º'
+                content: '<p class="text-center font-weight-bold" style="margin-bottom:0;">Última lectura<br><a href="javascript:showSensorHumData(' +
+                    item.id + ')"><i class="fas fa-tint"></i> </a>' + parseFloat(item.data[0].humedad) +
+                    '%<br><a href="javascript:showSensorTempData(' + item.id +
+                    ')"><i class="fas fa-thermometer-three-quarters"></i> </a>' + parseFloat(item.data[0].temperatura) + 'º </p>'
             });
             infowindow.addListener('closeclick', function () {
                 currentInfoWindow = null;
@@ -115,7 +115,7 @@ function focusSensor(id) {
 
 function showSensorTempData(id) {
 
-    $('#graphModalLabel').text("Temperatura sensor " + id);
+    $('#graphModalLabel').text("Temperatura sonda " + id);
     $('#graphModal').modal('show');
     chart.data.datasets = [];
     listaSensores.forEach(function (item) {
@@ -146,7 +146,7 @@ function showSensorTempData(id) {
 
 function showSensorHumData(id) {
 
-    $('#graphModalLabel').text("Humedad sensor " + id);
+    $('#graphModalLabel').text("Humedad sonda " + id);
     $('#graphModal').modal('show');
     chart.data.datasets = [];
 
