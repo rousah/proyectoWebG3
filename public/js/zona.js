@@ -10,11 +10,25 @@ var botonZonaTemplate = `<div class="btn-group btn-group-sm" role="group" style=
 var listaZonas = [];
 
 // Cargar el listado de zonas
-function loadZonas() {
+function loadAlerts() {
     $.ajax({
-        url:      baseURI + 'user/zonas',
+        url: baseURI + 'user/alertas',
         dataType: "json",
-        headers:  {
+        headers: {
+            'token': localStorage.getItem('token'),
+        },
+    }).done(function (data) {
+        console.log(data);
+    });
+
+}
+
+function loadZonas() {
+
+    $.ajax({
+        url: baseURI + 'user/zonas',
+        dataType: "json",
+        headers: {
             'token': localStorage.getItem('token'),
         },
     }).done(function (r) {
@@ -25,36 +39,41 @@ function loadZonas() {
                 vert.lng = parseFloat(vert.lng);
             });
             var zona = new google.maps.Polygon({
-                paths:         item.vertices,
-                strokeColor:   item.color,
+                paths: item.vertices,
+                strokeColor: item.color,
                 strokeOpacity: 0.8,
-                strokeWeight:  3,
-                fillColor:     item.color,
-                fillOpacity:   0.35,
-                editable:      false,
-                visible:       false
+                strokeWeight: 3,
+                fillColor: item.color,
+                fillOpacity: 0.35,
+                editable: false,
+                visible: false
             });
             zona.setMap(mapa);
             item.zona = zona;
 
             var str = botonZonaTemplate.replace('{Nombre de la zona}', item.name);
-            str     = str.replace(/{id}/g, item.id);
+            str = str.replace(/{id}/g, item.id);
 
             var c = "background-color: rgba(" + parseInt(item.color.substr(1, 2), 16) + "," +
-                    parseInt(item.color.substr(3, 2), 16) + "," + parseInt(item.color.substr(5, 2), 16) + ",0.35)";
-            str   = str.replace('{bgcolor}', c);
+                parseInt(item.color.substr(3, 2), 16) + "," + parseInt(item.color.substr(5, 2), 16) + ",0.35)";
+            str = str.replace('{bgcolor}', c);
 
             item.control = $.parseHTML(str)[0];
 
             $('#zonas-list').append(item.control);
 
         });
-        if (listaSensores.length == 0) {
-            loadSensores();
-        }
-        else {
-            $("#mask").addClass("d-none");
-        }
+        
+        //TODO CHANGE THIS TO LOAD ONLY SENSORES FROM CURRENT ZONE
+        r.forEach(function (zona) {
+            console.log(zona);
+            //if (listaSensores.length == 0) {
+                loadSensores(zona.sensors);
+            //} else {
+                $("#mask").addClass("d-none");
+            //}
+        });
+        loadAlerts();
     });
 }
 
@@ -79,8 +98,7 @@ function cargarZona(id) {
             if (item.zona.visible) {
                 c.classList.replace("fa-eye-slash", "fa-eye");
                 b.classList.replace("btn-secondary", "btn-light");
-            }
-            else {
+            } else {
                 c.classList.replace("fa-eye", "fa-eye-slash");
                 b.classList.replace("btn-light", "btn-secondary");
             }

@@ -10,18 +10,18 @@ var currentInfoWindow;
 const baseURI = 'http://localhost:3000/'; // local develop
 //const baseURI = 'http://luglo1.upv.edu.es/'; //LIVE
 
-function loadSensores() {
-    $.ajax({
+function loadSensores(sensores) {
+    /*$.ajax({
         url: baseURI + 'user/sensores',
         dataType: "json",
         headers: {
             'token': localStorage.getItem('token'),
         },
-    }).done(function (r) {
+    }).done(function (r) {*/
 
         var bounds = new google.maps.LatLngBounds();
 
-        listaSensores = r;
+        listaSensores = sensores;
         listaSensores.forEach(function (item) {
             var icon = {
                 url: "../images/pin_mapa.svg", // url
@@ -102,7 +102,7 @@ function loadSensores() {
                 'rgba(0,0,255,1)'
             ]
         });
-    });
+    //});
 }
 
 function focusSensor(id) {
