@@ -19,6 +19,7 @@ function loadAlerts() {
         },
     }).done(function (data) {
         console.log(data);
+        alert ("¡¡¡¡¡¡¡¡¡¡AVISO!!!!!!!!!!!")
     });
 
 }
