@@ -19,7 +19,12 @@ function loadAlerts() {
         },
     }).done(function (data) {
         console.log(data);
-        alert ("¡¡¡¡¡¡¡¡¡¡AVISO!!!!!!!!!!!")
+        data.forEach(function (item){
+            ultimo = item.sensor.data.length - 1;
+            console.log(item.sensor.data[ultimo].temperatura)
+            alert ( " Sensor " + item.sensor.id + " " + item.alert + " " + item.sensor.data[ultimo].temperatura + " ºC " ) //NO QUE PONER EN EL MENSAJE
+        })
+        
     });
 
 }
