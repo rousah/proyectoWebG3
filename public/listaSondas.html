@@ -57,6 +57,12 @@
         align-items: center;
         padding: 0;
     }
+    
+    .zonasYSondas{
+       max-width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
 
     .divSensores,
     .divZonas {
@@ -74,6 +80,40 @@
     .divZonas p {
         margin-bottom: 0.5rem;
     }
+    
+    /*            zonas y sondas responsive            */
+
+    
+        .pasoZonas {
+            width: 300px;
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .pasoZonas1 {
+            display: none;
+        }
+        
+        .pasoZonas2 {
+            display: none;
+        }
+        
+        .pasoSondas {
+            width: 330px;
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .pasoSondas1 {
+            display: none;
+        }
+        
+        .pasoSondas2 {
+            display: none;
+        }
+    
+    
+    /*          Fin zonas y sondas responsive          */
 
     .dropZonas,
     .pasoZonas,
@@ -116,13 +156,85 @@
 
     #mapa {
         width: inherit;
-        height: 400px;
+        height: 535px;
         border: solid 1px #ccc;
     }
 
     #graph {
         margin: 0;
         min-height: 400px;
+    }
+    
+    @media (max-width: 968px){
+        .pasoZonas {
+            width: 200px;
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .pasoZonas1 {
+            display: none;
+        }
+        
+        .pasoZonas2 {
+            display: none;
+        }
+        
+        .pasoSondas {
+            width: 230px;
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .pasoSondas1 {
+            display: none;
+        }
+        
+        .pasoSondas2 {
+            display: none;
+        }
+        
+        #mapa {
+        width: inherit;
+        height: 524.5px;
+        border: solid 1px #ccc;
+        }
+    }
+    
+    @media (max-width: 828px){
+        .pasoZonas {
+            display: none;
+        }
+        
+        .pasoZonas1 {
+            width: 100px;
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .pasoZonas2 {
+            display: none;
+        }
+        
+        .pasoSondas {
+            display: none;
+        }
+        
+        .pasoSondas1 {
+            width: 100px;
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .pasoSondas2 {
+            display: none;
+        }
+        
+        #mapa {
+        width: inherit;
+        height: 536.5px;
+        border: solid 1px #ccc;
+        }
     }
 
     @media (max-width: 767.98px) {
@@ -144,6 +256,82 @@
         .modal-dialog {
             max-width: 90%;
         }
+    }
+    
+    @media (max-width: 500px){
+        .pasoZonas {
+            display: none;
+        }
+        
+        .pasoZonas1 {
+            display: none;
+        }
+        
+        .pasoZonas2 {
+            width: 55px;
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .pasoSondas {
+            display: none;
+        }
+        
+        .pasoSondas1 {
+            display: none;
+        }
+        
+        .pasoSondas2 {
+            width: 58px;
+            display: flex;
+            flex-direction: row;
+        }    
+    }
+    
+        
+    @media (max-width: 425px) {
+        
+        .divSensores,
+        .divZonas{
+            margin: 0rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            max-width: 100%;    
+        }
+        
+        .pasoZonas {
+            display: none;
+        }
+        
+        .pasoZonas1 {
+            display: none;
+        }
+        
+        .pasoZonas2 {
+            display: none;
+        }
+        
+        .pasoSondas {
+            display: none;
+        }
+        
+        .pasoSondas1 {
+            display: none;
+        }
+        
+        .pasoSondas2 {
+            display: none;
+        }
+        
+        #mapa {
+        width: inherit;
+        height: 551px;
+        border: solid 1px #ccc;
+        }
+        
+        
     }
 
 </style>
@@ -186,10 +374,14 @@
     </header>
 
     <div class="container">
+        
+        <div class="zonasYSondas">
 
         <!-- ZONAS -->
         <div class="divZonas col-sm-5">
             <p class="pasoZonas">Paso 1: Elige la zona que quiere ver.</p>
+            <p class="pasoZonas1" display= "none">Paso 1: Elige</p>
+            <p class="pasoZonas2" display= "none">Paso 1: </p>
             <div class="dropdown dropZonas">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Zonas
@@ -201,16 +393,13 @@
             </div>
         </div>
 
-        <!-- MAPA -->
-        <div id="mapa"></div>
-        <!--  <div class="botones">
-            <a class="btn btn-outline-primary" role="button" onclick="editarZona()">Editar</a>
-            <a class="btn btn-outline-primary" role="button" onclick="guardarZona()">Guardar</a>
-        </div>
--->
+        
+
         <!-- SONDAS -->
         <div class="divSensores col-sm-5" id="sensoresCheck">
             <p class="pasoSondas">Paso 2: Elige las sondas que quiere ver.</p>
+            <p class="pasoSondas1" display= "none">Paso 2: Elige</p>
+            <p class="pasoSondas2" display= "none">Paso 2: </p>
             <div class="dropdown dropSondas">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Sondas
@@ -225,7 +414,8 @@
 
         </div>
     </div>
-
+    
+    
 
     </div>
 
@@ -250,6 +440,14 @@
             </div>
         </div>
     </div>
+    
+    <!-- MAPA -->
+        <div id="mapa"></div>
+        <!--  <div class="botones"> 
+            <a class="btn btn-outline-primary" role="button" onclick="editarZona()">Editar</a>
+            <a class="btn btn-outline-primary" role="button" onclick="guardarZona()">Guardar</a>
+        </div>
+-->
 
 
     <script>
