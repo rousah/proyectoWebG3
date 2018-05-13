@@ -507,21 +507,21 @@ function procesar_alertas(req, res) {
                                 console.log("too high");
                                 alerts.push({
                                     sensor: sensor,
-                                    alert: 'temperatura_maximo'
+                                    alert: 'temperatura_maxima'
                                 })
                             }
                             if (data.temperatura < zona.temp_min) {
                                 console.log("too low");
                                 alerts.push({
                                     sensor: sensor,
-                                    alert: 'temperatura_minimo'
+                                    alert: 'temperatura_minima'
                                 })
                             }
                             if (data.humedad < zona.hume_min) {
                                 console.log("hume");
                                 alerts.push({
                                     sensor: sensor,
-                                    alert: 'humedad_minimo'
+                                    alert: 'humedad_minima'
                                 })
                             }
                         }
