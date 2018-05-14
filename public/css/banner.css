@@ -1,5 +1,5 @@
 header {
-    background-color: #312e2e;
+    background-color: #363A3F;
     color: white;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
@@ -23,7 +23,8 @@ header {
     padding: 2rem 0rem 2rem 0.5rem;
     margin: 0;
 }
-#botonClientes{
+
+#botonClientes {
     width: 30%;
 }
 
