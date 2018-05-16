@@ -65,12 +65,13 @@
         display: flex;
     }
 
-    #myChart {
-        max-width: 50%;
-    }
 
     body div a {
         margin: 0.5rem;
+    }
+
+    .grafica1 {
+        display: block;
     }
 
     .grafica2 {
@@ -170,12 +171,14 @@
                 Cultisense es una <b>herramienta</b> web que ofrece un servicio de seguimiento a las principales características de los productos de la tierra, como la <b>humedad</b>, la <b>temperatura</b>, la <b>iluminación</b> y muchos más, para que resulte más fácil el <b>control</b> diario.
             </p>
             <div class="graficas">
-                <canvas class="my-4" id="myChart" width="900" height="380"></canvas>
+                <div class="grafica1 col-6" width="900" height="380">
+                    <canvas class="my-4" id="myChart" width="900" height="380"></canvas>
+                </div>
                 <div class="grafica2 col-6" width="900" height="380">
                     <canvas class="my-4" id="myChart2" width="900" height="380"></canvas>
                 </div>
             </div>
-            <p>
+            <p style="margin-bottom: 0px">
                 Descarga el pdf para más información:
             </p>
         </div>
