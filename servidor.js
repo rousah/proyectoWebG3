@@ -514,6 +514,7 @@ function procesar_alertas(req, res) {
                             if (data.temperatura > zona.temp_max) {
                                 console.log("too high");
                                 alerts.push({
+                                    zona: zona,
                                     sensor: sensor,
                                     alert: 'temperatura_maxima'
                                 })
@@ -521,6 +522,7 @@ function procesar_alertas(req, res) {
                             if (data.temperatura < zona.temp_min) {
                                 console.log("too low");
                                 alerts.push({
+                                    zona: zona,
                                     sensor: sensor,
                                     alert: 'temperatura_minima'
                                 })
@@ -528,6 +530,7 @@ function procesar_alertas(req, res) {
                             if (data.humedad < zona.hume_min) {
                                 console.log("hume");
                                 alerts.push({
+                                    zona: zona,
                                     sensor: sensor,
                                     alert: 'humedad_minima'
                                 })
@@ -535,7 +538,6 @@ function procesar_alertas(req, res) {
                         }
 
                     })
-
 
                     //data = sensor.data[sensor.data.length];
                     //TODO change this to user.temeperatura_warn 

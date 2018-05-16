@@ -9,26 +9,6 @@ var botonZonaTemplate = `<div class="btn-group btn-group-sm" role="group" style=
 
 var listaZonas = [];
 
-// Cargar el listado de zonas
-function loadAlerts() {
-    $.ajax({
-        url: baseURI + 'user/alertas',
-        dataType: "json",
-        headers: {
-            'token': localStorage.getItem('token'),
-        },
-    }).done(function (data) {
-        console.log(data);
-        data.forEach(function (item){
-            ultimo = item.sensor.data.length - 1;
-            console.log(item.sensor.data[ultimo].temperatura)
-            alert ( " Sensor " + item.sensor.id + " temperatura actual: " + item.sensor.data[ultimo].temperatura + " ºC " ) //NO SE QUE PONER EN EL MENSAJE
-        })
-        
-    });
-
-}
-
 function loadZonas() {
 
     $.ajax({
@@ -79,7 +59,6 @@ function loadZonas() {
                 $("#mask").addClass("d-none");
             //}
         });
-        loadAlerts();
     });
 }
 

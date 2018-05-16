@@ -8,9 +8,11 @@
     <title>CULTISENSE | Sondas</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css"/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/botones.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/navbar-alerts.css">
 
     <!--
         Librería de gráficos
@@ -57,7 +59,7 @@
         align-items: center;
         padding: 0;
     }
-    
+
     .zonasYSondas{
        max-width: 100%;
         display: flex;
@@ -80,39 +82,39 @@
     .divZonas p {
         margin-bottom: 0.5rem;
     }
-    
+
     /*            zonas y sondas responsive            */
 
-    
+
         .pasoZonas {
             width: 300px;
             display: flex;
             flex-direction: row;
         }
-        
+
         .pasoZonas1 {
             display: none;
         }
-        
+
         .pasoZonas2 {
             display: none;
         }
-        
+
         .pasoSondas {
             width: 330px;
             display: flex;
             flex-direction: row;
         }
-        
+
         .pasoSondas1 {
             display: none;
         }
-        
+
         .pasoSondas2 {
             display: none;
         }
-    
-    
+
+
     /*          Fin zonas y sondas responsive          */
 
     .dropZonas,
@@ -122,7 +124,7 @@
         margin: 0.5rem;
     }
 
-    #bootstrap-overwrite .dropdown-menu {
+    #bootstrap-overwrite .dropdown-menu .zona-list .sensor-list{
         min-width: 0px;
     }
 
@@ -164,72 +166,72 @@
         margin: 0;
         min-height: 400px;
     }
-    
+
     @media (max-width: 968px){
         .pasoZonas {
             width: 200px;
             display: flex;
             flex-direction: row;
         }
-        
+
         .pasoZonas1 {
             display: none;
         }
-        
+
         .pasoZonas2 {
             display: none;
         }
-        
+
         .pasoSondas {
             width: 230px;
             display: flex;
             flex-direction: row;
         }
-        
+
         .pasoSondas1 {
             display: none;
         }
-        
+
         .pasoSondas2 {
             display: none;
         }
-        
+
         #mapa {
         width: inherit;
         height: 524.5px;
         border: solid 1px #ccc;
         }
     }
-    
+
     @media (max-width: 828px){
         .pasoZonas {
             display: none;
         }
-        
+
         .pasoZonas1 {
             width: 100px;
             display: flex;
             flex-direction: row;
         }
-        
+
         .pasoZonas2 {
             display: none;
         }
-        
+
         .pasoSondas {
             display: none;
         }
-        
+
         .pasoSondas1 {
             width: 100px;
             display: flex;
             flex-direction: row;
         }
-        
+
         .pasoSondas2 {
             display: none;
         }
-        
+
         #mapa {
         width: inherit;
         height: 536.5px;
@@ -257,40 +259,40 @@
             max-width: 90%;
         }
     }
-    
+
     @media (max-width: 500px){
         .pasoZonas {
             display: none;
         }
-        
+
         .pasoZonas1 {
             display: none;
         }
-        
+
         .pasoZonas2 {
             width: 55px;
             display: flex;
             flex-direction: row;
         }
-        
+
         .pasoSondas {
             display: none;
         }
-        
+
         .pasoSondas1 {
             display: none;
         }
-        
+
         .pasoSondas2 {
             width: 58px;
             display: flex;
             flex-direction: row;
-        }    
+        }
     }
-    
-        
+
+
     @media (max-width: 425px) {
-        
+
         .divSensores,
         .divZonas{
             margin: 0rem;
@@ -298,40 +300,40 @@
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            max-width: 100%;    
+            max-width: 100%;
         }
-        
+
         .pasoZonas {
             display: none;
         }
-        
+
         .pasoZonas1 {
             display: none;
         }
-        
+
         .pasoZonas2 {
             display: none;
         }
-        
+
         .pasoSondas {
             display: none;
         }
-        
+
         .pasoSondas1 {
             display: none;
         }
-        
+
         .pasoSondas2 {
             display: none;
         }
-        
+
         #mapa {
         width: inherit;
         height: 551px;
         border: solid 1px #ccc;
         }
-        
-        
+
+
     }
 
 </style>
@@ -354,8 +356,15 @@
                     <li class="nav-item active">
                         <a class="nav-link itemsMenu" href="#">Home<span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Alertas</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link itemsMenu dropdown-toggle" id="alerts-link" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">Alertas</a>
+                        <ul class="dropdown-menu notify-drop">
+                            <!-- end notify title -->
+                            <!-- notify content -->
+                            <div class="drop-content" id="alert-list">
+                            </div>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Soporte Técnico</a>
@@ -374,7 +383,7 @@
     </header>
 
     <div class="container">
-        
+
         <div class="zonasYSondas">
 
         <!-- ZONAS -->
@@ -386,14 +395,14 @@
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Zonas
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <div class="dropdown-menu zona-list" aria-labelledby="dropdownMenu2">
                     <div id="zonas-list">
                     </div>
                 </div>
             </div>
         </div>
 
-        
+
 
         <!-- SONDAS -->
         <div class="divSensores col-sm-5" id="sensoresCheck">
@@ -405,7 +414,7 @@
                     Sondas
                 </button>
 
-                <div class="dropdown-menu" aria-labelledby="dropdownMenu3">
+                <div class="dropdown-menu sensor-list" aria-labelledby="dropdownMenu3">
                     <div id="sensores-list">
                     </div>
                 </div>
@@ -414,8 +423,8 @@
 
         </div>
     </div>
-    
-    
+
+
 
     </div>
 
@@ -440,10 +449,10 @@
             </div>
         </div>
     </div>
-    
+
     <!-- MAPA -->
         <div id="mapa"></div>
-        <!--  <div class="botones"> 
+        <!--  <div class="botones">
             <a class="btn btn-outline-primary" role="button" onclick="editarZona()">Editar</a>
             <a class="btn btn-outline-primary" role="button" onclick="guardarZona()">Guardar</a>
         </div>
@@ -464,13 +473,13 @@
 
             var latlng = new google.maps.LatLng (39.002249, -0.225464);
             var z = 12;
-            var mapOpciones = 
+            var mapOpciones =
                 {
                 zoom: 12,
                 center: latlng,
                 streetViewControl: false
             };
-            
+
             mapa = new google.maps.Map(document.getElementById("mapa"), mapOpciones);
 
             // especificar el tipo de mapa (tmb se podria especificar en las opciones en mapa = ....)
@@ -522,6 +531,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script src="js/sensor.js"></script>
     <script src="js/zona.js"></script>
     <!-- Localization start-->
@@ -530,6 +540,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.4/jquery.i18n.parser.js"></script>
     <script src="js/localize.js" type="text/javascript"></script>
     <!-- Localization end-->
+    <script src="js/alertas.js" ></script>
 
 
 </body>
