@@ -439,6 +439,14 @@ function procesar_zonas(req, res) {
                             as: 'data'
                     }
                 ],
+                    order: [
+                        [
+                            {
+                                model: Dato,
+                                as:    'data'
+                            }, 'tiempo'
+                        ]
+                    ]
         }, ],
                 //TODO Order this!
                 //order: [Vertice, 'id'],
@@ -534,7 +542,7 @@ function procesar_alertas(req, res) {
                     //if(data.temperatura > 40) {
                     //    alerts.push({sensor: sensor, alert: 'temperature_maximo'})
                     //}
-                })
+                });
 
                 return res.send(alerts);
             });
