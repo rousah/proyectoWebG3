@@ -84,7 +84,7 @@ function loadSensores(sensores) {
         });
 
         $("#mask").addClass("d-none");
-        mapa.fitBounds(bounds);
+        mapa.fitBounds(39.002249, -0.225464);
 
         tempHeatMap = new google.maps.visualization.HeatmapLayer({
             data: tempHeatMapData,

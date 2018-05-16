@@ -462,14 +462,16 @@
             // center es un objeto con los valores de latitud y longitud donde tiene q tener el centro al cargarlo
             // streetViewControl false para quitar el muñequito de street view
 
-            mapa = new google.maps.Map(document.getElementById('mapa'), {
-                zoom: 16,
-                center: {
-                    lat: 38.9922807,
-                    lng: -0.1735785
-                },
+            var latlng = new google.maps.LatLng (39.002249, -0.225464);
+            var z = 12;
+            var mapOpciones = 
+                {
+                zoom: 12,
+                center: latlng,
                 streetViewControl: false
-            });
+            };
+            
+            mapa = new google.maps.Map(document.getElementById("mapa"), mapOpciones);
 
             // especificar el tipo de mapa (tmb se podria especificar en las opciones en mapa = ....)
 
