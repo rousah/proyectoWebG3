@@ -70,10 +70,6 @@
         margin: 0.5rem;
     }
 
-    .grafica1 {
-        display: block;
-    }
-
     .grafica2 {
         display: block;
     }
@@ -112,6 +108,10 @@
             padding: 1rem;
         }
 
+        .grafica1 {
+            max-width: 100%;
+        }
+
         .contenedor2 {
             max-width: 90%;
             margin-top: 3rem;
@@ -136,7 +136,7 @@
 
 <body id="bootstrap-overwrite">
 
-    <header class="encabezado">
+    <header class="encabezado sticky-top">
         <div id="iconoGTI">
             <img src="images/logoGTI_blanco.svg" alt="logo GTI">
         </div>
@@ -151,7 +151,7 @@
             </h1>
             <p id="descripcion">Cultisense es una herramienta web que proporciona un servicio de seguimiento y control de los productos de la tierra.</p>
             <div class="flecha-bajar">
-                <a href="#logocultisense">
+                <a href="#bajar">
                     <i class="fas fa-angle-down"></i>
                 </a>
             </div>
@@ -159,9 +159,8 @@
     </div>
 
     <div class="container" background="images/trigo_116527159.jpg">
-
         <div id="descripcion">
-            <div class="logoPropio">
+            <div class="logoPropio" id="bajar">
                 <img id="logocultisense" src="images/logo_propio_03.svg" alt="logo Cultisense" style="display: block; margin: auto;">
             </div>
             <h1>
@@ -171,9 +170,8 @@
                 Cultisense es una <b>herramienta</b> web que ofrece un servicio de seguimiento a las principales características de los productos de la tierra, como la <b>humedad</b>, la <b>temperatura</b>, la <b>iluminación</b> y muchos más, para que resulte más fácil el <b>control</b> diario.
             </p>
             <div class="graficas">
-                <div class="grafica1 col-6" width="900" height="380">
-                    <canvas class="my-4" id="myChart" width="900" height="380"></canvas>
-                </div>
+                <canvas class="my-4 col-6" id="myChart" width="900" height="380"></canvas>
+
                 <div class="grafica2 col-6" width="900" height="380">
                     <canvas class="my-4" id="myChart2" width="900" height="380"></canvas>
                 </div>
