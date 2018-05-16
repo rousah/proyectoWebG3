@@ -40,6 +40,11 @@ footer div img {
     align-self: center;
 }
 
+i {
+    margin: 0.2rem;
+    color: #ffffff;
+}
+
 @media (min-width: 576px) {
     .footer {
         height: 60px;

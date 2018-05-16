@@ -74,7 +74,7 @@
         display: block;
     }
 
-    .flecha-bajar a {
+    .flecha-bajar {
         display: inline-block;
         color: black;
         font-size: 3rem;
@@ -150,10 +150,10 @@
                 Directamente del campo a tu móvil
             </h1>
             <p id="descripcion">Cultisense es una herramienta web que proporciona un servicio de seguimiento y control de los productos de la tierra.</p>
-            <div class="flecha-bajar">
-                <a href="#bajar">
-                    <i class="fas fa-angle-down"></i>
-                </a>
+            <div class="flecha-bajar js-scroll-to-bottom">
+
+                <i class="fas fa-angle-down text-dark"></i>
+
             </div>
         </div>
     </div>
@@ -181,18 +181,18 @@
             </p>
         </div>
         <div class="mx-auto" style="display: flex; justify-content: center;">
-            <a class="btn btn-outline-primary" href="" role="button" data-i18n="clientes">Descargar pdf</a>
+            <a class="btn btn-outline-primary" href="" role="button" data-i18n="clientes"><i class="fas fa-download text-white"></i> Descargar pdf</a>
         </div>
-        <div style="text-align: center; font-size: 0.7rem; margin: 1rem;" id="linkVolver"><a href="index.html"><span>Volver arriba</span></a></div>
+        <!-- <div style="text-align: center; font-size: 0.7rem; margin: 1rem;" id="linkVolver"><a href="index.html"><span>Volver arriba</span></a></div> -->
         <br>
     </div>
 
-    <footer class="footer" role="contentinfo">
+    <footer class="footer bg-dark text-white" role="contentinfo">
         <span>Copyright © 2018 Cultisense</span><br><span> Todos los derechos reservados | Términos de uso</span>
         <div class="imagenesFooter">
             <div>
-                <img src="images/logo_facebook.svg" alt="logoFacebook">
-                <img src="images/logo_twitter.svg" alt="logoTwitter">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
             </div>
         </div>
     </footer>
@@ -288,6 +288,18 @@
 
 
             }
+        });
+
+    </script>
+    <script>
+        // scroll to bottom
+        document.querySelector('.js-scroll-to-bottom').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 690,
+                left: 0,
+                behavior: 'smooth'
+            });
         });
 
     </script>
