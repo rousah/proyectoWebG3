@@ -11,16 +11,42 @@
     <link rel="stylesheet" href="css/banner.css">
     <link rel="stylesheet" href="css/footer.css">
     <link href="signin.css" rel="stylesheet">
+    <link href="form-validation.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 
 </head>
 
 <style>
     body {
         font-family: 'Montserrat', sans-serif;
+        background-image: url(images/drone_view_aerial_view_lane_road_countryside-1409341.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        height: 70vh;
+    }
+
+    .links {
+        color: #000;
     }
 
     .todo {
         margin-top: 100px;
+        justify-content: center;
+    }
+
+    .recuadro {
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.62);
+        border-radius: 5px;
+        padding: 1rem;
+        max-width: 40%;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .form-wrapper {
+        margin: auto;
     }
 
     label {
@@ -42,8 +68,10 @@
         width: 100%;
     }
 
-    .email .contrasena {
+    .email,
+    .contrasena {
         font-weight: 700;
+        margin: 1rem auto;
     }
 
     .cajaolvidar {
@@ -73,7 +101,6 @@
 
     @media (min-width: 768px) {
         #logoPropio {
-            max-width: 40%;
             margin: 0 auto;
         }
 
@@ -84,7 +111,17 @@
         }
 
         .todo {
-            margin-top: 130px;
+            margin-top: 150px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .recuadro {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.62);
+            border-radius: 0px;
+            max-width: 100%;
+            padding: 1rem;
         }
     }
 
@@ -93,44 +130,55 @@
 
 <body id="bootstrap-overwrite">
     <div class="todo">
-        <div id="logoPropio">
-            <a href="index.html">
-                <div class="logoPropio">
-                    <img id="logocultisense" src="images/logo_propio_03.svg" alt="logo Cultisense" style="display: block; margin: auto;">
-                </div>
-            </a>
-        </div>
-        <div class="form-wrapper offset-md-3 col-md-6 container">
-            <form id="login-form" class="form-signin">
-                <div class="email">
-                    <label data-i18n="email" id="email">E-Mail</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
-                    <br>
-                </div>
-                <div class="contrasena">
-                    <label id="contrasena" data-i18n="password">Contraseña</label>
+        <div class="recuadro">
+            <div id="logoPropio">
+                <a href="index.html">
+                    <div class="logoPropio">
+                        <img id="logocultisense" src="images/logo_propio_03.svg" alt="logo Cultisense" style="display: block; margin: auto;">
+                    </div>
+                </a>
+            </div>
+            <div class="form-wrapper container">
+                <form id="login-form" class="form-signin">
+                    <div class="email d-flex input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                        </div>
+                        <input type="email" class="form-control" id="email" name="email" required placeholder="Introduce su correo electrónico">
+                    </div>
+
+                    <div class="contrasena d-flex input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                        </div>
+                        <input type="password" class="form-control" id="inputPassword4" name="password" required placeholder="Introduce su contraseña">
+                    </div>
+
+                    <!-- <div class="contrasena">
                     <input type="password" class="form-control" id="inputPassword4" name="password" required>
-                </div>
-                <div class="cajaolvidar">
-                    <a data-i18n="forgot-password-question" href="restaurarMedianteCorreo.html">¿Olvidaste tu contraseña?</a>
-                </div>
-                <div id="fallo-aut" class="alert alert-danger" style="display: none" role="alert">
-                    Fallo de autenticación. Vuelve a intentarlo
-                </div>
+                    </div> -->
 
-                <div class="cajaenviar" style="margin-top: 12px;">
-                    <button data-i18n="send" class="cult-btn btn btn-outline-primary" role="button" type="submit"> Enviar</button>
-                </div>
-                <div style="text-align: center; font-size: 0.7rem; margin: 1rem; justify-content: center;"><a href="index.html"><span>Volver a la página principal</span></a></div>
-            </form>
+                    <div class="cajaolvidar">
+                        <a data-i18n="forgot-password-question" href="restaurarMedianteCorreo.html" class="links">¿Olvidaste tu contraseña?</a>
+                    </div>
+                    <div id="fallo-aut" class="alert alert-danger" style="display: none" role="alert">
+                        Fallo de autenticación. Vuelve a intentarlo
+                    </div>
+
+                    <div class="cajaenviar" style="margin-top: 12px;">
+                        <button data-i18n="send" class="cult-btn btn btn-outline-primary" role="button" type="submit"> Enviar</button>
+                    </div>
+                    <!-- <div style="text-align: center; font-size: 0.7rem; margin: 1rem; justify-content: center;"><a href="index.html" class="links"><span>Volver a la página principal</span></a></div> -->
+                </form>
+            </div>
         </div>
 
-        <footer class="footer" role="contentinfo" style="height: 65px;">
+        <footer class="footer bg-dark text-white" role="contentinfo" style="height: 65px;">
             <span>Copyright © 2018 Cultisense</span><br><span> Todos los derechos reservados | Términos de uso</span>
             <div class="imagenesFooter">
-                <div>
-                    <img src="images/logo_facebook.svg" alt="logoFacebook">
-                    <img src="images/logo_twitter.svg" alt="logoTwitter">
+                <div class="redes-sociales">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
                 </div>
                 <div class="dropdown text-center">
                     <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="languageMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
