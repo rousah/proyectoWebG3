@@ -22,7 +22,7 @@ function loadAlerts() {
         data.forEach(function (item){
             ultimo = item.sensor.data.length - 1;
             console.log(item.sensor.data[ultimo].temperatura)
-            alert ( " Sensor " + item.sensor.id + " " + item.alert + " " + item.sensor.data[ultimo].temperatura + " ºC " ) //NO SE QUE PONER EN EL MENSAJE
+            alert ( " Sensor " + item.sensor.id + " temperatura actual: " + item.sensor.data[ultimo].temperatura + " ºC " ) //NO SE QUE PONER EN EL MENSAJE
         })
         
     });
