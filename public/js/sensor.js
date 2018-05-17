@@ -44,9 +44,9 @@ function loadSensores(sensores) {
 
         var infowindow = new google.maps.InfoWindow({
             content: '<p class="text-center font-weight-bold" style="margin-bottom:0;">Última lectura<br><a href="javascript:showSensorHumData(' +
-                item.id + ')"><i class="fas fa-tint"></i>' + parseFloat(item.data[0].humedad) +
-                '%</a><br><a href="javascript:showSensorTempData(' + item.id +
-                ')"><i class="fas fa-thermometer-three-quarters"></i> ' + parseFloat(item.data[0].temperatura) + 'º </p></a>'
+                item.id + ')"><button class="btn" style="margin:0.25rem 0.5rem;"><i class="fas fa-chart-area"></button></a></i><i class="fas fa-tint"></i>' + parseFloat(item.data[0].humedad) +
+                '%<br><a href="javascript:showSensorTempData(' + item.id +
+                ')"><button class="btn" style="margin:0.25rem 0.5rem;"><i class="fas fa-chart-area"></i></button></a></i><i class="fas fa-thermometer-three-quarters"></i> ' + parseFloat(item.data[0].temperatura) + 'º </p>'
         });
         infowindow.addListener('closeclick', function () {
             currentInfoWindow = null;
