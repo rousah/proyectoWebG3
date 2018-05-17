@@ -116,6 +116,8 @@ function focusSensor(id) {
 function showSensorTempData(id) {
 
     $('#graphModalLabel').text("Temperatura sonda " + id);
+    $('#humedad').html('<a href="javascript:showSensorHumData('+ id + ')" class="badge badge-light" style="font-size: 1.5rem; color:#4098bc"><i class="fas fa-tint"></i></a>');
+    $('#temperatura').html('<a href="javascript:showSensorTempData('+ id + ')" class="badge badge-light" style="font-size: 1.5rem; color:#cb5050"><i class="fas fa-thermometer-three-quarters"></i></a>');
     $('#graphModal').modal('show');
     chart.data.datasets = [];
     listaSensores.forEach(function (item) {
@@ -147,6 +149,8 @@ function showSensorTempData(id) {
 function showSensorHumData(id) {
 
     $('#graphModalLabel').text("Humedad sonda " + id);
+    $('#humedad').html('<a href="javascript:showSensorHumData('+ id + ')" class="badge badge-light" style="font-size: 1.5rem; color:#4098bc"><i class="fas fa-tint"></i></a>');
+    $('#temperatura').html('<a href="javascript:showSensorTempData('+ id + ')" class="badge badge-light" style="font-size: 1.5rem; color:#cb5050"><i class="fas fa-thermometer-three-quarters"></i></a>');
     $('#graphModal').modal('show');
     chart.data.datasets = [];
 
