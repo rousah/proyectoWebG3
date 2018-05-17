@@ -3,7 +3,7 @@
 var botonZonaTemplate = `<div class="btn-group btn-group-sm" role="group" style="margin: 5px;">
             <button class="btn btn-light" style="{bgcolor}" onclick="focusZona({id})">{Nombre de la zona}</button>
             <button class="btn btn-secondary" style="width:40px" onclick="cargarZona({id})">
-                <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                <i class="fa fa-eye" aria-hidden="true"></i>
             </button>
         </div>`;
 
@@ -32,7 +32,7 @@ function loadZonas() {
                 fillColor: item.color,
                 fillOpacity: 0.35,
                 editable: false,
-                visible: false
+                visible: true
             });
             zona.setMap(mapa);
             item.zona = zona;
@@ -49,14 +49,14 @@ function loadZonas() {
             $('#zonas-list').append(item.control);
 
         });
-        
+
         //TODO CHANGE THIS TO LOAD ONLY SENSORES FROM CURRENT ZONE
         r.forEach(function (zona) {
             console.log(zona);
             //if (listaSensores.length == 0) {
-                loadSensores(zona.sensors);
+            loadSensores(zona.sensors);
             //} else {
-                $("#mask").addClass("d-none");
+            $("#mask").addClass("d-none");
             //}
         });
     });
