@@ -44,9 +44,9 @@ function loadSensores(sensores) {
 
         var infowindow = new google.maps.InfoWindow({
             content: '<p class="text-center font-weight-bold" style="margin-bottom:0;">Última lectura<br><a href="javascript:showSensorHumData(' +
-                item.id + ')"><button class="btn" style="margin:0.25rem 0.5rem;"><i class="fas fa-chart-area"></button></a></i><i class="fas fa-tint"></i>' + parseFloat(item.data[0].humedad) +
+                item.id + ')"><button class="btn" style="margin:0.25rem 0.5rem; background-color:#4098bc;"><i class="fas fa-chart-area"></button></a></i><i class="fas fa-tint"></i>' + parseFloat(item.data[0].humedad) +
                 '%<br><a href="javascript:showSensorTempData(' + item.id +
-                ')"><button class="btn" style="margin:0.25rem 0.5rem;"><i class="fas fa-chart-area"></i></button></a></i><i class="fas fa-thermometer-three-quarters"></i> ' + parseFloat(item.data[0].temperatura) + 'º </p>'
+                ')"><button class="btn" style="margin:0.25rem 0.5rem; background-color:#cb5050;"><i class="fas fa-chart-area"></i></button></a></i><i class="fas fa-thermometer-three-quarters"></i> ' + parseFloat(item.data[0].temperatura) + 'º </p>'
         });
         infowindow.addListener('closeclick', function () {
             currentInfoWindow = null;
@@ -116,8 +116,8 @@ function focusSensor(id) {
 function showSensorTempData(id) {
 
     $('#graphModalLabel').text("Temperatura sonda " + id);
-    $('#humedad').html('<a href="javascript:showSensorHumData('+ id + ')" class="badge badge-light" style="font-size: 1.5rem; color:#4098bc"><i class="fas fa-tint"></i></a>');
-    $('#temperatura').html('<a href="javascript:showSensorTempData('+ id + ')" class="badge badge-light" style="font-size: 1.5rem; color:#cb5050"><i class="fas fa-thermometer-three-quarters"></i></a>');
+    $('#humedad').html('<a href="javascript:showSensorHumData(' + id + ')" class="badge badge-light" style="font-size: 1.5rem; color:#4098bc"><i class="fas fa-tint"></i></a>');
+    $('#temperatura').html('<a href="javascript:showSensorTempData(' + id + ')" class="badge badge-light" style="font-size: 1.5rem; color:#cb5050"><i class="fas fa-thermometer-three-quarters"></i></a>');
     $('#graphModal').modal('show');
     chart.data.datasets = [];
     listaSensores.forEach(function (item) {
@@ -149,8 +149,8 @@ function showSensorTempData(id) {
 function showSensorHumData(id) {
 
     $('#graphModalLabel').text("Humedad sonda " + id);
-    $('#humedad').html('<a href="javascript:showSensorHumData('+ id + ')" class="badge badge-light" style="font-size: 1.5rem; color:#4098bc"><i class="fas fa-tint"></i></a>');
-    $('#temperatura').html('<a href="javascript:showSensorTempData('+ id + ')" class="badge badge-light" style="font-size: 1.5rem; color:#cb5050"><i class="fas fa-thermometer-three-quarters"></i></a>');
+    $('#humedad').html('<a href="javascript:showSensorHumData(' + id + ')" class="badge badge-light" style="font-size: 1.5rem; color:#4098bc"><i class="fas fa-tint"></i></a>');
+    $('#temperatura').html('<a href="javascript:showSensorTempData(' + id + ')" class="badge badge-light" style="font-size: 1.5rem; color:#cb5050"><i class="fas fa-thermometer-three-quarters"></i></a>');
     $('#graphModal').modal('show');
     chart.data.datasets = [];
 
