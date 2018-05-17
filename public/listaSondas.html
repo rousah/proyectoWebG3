@@ -387,6 +387,15 @@
                 <div class="modal-body">
                     <span id="humedad"><i class="fas fa-tint"></i></span>
                     <span id="temperatura"><i class="fas fa-thermometer-three-quarters"></i></span>
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Sondas
+                </button>
+
+                    <div class="dropdown-menu sensor-list" aria-labelledby="dropdownMenu3">
+                        <div id="sensores">
+                        </div>
+                    </div>
+                </div>
                     <!-- GRAFICA -->
                     <div id="graph" class="container">
                         <canvas id="grafica" width="500" height="400" class="chartjs-render-monitor"></canvas>
