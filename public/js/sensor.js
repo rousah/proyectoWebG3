@@ -19,89 +19,89 @@ function loadSensores(sensores) {
         },
     }).done(function (r) {*/
 
-        var bounds = new google.maps.LatLngBounds();
+    var bounds = new google.maps.LatLngBounds();
 
-        listaSensores = sensores;
-        listaSensores.forEach(function (item) {
-            var icon = {
-                url: "../images/pin_mapa.svg", // url
-                scaledSize: new google.maps.Size(50, 50), // scaled size
-                origin: new google.maps.Point(0, 0), // origin
-                anchor: new google.maps.Point(0, 0) // anchor
-            };
+    listaSensores = sensores;
+    listaSensores.forEach(function (item) {
+        var icon = {
+            url: "../images/pin_mapa.svg", // url
+            scaledSize: new google.maps.Size(50, 50), // scaled size
+            origin: new google.maps.Point(0, 0), // origin
+            anchor: new google.maps.Point(0, 0) // anchor
+        };
 
-            var marker = new google.maps.Marker({
-                position: new google.maps.LatLng({
-                    lat: parseFloat(item.lat),
-                    lng: parseFloat(item.lng)
-                }),
-                map: mapa,
-                label: item.id,
-                icon: icon,
-                icon: new google.maps.MarkerImage('../images/pin_mapa.png',
-                    null, null, null, new google.maps.Size(35, 35)),
-            });
-
-            var infowindow = new google.maps.InfoWindow({
-                content: '<p class="text-center font-weight-bold" style="margin-bottom:0;">Última lectura<br><a href="javascript:showSensorHumData(' +
-                    item.id + ')"><i class="fas fa-tint"></i> </a>' + parseFloat(item.data[0].humedad) +
-                    '%<br><a href="javascript:showSensorTempData(' + item.id +
-                    ')"><i class="fas fa-thermometer-three-quarters"></i> </a>' + parseFloat(item.data[0].temperatura) + 'º </p>'
-            });
-            infowindow.addListener('closeclick', function () {
-                currentInfoWindow = null;
-                chart.data.datasets = [];
-                chart.update();
-            });
-            item.info = infowindow;
-            marker.addListener('click', function () {
-                if (currentInfoWindow != null) currentInfoWindow.close();
-                infowindow.open(mapa, marker);
-                currentInfoWindow = infowindow;
-                chart.data.datasets = [];
-                chart.update();
-            });
-            item.marker = marker;
-
-            bounds.extend(marker.position);
-
-            tempHeatMapData.push({
-                location: marker.position,
-                weight: item.data[0].temperatura
-            });
-
-            humHeatMapData.push({
-                location: marker.position,
-                weight: item.data[0].humedad
-            });
-
-            var str = sensorTemplate.replace('{lat}', item.lat);
-            str = str.replace('{lng}', item.lng);
-            str = str.replace(/{id}/g, item.id);
-
-            $('#sensores-list').append(str);
-
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng({
+                lat: parseFloat(item.lat),
+                lng: parseFloat(item.lng)
+            }),
+            map: mapa,
+            label: item.id,
+            icon: icon,
+            icon: new google.maps.MarkerImage('../images/pin_mapa.png',
+                null, null, null, new google.maps.Size(35, 35)),
         });
 
-        $("#mask").addClass("d-none");
-        mapa.fitBounds(39.002249, -0.225464);
+        var infowindow = new google.maps.InfoWindow({
+            content: '<p class="text-center font-weight-bold" style="margin-bottom:0;">Última lectura<br><a href="javascript:showSensorHumData(' +
+                item.id + ')"><i class="fas fa-tint"></i>' + parseFloat(item.data[0].humedad) +
+                '%</a><br><a href="javascript:showSensorTempData(' + item.id +
+                ')"><i class="fas fa-thermometer-three-quarters"></i> ' + parseFloat(item.data[0].temperatura) + 'º </p></a>'
+        });
+        infowindow.addListener('closeclick', function () {
+            currentInfoWindow = null;
+            chart.data.datasets = [];
+            chart.update();
+        });
+        item.info = infowindow;
+        marker.addListener('click', function () {
+            if (currentInfoWindow != null) currentInfoWindow.close();
+            infowindow.open(mapa, marker);
+            currentInfoWindow = infowindow;
+            chart.data.datasets = [];
+            chart.update();
+        });
+        item.marker = marker;
 
-        tempHeatMap = new google.maps.visualization.HeatmapLayer({
-            data: tempHeatMapData,
-            radius: 40,
-            maxIntensity: 50
+        bounds.extend(marker.position);
+
+        tempHeatMapData.push({
+            location: marker.position,
+            weight: item.data[0].temperatura
         });
 
-        humHeatMap = new google.maps.visualization.HeatmapLayer({
-            data: humHeatMapData,
-            radius: 40,
-            maxIntensity: 100,
-            gradient: [
+        humHeatMapData.push({
+            location: marker.position,
+            weight: item.data[0].humedad
+        });
+
+        var str = sensorTemplate.replace('{lat}', item.lat);
+        str = str.replace('{lng}', item.lng);
+        str = str.replace(/{id}/g, item.id);
+
+        $('#sensores-list').append(str);
+
+    });
+
+    $("#mask").addClass("d-none");
+    mapa.fitBounds(39.002249, -0.225464);
+
+    tempHeatMap = new google.maps.visualization.HeatmapLayer({
+        data: tempHeatMapData,
+        radius: 40,
+        maxIntensity: 50
+    });
+
+    humHeatMap = new google.maps.visualization.HeatmapLayer({
+        data: humHeatMapData,
+        radius: 40,
+        maxIntensity: 100,
+        gradient: [
                 'rgba(0,255,255,0)',
                 'rgba(0,255,255,1)',
                 'rgba(0,0,255,1)'
             ]
-        });
+    });
     //});
 }
 
