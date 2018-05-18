@@ -8,10 +8,13 @@ var sensorTemplate = `<button class="btn btn-secondary" style="margin: 5px" oncl
 var sensorTemplate2 = `<button class="btn btn-secondary" style="margin: 5px" onclick="showSensorHumData({id})"><i class="fa fa-map-pin"></i> Sonda {id}</button>`;
 
 var currentInfoWindow;
+var bounds = new google.maps.LatLngBounds();
+
 const baseURI = 'http://localhost:3000/'; // local develop
 //const baseURI = 'http://luglo1.upv.edu.es/'; //LIVE
 
 function loadSensores(sensores) {
+    console.log("load");
     /*$.ajax({
         url: baseURI + 'user/sensores',
         dataType: "json",
@@ -20,7 +23,6 @@ function loadSensores(sensores) {
         },
     }).done(function (r) {*/
 
-    var bounds = new google.maps.LatLngBounds();
 
     listaSensores = sensores;
     listaSensores.forEach(function (item) {
@@ -37,7 +39,7 @@ function loadSensores(sensores) {
                 lng: parseFloat(item.lng)
             }),
             map: mapa,
-            label: item.id,
+            //label: String(item.id),
             icon: icon,
             icon: new google.maps.MarkerImage('../images/pin_mapa.png',
                 null, null, null, new google.maps.Size(35, 35)),
@@ -91,7 +93,8 @@ function loadSensores(sensores) {
     });
 
     $("#mask").addClass("d-none");
-    mapa.fitBounds(39.002249, -0.225464);
+    //mapa.fitBounds(39.002249, -0.225464);
+    mapa.fitBounds(bounds);
 
     tempHeatMap = new google.maps.visualization.HeatmapLayer({
         data: tempHeatMapData,
@@ -110,6 +113,7 @@ function loadSensores(sensores) {
             ]
     });
     //});
+    console.log("load finished");
 }
 
 function focusSensor(id) {

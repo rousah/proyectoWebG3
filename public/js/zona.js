@@ -49,16 +49,17 @@ function loadZonas() {
             $('#zonas-list').append(item.control);
 
         });
-
+        
+        console.log(r);
         //TODO CHANGE THIS TO LOAD ONLY SENSORES FROM CURRENT ZONE
-        r.forEach(function (zona) {
-            console.log(zona);
+        for(let i = 0; i < r.length; i++) {
+         console.log(r[i]);
             //if (listaSensores.length == 0) {
-            loadSensores(zona.sensors);
+            loadSensores(r[i].sensors);
             //} else {
             $("#mask").addClass("d-none");
-            //}
-        });
+            //}   
+        }
     });
 }
 
@@ -91,7 +92,7 @@ function cargarZona(id) {
     });
 }
 
-loadZonas();
+loadZonas(); 
 
 
 var zonaTemp;
