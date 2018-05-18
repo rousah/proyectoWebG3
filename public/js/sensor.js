@@ -10,6 +10,8 @@ var sensorTemplate2 = `<button class="btn btn-secondary" style="margin: 5px" onc
 var currentInfoWindow;
 var bounds = new google.maps.LatLngBounds();
 
+var listaSensores = [];
+
 const baseURI = 'http://localhost:3000/'; // local develop
 //const baseURI = 'http://luglo1.upv.edu.es/'; //LIVE
 
@@ -24,8 +26,8 @@ function loadSensores(sensores) {
     }).done(function (r) {*/
 
 
-    listaSensores = sensores;
-    listaSensores.forEach(function (item) {
+    newSensores = sensores;
+    newSensores.forEach(function (item) {
         var icon = {
             url: "../images/pin_mapa.svg", // url
             scaledSize: new google.maps.Size(50, 50), // scaled size
@@ -89,7 +91,7 @@ function loadSensores(sensores) {
         str2 = str2.replace(/{id}/g, item.id);
         
         $('#sensores').append(str2);
-
+        listaSensores.push(item);
     });
 
     $("#mask").addClass("d-none");
@@ -120,6 +122,26 @@ function focusSensor(id) {
     listaSensores.forEach(function (item) {
         if (item.id == id) {
             mapa.panTo(item.marker.position);
+        }
+    });
+}
+
+function refreshSensorList(zona_id) {
+    $('#sensores-list').empty();
+    $('#sensores').empty();
+
+    listaSensores.forEach(function (sensor) {
+        if(sensor.zonaId === zona_id) {
+            var str = sensorTemplate.replace('{lat}', sensor.lat);
+            str     = str.replace('{lng}', sensor.lng);
+            str     = str.replace(/{id}/g, sensor.id);
+
+            $('#sensores-list').append(str);
+
+            var str2 = sensorTemplate2.replace('{lat}', sensor.lat);
+            str2     = str2.replace('{lng}', sensor.lng);
+            str2     = str2.replace(/{id}/g, sensor.id);
+            $('#sensores').append(str2);
         }
     });
 }

@@ -71,6 +71,7 @@ function focusZona(id) {
                 bounds.extend(v);
             });
             mapa.fitBounds(bounds);
+            refreshSensorList(id);
         }
     });
 }
