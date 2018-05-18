@@ -16,15 +16,6 @@ const baseURI = 'http://localhost:3000/'; // local develop
 //const baseURI = 'http://luglo1.upv.edu.es/'; //LIVE
 
 function loadSensores(sensores) {
-    console.log("load");
-    /*$.ajax({
-        url: baseURI + 'user/sensores',
-        dataType: "json",
-        headers: {
-            'token': localStorage.getItem('token'),
-        },
-    }).done(function (r) {*/
-
 
     newSensores = sensores;
     newSensores.forEach(function (item) {
@@ -95,7 +86,7 @@ function loadSensores(sensores) {
     });
 
     $("#mask").addClass("d-none");
-    //mapa.fitBounds(39.002249, -0.225464);
+
     mapa.fitBounds(bounds);
 
     tempHeatMap = new google.maps.visualization.HeatmapLayer({
@@ -114,8 +105,6 @@ function loadSensores(sensores) {
                 'rgba(0,0,255,1)'
             ]
     });
-    //});
-    console.log("load finished");
 }
 
 function focusSensor(id) {
