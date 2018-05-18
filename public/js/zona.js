@@ -49,11 +49,11 @@ function loadZonas() {
             $('#zonas-list').append(item.control);
 
         });
-        
+
         console.log(r);
         //TODO CHANGE THIS TO LOAD ONLY SENSORES FROM CURRENT ZONE
-        for(let i = 0; i < r.length; i++) {
-         console.log(r[i]);
+        for (let i = 0; i < r.length; i++) {
+            console.log(r[i]);
             //if (listaSensores.length == 0) {
             loadSensores(r[i].sensors);
             //} else {
@@ -74,6 +74,7 @@ function focusZona(id) {
             refreshSensorList(id);
         }
     });
+    document.getElementById("dropdownMenu3").disabled = false;
 }
 
 function cargarZona(id) {
@@ -93,7 +94,7 @@ function cargarZona(id) {
     });
 }
 
-loadZonas(); 
+loadZonas();
 
 
 var zonaTemp;

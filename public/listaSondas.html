@@ -147,7 +147,7 @@
 
     #mapa {
         width: inherit;
-        height: 700px;
+        height: 75vh;
         border: solid 1px #ccc;
     }
 
@@ -178,7 +178,7 @@
 
         #mapa {
             width: inherit;
-            height: 700px;
+            /*height: 700px;*/
             border: solid 1px #ccc;
         }
     }
@@ -205,7 +205,7 @@
 
         #mapa {
             width: inherit;
-            height: 536.5px;
+            /*height: 536.5px;*/
             border: solid 1px #ccc;
         }
     }
@@ -277,7 +277,7 @@
 
         #mapa {
             width: inherit;
-            height: 551px;
+            /*height: 551px;*/
             border: solid 1px #ccc;
         }
 
@@ -335,12 +335,12 @@
 
             <!-- ZONAS -->
             <div class="divZonas col-sm-5">
-                <p class="pasoZonas">Paso 1: Elige la zona que quiere ver.</p>
+                <p class="pasoZonas">Paso 1: Elige el campo que quiere ver.</p>
                 <p class="pasoZonas1" display="none">Paso 1: Elige</p>
                 <p class="pasoZonas2" display="none">Paso 1: </p>
                 <div class="dropdown dropZonas">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Zonas
+                    Campos
                 </button>
                     <div class="dropdown-menu zona-list" aria-labelledby="dropdownMenu2">
                         <div id="zonas-list">
@@ -357,22 +357,16 @@
                 <p class="pasoSondas1" display="none">Paso 2: Elige</p>
                 <p class="pasoSondas2" display="none">Paso 2: </p>
                 <div class="dropdown dropSondas">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>
                     Sondas
-                </button>
-
+                    </button>
                     <div class="dropdown-menu sensor-list" aria-labelledby="dropdownMenu3">
                         <div id="sensores-list">
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
-
-
-
     </div>
 
     <div class="modal fade" id="graphModal" tabindex="-1" role="dialog" aria-labelledby="graphModalLabel" aria-hidden="true">
@@ -396,13 +390,12 @@
                         </div>
                     </div>
                 </div>
-                    <!-- GRAFICA -->
-                    <div id="graph" class="container">
-                        <canvas id="grafica" width="500" height="400" class="chartjs-render-monitor"></canvas>
-                    </div>
+                <!-- GRAFICA -->
+                <div id="graph" class="container">
+                    <canvas id="grafica" width="500" height="400" class="chartjs-render-monitor"></canvas>
                 </div>
-                <div class="modal-footer">
-                </div>
+            </div>
+            <div class="modal-footer">
             </div>
         </div>
     </div>
@@ -413,7 +406,7 @@
             <a class="btn btn-outline-primary" role="button" onclick="editarZona()">Editar</a>
             <a class="btn btn-outline-primary" role="button" onclick="guardarZona()">Guardar</a>
         </div>
--->
+    -->
 
 
     <script>
@@ -461,7 +454,6 @@
         }
 
     </script>
-
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAb24jHOG5TNONnZFGrHXCfnkoEnhfpKxc&callback=initMap&libraries=visualization">
 
