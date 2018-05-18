@@ -38,8 +38,8 @@ const sensores = [
     },
     {
         mac: '58:8F:AD:34:F6:50:00',
-        lng: '-0.17204761505',
-        lat: '38.90405569704',
+        lng: '-0.170030',
+        lat: '38.994605',
         userId: 1,
         zonaId: 1,
     },
@@ -443,7 +443,7 @@ function procesar_zonas(req, res) {
                         [
                             {
                                 model: Dato,
-                                as:    'data'
+                                as: 'data'
                             }, 'tiempo'
                         ]
                     ]
