@@ -34,7 +34,7 @@ function loadSensores(sensores) {
             map: mapa,
             //label: String(item.id),
             icon: icon,
-            icon: new google.maps.MarkerImage('../images/pin_mapa.png',
+            icon: new google.maps.MarkerImage('../images/marcador_azul.png',
                 null, null, null, new google.maps.Size(35, 35)),
         });
 
@@ -111,6 +111,7 @@ function focusSensor(id) {
     listaSensores.forEach(function (item) {
         if (item.id == id) {
             mapa.panTo(item.marker.position);
+            infowindow.open(map, marker);
         }
     });
 }
