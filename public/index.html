@@ -131,6 +131,7 @@
 
 
     }
+
 </style>
 
 <body id="bootstrap-overwrite">
@@ -243,6 +244,7 @@
                 },
             }
         });
+
     </script>
     <script>
         var ctx = document.getElementById("myChart2");
@@ -285,17 +287,19 @@
 
             }
         });
+
     </script>
     <script>
         // scroll to bottom
         document.querySelector('.js-scroll-to-bottom').addEventListener('click', function(e) {
             e.preventDefault();
-            window.scrollTo({
-                top: 690,
+            window.scrollBy({
+                top: window.innerHeight * 1.5,
                 left: 0,
                 behavior: 'smooth'
             });
         });
+
     </script>
 
 </body>
