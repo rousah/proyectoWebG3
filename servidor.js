@@ -203,6 +203,7 @@ function setup() {
                         zip: '29780',
                         street: 'C/ Condal 45',
                         telephone: '+34 665454432',
+                        force_password_change: true,
                         /*rol: 'admin',
                         activo: 'true',*/
                     }
@@ -320,7 +321,8 @@ function procesar_login(req, res) {
                             });
                             token.save().then(() => {
                                 return res.send({
-                                    token: token.token
+                                    token: token.token,
+                                    user: user
                                 });
                             });
 
@@ -628,7 +630,8 @@ function procesar_password(req, res) {
                     if (new_password === re_new_password) {
                         bcrypt.hash(new_password, saltRounds).then(function (hash) {
                             user.password = hash;
-                            user.save()
+                            user.force_password_change = false;
+                            user.save();
                             return res.send({
                                 success: 'Password changed'
                             });
