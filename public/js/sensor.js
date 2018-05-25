@@ -6,7 +6,7 @@ var humHeatMap;
 
 var sensorTemplate = `<button class="btn btn-secondary" style="margin: 5px" onclick="focusSensor({id})"><i class="fa fa-map-pin"></i> Sonda {id}</button>`;
 var sensorTemplate2 = `<button class="btn btn-secondary" style="margin: 5px" onclick="showSensorHumData({id})"><i class="fa fa-map-pin"></i> Sonda {id}</button>`;
-var sensorTemplate3 = `<p class="btn btn-secondary" style="margin: 5px; background-color: white; color:black;"><i class="fa fa-map-pin"></i> Sonda {id}</p>`;
+var sensorTemplate3 = `<p style="margin: 5px; background-color: white; color:black;"><i class="fa fa-map-pin"></i> Sonda {id}</p>`;
 
 var currentInfoWindow;
 var bounds = new google.maps.LatLngBounds();

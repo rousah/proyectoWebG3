@@ -6,7 +6,7 @@ var botonZonaTemplate = `<div class="btn-group btn-group-sm" role="group" style=
                 <i class="fa fa-eye" aria-hidden="true"></i>
             </button>
         </div>`;
-var zonaTemplate = `<p style="margin: 5px; background-color: white; color:black;">
+var zonaTemplate = `<p style="margin: 5px; background-color: white; color:black;"><i class="fas fa-leaf"></i> 
             Campo {id}
         </p>`;
 
