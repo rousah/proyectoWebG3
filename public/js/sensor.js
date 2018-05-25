@@ -122,7 +122,7 @@ function focusSensor(id) {
             var str3 = sensorTemplate3.replace(/{id}/g, item.id);
             $('#sensorSelect').empty();
             $('#sensorSelect').append(str3);
-            listaSensores.push(item);
+            
         }
         
     });
