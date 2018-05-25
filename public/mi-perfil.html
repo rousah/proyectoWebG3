@@ -44,7 +44,7 @@
 
     .datos-cuenta,
     .datos-personales {
-        border: solid 1px #676767;
+        border: solid 1px #eee;
         border-radius: 15px;
         padding: 1rem;
     }
@@ -110,134 +110,141 @@
         </nav>
     </header>
 
-    <div class="container">
-        <h6>Datos cuenta:</h6>
-        <div class="datos-cuenta d-flex justify-content-between row">
-            <section id="datos-cuenta" class="col-12 d-flex justify-content-between p-0">
-                <form class="col-md-12">
-                    <div class="form-group row d-flex justify-content-between align-items-center">
-                        <label for="placeholder-email" class="col-form-label bold col-6 p-0" data-i18n="correo">E-mail:</label>
-                        <div class="col-6 p-0">
-                            <input type="text" readonly class="form-control-plaintext" id="placeholder-email" value="hola@email.es">
+    <div class="container d-lg-flex p-0">
+        <div class="col-lg-6">
+            <h6>Datos cuenta:</h6>
+            <div class="datos-cuenta d-flex justify-content-between row">
+                <section id="datos-cuenta" class="col-12 d-flex justify-content-between p-0">
+                    <form class="col-md-12">
+                        <div class="form-group row d-flex justify-content-between align-items-center">
+                            <label for="placeholder-email" class="col-form-label bold col-6 p-0" data-i18n="correo">E-mail:</label>
+                            <div class="col-6 p-0">
+                                <input type="text" readonly class="form-control-plaintext" id="placeholder-email" value="hola@email.es">
+                            </div>
                         </div>
+                    </form>
+                </section>
+                <section id="datos-password" class="p-0 col-12">
+                    <div>
+                        <span class="text-left p-0">Contraseña:</span>
                     </div>
-                </form>
-            </section>
-            <section id="datos-password" class="d-flex justify-content-between align-items-center p-0 col-12">
-                <span>Contraseña:</span>
-                <!-- Button trigger modal contraseña-->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#passModal">
-                    Cambiar contraseña <i class="fas fa-lock"></i>
-                </button>
-                <!-- Modal contraseña-->
-                <div class="modal fade" id="passModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Cambiar contraseña</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <div class="d-flex justify-content-center">
+                        <!-- Button trigger modal contraseña-->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#passModal">
+                            Cambiar contraseña <i class="fas fa-lock"></i>
+                        </button>
+                    </div>
+                    <!-- Modal contraseña-->
+                    <div class="modal fade" id="passModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Cambiar contraseña</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                   <span aria-hidden="true">&times;</span>
                                 </button>
-                            </div>
-                            <div class="modal-body">
-                                <form id="password-form" class="col-md-6 col-sm-8">
-                                    <div class="form-group">
-                                        <label for="old_password" data-i18n="contrasenya-antigua" class="bold">Contraseña antigua:</label>
-                                        <input type="password" class="form-control" id="old_password" name="old_password" required>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="password-form" class="col-md-6 col-sm-8">
+                                        <div class="form-group">
+                                            <label for="old_password" data-i18n="contrasenya-antigua" class="bold">Contraseña antigua:</label>
+                                            <input type="password" class="form-control" id="old_password" name="old_password" required>
 
-                                    </div>
-                                    <div class="form-group">
-                                        <label id="new_password" data-i18n="contrasenya-nueva" class="bold">Contraseña nueva:</label>
-                                        <input type="password" class="form-control" id="new_password" name="new_password" required>
-
-                                    </div>
-                                    <div class="form-group">
-                                        <label id="re_new_password" class="bold" data-i18n="repetir-contrasenya">Repetir contraseña nueva:</label>
-                                        <input type="password" class="form-control" id="re_new_password" name="re_new_password" required>
-
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                        <div class="boton" id="botones">
-                                            <button class="cult-btn btn btn-outline-primary" role="button" type="submit">Cambiar </button>
                                         </div>
-                                    </div>
-                                    <div style="display: none" class="alert alert-success" id="password-success-alert" role="alert" data-i18n="pass-changed" on="habilitar()">
-                                        ¡Su contraseña se ha cambiado!
-                                    </div>
+                                        <div class="form-group">
+                                            <label id="new_password" data-i18n="contrasenya-nueva" class="bold">Contraseña nueva:</label>
+                                            <input type="password" class="form-control" id="new_password" name="new_password" required>
 
-                                    <script>
-                                        function habilitar() {
-                                            document.getElementById("continuar").disabled = false;
-                                        }
+                                        </div>
+                                        <div class="form-group">
+                                            <label id="re_new_password" class="bold" data-i18n="repetir-contrasenya">Repetir contraseña nueva:</label>
+                                            <input type="password" class="form-control" id="re_new_password" name="re_new_password" required>
 
-                                    </script>
-                                    <div style="display: none" class="alert alert-danger" id="password-error-alert" role="alert" data-i18n="error">
-                                        ¡Error!
-                                    </div>
-                                </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                            <div class="boton" id="botones">
+                                                <button class="cult-btn btn btn-outline-primary" role="button" type="submit">Cambiar </button>
+                                            </div>
+                                        </div>
+                                        <div style="display: none" class="alert alert-success" id="password-success-alert" role="alert" data-i18n="pass-changed" on="habilitar()">
+                                            ¡Su contraseña se ha cambiado!
+                                        </div>
+
+                                        <script>
+                                            function habilitar() {
+                                                document.getElementById("continuar").disabled = false;
+                                            }
+
+                                        </script>
+                                        <div style="display: none" class="alert alert-danger" id="password-error-alert" role="alert" data-i18n="error">
+                                            ¡Error!
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
         </div>
 
-
-        <h6>Datos personales:</h6>
-        <div class="datos-personales d-flex justify-content-between row">
-            <section id="datos-personales col-12 d-flex justify-content-between p-0">
-                <form class="col-md-12">
-                    <div class="form-group row d-flex justify-content-between align-items-center">
-                        <label for="placeholder-firstname" class="col-form-label bold col-6 p-0" data-i18n="name">Nombre:</label>
-                        <div class="col-6 p-0">
-                            <input type="text" readonly class="form-control-plaintext" id="placeholder-firstname">
+        <div class="col-lg-6">
+            <h6>Datos personales:</h6>
+            <div class="datos-personales d-flex justify-content-between row">
+                <section id="datos-personales" class="col-12 d-flex justify-content-between p-0">
+                    <form class="col-12">
+                        <div class="form-group row d-flex justify-content-between align-items-center">
+                            <label for="placeholder-firstname" class="col-form-label bold col-6 p-0" data-i18n="name">Nombre:</label>
+                            <div class="col-6 p-0">
+                                <input type="text" readonly class="form-control-plaintext" id="placeholder-firstname">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row d-flex justify-content-between align-items-center">
-                        <label for="placeholder-lastname" class="col-6 p-0 col-form-label" data-i18n="surname">Apellido:</label>
-                        <div class="col-6 p-0">
-                            <input type="text" readonly class="form-control-plaintext" id="placeholder-lastname">
+                        <div class="form-group row d-flex justify-content-between align-items-center">
+                            <label for="placeholder-lastname" class="col-6 p-0 col-form-label" data-i18n="surname">Apellido:</label>
+                            <div class="col-6 p-0">
+                                <input type="text" readonly class="form-control-plaintext" id="placeholder-lastname">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row d-flex justify-content-between align-items-center ">
-                        <label for="placeholder-sexo" class="col-6 p-0 col-form-label" data-i18n="sex">Sexo:</label>
-                        <div class="col-6 p-0">
-                            <input type="text" readonly class="form-control-plaintext" id="placeholder-sexo">
+                        <div class="form-group row d-flex justify-content-between align-items-center ">
+                            <label for="placeholder-sexo" class="col-6 p-0 col-form-label" data-i18n="sex">Sexo:</label>
+                            <div class="col-6 p-0">
+                                <input type="text" readonly class="form-control-plaintext" id="placeholder-sexo">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row d-flex justify-content-between align-items-center ">
-                        <label for="placeholder-pais" class="col-6 p-0 col-form-label" data-i18n="pais">País:</label>
-                        <div class="col-6 p-0">
-                            <input type="text" readonly class="form-control-plaintext" id="placeholder-pais">
+                        <div class="form-group row d-flex justify-content-between align-items-center ">
+                            <label for="placeholder-pais" class="col-6 p-0 col-form-label" data-i18n="pais">País:</label>
+                            <div class="col-6 p-0">
+                                <input type="text" readonly class="form-control-plaintext" id="placeholder-pais">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row d-flex justify-content-between align-items-center ">
-                        <label for="placeholder-ciudad" class="col-6 p-0 col-form-label" data-i18n="city">Ciudad:</label>
-                        <div class="col-6 p-0">
-                            <input type="text" readonly class="form-control-plaintext" id="placeholder-ciudad">
+                        <div class="form-group row d-flex justify-content-between align-items-center ">
+                            <label for="placeholder-ciudad" class="col-6 p-0 col-form-label" data-i18n="city">Ciudad:</label>
+                            <div class="col-6 p-0">
+                                <input type="text" readonly class="form-control-plaintext" id="placeholder-ciudad">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row d-flex justify-content-between align-items-center ">
-                        <label for="placeholder-direccion" class="col-6 p-0 col-form-label" data-i18n="street">Dirección:</label>
-                        <div class="col-6 p-0">
-                            <input type="text" readonly class="form-control-plaintext" id="placeholder-direccion">
+                        <div class="form-group row d-flex justify-content-between align-items-center ">
+                            <label for="placeholder-direccion" class="col-6 p-0 col-form-label" data-i18n="street">Dirección:</label>
+                            <div class="col-6 p-0">
+                                <input type="text" readonly class="form-control-plaintext" id="placeholder-direccion">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row d-flex justify-content-between align-items-center ">
-                        <label for="placeholder-cod-postal" class="col-6 p-0 col-form-label" data-i18n="zip">Código postal:</label>
-                        <div class="col-6 p-0">
-                            <input type="text" readonly class="form-control-plaintext" id="placeholder-cod-postal">
+                        <div class="form-group row d-flex justify-content-between align-items-center ">
+                            <label for="placeholder-cod-postal" class="col-6 p-0 col-form-label" data-i18n="zip">Código postal:</label>
+                            <div class="col-6 p-0">
+                                <input type="text" readonly class="form-control-plaintext" id="placeholder-cod-postal">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row d-flex justify-content-between align-items-center my-0">
-                        <label for="placeholder-telefono" class="col-6 p-0 col-form-label" data-i18n="phone">Número de teléfono:</label>
-                        <div class="col-6 p-0">
-                            <input type="text" readonly class="form-control-plaintext" id="placeholder-telefono">
+                        <div class="form-group row d-flex justify-content-between align-items-center my-0">
+                            <label for="placeholder-telefono" class="col-6 p-0 col-form-label" data-i18n="phone">Número de teléfono:</label>
+                            <div class="col-6 p-0">
+                                <input type="text" readonly class="form-control-plaintext" id="placeholder-telefono">
+                            </div>
                         </div>
-                    </div>
-                </form>
-            </section>
+                    </form>
+                </section>
+            </div>
         </div>
     </div>
 
