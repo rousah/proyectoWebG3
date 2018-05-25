@@ -277,6 +277,7 @@ app.use('/user', function (req, res, next) {
 });
 
 app.post('/login', procesar_login);
+app.post('/user/soporte_mail', procesar_soporte_mail);
 app.get('/user', procesar_user);
 app.post('/user/change_password', procesar_password);
 app.get('/user/sensores', procesar_sensores);
@@ -284,6 +285,8 @@ app.get('/user/alertas', procesar_alertas);
 app.get('/user/zonas', procesar_zonas);
 app.get('/user/temperatura', procesar_temperatura);
 app.get('/pw_reset', procesar_pw_reset);
+
+
 
 function procesar_pw_reset(req, res) {
     email.send();
@@ -650,6 +653,32 @@ function procesar_password(req, res) {
             });
 
         } else {
+            return res.status(404).send({
+                message: 'User not found'
+            });
+        }
+    })
+}
+
+function procesar_soporte_mail(req, res) {
+    Token.findOne({
+        where:   {
+            token: req.headers.token
+        },
+        include: [
+            {
+                model: User
+            }
+        ]
+    }).then(token => {
+        if (token !== null) {
+            let user = token.user;
+            let subject  = req.body.subject;
+            let text = req.body.text;
+            email.sendSopporte(user, subject, text);
+            res.send();
+        }
+        else {
             return res.status(404).send({
                 message: 'User not found'
             });

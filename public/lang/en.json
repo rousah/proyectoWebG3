@@ -35,5 +35,9 @@
     "temperatura_maxima": "The temperature is very high",
     "temperatura_minima": "The temperature is very low",
     "humedad_minima": "The humidity is very low",
-    "alerts" : "Alerts"
+    "alerts" : "Alerts",
+    "soporte-tema": "Subject",
+    "soporte-texto": "Description of the problem",
+    "soporte-enviar": "Send message",
+    "soporte-success": "Message sent"
 }

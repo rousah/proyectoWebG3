@@ -35,5 +35,9 @@
     "temperatura_maxima": "La temperatura es muy alta",
     "temperatura_minima": "La temperatura es muy baja",
     "humedad_minima": "La humedad esta muy baja",
-    "alerts" : "Alertas"
+    "alerts" : "Alertas",
+    "soporte-tema": "Tema",
+    "soporte-texto": "Descripción del problema",
+    "soporte-enviar": "Enviar mensaje",
+    "soporte-success": "Mensaje enviado"
 }
