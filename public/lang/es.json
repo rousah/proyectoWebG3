@@ -31,9 +31,9 @@
     "foto": "Foto de perfil: ",
     "upload": "Subir",
     "file": "Elegir archivo...",
-    "correo": "Correo electrónico: ",
+    "correo": "E-mail: ",
     "temperatura_maxima": "La temperatura es muy alta",
     "temperatura_minima": "La temperatura es muy baja",
     "humedad_minima": "La humedad esta muy baja",
-    "alerts" : "Alertas"
+    "alerts": "Alertas"
 }
