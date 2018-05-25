@@ -6,6 +6,9 @@ var botonZonaTemplate = `<div class="btn-group btn-group-sm" role="group" style=
                 <i class="fa fa-eye" aria-hidden="true"></i>
             </button>
         </div>`;
+var zonaTemplate = `<p style="margin: 5px; background-color: white; color:black;"><i class="fas fa-leaf"></i> 
+            Campo {id}
+        </p>`;
 
 var listaZonas = [];
 
@@ -41,7 +44,7 @@ function loadZonas() {
             str = str.replace(/{id}/g, item.id);
 
             var c = "background-color: rgba(" + parseInt(item.color.substr(1, 2), 16) + "," +
-                parseInt(item.color.substr(3, 2), 16) + "," + parseInt(item.color.substr(5, 2), 16) + ",0.35)";
+            parseInt(item.color.substr(3, 2), 16) + "," + parseInt(item.color.substr(5, 2), 16) + ",0.35)";
             str = str.replace('{bgcolor}', c);
 
             item.control = $.parseHTML(str)[0];
@@ -72,6 +75,9 @@ function focusZona(id) {
             });
             mapa.fitBounds(bounds);
             refreshSensorList(id);
+            var str4 = zonaTemplate.replace(/{id}/g, item.id);
+            $('#zonaSelect').empty();
+            $('#zonaSelect').append(str4);
         }
     });
     document.getElementById("dropdownMenu3").disabled = false;

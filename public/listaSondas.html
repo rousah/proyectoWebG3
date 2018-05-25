@@ -280,7 +280,11 @@
             /*height: 551px;*/
             border: solid 1px #ccc;
         }
+    }
 
+    .mostrar {
+        display: flex;
+        flex-direction: row;
 
     }
 
@@ -316,7 +320,7 @@
                         <a class="nav-link" href="soporte-tecnico.html">Soporte Técnico</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="mis-datos.html">Perfil</a>
+                        <a class="nav-link" href="mi-perfil.html">Perfil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="mis-datos.html">Cerrar sesión</a>
@@ -347,8 +351,6 @@
                 </div>
             </div>
 
-
-
             <!-- SONDAS -->
             <div class="divSensores col-sm-5" id="sensoresCheck">
                 <p class="pasoSondas">Paso 2: Elige las sondas que quiere ver.</p>
@@ -365,6 +367,11 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="mostrar">
+        <div id="zonaSelect" class="col-6" style="text-align: center;"></div>
+        <div id="sensorSelect" class="col-6" style="text-align: center"></div>
     </div>
 
     <div class="modal fade" id="graphModal" tabindex="-1" role="dialog" aria-labelledby="graphModalLabel" aria-hidden="true">

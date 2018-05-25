@@ -25,10 +25,6 @@
         font-family: 'Montserrat', sans-serif;
     }
 
-    .subtitulos {
-        margin-top: 1rem;
-    }
-
     .navbar {
         padding: 0;
     }
@@ -40,7 +36,14 @@
         display: none;
     }
 
-    .datos-cuenta {
+    h6 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-top: 1rem;
+    }
+
+    .datos-cuenta,
+    .datos-personales {
         border: solid 1px #676767;
         border-radius: 15px;
         padding: 1rem;
@@ -81,7 +84,7 @@
             <div class="navbar-collapse collapse" id="navbarsExample01">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="listaSondas.html">Home</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link itemsMenu dropdown-toggle" id="alerts-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Alertas</a>
@@ -106,15 +109,16 @@
             </div>
         </nav>
     </header>
+
     <div class="container">
         <h6>Datos cuenta:</h6>
         <div class="datos-cuenta d-flex justify-content-between row">
-            <section id="datos-cuenta">
+            <section id="datos-cuenta" class="col-12 d-flex justify-content-between p-0">
                 <form class="col-md-12">
-                    <div class="form-group row email d-flex justify-content-between align-items-center">
-                        <label for="placeholder-email" class="col-form-label bold col-6 p-0" data-i18n="correo">Correo electrónico</label>
+                    <div class="form-group row d-flex justify-content-between align-items-center">
+                        <label for="placeholder-email" class="col-form-label bold col-6 p-0" data-i18n="correo">E-mail:</label>
                         <div class="col-6 p-0">
-                            <input type="text" readonly class="form-control-plaintext text-right" id="placeholder-email" value="hola@email.es">
+                            <input type="text" readonly class="form-control-plaintext" id="placeholder-email" value="hola@email.es">
                         </div>
                     </div>
                 </form>
@@ -123,7 +127,7 @@
                 <span>Contraseña:</span>
                 <!-- Button trigger modal contraseña-->
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#passModal">
-                    Cambiar contraseña
+                    Cambiar contraseña <i class="fas fa-lock"></i>
                 </button>
                 <!-- Modal contraseña-->
                 <div class="modal fade" id="passModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -173,84 +177,72 @@
                                     </div>
                                 </form>
                             </div>
-
                         </div>
                     </div>
                 </div>
             </section>
         </div>
 
-        <span>Datos personales:</span>
-        <section id="datos-personales">
-            <form class="col-md-8">
-                <div class="form-group row name">
-                    <label for="placeholder-firstname" class="col-sm-4 col-form-label bold" data-i18n="name">Nombre:</label>
-                    <div class="col-sm-8">
-                        <input type="text" readonly class="form-control-plaintext" id="placeholder-firstname">
-                    </div>
-                </div>
-                <div class="form-group row ">
-                    <label for="placeholder-lastname" class="col-sm-4 col-form-label bold" data-i18n="surname">Apellido:</label>
-                    <div class="col-sm-8">
-                        <input type="text" readonly class="form-control-plaintext" id="placeholder-lastname">
-                    </div>
-                </div>
-                <div class="form-group row ">
-                    <label for="placeholder-sexo" class="col-sm-4 col-form-label bold" data-i18n="sex">Sexo:</label>
-                    <div class="col-sm-8">
-                        <input type="text" readonly class="form-control-plaintext" id="placeholder-sexo">
-                    </div>
-                </div>
-                <div class="form-group row ">
-                    <label for="placeholder-pais" class="col-sm-4 col-form-label bold" data-i18n="pais">País:</label>
-                    <div class="col-sm-8">
-                        <input type="text" readonly class="form-control-plaintext" id="placeholder-pais">
-                    </div>
-                </div>
-                <div class="form-group row ">
-                    <label for="placeholder-ciudad" class="col-sm-4 col-form-label bold" data-i18n="city">Ciudad:</label>
-                    <div class="col-sm-8">
-                        <input type="text" readonly class="form-control-plaintext" id="placeholder-ciudad">
-                    </div>
-                </div>
-                <div class="form-group row ">
-                    <label for="placeholder-direccion" class="col-sm-4 col-form-label bold" data-i18n="street">Dirección:</label>
-                    <div class="col-sm-8">
-                        <input type="text" readonly class="form-control-plaintext" id="placeholder-direccion">
-                    </div>
-                </div>
-                <div class="form-group row ">
-                    <label for="placeholder-cod-postal" class="col-sm-4 col-form-label bold" data-i18n="zip">Código postal:</label>
-                    <div class="col-sm-8">
-                        <input type="text" readonly class="form-control-plaintext" id="placeholder-cod-postal">
-                    </div>
-                </div>
-                <div class="form-group row ">
-                    <label for="placeholder-telefono" class="col-sm-4 col-form-label bold" data-i18n="phone">Número de teléfono:</label>
-                    <div class="col-sm-8">
-                        <input type="text" readonly class="form-control-plaintext" id="placeholder-telefono">
-                    </div>
-                </div>
-            </form>
-        </section>
 
-        <section id="foto-de-perfil" class="usuario">
-            <div class="col-md-8"><b data-i18n="foto">Foto de perfil:</b></div>
-            <div class="input-group mb-3 col-md-6">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" data-i18n="upload">Upload</span>
-                </div>
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="inputGroupFile01">
-                    <label class="custom-file-label" for="inputGroupFile01" data-i18n="file">Choose file</label>
-                </div>
-            </div>
-        </section>
-
+        <h6>Datos personales:</h6>
+        <div class="datos-personales d-flex justify-content-between row">
+            <section id="datos-personales col-12 d-flex justify-content-between p-0">
+                <form class="col-md-12">
+                    <div class="form-group row d-flex justify-content-between align-items-center">
+                        <label for="placeholder-firstname" class="col-form-label bold col-6 p-0" data-i18n="name">Nombre:</label>
+                        <div class="col-6 p-0">
+                            <input type="text" readonly class="form-control-plaintext" id="placeholder-firstname">
+                        </div>
+                    </div>
+                    <div class="form-group row d-flex justify-content-between align-items-center">
+                        <label for="placeholder-lastname" class="col-6 p-0 col-form-label" data-i18n="surname">Apellido:</label>
+                        <div class="col-6 p-0">
+                            <input type="text" readonly class="form-control-plaintext" id="placeholder-lastname">
+                        </div>
+                    </div>
+                    <div class="form-group row d-flex justify-content-between align-items-center ">
+                        <label for="placeholder-sexo" class="col-6 p-0 col-form-label" data-i18n="sex">Sexo:</label>
+                        <div class="col-6 p-0">
+                            <input type="text" readonly class="form-control-plaintext" id="placeholder-sexo">
+                        </div>
+                    </div>
+                    <div class="form-group row d-flex justify-content-between align-items-center ">
+                        <label for="placeholder-pais" class="col-6 p-0 col-form-label" data-i18n="pais">País:</label>
+                        <div class="col-6 p-0">
+                            <input type="text" readonly class="form-control-plaintext" id="placeholder-pais">
+                        </div>
+                    </div>
+                    <div class="form-group row d-flex justify-content-between align-items-center ">
+                        <label for="placeholder-ciudad" class="col-6 p-0 col-form-label" data-i18n="city">Ciudad:</label>
+                        <div class="col-6 p-0">
+                            <input type="text" readonly class="form-control-plaintext" id="placeholder-ciudad">
+                        </div>
+                    </div>
+                    <div class="form-group row d-flex justify-content-between align-items-center ">
+                        <label for="placeholder-direccion" class="col-6 p-0 col-form-label" data-i18n="street">Dirección:</label>
+                        <div class="col-6 p-0">
+                            <input type="text" readonly class="form-control-plaintext" id="placeholder-direccion">
+                        </div>
+                    </div>
+                    <div class="form-group row d-flex justify-content-between align-items-center ">
+                        <label for="placeholder-cod-postal" class="col-6 p-0 col-form-label" data-i18n="zip">Código postal:</label>
+                        <div class="col-6 p-0">
+                            <input type="text" readonly class="form-control-plaintext" id="placeholder-cod-postal">
+                        </div>
+                    </div>
+                    <div class="form-group row d-flex justify-content-between align-items-center my-0">
+                        <label for="placeholder-telefono" class="col-6 p-0 col-form-label" data-i18n="phone">Número de teléfono:</label>
+                        <div class="col-6 p-0">
+                            <input type="text" readonly class="form-control-plaintext" id="placeholder-telefono">
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
     </div>
 
     <footer class="footer" role="contentinfo">
-        <span>Copyright © 2018 Cultisense <br>Todos los derechos reservados | Términos de uso</span>
+        <span>Copyright © 2018 Cultisense<br>Todos los derechos reservados | Términos de uso</span>
         <div>
             <img src="images/logo_facebook.svg" alt="logoFacebook">
             <img src="images/logo_twitter.svg" alt="logoTwitter">
@@ -263,6 +255,8 @@
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./js/member.js"></script>
+    <script src="js/alertas.js"></script>
+
 
     <!-- Localization start-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.4/jquery.i18n.js"></script>

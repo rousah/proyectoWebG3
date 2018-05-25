@@ -69,7 +69,7 @@ const sensores = [
 
 const zonas = [
     {
-        "name": "Campo de alcachofas",
+        "name": "Campo 1",
         "color": "#8336c9",
         "userId": 1,
         "temp_max": 30,
@@ -77,7 +77,7 @@ const zonas = [
         "hume_min": 50,
     },
     {
-        "name": "Campo de trigo",
+        "name": "Campo 2",
         "color": "#ff8000",
         "userId": 1,
         "temp_max": 25,
