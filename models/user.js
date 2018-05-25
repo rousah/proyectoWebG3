@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
         zip: DataTypes.STRING,
         street: DataTypes.STRING,
         telephone: DataTypes.STRING,
+        force_password_change: DataTypes.BOOLEAN,
         /*activo: DataTypes.STRING,
         rol: DataTypes.STRING,*/
 

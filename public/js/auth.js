@@ -9,10 +9,16 @@ $(document).ready(function () {
             url: baseURI + 'login',
             data: $(this).serialize(),
             success: function (data) {
-                console.log(data);
+                console.log(data.user.force_password_change);
                 if (data.token) {
                     localStorage.setItem('token', data.token);
-                    window.location = '/mis-datos.html';
+                    if(data.user.force_password_change) {
+                        window.location = '/mis-datos.html';
+                    }
+                    else {
+                        window.location = '/listaSondas.html'
+                    }
+
                 } else {
                     console.log('No token recieved');
                 }
