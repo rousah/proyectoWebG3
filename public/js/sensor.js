@@ -110,8 +110,13 @@ function loadSensores(sensores) {
 function focusSensor(id) {
     listaSensores.forEach(function (item) {
         if (item.id == id) {
+            infowindow = item.info;
             mapa.panTo(item.marker.position);
-            infowindow.open(map, marker);
+            if (currentInfoWindow != null) currentInfoWindow.close();
+            infowindow.open(mapa, item.marker);
+            currentInfoWindow   = infowindow;
+            chart.data.datasets = [];
+            chart.update();
         }
     });
 }
