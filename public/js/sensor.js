@@ -6,6 +6,7 @@ var humHeatMap;
 
 var sensorTemplate = `<button class="btn btn-secondary" style="margin: 5px" onclick="focusSensor({id})"><i class="fa fa-map-pin"></i> Sonda {id}</button>`;
 var sensorTemplate2 = `<button class="btn btn-secondary" style="margin: 5px" onclick="showSensorHumData({id})"><i class="fa fa-map-pin"></i> Sonda {id}</button>`;
+var sensorTemplate3 = `<p class="btn btn-secondary" style="margin: 5px; background-color: white; color:black;"><i class="fa fa-map-pin"></i> Sonda {id}</p>`;
 
 var currentInfoWindow;
 var bounds = new google.maps.LatLngBounds();
@@ -76,11 +77,11 @@ function loadSensores(sensores) {
         str = str.replace(/{id}/g, item.id);
 
         $('#sensores-list').append(str);
-        
+
         var str2 = sensorTemplate2.replace('{lat}', item.lat);
         str2 = str2.replace('{lng}', item.lng);
         str2 = str2.replace(/{id}/g, item.id);
-        
+
         $('#sensores').append(str2);
         listaSensores.push(item);
     });
@@ -114,10 +115,16 @@ function focusSensor(id) {
             mapa.panTo(item.marker.position);
             if (currentInfoWindow != null) currentInfoWindow.close();
             infowindow.open(mapa, item.marker);
-            currentInfoWindow   = infowindow;
+            currentInfoWindow = infowindow;
             chart.data.datasets = [];
             chart.update();
+
+            var str3 = sensorTemplate3.replace(/{id}/g, item.id);
+            $('#sensorSelect').empty();
+            $('#sensorSelect').append(str3);
+            listaSensores.push(item);
         }
+        
     });
 }
 
@@ -126,16 +133,16 @@ function refreshSensorList(zona_id) {
     $('#sensores').empty();
 
     listaSensores.forEach(function (sensor) {
-        if(sensor.zonaId === zona_id) {
+        if (sensor.zonaId === zona_id) {
             var str = sensorTemplate.replace('{lat}', sensor.lat);
-            str     = str.replace('{lng}', sensor.lng);
-            str     = str.replace(/{id}/g, sensor.id);
+            str = str.replace('{lng}', sensor.lng);
+            str = str.replace(/{id}/g, sensor.id);
 
             $('#sensores-list').append(str);
 
             var str2 = sensorTemplate2.replace('{lat}', sensor.lat);
-            str2     = str2.replace('{lng}', sensor.lng);
-            str2     = str2.replace(/{id}/g, sensor.id);
+            str2 = str2.replace('{lng}', sensor.lng);
+            str2 = str2.replace(/{id}/g, sensor.id);
             $('#sensores').append(str2);
         }
     });
@@ -179,7 +186,7 @@ function showSensorHumData(id) {
     $('#graphModalLabel').text("Humedad sonda " + id);
     $('#humedad').html('<a href="javascript:showSensorHumData(' + id + ')" class="badge badge-light" style="font-size: 1.5rem; color:#4098bc"><i class="fas fa-tint"></i></a>');
     $('#temperatura').html('<a href="javascript:showSensorTempData(' + id + ')" class="badge badge-light" style="font-size: 1.5rem; color:#cb5050"><i class="fas fa-thermometer-three-quarters"></i></a>');
-   /* $('#sensores').html(`<button class="btn btn-secondary" style="margin: 5px" onclick="focusSensor({id})"><i class="fa fa-map-pin"></i> Sonda {id}</button>`);*/
+    /* $('#sensores').html(`<button class="btn btn-secondary" style="margin: 5px" onclick="focusSensor({id})"><i class="fa fa-map-pin"></i> Sonda {id}</button>`);*/
     $('#graphModal').modal('show');
     chart.data.datasets = [];
 
