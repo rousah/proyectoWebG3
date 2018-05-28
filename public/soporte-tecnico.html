@@ -103,7 +103,7 @@
         <nav class="navbar navbar-dark navbar-expand-md bg-dark">
             <a class="navbar-brand" href="#" style="width: 50px; margin: 0.5rem 1rem;"><img id="C" src="images/logo_C.svg"></a>
             <a href="#">
-                <h4 class="titulo">Home</h4>
+                <h4 class="titulo">Soporte</h4>
             </a>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation" style="margin: 0.5rem 1rem;">
             <span class="navbar-toggler-icon"></span>
@@ -111,9 +111,9 @@
 
             <div class="navbar-collapse collapse" id="navbarsExample01">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link itemsMenu" href="listaSondas.html">Home<span class="sr-only">(current)</span></a>
-                    </li>
+                    
+                        <a class="nav-link itemsMenu" href="listaSondas.html">Home</a>
+                    
                     <li class="nav-item dropdown">
                         <a class="nav-link itemsMenu dropdown-toggle" id="alerts-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Alertas</a>
                         <ul class="dropdown-menu notify-drop">
@@ -123,14 +123,15 @@
                             </div>
                         </ul>
                     </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="soporte-tecnico.html">Soporte Técnico<span class="sr-only">(current)</span></a>
+                    </li>
+            
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Soporte Técnico</a>
+                        <a class="nav-link" href="mi-perfil.html">Perfil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="mis-datos.html">Perfil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="mis-datos.html">Cerrar sesión</a>
+                        <a class="nav-link" href="mis-datos.html" onclick="localStorage.clear()">Cerrar sesión</a>
                     </li>
                 </ul>
 
