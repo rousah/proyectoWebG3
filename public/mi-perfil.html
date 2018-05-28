@@ -49,6 +49,10 @@
         padding: 1rem;
     }
 
+    /* .cambiar-pass {
+        background-color: #eee;
+    } */
+
     header nav a {
         max-width: inherit;
     }
@@ -68,6 +72,12 @@
         }
     }
 
+    @media (min-width: 992px) {
+        .datos-cuenta {
+            height: 450px;
+        }
+    }
+
 </style>
 
 <body id="bootstrap-overwrite">
@@ -84,7 +94,7 @@
             <div class="navbar-collapse collapse" id="navbarsExample01">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="listaSondas.html">Home</a>
+                        <a class="nav-link" href="listaSondas.html"><i class="fas fa-chart-area"></i> Home</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link itemsMenu dropdown-toggle" id="alerts-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Alertas</a>
@@ -96,13 +106,13 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Soporte Técnico</a>
+                        <a class="nav-link" href="#"><i class="fas fa-question-circle"></i> Soporte Técnico</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link itemsMenu" href="#">Perfil<span class="sr-only">(current)</span></a>
+                        <a class="nav-link itemsMenu" href="#"><i class="fas fa-user"></i> Perfil<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html" onclick="localStorage.clear()">Cerrar sesión</a>
+                        <a class="nav-link" href="index.html" onclick="localStorage.clear()"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
                     </li>
                 </ul>
 
@@ -111,27 +121,53 @@
     </header>
 
     <div class="container d-lg-flex p-0">
-        <div class="col-lg-6">
+        <div class="cuenta col-lg-6 mx-lg-1">
             <h6>Datos cuenta:</h6>
             <div class="datos-cuenta d-flex justify-content-between row">
                 <section id="datos-cuenta" class="col-12 d-flex justify-content-between p-0">
                     <form class="col-md-12">
                         <div class="form-group row d-flex justify-content-between align-items-center">
-                            <label for="placeholder-email" class="col-form-label bold col-6 p-0" data-i18n="correo">E-mail:</label>
-                            <div class="col-6 p-0">
+                            <label for="placeholder-email" class="col-form-label bold col-5 p-0" data-i18n="correo">E-mail:</label>
+                            <div class="col-7 p-0">
                                 <input type="text" readonly class="form-control-plaintext" id="placeholder-email" value="hola@email.es">
                             </div>
                         </div>
                     </form>
                 </section>
-                <section id="datos-password" class="p-0 col-12">
-                    <div>
+                <section id="datos-password" class="p-0 col-12 d-flex flex-row align-items-center align-items-lg-start justify-space-between">
+                    <div class="col-5 m-0 p-0">
                         <span class="text-left p-0">Contraseña:</span>
                     </div>
-                    <div class="d-flex justify-content-center">
+                    <div class="cambiar-pass d-none d-lg-block d-xl-block col-7 p-0">
+                        <form id="password-form">
+                            <div class="form-group">
+                                <label for="old_password" data-i18n="contrasenya-antigua" class="bold">Contraseña antigua:</label>
+                                <input type="password" class="form-control" id="old_password" name="old_password" required>
+
+                            </div>
+                            <div class="form-group">
+                                <label id="new_password" data-i18n="contrasenya-nueva" class="bold">Contraseña nueva:</label>
+                                <input type="password" class="form-control" id="new_password" name="new_password" required>
+                            </div>
+                            <div class="form-group">
+                                <label id="re_new_password" class="bold" data-i18n="repetir-contrasenya">Repetir contraseña nueva:</label>
+                                <input type="password" class="form-control" id="re_new_password" name="re_new_password" required>
+                            </div>
+                            <div class="boton justify-content-center d-flex" id="botones">
+                                <button class="cult-btn btn btn-outline-primary align-self-end d-flex" role="button" type="submit">Cambiar</button>
+                            </div>
+                            <div style="display: none" class="alert alert-success my-lg-2" id="password-success-alert" role="alert" data-i18n="pass-changed">
+                                ¡Su contraseña se ha cambiado!
+                            </div>
+                            <div style="display: none" class="alert alert-danger my-lg-2" id="password-error-alert" role="alert" data-i18n="error">
+                                ¡Error!
+                            </div>
+                        </form>
+                    </div>
+                    <div class="d-flex col-6 p-0 d-lg-none d-xl-none">
                         <!-- Button trigger modal contraseña-->
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#passModal">
-                            Cambiar contraseña <i class="fas fa-lock"></i>
+                            Cambiar <i class="fas fa-lock"></i>
                         </button>
                     </div>
                     <!-- Modal contraseña-->
@@ -144,8 +180,8 @@
                                   <span aria-hidden="true">&times;</span>
                                 </button>
                                 </div>
-                                <div class="modal-body">
-                                    <form id="password-form" class="col-md-6 col-sm-8">
+                                <div class="modal-body justify-content-center d-flex">
+                                    <form id="password-form" class="col-12 col-sm-10">
                                         <div class="form-group">
                                             <label for="old_password" data-i18n="contrasenya-antigua" class="bold">Contraseña antigua:</label>
                                             <input type="password" class="form-control" id="old_password" name="old_password" required>
@@ -159,24 +195,16 @@
                                         <div class="form-group">
                                             <label id="re_new_password" class="bold" data-i18n="repetir-contrasenya">Repetir contraseña nueva:</label>
                                             <input type="password" class="form-control" id="re_new_password" name="re_new_password" required>
-
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <div class="modal-footer d-flex justify-content-right col-12">
                                             <div class="boton" id="botones">
-                                                <button class="cult-btn btn btn-outline-primary" role="button" type="submit">Cambiar </button>
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                <button class="cult-btn btn btn-outline-primary" role="button" type="submit">Cambiar</button>
                                             </div>
                                         </div>
-                                        <div style="display: none" class="alert alert-success" id="password-success-alert" role="alert" data-i18n="pass-changed" on="habilitar()">
+                                        <div style="display: none" class="alert alert-success" id="password-success-alert" role="alert" data-i18n="pass-changed">
                                             ¡Su contraseña se ha cambiado!
                                         </div>
-
-                                        <script>
-                                            function habilitar() {
-                                                document.getElementById("continuar").disabled = false;
-                                            }
-
-                                        </script>
                                         <div style="display: none" class="alert alert-danger" id="password-error-alert" role="alert" data-i18n="error">
                                             ¡Error!
                                         </div>
@@ -188,10 +216,9 @@
                 </section>
             </div>
         </div>
-
-        <div class="col-lg-6">
+        <div class="col-lg-6 mx-lg-2">
             <h6>Datos personales:</h6>
-            <div class="datos-personales d-flex justify-content-between row">
+            <div class="datos-personales d-flex justify-content-between row mr-lg-1">
                 <section id="datos-personales" class="col-12 d-flex justify-content-between p-0">
                     <form class="col-12">
                         <div class="form-group row d-flex justify-content-between align-items-center">
