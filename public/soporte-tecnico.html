@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie-edge">
-    <title>CULTISENSE | Sondas</title>
+    <title>CULTISENSE | Soporte Técnico</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css" />
@@ -97,6 +97,7 @@
 
 </style>
 
+
 <body id="bootstrap-overwrite">
 
     <header class="encabezado">
@@ -112,10 +113,10 @@
             <div class="navbar-collapse collapse" id="navbarsExample01">
                 <ul class="navbar-nav mr-auto">
 
-                    <a class="nav-link itemsMenu" href="listaSondas.html">Home</a>
+                    <a class="nav-link itemsMenu" href="listaSondas.html"><i class="fas fa-map-marker-alt"></i> Mapa</a>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link itemsMenu dropdown-toggle" id="alerts-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Alertas</a>
+                        <a class="nav-link itemsMenu dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-bell"></i> <span id="alerts-link">Alertas</span></a>
                         <ul class="dropdown-menu notify-drop py-0">
                             <!-- end notify title -->
                             <!-- notify content -->
@@ -124,14 +125,14 @@
                         </ul>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="soporte-tecnico.html">Soporte Técnico<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="soporte-tecnico.html"><i class="fas fa-question-circle"></i> Soporte Técnico<span class="sr-only">(current)</span></a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="mi-perfil.html">Perfil</a>
+                        <a class="nav-link" href="mi-perfil.html"><i class="fas fa-user"></i> Perfil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="mis-datos.html" onclick="localStorage.clear()">Cerrar sesión</a>
+                        <a class="nav-link" href="mis-datos.html" onclick="localStorage.clear()"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
                     </li>
                 </ul>
 
