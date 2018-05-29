@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie-edge">
-    <title>CULTISENSE | Sondas</title>
+    <title>CULTISENSE | Mapa</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css" />
@@ -272,20 +272,20 @@
             padding: 5px;
             border: none;
         }
-        
-        .dropdown.dropZonas{
+
+        .dropdown.dropZonas {
             width: 205.06px;
             height: 36px;
             margin: 0px;
         }
-        
-        .dropdown.dropSondas{
+
+        .dropdown.dropSondas {
             width: 205.06px;
             height: 36px;
             margin: 0px;
         }
-        
-        .btn.btn-secondary.dropdown-toggle{
+
+        .btn.btn-secondary.dropdown-toggle {
             width: 100%;
             height: 36px;
             padding: 0px;
@@ -306,6 +306,7 @@
             border: solid 1px #ccc;
         }
     }
+
 </style>
 
 <body id="bootstrap-overwrite">
@@ -314,7 +315,7 @@
         <nav class="navbar navbar-dark navbar-expand-md bg-dark">
             <a class="navbar-brand" href="#" style="width: 50px; margin: 0.5rem 1rem;"><img id="C" src="images/logo_C.svg"></a>
             <a href="#">
-                <h4 class="titulo">Home</h4>
+                <h4 class="titulo">Mapa</h4>
             </a>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation" style="margin: 0.5rem 1rem;">
             <span class="navbar-toggler-icon"></span>
@@ -323,11 +324,11 @@
             <div class="navbar-collapse collapse" id="navbarsExample01">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link itemsMenu" href="listaSondas.html">Home<span class="sr-only">(current)</span></a>
+                        <a class="nav-link itemsMenu" href="listaSondas.html"><i class="fas fa-map-marker-alt"></i> Mapa<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link itemsMenu dropdown-toggle" id="alerts-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Alertas</a>
-                        <ul class="dropdown-menu notify-drop">
+                        <a class="nav-link itemsMenu dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-bell"></i> <span id="alerts-link">Alertas</span></a>
+                        <ul class="dropdown-menu notify-drop py-0">
                             <!-- end notify title -->
                             <!-- notify content -->
                             <div class="drop-content" id="alert-list">
@@ -335,13 +336,13 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="soporte-tecnico.html">Soporte Técnico</a>
+                        <a class="nav-link" href="soporte-tecnico.html"><i class="fas fa-question-circle"></i> Soporte Técnico</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="mi-perfil.html">Perfil</a>
+                        <a class="nav-link" href="mi-perfil.html"><i class="fas fa-user"></i> Perfil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html" onclick="localStorage.clear()">Cerrar sesión</a>
+                        <a class="nav-link" href="index.html" onclick="localStorage.clear()"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
                     </li>
                 </ul>
 
