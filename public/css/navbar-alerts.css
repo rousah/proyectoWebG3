@@ -1,9 +1,8 @@
-
 .navbar-nav .dropdown-menu.notify-drop {
-    min-width:        330px;
+    min-width: 290px;
     background-color: #fff;
-    min-height:       360px;
-    max-height:       360px;
+    min-height: 290px;
+    max-height: 360px;
 }
 
 .navbar-nav .dropdown-menu.notify-drop .drop-content {
@@ -13,14 +12,13 @@
     overflow-y: scroll;
 }
 
-.navbar-nav .dropdown-menu.notify-drop .drop-content > li{
+.navbar-nav .dropdown-menu.notify-drop .drop-content > li {
     border-bottom: 2px solid #55c5ff;
-
 }
 
 .navbar-nav .dropdown-menu.notify-drop .drop-content .notification-wrapper {
-    padding:       10px;
-    font-size:     14px;
+    padding: 10px;
+    font-size: 14px;
 }
 
 .navbar-nav .dropdown-menu.notify-drop .drop-content .notification-wrapper .notification-action > i {
@@ -36,7 +34,7 @@
 }
 
 .navbar-nav .dropdown-menu.notify-drop .drop-content::-webkit-scrollbar {
-    width:            8px;
+    width: 8px;
     background-color: #F5F5F5;
 }
 
@@ -44,3 +42,11 @@
     background-color: #ccc;
 }
 
+.fa-exclamation-triangle {
+    color: #f49600;
+    font-size: 1.5rem;
+}
+
+.fa-trash {
+    font-size: 1.2rem;
+}
