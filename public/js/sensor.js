@@ -34,7 +34,8 @@ function loadSensores(sensores) {
             }),
             map: mapa,
             //label: String(item.id),
-            icon: icon,
+            animation: google.maps.Animation.DROP,
+            visible: false,
             icon: new google.maps.MarkerImage('../images/marcador_azul.png',
                 null, null, null, new google.maps.Size(35, 35)),
         });
@@ -90,22 +91,7 @@ function loadSensores(sensores) {
 
     mapa.fitBounds(bounds);
 
-    tempHeatMap = new google.maps.visualization.HeatmapLayer({
-        data: tempHeatMapData,
-        radius: 40,
-        maxIntensity: 50
-    });
-
-    humHeatMap = new google.maps.visualization.HeatmapLayer({
-        data: humHeatMapData,
-        radius: 40,
-        maxIntensity: 100,
-        gradient: [
-                'rgba(0,255,255,0)',
-                'rgba(0,255,255,1)',
-                'rgba(0,0,255,1)'
-            ]
-    });
+    $('#campoSelect').modal('show');
 }
 
 function focusSensor(id) {
@@ -134,6 +120,7 @@ function refreshSensorList(zona_id) {
 
     listaSensores.forEach(function (sensor) {
         if (sensor.zonaId === zona_id) {
+            sensor.marker.setVisible(true);
             var str = sensorTemplate.replace('{lat}', sensor.lat);
             str = str.replace('{lng}', sensor.lng);
             str = str.replace(/{id}/g, sensor.id);

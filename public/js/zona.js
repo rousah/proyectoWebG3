@@ -1,11 +1,15 @@
 // https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/template_strings
 
 var botonZonaTemplate = `<div class="btn-group btn-group-sm" role="group" style="margin: 5px;">
-            <button class="btn btn-light" style="{bgcolor}" onclick="focusZona({id})">{Nombre de la zona}</button>
+            <button class="btn btn-secondary" style="{bgcolor}" onclick="focusZona({id})">{Nombre de la zona}</button>
             <button class="btn btn-secondary" style="width:40px" onclick="cargarZona({id})">
-                <i class="fa fa-eye" aria-hidden="true"></i>
+                <i class="fa fa-eye-slash" aria-hidden="true"></i>
             </button>
         </div>`;
+var botonZonaSelectTemplate = `<div class="btn-group btn-group-sm" role="group" style="margin: 5px;">
+            <button class="btn btn-light" style="{bgcolor}" onclick="focusZona({id})">{Nombre de la zona}</button>
+        </div>`;
+
 var zonaTemplate = `<p style="margin: 5px; background-color: white; color:black; text-align=center;"><i class="fas fa-leaf"></i> 
             Campo {id}
         </p>`;
@@ -35,7 +39,7 @@ function loadZonas() {
                 fillColor: item.color,
                 fillOpacity: 0.35,
                 editable: false,
-                visible: true
+                visible: false
             });
             zona.setMap(mapa);
             item.zona = zona;
@@ -50,6 +54,18 @@ function loadZonas() {
             item.control = $.parseHTML(str)[0];
 
             $('#zonas-list').append(item.control);
+
+
+            str = botonZonaSelectTemplate.replace('{Nombre de la zona}', item.name);
+            str = str.replace(/{id}/g, item.id);
+
+            var c = "background-color: rgba(" + parseInt(item.color.substr(1, 2), 16) + "," +
+                    parseInt(item.color.substr(3, 2), 16) + "," + parseInt(item.color.substr(5, 2), 16) + ",0.35)";
+            str   = str.replace('{bgcolor}', c);
+
+            item.control_select = $.parseHTML(str)[0];
+
+            $('#zonas-preselect-list').append(item.control_select);
 
         });
 
@@ -67,13 +83,21 @@ function loadZonas() {
 }
 
 function focusZona(id) {
+    $('#campoSelect').modal('hide');
     listaZonas.forEach(function (item) {
+        var c = item.control.querySelector("i");
+        var b = item.control.querySelector("button:nth-child(2)");
+
         if (item.id == id) {
             var bounds = new google.maps.LatLngBounds();
             item.zona.getPath().getArray().forEach(function (v) {
                 bounds.extend(v);
             });
             mapa.fitBounds(bounds);
+            item.zona.setVisible(true);
+            c.classList.replace("fa-eye-slash", "fa-eye");
+            b.classList.replace("btn-secondary", "btn-light");
+
             refreshSensorList(id);
             var str4 = zonaTemplate.replace(/{id}/g, item.id);
             $('#zonaSelect').empty();

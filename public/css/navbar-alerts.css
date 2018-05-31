@@ -50,3 +50,7 @@
 .fa-trash {
     font-size: 1.2rem;
 }
+
+.navbar-nav .nav-link {
+    cursor: pointer;
+}

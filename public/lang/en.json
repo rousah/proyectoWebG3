@@ -39,5 +39,6 @@
     "soporte-tema": "Subject",
     "soporte-texto": "Description of the problem",
     "soporte-enviar": "Send message",
-    "soporte-success": "Message sent"
+    "soporte-success": "Message sent",
+    "select-campo": "Select camp"
 }
