@@ -222,68 +222,68 @@
             </div>
         </div>
         <div class="col-lg-6 mx-lg-2">
-
-            <h6 onclick="toggleDatosPersonales()" class="d-flex align-items-center">Datos personales <i class="fas fa-angle-down ml-1 btn btn-primary p-0 m-0" style="font-size: 1.5rem;"></i></h6>
-            <script>
-                function toggleDatosPersonales() {
-                    var element = document.getElementById("datos-personales");
-                    element.classList.toggle("d-none").slideDown("slow");
-                }
-
-            </script>
-            <div class="datos-personales justify-content-between row mr-lg-1 d-none" id="datos-personales">
-                <section id="datos-personales" class="col-12 d-flex justify-content-between p-0">
-                    <form class="col-12">
-                        <div class="form-group row d-flex justify-content-between align-items-center">
-                            <label for="placeholder-firstname" class="col-form-label bold col-6 p-0" data-i18n="name">Nombre:</label>
-                            <div class="col-6 p-0">
-                                <input type="text" readonly class="form-control-plaintext" id="placeholder-firstname">
+            <div id="accordion">
+                <div id="headingDatos">
+                    <h6 class="d-flex align-items-center">Datos personales <button data-toggle="collapse" data-target="#collapseDatos" aria-expanded="true" aria-controls="collapseDatos"><i class="fas fa-angle-down ml-1 btn btn-primary p-0 m-0" style="font-size: 1.5rem;"></i></button></h6>
+                </div>
+                <div class="datos-personales justify-content-between row mr-lg-1 collapse hide" id="collapseDatos" aria-labelledby="headingDatos" data-parent="#accordion">
+                    <section id="datos-personales" class="col-12 d-flex justify-content-between p-0">
+                        <form class="col-12">
+                            <div class="form-group row d-flex justify-content-between align-items-center">
+                                <label for="placeholder-firstname" class="col-form-label bold col-6 p-0" data-i18n="name">Nombre:</label>
+                                <div class="col-6 p-0">
+                                    <input type="text" readonly class="form-control-plaintext" id="placeholder-firstname">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group row d-flex justify-content-between align-items-center">
-                            <label for="placeholder-lastname" class="col-6 p-0 col-form-label" data-i18n="surname">Apellido:</label>
-                            <div class="col-6 p-0">
-                                <input type="text" readonly class="form-control-plaintext" id="placeholder-lastname">
+                            <div class="form-group row d-flex justify-content-between align-items-center">
+                                <label for="placeholder-lastname" class="col-6 p-0 col-form-label" data-i18n="surname">Apellido:</label>
+                                <div class="col-6 p-0">
+                                    <input type="text" readonly class="form-control-plaintext" id="placeholder-lastname">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group row d-flex justify-content-between align-items-center ">
-                            <label for="placeholder-sexo" class="col-6 p-0 col-form-label" data-i18n="sex">Sexo:</label>
-                            <div class="col-6 p-0">
-                                <input type="text" readonly class="form-control-plaintext" id="placeholder-sexo">
+                            <div class="form-group row d-flex justify-content-between align-items-center ">
+                                <label for="placeholder-sexo" class="col-6 p-0 col-form-label" data-i18n="sex">Sexo:</label>
+                                <div class="col-6 p-0">
+                                    <input type="text" readonly class="form-control-plaintext" id="placeholder-sexo">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group row d-flex justify-content-between align-items-center ">
-                            <label for="placeholder-pais" class="col-6 p-0 col-form-label" data-i18n="pais">País:</label>
-                            <div class="col-6 p-0">
-                                <input type="text" readonly class="form-control-plaintext" id="placeholder-pais">
+                            <div class="form-group row d-flex justify-content-between align-items-center ">
+                                <label for="placeholder-pais" class="col-6 p-0 col-form-label" data-i18n="pais">País:</label>
+                                <div class="col-6 p-0">
+                                    <input type="text" readonly class="form-control-plaintext" id="placeholder-pais">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group row d-flex justify-content-between align-items-center ">
-                            <label for="placeholder-ciudad" class="col-6 p-0 col-form-label" data-i18n="city">Ciudad:</label>
-                            <div class="col-6 p-0">
-                                <input type="text" readonly class="form-control-plaintext" id="placeholder-ciudad">
+                            <div class="form-group row d-flex justify-content-between align-items-center ">
+                                <label for="placeholder-ciudad" class="col-6 p-0 col-form-label" data-i18n="city">Ciudad:</label>
+                                <div class="col-6 p-0">
+                                    <input type="text" readonly class="form-control-plaintext" id="placeholder-ciudad">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group row d-flex justify-content-between align-items-center ">
-                            <label for="placeholder-direccion" class="col-6 p-0 col-form-label" data-i18n="street">Dirección:</label>
-                            <div class="col-6 p-0">
-                                <input type="text" readonly class="form-control-plaintext" id="placeholder-direccion">
+                            <div class="form-group row d-flex justify-content-between align-items-center ">
+                                <label for="placeholder-direccion" class="col-6 p-0 col-form-label" data-i18n="street">Dirección:</label>
+                                <div class="col-6 p-0">
+                                    <input type="text" readonly class="form-control-plaintext" id="placeholder-direccion">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group row d-flex justify-content-between align-items-center ">
-                            <label for="placeholder-cod-postal" class="col-6 p-0 col-form-label" data-i18n="zip">Código postal:</label>
-                            <div class="col-6 p-0">
-                                <input type="text" readonly class="form-control-plaintext" id="placeholder-cod-postal">
+                            <div class="form-group row d-flex justify-content-between align-items-center ">
+                                <label for="placeholder-cod-postal" class="col-6 p-0 col-form-label" data-i18n="zip">Código postal:</label>
+                                <div class="col-6 p-0">
+                                    <input type="text" readonly class="form-control-plaintext" id="placeholder-cod-postal">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group row d-flex justify-content-between align-items-center my-0">
-                            <label for="placeholder-telefono" class="col-6 p-0 col-form-label" data-i18n="phone">Número de teléfono:</label>
-                            <div class="col-6 p-0">
-                                <input type="text" readonly class="form-control-plaintext" id="placeholder-telefono">
+                            <div class="form-group row d-flex justify-content-between align-items-center my-0">
+                                <label for="placeholder-telefono" class="col-6 p-0 col-form-label" data-i18n="phone">Número de teléfono:</label>
+                                <div class="col-6 p-0">
+                                    <input type="text" readonly class="form-control-plaintext" id="placeholder-telefono">
+                                </div>
                             </div>
-                        </div>
-                    </form>
-                </section>
+                        </form>
+                    </section>
+                </div>
+                <div id="headingAlertas">
+                    <h6 class="d-flex align-items-center">Alertas <button data-toggle="collapse" data-target="#collapseAlertas" aria-expanded="true" aria-controls="collapseAlertas"><i class="fas fa-angle-down ml-1 btn btn-primary p-0 m-0" style="font-size: 1.5rem;"></i></button></h6>
+                </div>
+                <div class="datos-personales justify-content-between row mr-lg-1 collapse hide" id="collapseAlertas" aria-labelledby="headingAlertas" data-parent="#accordion">alertasjajja</div>
             </div>
         </div>
     </div>
