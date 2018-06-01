@@ -1,7 +1,7 @@
 const baseURI = 'http://localhost:3000/'; // local develop
 //const baseURI = 'http://luglo1.upv.edu.es/'; //LIVE
 
-var sensorTemplate = `<button class="btn btn-secondary" style="margin: 5px" onclick="#"><i class="fa fa-map-pin"></i> Sonda {id}</button>`;
+var sensorTemplate = `<button class="btn btn-secondary" style="margin: 5px" data-toggle="modal" data-target="#alertasModal"><i class="fa fa-map-pin"></i> Sonda {id}</button>`;
 
 $(document).ready(function () {
     //Call this when page loaded
