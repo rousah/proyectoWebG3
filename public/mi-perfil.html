@@ -186,20 +186,20 @@
                                 </button>
                                 </div>
                                 <div class="modal-body justify-content-center d-flex">
-                                    <form id="password-form" class="col-12 col-sm-10">
+                                    <form id="password-form_modal" class="col-12 col-sm-10">
                                         <div class="form-group">
-                                            <label for="old_password" data-i18n="contrasenya-antigua" class="bold">Contraseña antigua:</label>
-                                            <input type="password" class="form-control" id="old_password" name="old_password" required>
+                                            <label for="old_password_modal" data-i18n="contrasenya-antigua" class="bold">Contraseña antigua:</label>
+                                            <input type="password" class="form-control" id="old_password_modal" name="old_password_modal" required>
 
                                         </div>
                                         <div class="form-group">
-                                            <label id="new_password" data-i18n="contrasenya-nueva" class="bold">Contraseña nueva:</label>
-                                            <input type="password" class="form-control" id="new_password" name="new_password" required>
+                                            <label id="new_password_modal" data-i18n="contrasenya-nueva" class="bold">Contraseña nueva:</label>
+                                            <input type="password" class="form-control" id="new_password_modal" name="new_password_modal" required>
 
                                         </div>
                                         <div class="form-group">
-                                            <label id="re_new_password" class="bold" data-i18n="repetir-contrasenya">Repetir contraseña nueva:</label>
-                                            <input type="password" class="form-control" id="re_new_password" name="re_new_password" required>
+                                            <label id="re_new_password_modal" class="bold" data-i18n="repetir-contrasenya">Repetir contraseña nueva:</label>
+                                            <input type="password" class="form-control" id="re_new_password_modal" name="re_new_password_modal" required>
                                         </div>
                                         <div class="modal-footer d-flex justify-content-right col-12">
                                             <div class="boton" id="botones">
@@ -283,7 +283,35 @@
                 <div id="headingAlertas">
                     <h6 class="d-flex align-items-center">Alertas <button data-toggle="collapse" data-target="#collapseAlertas" aria-expanded="true" aria-controls="collapseAlertas"><i class="fas fa-angle-down ml-1 btn btn-primary p-0 m-0" style="font-size: 1.5rem;"></i></button></h6>
                 </div>
-                <div class="datos-personales justify-content-between row mr-lg-1 collapse hide" id="collapseAlertas" aria-labelledby="headingAlertas" data-parent="#accordion">alertasjajja</div>
+                <div class="datos-personales justify-content-between row mr-lg-1 collapse hide" id="collapseAlertas" aria-labelledby="headingAlertas" data-parent="#accordion">
+                  <div class="modal fade" id="passModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Cambiar contraseña</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                                <div class="modal-body justify-content-center d-flex">
+                                    <form id="password-form_modal" class="col-12 col-sm-10">
+                                        
+                                        <div class="modal-footer d-flex justify-content-right col-12">
+                                            <div class="boton" id="botones">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                <button class="cult-btn btn btn-outline-primary" role="button" type="submit">Cambiar</button>
+                                            </div>
+                                        </div>
+                                        
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   ------
+                    <div id="sensores"></div>
+                    ------
+                </div>
             </div>
         </div>
     </div>
@@ -301,7 +329,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./js/member.js"></script>
+    <script type="text/javascript" src="js/mi-perfil.js"></script>
     <script src="js/alertas.js"></script>
 
 
