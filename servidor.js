@@ -43,6 +43,63 @@ const sensores = [
         userId: 1,
         zonaId: 1,
     },
+    {
+        mac: '58:8F:AD:34:F6:50:00',
+        lng: '-0.177079',
+        lat: '38.995249',
+        userId: 1,
+        zonaId: 1,
+    },
+    {
+        mac: '58:8F:AD:34:F6:50:00',
+        lng: '-0.177057',
+        lat: '38.994307',
+        userId: 1,
+        zonaId: 1,
+    },
+    {
+        mac: '58:8F:AD:34:F6:50:00',
+        lng: '-0.176185',
+        lat: '38.993803',
+        userId: 1,
+        zonaId: 1,
+    },
+    {
+        mac: '58:8F:AD:34:F6:50:00',
+        lng: '-0.176218',
+        lat: '38.994485',
+        userId: 1,
+        zonaId: 1,
+    },
+    {
+        mac: '58:8F:AD:34:F6:50:00',
+        lng: '-0.176153',
+        lat: '38.995218',
+        userId: 1,
+        zonaId: 1,
+    },
+    {
+        mac: '58:8F:AD:34:F6:50:00',
+        lng: '-0.175291',
+        lat: '38.995186',
+        userId: 1,
+        zonaId: 1,
+    },
+    {
+        mac:    '58:8F:AD:34:F6:50:00',
+        lng:    '-0.175258',
+        lat:    '38.994365',
+        userId: 1,
+        zonaId: 1,
+    },
+    {
+        mac:    '58:8F:AD:34:F6:50:00',
+        lng:    '-0.175136',
+        lat:    '38.993506',
+        userId: 1,
+        zonaId: 1,
+    },
+
     //ZONA 2
     {
         mac: '56:8F:AD:34:F6:50:00',
@@ -224,12 +281,12 @@ function setup() {
 
                         Sequelize.Promise.all(promises).then(() => {
 
-                            for (i = 1; i < 7; i++) {
+                            for (i = 1; i < 15; i++) {
                                 date = new Moment();
                                 for (j = 1; j < 20; j++) {
                                     Dato.create({
                                         temperatura: Math.floor(Math.random() * (
-                                            30 - 10 + 1
+                                            40 - 10 + 1
                                         ) + 10),
                                         humedad: Math.floor(Math.random() * (
                                             95 - 60 + 1

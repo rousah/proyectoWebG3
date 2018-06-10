@@ -11,14 +11,12 @@ var sensorTemplate3 = `<p style="margin: 5px; background-color: white; color:bla
 var currentInfoWindow;
 var bounds = new google.maps.LatLngBounds();
 
-var listaSensores = [];
-
 const baseURI = 'http://localhost:3000/'; // local develop
 //const baseURI = 'http://luglo1.upv.edu.es/'; //LIVE
 
 function loadSensores(sensores) {
 
-    newSensores = sensores;
+    var newSensores = sensores;
     newSensores.forEach(function (item) {
         var icon = {
             url: "../images/pin_mapa.svg", // url
@@ -90,6 +88,34 @@ function loadSensores(sensores) {
     $("#mask").addClass("d-none");
 
     mapa.fitBounds(bounds);
+
+    tempHeatMap = new google.maps.visualization.HeatmapLayer({
+        data:         tempHeatMapData,
+        radius:       50,
+        maxIntensity: 45
+    });
+
+    humHeatMap = new google.maps.visualization.HeatmapLayer({
+        data:         humHeatMapData,
+        radius:       50,
+        maxIntensity: 100,
+        gradient: [
+            'rgba(0, 255, 255, 0)',
+            'rgba(0, 255, 255, 1)',
+            'rgba(0, 191, 255, 1)',
+            'rgba(0, 127, 255, 1)',
+            'rgba(0, 63, 255, 1)',
+            'rgba(0, 0, 255, 1)',
+            'rgba(0, 0, 223, 1)',
+            'rgba(0, 0, 191, 1)',
+            'rgba(0, 0, 159, 1)',
+            'rgba(0, 0, 127, 1)',
+            'rgba(63, 0, 91, 1)',
+            'rgba(127, 0, 63, 1)',
+            'rgba(191, 0, 31, 1)',
+            'rgba(255, 0, 0, 1)'
+        ],
+    });
 
     $('#campoSelect').modal('show');
 }
@@ -202,6 +228,34 @@ function showSensorHumData(id) {
     });
 
     chart.update();
+}
+
+var tempHeatMap;
+
+function showTemp(e) {
+    if (e.classList.contains("active")) {
+        // ocultar mapa de calor
+        tempHeatMap.setMap(null);
+        e.classList.replace("btn-light", "btn-secondary");
+    }
+    else {
+        // mostrar mapa de calor
+        tempHeatMap.setMap(mapa);
+        e.classList.replace("btn-secondary", "btn-light");
+    }
+}
+
+function showHum(e) {
+    if (e.classList.contains("active")) {
+        // ocultar mapa de calor
+        humHeatMap.setMap(null);
+        e.classList.replace("btn-light", "btn-secondary");
+    }
+    else {
+        // mostrar mapa de calor
+        humHeatMap.setMap(mapa);
+        e.classList.replace("btn-secondary", "btn-light");
+    }
 }
 
 
