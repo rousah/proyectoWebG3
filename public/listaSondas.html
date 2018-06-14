@@ -124,6 +124,34 @@
         justify-content: space-around;
         align-items: center;
     }
+    
+    .container2{
+        max-width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding-right: 10rem;
+    }
+
+    .medidas {
+        display: flex;
+        flex-direction: row;
+        
+    }
+
+    .medidas .temp,
+    .medidas .hum {
+        width: 5%;
+        border-radius: 5px;
+    }
+
+    .medidas .fa {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
 
     .botonEnviar {
         margin: 0.5rem auto;
@@ -147,7 +175,7 @@
 
     #mapa {
         width: inherit;
-        height: 75vh;
+        height: 70vh;
         border: solid 1px #ccc;
     }
 
@@ -388,20 +416,29 @@
                 </div>
             </div>
 
-            <div class="btn-group btn-group-toggle" data-toggle="buttons" id="opciones">
-                <button class="btn btn-secondary" onclick="showTemp(this)">
-                    <i class="fa fa-thermometer"></i> Temp.
-                </button>
-                <button class="btn btn-secondary" onclick="showHum(this)">
-                    <i class="fa fa-tint"></i> Hum.
-                </button>
-            </div>
+
         </div>
     </div>
 
-    <div class="d-flex justify-content-around">
-        <div id="zonaSelect" class="pl-3"></div>
-        <div id="sensorSelect" class="pr-4"></div>
+    <div class=container2>
+       <div class="d-flex justify-content-around">
+            <div id="zonaSelect" class="pl-3"></div>
+            <div id="sensorSelect" class="pr-4"></div>
+        </div>
+        
+        <div class="medidas">
+            <div class="btn-group" data-toggle="buttons" id="opciones">
+                <button class=" temp btn btn-secondary dropdown-item" type="button" onclick="showTemp(this)">
+                    <i class="fa fa-thermometer"></i>
+                </button>
+                <button class="hum btn btn-secondary dropdown-item" type="button" onclick="showHum(this)">
+                    <i class="fa fa-tint"></i>
+                </button>
+
+            </div>
+        </div>
+
+        
     </div>
 
     <div class="modal fade" id="graphModal" tabindex="-1" role="dialog" aria-labelledby="graphModalLabel" aria-hidden="true">
