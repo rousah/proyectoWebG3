@@ -69,15 +69,10 @@ function loadZonas() {
 
         });
 
-        console.log(r);
-        //TODO CHANGE THIS TO LOAD ONLY SENSORES FROM CURRENT ZONE
         for (let i = 0; i < r.length; i++) {
-            console.log(r[i]);
-            //if (listaSensores.length == 0) {
             loadSensores(r[i].sensors);
-            //} else {
             $("#mask").addClass("d-none");
-            //}   
+
         }
     });
 }

@@ -3,6 +3,8 @@ module.exports = (sequelize, DataTypes) => {
         lng: DataTypes.FLOAT,
         mac: DataTypes.STRING,
         lat: DataTypes.FLOAT,
+        temp_min: DataTypes.INTEGER,
+        hume_min: DataTypes.INTEGER,
     });
 
     sensor.prototype.toJSON = function () {

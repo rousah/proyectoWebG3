@@ -28,6 +28,8 @@ const sensores = [
         lat: '38.99522308750',
         userId: 1,
         zonaId: 1,
+        temp_min: 25,
+        hume_min: 75,
     },
     {
         mac: '57:8F:AD:34:F6:50:00',
@@ -35,6 +37,8 @@ const sensores = [
         lat: '38.99352202642',
         userId: 1,
         zonaId: 1,
+        temp_min: 25,
+        hume_min: 75,
     },
     {
         mac: '58:8F:AD:34:F6:50:00',
@@ -42,6 +46,8 @@ const sensores = [
         lat: '38.994605',
         userId: 1,
         zonaId: 1,
+        temp_min: 25,
+        hume_min: 75,
     },
     {
         mac: '58:8F:AD:34:F6:50:00',
@@ -49,6 +55,8 @@ const sensores = [
         lat: '38.995249',
         userId: 1,
         zonaId: 1,
+        temp_min: 25,
+        hume_min: 75,
     },
     {
         mac: '58:8F:AD:34:F6:50:00',
@@ -56,6 +64,8 @@ const sensores = [
         lat: '38.994307',
         userId: 1,
         zonaId: 1,
+        temp_min: 25,
+        hume_min: 75,
     },
     {
         mac: '58:8F:AD:34:F6:50:00',
@@ -63,6 +73,8 @@ const sensores = [
         lat: '38.993803',
         userId: 1,
         zonaId: 1,
+        temp_min: 25,
+        hume_min: 75,
     },
     {
         mac: '58:8F:AD:34:F6:50:00',
@@ -70,6 +82,8 @@ const sensores = [
         lat: '38.994485',
         userId: 1,
         zonaId: 1,
+        temp_min: 25,
+        hume_min: 75,
     },
     {
         mac: '58:8F:AD:34:F6:50:00',
@@ -77,6 +91,8 @@ const sensores = [
         lat: '38.995218',
         userId: 1,
         zonaId: 1,
+        temp_min: 25,
+        hume_min: 75,
     },
     {
         mac: '58:8F:AD:34:F6:50:00',
@@ -84,6 +100,8 @@ const sensores = [
         lat: '38.995186',
         userId: 1,
         zonaId: 1,
+        temp_min: 25,
+        hume_min: 75,
     },
     {
         mac:    '58:8F:AD:34:F6:50:00',
@@ -91,6 +109,8 @@ const sensores = [
         lat:    '38.994365',
         userId: 1,
         zonaId: 1,
+        temp_min: 25,
+        hume_min: 75,
     },
     {
         mac:    '58:8F:AD:34:F6:50:00',
@@ -98,6 +118,8 @@ const sensores = [
         lat:    '38.993506',
         userId: 1,
         zonaId: 1,
+        temp_min: 25,
+        hume_min: 75,
     },
 
     //ZONA 2
@@ -107,6 +129,8 @@ const sensores = [
         lat: '39.030528',
         userId: 1,
         zonaId: 2,
+        temp_min: 25,
+        hume_min: 75,
     },
     {
         mac: '57:8F:AD:34:F6:50:00',
@@ -114,6 +138,8 @@ const sensores = [
         lat: '39.029972',
         userId: 1,
         zonaId: 2,
+        temp_min: 25,
+        hume_min: 75,
     },
     {
         mac: '58:8F:AD:34:F6:50:00',
@@ -121,6 +147,8 @@ const sensores = [
         lat: '39.030359',
         userId: 1,
         zonaId: 2,
+        temp_min: 25,
+        hume_min: 75,
     }
 ];
 
@@ -129,17 +157,11 @@ const zonas = [
         "name": "Campo 1",
         "color": "#8336c9",
         "userId": 1,
-        "temp_max": 30,
-        "temp_min": 20,
-        "hume_min": 50,
     },
     {
         "name": "Campo 2",
         "color": "#ff8000",
         "userId": 1,
-        "temp_max": 25,
-        "temp_min": 20,
-        "hume_min": 75,
     }
 ];
 
@@ -261,6 +283,7 @@ function setup() {
                         street: 'C/ Condal 45',
                         telephone: '+34 665454432',
                         force_password_change: true,
+                        alerts: false,
                         /*rol: 'admin',
                         activo: 'true',*/
                     }
@@ -337,6 +360,8 @@ app.post('/login', procesar_login);
 app.post('/user/soporte_mail', procesar_soporte_mail);
 app.get('/user', procesar_user);
 app.post('/user/change_password', procesar_password);
+app.post('/user', procesar_user_post);
+app.post('/user/sensor', procesar_sensor_post);
 app.get('/user/sensores', procesar_sensores);
 app.get('/user/alertas', procesar_alertas);
 app.get('/user/zonas', procesar_zonas);
@@ -422,6 +447,7 @@ function procesar_user(req, res) {
                 message: 'User not found'
             });
         }
+
     })
 
 };
@@ -536,7 +562,10 @@ function procesar_alertas(req, res) {
     }).then(token => {
         if (token !== null) {
 
-            let user = token.user
+            let user = token.user;
+            if(!user.alerts) {
+                return res.send([]);
+            }
 
             Zona.findAll({
                 where: {
@@ -555,9 +584,6 @@ function procesar_alertas(req, res) {
                 //TODO SORT BY DATE
                 //order: [Zona.associations.sensor, Sensor.associations.data, 'tiempo'],
             }).then(zonas => {
-                console.log(Zona.associations);
-                console.log(Sensor.associations);
-                console.log(zonas);
                 alerts = [];
                 zonas.forEach((zona) => {
 
@@ -570,18 +596,15 @@ function procesar_alertas(req, res) {
                             data = sensor.data[sensor.data.length - 1];
                             console.log(data.temperatura);
                             console.log(data.humedad);
-                            console.log(zona.temp_max);
-                            console.log(zona.temp_min);
-                            console.log(zona.hume_min);
-                            if (data.temperatura > zona.temp_max) {
+                            /*if (data.temperatura > zona.temp_max) {
                                 console.log("too high");
                                 alerts.push({
                                     zona: zona,
                                     sensor: sensor,
                                     alert: 'temperatura_maxima'
                                 })
-                            }
-                            if (data.temperatura < zona.temp_min) {
+                            }*/
+                            if (data.temperatura < sensor.temp_min) {
                                 console.log("too low");
                                 alerts.push({
                                     zona: zona,
@@ -589,7 +612,7 @@ function procesar_alertas(req, res) {
                                     alert: 'temperatura_minima'
                                 })
                             }
-                            if (data.humedad < zona.hume_min) {
+                            if (data.humedad < sensor.hume_min) {
                                 console.log("hume");
                                 alerts.push({
                                     zona: zona,
@@ -734,6 +757,85 @@ function procesar_soporte_mail(req, res) {
             let text = req.body.text;
             email.sendSopporte(user, subject, text);
             res.send();
+        }
+        else {
+            return res.status(404).send({
+                message: 'User not found'
+            });
+        }
+    })
+}
+
+function procesar_user_post(req, res) {
+    console.log('Post change user');
+    Token.findOne({
+        where:   {
+            token: req.headers.token
+        },
+        include: [
+            {
+                model: User
+            }
+        ]
+    }).then(token => {
+        if (token !== null) {
+
+            let user            = token.user;
+            let updated_user = JSON.parse(req.body.user);
+            console.log(user.alerts);
+            console.log(req.body.user.alerts);
+            console.log(req.body.user);
+            console.log(updated_user.alerts);
+
+            user.alerts = updated_user.alerts;
+            user.save();
+            return res.send({
+                success: 'User changed'
+                            });
+
+        }
+        else {
+            return res.status(404).send({
+                message: 'User not found'
+            });
+        }
+    })
+}
+
+function procesar_sensor_post(req, res) {
+    console.log('Post change sensor');
+    Token.findOne({
+        where:   {
+            token: req.headers.token
+        },
+        include: [
+            {
+                model: User
+            }
+        ]
+    }).then(token => {
+        if (token !== null) {
+
+            let user         = token.user;
+            let updated_sensor = JSON.parse(req.body.sensor);
+
+            Sensor.findOne({
+                where:   {
+                    id: updated_sensor.id
+                }
+            }).then(sensor => {
+                if(sensor.userId !== user.id) {
+                    return res.status(400).send({
+                        message: 'Not owner of sensor'
+                    });
+                }
+                sensor.temp_min = updated_sensor.temp_min;
+                sensor.hume_min = updated_sensor.hume_min;
+                sensor.save();
+                return res.send({
+                    success: 'Sensor changed'
+                });
+            });
         }
         else {
             return res.status(404).send({

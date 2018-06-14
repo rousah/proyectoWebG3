@@ -1,3 +1,4 @@
+const baseURI = 'http://localhost:3000/'; // local develop
 var tempHeatMapData = [];
 var listaSensores = [];
 
@@ -11,7 +12,7 @@ var sensorTemplate3 = `<p style="margin: 5px; background-color: white; color:bla
 var currentInfoWindow;
 var bounds = new google.maps.LatLngBounds();
 
-const baseURI = 'http://localhost:3000/'; // local develop
+
 //const baseURI = 'http://luglo1.upv.edu.es/'; //LIVE
 
 function loadSensores(sensores) {
