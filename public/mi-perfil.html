@@ -14,23 +14,28 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/navbar-alerts.css">
     <script type="text/javascript">
-        function mostrarOcultar1(){
+        function mostrarOcultar1() {
             document.getElementById('up').style.display = 'block';
             document.getElementById('down').style.display = 'none';
         }
-        function mostrarOcultar2(){
+
+        function mostrarOcultar2() {
             document.getElementById('down').style.display = 'block';
             document.getElementById('up').style.display = 'none';
         }
-        function mostrarOcultar3(){
+
+        function mostrarOcultar3() {
             document.getElementById('up2').style.display = 'block';
             document.getElementById('down2').style.display = 'none';
         }
-        function mostrarOcultar4(){
+
+        function mostrarOcultar4() {
             document.getElementById('down2').style.display = 'block';
             document.getElementById('up2').style.display = 'none';
         }
+
     </script>
+
 </head>
 
 <style>
@@ -79,12 +84,12 @@
     header nav a {
         max-width: inherit;
     }
-    
-    #up{
+
+    #up {
         display: none;
     }
-    
-    #up2{
+
+    #up2 {
         display: none;
     }
 
@@ -108,38 +113,38 @@
             height: 450px;
         }
     }
-    
+
     /* SLIDER */
-    
+
     .slider {
-    -webkit-appearance: none;
-    width: 100%;
-    height: 15px;
-    border-radius: 5px;   
-    background: #d3d3d3;
-    outline: none;
-    opacity: 2;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
-}
+        -webkit-appearance: none;
+        width: 100%;
+        height: 15px;
+        border-radius: 5px;
+        background: #d3d3d3;
+        outline: none;
+        opacity: 2;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+    }
 
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%; 
-    background: #3F9482;
-    cursor: pointer;
-}
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #3F9482;
+        cursor: pointer;
+    }
 
-.slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: #4CAF50;
-    cursor: pointer;
-}
+    .slider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #4CAF50;
+        cursor: pointer;
+    }
 
 </style>
 
@@ -342,31 +347,16 @@
                     <h6 class="d-flex align-items-center">Alertas <button data-toggle="collapse" data-target="#collapseAlertas" aria-expanded="true" aria-controls="collapseAlertas" style="background: none; border: 0"><i class="fas fa-angle-down ml-1 btn btn-primary p-0 m-0" id='down2' style="font-size: 1.5rem;" onclick="mostrarOcultar3()"></i><i class="fas fa-angle-up ml-1 btn btn-primary p-0 m-0" id='up2' style="font-size: 1.5rem;"onclick="mostrarOcultar4()"></i></button></h6>
                 </div>
                 <div class="datos-personales justify-content-between row mr-lg-1 collapse hide" id="collapseAlertas" aria-labelledby="headingAlertas" data-parent="#accordion">
-                    <!-- MODAL -->
-                    <div class="modal fade" id="alertasModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Configuración alertas</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-                                </div>
-                                <div class="modal-body">
-                                   HUMEDAD
-                                   <input type="range" min="0" max="100" value="50" class="slider" list="hum-range">
-                                   <BR>
-                                   TEMPERATURA
-                                   <input type="range" min="1" max="100" value="50" class="slider" id="myRange">                          </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                    <button type="button" class="btn btn-primary">Guardar cambios</button>
-                                </div>
-                            </div>
-                        </div>
+                    <!-- ALERTAS -->
+                    <div class="d-flex align-items-center ">
+                        <input type="checkbox" id="alerts-box">
+                        <p style="margin-top: 1rem;" class="px-2"> Alerts: <span id="alerts-status" class="d-none"> <div id="campana-true"></div><div id="campana-false" style="padding-right: 0.2rem;"></div> </span></p>
+                        <button class="btn btn-outline-primary col-2" id="save-alerts" onclick="save_user()">Save</button>
                     </div>
-                    <!-- FINAL MODAL -->
-                    <div id="sensores"></div>
+
+                    <div id="sensor-alerts">
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -382,6 +372,7 @@
 
     <script>
 
+
     </script>
     <script src="js/lib/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -389,6 +380,7 @@
     <script src="js/lib/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/mi-perfil.js"></script>
     <script src="js/alertas.js"></script>
+    <script src="js/alertas-example-functions.js"></script>
 
 
     <!-- Localization start-->
