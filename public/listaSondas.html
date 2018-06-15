@@ -25,6 +25,25 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
     <!--<script src="js/grafica.js"></script>-->
+    <script>
+        
+        function mostrarOcultar1(){
+            document.getElementById('faeyeslash').style.display = 'flex';
+            document.getElementById('faeye').style.display = 'none';
+        }
+        function mostrarOcultar2(){
+            document.getElementById('faeye').style.display = 'flex';
+            document.getElementById('faeyeslash').style.display = 'none';
+        }
+        function mostrarOcultar3(){
+            document.getElementById('faeyeslash2').style.display = 'flex';
+            document.getElementById('faeye2').style.display = 'none';
+        }
+        function mostrarOcultar4(){
+            document.getElementById('faeye2').style.display = 'flex';
+            document.getElementById('faeyeslash2').style.display = 'none';
+        }
+    </script>
 </head>
 
 <style>
@@ -133,25 +152,86 @@
         justify-content: center;
         padding-right: 10rem;
     }
+    
+    
 
     .medidas {
         display: flex;
         flex-direction: row;
+        height: 10%;
         
     }
-
+    
+    .temp{
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+    
+    .eye{
+        margin-right: 0.5rem;
+    }
+    
+    .eye,
+    .eye2,
+    #eye,
+    #eye-slash,
+    #eye2,
+    #eye-slash2{
+        height: 24px;
+        width: 48px;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+    
+    eye2{
+        border-left
+    }
+    
+    .see,
+    .noSee,
+    .see2,
+    .noSee2{
+        height: 16px;
+        border-left: 0px;
+    }
+    
+    
     .medidas .temp,
     .medidas .hum {
         width: 5%;
-        border-radius: 5px;
     }
-
-    .medidas .fa {
+    
+    .eye,
+    .eye2,
+    #eye,
+    #eye-slash,
+    #eye2,
+    #eye-slash2,
+    .medidas .fa{
         display: flex;
         justify-content: center;
         align-content: center;
         align-items: center;
     }
+    
+    #eye,
+    #eye-slash,
+    #eye2,
+    #eye-slash2{
+        padding-top: 0px;
+        padding-bottom: 7px;
+        border-radius: none;
+    }
+    
+    .eye .fa,
+    .eye2 .fa{
+        display: flex;
+        justify-content: center;
+        align-content: flex-start;
+        align-items: flex-start;
+    }
+    
+    
 
     .botonEnviar {
         margin: 0.5rem auto;
@@ -421,21 +501,54 @@
     </div>
 
     <div class=container2>
-       <div class="d-flex justify-content-around">
-            <div id="zonaSelect" class="pl-3"></div>
-            <div id="sensorSelect" class="pr-4"></div>
-        </div>
+          
+           <div class="d-flex justify-content-around">
+                <div id="zonaSelect" class="pl-3"></div>
+                <div id="sensorSelect" class="pr-4"></div>
+            </div>
         
         <div class="medidas">
+           
             <div class="btn-group" data-toggle="buttons" id="opciones">
-                <button class=" temp btn btn-secondary dropdown-item" type="button" onclick="showTemp(this)">
+                <button class= "temp btn btn-secondary dropdown-item" type="button" >
                     <i class="fa fa-thermometer"></i>
                 </button>
-                <button class="hum btn btn-secondary dropdown-item" type="button" onclick="showHum(this)">
+                <div class="eye" id="eyecontainer">
+                   <div class="btn btn-secondary" id='eye'>
+                       <button class="see btn btn-light" onclick="showTemp(this)">
+                            <div id="faeye" onclick="mostrarOcultar1()">
+                                <i class="fa fa-eye" aria-hidden="true">
+                                </i>
+                            </div>
+                            <div id="faeyeslash"  style="display:none;"  onclick="mostrarOcultar2()">
+                                <i class="fa fa-eye-slash" aria-hidden="true">
+                                </i>
+                            </div>
+                       </button>
+                   </div>
+                </div>
+            </div>
+                
+            <div class="btn-group" data-toggle="buttons" id="opciones">
+                <button class= "hum btn btn-secondary dropdown-item" type="button">
                     <i class="fa fa-tint"></i>
                 </button>
-
+                <div class="eye2" id="eye2container">
+                    <div class="btn btn-secondary" id='eye2'>
+                        <button class="see2 btn btn-light" onclick="showHum(this)" style="border-radius: 0px;">
+                           <div id="faeye2" onclick="mostrarOcultar3()">
+                               <i class="fa fa-eye" aria-hidden="true">
+                               </i>
+                           </div>
+                           <div id="faeyeslash2"  style="display:none;" onclick="mostrarOcultar4()">
+                               <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                           </div>
+                       </button>
+                   </div>
+               </div>
             </div>
+
+            
         </div>
 
         
