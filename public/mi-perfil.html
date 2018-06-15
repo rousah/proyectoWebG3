@@ -13,6 +13,24 @@
     <link rel="stylesheet" href="css/botones.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/navbar-alerts.css">
+    <script type="text/javascript">
+        function mostrarOcultar1(){
+            document.getElementById('up').style.display = 'block';
+            document.getElementById('down').style.display = 'none';
+        }
+        function mostrarOcultar2(){
+            document.getElementById('down').style.display = 'block';
+            document.getElementById('up').style.display = 'none';
+        }
+        function mostrarOcultar3(){
+            document.getElementById('up2').style.display = 'block';
+            document.getElementById('down2').style.display = 'none';
+        }
+        function mostrarOcultar4(){
+            document.getElementById('down2').style.display = 'block';
+            document.getElementById('up2').style.display = 'none';
+        }
+    </script>
 </head>
 
 <style>
@@ -60,6 +78,14 @@
 
     header nav a {
         max-width: inherit;
+    }
+    
+    #up{
+        display: none;
+    }
+    
+    #up2{
+        display: none;
     }
 
     @media (max-width: 767.98px) {
@@ -256,7 +282,7 @@
         <div class="col-lg-6 mx-lg-2">
             <div id="accordion">
                 <div id="headingDatos">
-                    <h6 class="d-flex align-items-center">Datos personales <button data-toggle="collapse" data-target="#collapseDatos" aria-expanded="true" aria-controls="collapseDatos" style="background: none; border: 0"><i class="fas fa-angle-down ml-1 btn btn-primary p-0 m-0" style="font-size: 1.5rem;"></i></button></h6>
+                    <h6 class="d-flex align-items-center">Datos personales <button data-toggle="collapse" data-target="#collapseDatos" aria-expanded="true" aria-controls="collapseDatos" style="background: none; border: 0"><i class="fas fa-angle-down ml-1 btn btn-primary p-0 m-0" id='down' style="font-size: 1.5rem;" onclick="mostrarOcultar1()"></i><i class="fas fa-angle-up ml-1 btn btn-primary p-0 m-0" id='up' style="font-size: 1.5rem;"onclick="mostrarOcultar2()"></i></button></h6>
                 </div>
                 <div class="datos-personales justify-content-between row mr-lg-1 collapse hide" id="collapseDatos" aria-labelledby="headingDatos" data-parent="#accordion">
                     <section id="datos-personales" class="col-12 d-flex justify-content-between p-0">
@@ -313,7 +339,7 @@
                     </section>
                 </div>
                 <div id="headingAlertas">
-                    <h6 class="d-flex align-items-center">Alertas <button data-toggle="collapse" data-target="#collapseAlertas" aria-expanded="true" aria-controls="collapseAlertas" style="background: none; border: 0"><i class="fas fa-angle-down ml-1 btn btn-primary p-0 m-0" style="font-size: 1.5rem;"></i></button></h6>
+                    <h6 class="d-flex align-items-center">Alertas <button data-toggle="collapse" data-target="#collapseAlertas" aria-expanded="true" aria-controls="collapseAlertas" style="background: none; border: 0"><i class="fas fa-angle-down ml-1 btn btn-primary p-0 m-0" id='down2' style="font-size: 1.5rem;" onclick="mostrarOcultar3()"></i><i class="fas fa-angle-up ml-1 btn btn-primary p-0 m-0" id='up2' style="font-size: 1.5rem;"onclick="mostrarOcultar4()"></i></button></h6>
                 </div>
                 <div class="datos-personales justify-content-between row mr-lg-1 collapse hide" id="collapseAlertas" aria-labelledby="headingAlertas" data-parent="#accordion">
                     <!-- MODAL -->
