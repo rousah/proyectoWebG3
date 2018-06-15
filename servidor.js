@@ -19,6 +19,7 @@ const Vertice = sequelize.import('./models/vertice.js');
 const saltRounds = 10;
 const port = 3000;
 const app = express();
+//const Campos = require('./public/Campos.js')  I was trying to export sensores, zonas and vertices because there are so long
 
 const sensores = [
     //ZONA 1
@@ -149,7 +150,358 @@ const sensores = [
         zonaId: 2,
         temp_min: 25,
         hume_min: 75,
-    }
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 2,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 2,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 2,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    //ZONA 3
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 3,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-1.834473',
+        lat: '37.512706',
+        userId: 1,
+        zonaId: 3,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-1.833793',
+        lat: '37.513370',
+        userId: 1,
+        zonaId: 3,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-1.835351',
+        lat: '37.514366',
+        userId: 1,
+        zonaId: 3,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-1.836005',
+        lat: '37.513676',
+        userId: 1,
+        zonaId: 3,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    
+    //ZONA 4
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 4,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 4,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 4,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 4,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 4,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 4,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    //ZONA 5
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 5,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 5,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 5,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 5,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 5,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 5,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    //ZONA 6
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 6,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 6,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 6,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 6,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 6,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 6,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    //ZONA 7
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 7,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 7,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 7,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 7,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 7,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 7,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    //ZONA 8
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 8,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 8,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 8,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 8,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 8,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    {
+        mac: '56:8F:AD:34:F6:50:00',
+        lng: '-0.235153',
+        lat: '39.030528',
+        userId: 1,
+        zonaId: 8,
+        temp_min: 25,
+        hume_min: 75,
+    },
+    
+    
 ];
 
 const zonas = [
@@ -162,10 +514,41 @@ const zonas = [
         "name": "Campo 2",
         "color": "#ff8000",
         "userId": 1,
-    }
+    },
+    {
+        "name": "Campo 3",
+        "color": "#00ceff",
+        "userId": 1,
+    },
+    {
+        "name": "Campo 4",
+        "color": "#ff00e2",
+        "userId": 1,
+    },
+    {
+        "name": "Campo 5",
+        "color": "#00ff14",
+        "userId": 1,
+    },
+    {
+        "name": "Campo 6",
+        "color": "#fff500",
+        "userId": 1,
+    },
+    {
+        "name": "Campo 7",
+        "color": "#ff0000",
+        "userId": 1,
+    },
+    {
+        "name": "Campo 8",
+        "color": "#0031ff",
+        "userId": 1,
+    },
 ];
 
 const vertices = [
+    //ZONA 1
     {
         "lat": "38.99574370819",
         "lng": "-0.17884278223",
@@ -191,6 +574,7 @@ const vertices = [
         "lng": "-0.17782711908",
         "zonaId": 1
     },
+    //ZONA 2
     {
         "lat": "39.03081634558",
         "lng": "-0.23717880249",
@@ -240,7 +624,177 @@ const vertices = [
         "lat": "39.02848827650",
         "lng": "-0.23595571518",
         "zonaId": 2
-    }
+    },
+    //ZONA 3
+    {
+        "lat": "37.512706",
+        "lng": "-1.834473",
+        "zonaId": 3
+    },
+    {
+        "lat": "37.513370",
+        "lng": "-1.833793",
+        "zonaId": 3
+    },
+    {
+        "lat": "37.514366",
+        "lng": "-1.835351",
+        "zonaId": 3
+    },
+    {
+        "lat": "37.513676",
+        "lng": "-1.836005",
+        "zonaId": 3
+    },
+    
+    //ZONA 4
+    {
+        "lat": "36.736548",
+        "lng": "-3.573855",
+        "zonaId": 4
+    },
+    {
+        "lat": "36.736884",
+        "lng": "-3.573703",
+        "zonaId": 4
+    },
+    {
+        "lat": "36.736944",
+        "lng": "-3.573715",
+        "zonaId": 4
+    },
+    {
+        "lat": "36.737056",
+        "lng": "-3.573038",
+        "zonaId": 4
+    },
+    {
+        "lat": "36.737056",
+        "lng": "-3.573038",
+        "zonaId": 4
+    },
+    {
+        "lat": "36.736698",
+        "lng": "-3.572996",
+        "zonaId": 4
+    },
+    {
+        "lat": "36.736558",
+        "lng": "-3.573022",
+        "zonaId": 4
+    },
+    //ZONA 5
+    {
+        "lat": "36.944100",
+        "lng": "-3.955655",
+        "zonaId": 5
+    },
+    {
+        "lat": "36.943971",
+        "lng": "-3.954525",
+        "zonaId": 5
+    },
+    {
+        "lat": "36.943692",
+        "lng": "-3.954405",
+        "zonaId": 5
+    },
+    {
+        "lat": "36.943849",
+        "lng": "-3.955696",
+        "zonaId": 5
+    },
+    
+    //ZONA 6
+    {
+        "lat": "37.463833",
+        "lng": "-6.033069",
+        "zonaId": 6
+    },
+    {
+        "lat": "37.463928",
+        "lng": "-6.032502",
+        "zonaId": 6
+    },
+    {
+        "lat": "37.462230",
+        "lng": "-6.031949",
+        "zonaId": 6
+    },
+    {
+        "lat": "37.462218",
+        "lng": "-6.032527",
+        "zonaId": 6
+    },
+    
+    //ZONA 7
+    {
+        "lat": "41.894888",
+        "lng": "-5.778184",
+        "zonaId": 7
+    },
+    {
+        "lat": "41.895256",
+        "lng": "-5.777373",
+        "zonaId": 7
+    },
+    {
+        "lat": "41.893842",
+        "lng": "-5.775793",
+        "zonaId": 7
+    },
+    {
+        "lat": "41.893729",
+        "lng": "-5.776824",
+        "zonaId": 7
+    },
+    
+    //ZONA 8
+    {
+        "lat": "43.272600",
+        "lng": "-8.397738",
+        "zonaId": 8
+    },
+    {
+        "lat": "43.272714",
+        "lng": "-8.397869",
+        "zonaId": 8
+    },
+    {
+        "lat": "43.272782",
+        "lng": "-8.397889",
+        "zonaId": 8
+    },
+    {
+        "lat": "43.272850",
+        "lng": "-8.397525",
+        "zonaId": 8
+    },
+    {
+        "lat": "43.272891",
+        "lng": "-8.397537",
+        "zonaId": 8
+    },
+    {
+        "lat": "43.272903",
+        "lng": "-8.397445",
+        "zonaId": 8
+    },
+    {
+        "lat": "43.272974",
+        "lng": "-8.397462",
+        "zonaId": 8
+    },
+    {
+        "lat": "43.273219",
+        "lng": "-8.396448",
+        "zonaId": 8
+    },
+    {
+        "lat": "43.273061",
+        "lng": "-8.396403",
+        "zonaId": 8
+    },
 ];
 
 app.use(bodyParser.urlencoded({
