@@ -181,8 +181,8 @@ const sensores = [
     //ZONA 3
     {
         mac: '56:8F:AD:34:F6:50:00',
-        lng: '-0.235153',
-        lat: '39.030528',
+        lat: "37.512706",
+        lng: "-1.834473",
         userId: 1,
         zonaId: 3,
         temp_min: 25,
@@ -190,8 +190,8 @@ const sensores = [
     },
     {
         mac: '56:8F:AD:34:F6:50:00',
-        lng: '-1.834473',
-        lat: '37.512706',
+        lat: "37.513370",
+        lng: "-1.833793",
         userId: 1,
         zonaId: 3,
         temp_min: 25,
@@ -199,8 +199,8 @@ const sensores = [
     },
     {
         mac: '56:8F:AD:34:F6:50:00',
-        lng: '-1.833793',
-        lat: '37.513370',
+        lat: "37.514366",
+        lng: "-1.835351",
         userId: 1,
         zonaId: 3,
         temp_min: 25,
@@ -208,8 +208,8 @@ const sensores = [
     },
     {
         mac: '56:8F:AD:34:F6:50:00',
-        lng: '-1.835351',
-        lat: '37.514366',
+        lat: "36.737056",
+        lng: "-3.573038",
         userId: 1,
         zonaId: 3,
         temp_min: 25,
@@ -217,7 +217,7 @@ const sensores = [
     },
     {
         mac: '56:8F:AD:34:F6:50:00',
-        lng: '-1.836005',
+        lng: '-1.836008',
         lat: '37.513676',
         userId: 1,
         zonaId: 3,
@@ -228,8 +228,8 @@ const sensores = [
     //ZONA 4
     {
         mac: '56:8F:AD:34:F6:50:00',
-        lng: '-0.235153',
-        lat: '39.030528',
+        lat: "36.736548",
+        lng: "-3.573855",
         userId: 1,
         zonaId: 4,
         temp_min: 25,
@@ -237,8 +237,8 @@ const sensores = [
     },
     {
         mac: '56:8F:AD:34:F6:50:00',
-        lng: '-0.235153',
-        lat: '39.030528',
+        lat: "36.736884",
+        lng: "-3.573703",
         userId: 1,
         zonaId: 4,
         temp_min: 25,
@@ -246,8 +246,8 @@ const sensores = [
     },
     {
         mac: '56:8F:AD:34:F6:50:00',
-        lng: '-0.235153',
-        lat: '39.030528',
+        lat: "36.736944",
+        lng: "-3.573715",
         userId: 1,
         zonaId: 4,
         temp_min: 25,
@@ -255,8 +255,8 @@ const sensores = [
     },
     {
         mac: '56:8F:AD:34:F6:50:00',
-        lng: '-0.235153',
-        lat: '39.030528',
+        lat: "36.737056",
+        lng: "-3.573038",
         userId: 1,
         zonaId: 4,
         temp_min: 25,
@@ -264,8 +264,8 @@ const sensores = [
     },
     {
         mac: '56:8F:AD:34:F6:50:00',
-        lng: '-0.235153',
-        lat: '39.030528',
+        lat: "36.737056",
+        lng: "-3.573038",
         userId: 1,
         zonaId: 4,
         temp_min: 25,
@@ -273,8 +273,8 @@ const sensores = [
     },
     {
         mac: '56:8F:AD:34:F6:50:00',
-        lng: '-0.235153',
-        lat: '39.030528',
+        lat: "36.736698",
+        lng: "-3.572996",
         userId: 1,
         zonaId: 4,
         temp_min: 25,
@@ -283,8 +283,8 @@ const sensores = [
     //ZONA 5
     {
         mac: '56:8F:AD:34:F6:50:00',
-        lng: '-0.235153',
-        lat: '39.030528',
+        lat: "36.944100",
+        lng: "-3.955655",
         userId: 1,
         zonaId: 5,
         temp_min: 25,
@@ -292,8 +292,8 @@ const sensores = [
     },
     {
         mac: '56:8F:AD:34:F6:50:00',
-        lng: '-0.235153',
-        lat: '39.030528',
+        lat: "36.943971",
+        lng: "-3.954525",
         userId: 1,
         zonaId: 5,
         temp_min: 25,
@@ -301,8 +301,8 @@ const sensores = [
     },
     {
         mac: '56:8F:AD:34:F6:50:00',
-        lng: '-0.235153',
-        lat: '39.030528',
+        lat: "36.943692",
+        lng: "-3.954405",
         userId: 1,
         zonaId: 5,
         temp_min: 25,
@@ -310,8 +310,8 @@ const sensores = [
     },
     {
         mac: '56:8F:AD:34:F6:50:00',
-        lng: '-0.235153',
-        lat: '39.030528',
+        lat: "36.943695",
+        lng: "-3.954404",
         userId: 1,
         zonaId: 5,
         temp_min: 25,
@@ -319,8 +319,8 @@ const sensores = [
     },
     {
         mac: '56:8F:AD:34:F6:50:00',
-        lng: '-0.235153',
-        lat: '39.030528',
+        lat: "36.943698",
+        lng: "-3.954404",
         userId: 1,
         zonaId: 5,
         temp_min: 25,
@@ -328,8 +328,8 @@ const sensores = [
     },
     {
         mac: '56:8F:AD:34:F6:50:00',
-        lng: '-0.235153',
-        lat: '39.030528',
+        lat: "36.943792",
+        lng: "-3.954425",
         userId: 1,
         zonaId: 5,
         temp_min: 25,
@@ -858,9 +858,9 @@ function setup() {
 
                         Sequelize.Promise.all(promises).then(() => {
 
-                            for (i = 1; i < 52; i++) {
+                            for (i = 1; i < 53; i++) {
                                 date = new Moment();
-                                for (j = 1; j < 57; j++) {
+                                for (j = 1; j < 58; j++) {
                                     Dato.create({
                                         temperatura: Math.floor(Math.random() * (
                                             40 - 10 + 1
