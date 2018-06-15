@@ -499,7 +499,7 @@ const sensores = [
         zonaId: 8,
         temp_min: 25,
         hume_min: 75,
-    },
+    }
     
     
 ];
@@ -507,42 +507,42 @@ const sensores = [
 const zonas = [
     {
         "name": "Campo 1",
-        "color": "#8336c9",
+        "color": "#0078B2",
         "userId": 1,
     },
     {
         "name": "Campo 2",
-        "color": "#ff8000",
+        "color": "#FF8E00",
         "userId": 1,
     },
     {
         "name": "Campo 3",
-        "color": "#00ceff",
+        "color": "#AF00FF",
         "userId": 1,
     },
     {
         "name": "Campo 4",
-        "color": "#ff00e2",
+        "color": "#00B213",
         "userId": 1,
     },
     {
         "name": "Campo 5",
-        "color": "#00ff14",
+        "color": "#FF005F",
         "userId": 1,
     },
     {
         "name": "Campo 6",
-        "color": "#fff500",
+        "color": "#0078B2",
         "userId": 1,
     },
     {
         "name": "Campo 7",
-        "color": "#ff0000",
+        "color": "#FF8E00",
         "userId": 1,
     },
     {
         "name": "Campo 8",
-        "color": "#0031ff",
+        "color": "#AF00FF",
         "userId": 1,
     },
 ];
@@ -858,9 +858,9 @@ function setup() {
 
                         Sequelize.Promise.all(promises).then(() => {
 
-                            for (i = 1; i < 15; i++) {
+                            for (i = 1; i < 52; i++) {
                                 date = new Moment();
-                                for (j = 1; j < 20; j++) {
+                                for (j = 1; j < 57; j++) {
                                     Dato.create({
                                         temperatura: Math.floor(Math.random() * (
                                             40 - 10 + 1

@@ -93,7 +93,24 @@ function loadSensores(sensores) {
     tempHeatMap = new google.maps.visualization.HeatmapLayer({
         data:         tempHeatMapData,
         radius:       50,
-        maxIntensity: 45
+        maxIntensity: 45,
+        gradient: [
+            'rgba(0, 255, 255, 0)',
+            'rgb(245, 255, 0)',
+            'rgb(255, 245, 0)',
+            'rgb(255, 235, 0)',
+            'rgb(255, 206, 0)',
+            'rgb(255, 167, 0)',
+            'rgb(223, 154, 0)',
+            'rgb(255, 98, 0)',
+            'rgb(248, 96, 0)',
+            'rgb(255, 78, 0)',
+            'rgb(255, 78, 0)',
+            'rgb(255, 1, 1)',
+            'rgb(183, 0, 0)',
+            'rgb(255, 0, 0)'
+            
+        ],
     });
 
     humHeatMap = new google.maps.visualization.HeatmapLayer({
@@ -111,10 +128,11 @@ function loadSensores(sensores) {
             'rgba(0, 0, 191, 1)',
             'rgba(0, 0, 159, 1)',
             'rgba(0, 0, 127, 1)',
-            'rgba(63, 0, 91, 1)',
-            'rgba(127, 0, 63, 1)',
-            'rgba(191, 0, 31, 1)',
-            'rgba(255, 0, 0, 1)'
+            'rgb(0, 0, 98)',
+            'rgb(0, 0, 69)',
+            'rgb(0, 0, 46)',
+            'rgb(0, 0, 15)'
+            
         ],
     });
 
