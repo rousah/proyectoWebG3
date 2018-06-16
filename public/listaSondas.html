@@ -310,6 +310,12 @@
             display: flex;
             flex-direction: row;
         }
+        
+        .container2{
+            max-width: 100%;
+            justify-content: center;
+            padding-right: 0rem;
+        }
 
         #mapa {
             width: inherit;
@@ -407,6 +413,8 @@
         .pasoSondas2 {
             display: none;
         }
+        
+        
 
         #mapa {
             width: inherit;
@@ -501,13 +509,13 @@
     </div>
 
     <div class=container2>
-          
-           <div class="d-flex justify-content-around">
-                <div id="zonaSelect" class="pl-3"></div>
-                <div id="sensorSelect" class="pr-4"></div>
+        <div class="row">
+           <div class="col-sm-6 col-md-7 d-flex justify-content-around">
+                <div id="zonaSelect" class="pl-md-3"></div>
+                <div id="sensorSelect" class="pr-md-4"></div>
             </div>
         
-        <div class="medidas">
+        <div class="col-sm-6 col-md-5 d-flex justify-content-around medidas">
            
             <div class="btn-group" data-toggle="buttons" id="opciones">
                 <button class= "temp btn btn-secondary dropdown-item" type="button" >
@@ -549,6 +557,8 @@
             </div>
 
             
+        </div>
+    
         </div>
 
         
