@@ -86,42 +86,6 @@ const sensores = [
         temp_min: 25,
         hume_min: 75,
     },
-    {
-        mac: '58:8F:AD:34:F6:50:00',
-        lng: '-0.176153',
-        lat: '38.995218',
-        userId: 1,
-        zonaId: 1,
-        temp_min: 25,
-        hume_min: 75,
-    },
-    {
-        mac: '58:8F:AD:34:F6:50:00',
-        lng: '-0.175291',
-        lat: '38.995186',
-        userId: 1,
-        zonaId: 1,
-        temp_min: 25,
-        hume_min: 75,
-    },
-    {
-        mac:    '58:8F:AD:34:F6:50:00',
-        lng:    '-0.175258',
-        lat:    '38.994365',
-        userId: 1,
-        zonaId: 1,
-        temp_min: 25,
-        hume_min: 75,
-    },
-    {
-        mac:    '58:8F:AD:34:F6:50:00',
-        lng:    '-0.175136',
-        lat:    '38.993506',
-        userId: 1,
-        zonaId: 1,
-        temp_min: 25,
-        hume_min: 75,
-    },
 
     //ZONA 2
     {
