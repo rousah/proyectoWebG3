@@ -61,3 +61,13 @@ footer div img {
         font-size: 0.6rem;
     }
 }
+
+.imagenesFooter {
+    display:         flex;
+    justify-content: center;
+    align-items:     center;
+}
+
+#languageMenuButton {
+    margin: 0 0.5rem;
+}
