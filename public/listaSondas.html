@@ -521,7 +521,7 @@
             <div class="col-sm-6 col-md-5 d-flex justify-content-around medidas">
 
                 <div class="btn-group" data-toggle="buttons" id="opciones">
-                    <button class="temp btn btn-secondary dropdown-item" type="button">
+                    <button class="temp btn btn-secondary dropdown-item" type="button" style="background-color: rgba(63, 148, 130, 0.6)">
                     <i class="fa fa-thermometer"></i>
                 </button>
                     <div class="eye" id="eyecontainer">
@@ -541,7 +541,25 @@
                 </div>
 
                 <div class="btn-group" data-toggle="buttons" id="opciones">
-                    <button class="hum btn btn-secondary dropdown-item" type="button">
+                    <button class="hum btn btn-secondary dropdown-item" type="button" style="background-color: rgba(63, 148, 130, 0.6)">
+                    <i class="fa fa-tint"></i>
+                </button>
+                    <div class="eye2" id="eye2container">
+                        <div class="btn btn-secondary" id='eye2'>
+                            <button class="see2 btn btn-light" onclick="showHum(this)" style="border-radius: 0px;">
+                           <div id="faeye2" onclick="mostrarOcultar3()">
+                               <i class="fa fa-eye" aria-hidden="true">
+                               </i>
+                           </div>
+                           <div id="faeyeslash2"  style="display:none;" onclick="mostrarOcultar4()">
+                               <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                           </div>
+                       </button>
+                        </div>
+                    </div>
+                </div> 
+                 <div class="btn-group" data-toggle="buttons" id="opciones">
+                    <button class="hum btn btn-secondary dropdown-item" type="button" style="background-color: rgba(63, 148, 130, 0.6)">
                     <i class="fa fa-tint"></i>
                 </button>
                     <div class="eye2" id="eye2container">
