@@ -19,8 +19,12 @@ $(document).ready(function () {
                 $('#alerts-status').text(user.alerts);
                 if (user.alerts) {
                     $('#sensor-alerts').show();
+                    $('#alert-bell').removeClass('fa-bell-slash');
+                    $('#alert-bell').addClass('fa-bell');
                 } else {
                     $('#sensor-alerts').hide();
+                    $('#alert-bell').addClass('fa-bell-slash');
+                    $('#alert-bell').removeClass('fa-bell');
                 }
             } else {
                 console.log('No data recieved');
@@ -69,23 +73,18 @@ $(document).ready(function () {
     });
 });
 
-$('#campana-true').append('<i class="far fa-bell"></i>');
-$('#campana-false').append('<i class="far fa-bell-slash"></i>');
-$('#campana-false').hide();
-$('#campana-true').hide();
-
 $('#alerts-box').click(function () {  
     $('#alert-status').hide();
     $('#alerts-status').is(":checked");            
-    if ($(this).is(":checked")) {        
-        $('#campana-false').hide();        
-        $('#sensor-alerts').show();        
-        $('#campana-true').show();    
+    if ($(this).is(":checked")) {             
+        $('#sensor-alerts').show();
+        $('#alert-bell').removeClass('fa-bell-slash');
+        $('#alert-bell').addClass('fa-bell');     
     }    
     else {        
-        $('#campana-true').hide();        
-        $('#sensor-alerts').hide();        
-        $('#campana-false').show();    
+        $('#sensor-alerts').hide();
+        $('#alert-bell').addClass('fa-bell-slash');
+        $('#alert-bell').removeClass('fa-bell');      
     }
 });
 

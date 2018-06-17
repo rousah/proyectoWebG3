@@ -146,6 +146,36 @@
         cursor: pointer;
     }
 
+    input[type=range] {
+        -webkit-appearance: none;
+    }
+
+    input[type=range]::-webkit-slider-runnable-track {
+        width:         300px;
+        height:        5px;
+        background:    #ddd;
+        border:        none;
+        border-radius: 3px;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border:             none;
+        height:             16px;
+        width:              16px;
+        border-radius:      50%;
+        background:         #3F9482;
+        margin-top:         -4px;
+    }
+
+    input[type=range]:focus {
+        outline: none;
+    }
+
+    input[type=range]:focus::-webkit-slider-runnable-track {
+        background: #ccc;
+    }
+
 </style>
 
 <body id="bootstrap-overwrite">
@@ -345,13 +375,15 @@
                 </div>
                 <div id="headingAlertas">
                     <h6 class="d-flex align-items-center">Alertas
-                        <p class="pl-2"><span id="alerts-status" class="d-none"> <div id="campana-true"></div><div id="campana-false" style="padding-right: 0.2rem;"></div> </span></p><button data-toggle="collapse" data-target="#collapseAlertas" aria-expanded="true" aria-controls="collapseAlertas" style="background: none; border: 0"><i class="fas fa-angle-down ml-1 btn btn-primary p-0 m-0" id='down2' style="font-size: 1.5rem;" onclick="mostrarOcultar3()"></i><i class="fas fa-angle-up ml-1 btn btn-primary p-0 m-0" id='up2' style="font-size: 1.5rem;"onclick="mostrarOcultar4()"></i></button></h6>
+                        <p class="pl-2"><span id="alerts-status" class="d-none"> <div id="campana">
+                            <i class="far fa-bell" id="alert-bell"></i>
+                        </div></span></p><button data-toggle="collapse" data-target="#collapseAlertas" aria-expanded="true" aria-controls="collapseAlertas" style="background: none; border: 0"><i class="fas fa-angle-down ml-1 btn btn-primary p-0 m-0" id='down2' style="font-size: 1.5rem;" onclick="mostrarOcultar3()"></i><i class="fas fa-angle-up ml-1 btn btn-primary p-0 m-0" id='up2' style="font-size: 1.5rem;"onclick="mostrarOcultar4()"></i></button></h6>
                 </div>
                 <div class="datos-personales justify-content-between row mr-lg-1 collapse hide" id="collapseAlertas" aria-labelledby="headingAlertas" data-parent="#accordion">
                     <!-- ALERTAS -->
                     <div class="d-flex align-items-center ">
                         <input type="checkbox" id="alerts-box">
-                        <p style="margin-top: 1rem;" class="px-2"> Habilitar/deshabilitar <span id="alerts-status" class="d-none"> <div id="campana-true"></div><div id="campana-false" style="padding-right: 0.2rem;"></div> </span></p>
+                        <p style="margin-top: 1rem;" class="px-2"> Habilitar/deshabilitar </p>
                         <button class="btn btn-outline-primary col-4 col-md-2 col-lg-2" id="save-alerts" onclick="save_user()">Guardar</button>
                     </div>
 
@@ -376,18 +408,18 @@
 
     </script>
     <script src="js/lib/jquery-3.3.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-
+    <script src="js/lib/popper.min.js" crossorigin="anonymous"></script>
     <script src="js/lib/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/mi-perfil.js"></script>
+    <script src="js/lib/toastr.min.js"></script>
     <script src="js/alertas.js"></script>
     <script src="js/alertas-example-functions.js"></script>
 
 
     <!-- Localization start-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.4/jquery.i18n.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.4/jquery.i18n.messagestore.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.4/jquery.i18n.parser.js"></script>
+    <script src="js/lib/i18n/jquery.i18n.js"></script>
+    <script src="js/lib/i18n/jquery.i18n.messagestore.js"></script>
+    <script src="js/lib/i18n/jquery.i18n.parser.js"></script>
     <script src="js/localize.js" type="text/javascript"></script>
     <!-- Localization end-->
 
