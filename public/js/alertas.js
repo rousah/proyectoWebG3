@@ -44,7 +44,7 @@ function loadAlerts() {
             });
             if (!already_exists) {
                 ultimo = item.sensor.data.length - 1;
-                toastr.warning('Zona ' + item.zona.name + ' - Sensor ' + item.sensor.id, $.i18n(item.alert));
+                toastr.warning('Zona ' + item.zona.name + ' - Sonda ' + item.sensor.id, $.i18n(item.alert));
                 alerts.push(item);
             }
         });
@@ -66,7 +66,7 @@ function refreshAlerts() {
     let alerts = JSON.parse(localStorage.getItem("alerts"));
     alerts ? null : alerts = [];
     alerts.forEach((item) => {
-        let str = alert_template.replace('{Title}', ' ' + item.zona.name + ' - Sensor ' +
+        let str = alert_template.replace('{Title}', ' ' + item.zona.name + ' - Sonda ' +
             +item.sensor.id);
         str = str.replace(/{id}/g, alerts.length - 1);
         str = str.replace(/{Alert}/g, $.i18n(item.alert));
