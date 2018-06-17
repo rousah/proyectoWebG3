@@ -256,11 +256,15 @@ function showTemp(e) {
         // ocultar mapa de calor
         tempHeatMap.setMap(null);
         e.classList.replace("btn-light", "btn-secondary");
+        $('#eye-temp').addClass('fa-eye-slash');
+        $('#eye-temp').removeClass('fa-eye');
     }
     else {
         // mostrar mapa de calor
         tempHeatMap.setMap(mapa);
         e.classList.replace("btn-secondary", "btn-light");
+        $('#eye-temp').removeClass('fa-eye-slash');
+        $('#eye-temp').addClass('fa-eye');
     }
 }
 
@@ -269,11 +273,15 @@ function showHum(e) {
         // ocultar mapa de calor
         humHeatMap.setMap(null);
         e.classList.replace("btn-light", "btn-secondary");
+        $('#eye-hume').addClass('fa-eye-slash');
+        $('#eye-hume').removeClass('fa-eye');
     }
     else {
         // mostrar mapa de calor
         humHeatMap.setMap(mapa);
         e.classList.replace("btn-secondary", "btn-light");
+        $('#eye-hume').removeClass('fa-eye');
+        $('#eye-hume').addClass('fa-eye-slash');
     }
 }
 
