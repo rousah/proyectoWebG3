@@ -40,5 +40,16 @@
     "soporte-texto": "Descripción del problema",
     "soporte-enviar": "Enviar mensaje",
     "soporte-success": "Mensaje enviado",
-    "select-campo": "Seleccionar campo"
+    "select-campo": "Seleccionar campo",
+    "title-index": "CULTISENSE | Acceso Web",
+    "clientes": "Clientes",
+    "index-directament": "Directamente del campo a tu móvil",
+    "index-subtitle": "Cultisense es una herramienta web que proporciona un servicio de seguimiento y control de los productos de la tierra.",
+    "index-que": "¿Qué es Cultisense?",
+    "index-information": "Cultisense es una herramienta web que ofrece un servicio de seguimiento a las principales características de los productos de la tierra, como la humedad, la temperatura, la iluminación y muchos más, para que resulte más fácil el control diario.",
+    "index-download-info": "Descarga el pdf para más información:",
+    "download-pdf": "Descargar PDF",
+    "footer-copy":"Copyright © 2018 Cultisense",
+    "footer-rights":"Todos los derechos reservados | Términos de uso",
+    "datos-password-note": "Es necesario cambiar su contraseña."
 }

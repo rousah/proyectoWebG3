@@ -40,5 +40,16 @@
     "soporte-texto": "Description of the problem",
     "soporte-enviar": "Send message",
     "soporte-success": "Message sent",
-    "select-campo": "Select camp"
+    "select-campo": "Select camp",
+    "title-index": "CULTISENSE",
+    "clientes": "Clients",
+    "index-directament": "Straight from the field to your mobile",
+    "index-subtitle": "Cultisense is a web tool to help you tracking and control the products of your fields.",
+    "index-que": "What is Cultisense?",
+    "index-information": "Cultisense is a web tool that offers a tracking service to the main characteristics of the products of the earth, such as humidity, temperature, lighting and many more, to make daily control easier.",
+    "index-download-info": "Download PDF with more information",
+    "download-pdf": "Download PDF",
+    "footer-copy": "Copyright © 2018 Cultisense",
+    "footer-rights": "All rights reserved | Terms of use",
+    "datos-password-note": "You have to change your password"
 }

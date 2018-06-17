@@ -14,7 +14,6 @@
     "catalan": "Català",
     "english": "Anglés",
     "send": "Enviar",
-
     "mis-datos": "Les meves Dades",
     "contrasenya-antigua": "Contrasenya antiga:",
     "contrasenya-nueva": "Contrasenya nova:",
@@ -32,5 +31,8 @@
     "foto": "Foto de perfil: ",
     "upload": "Pujar",
     "file": "Elegir archiu...",
-    "correo": "Correu electrònic: "
+    "correo": "Correu electrònic: ",
+    "title-index": "CULTISENSE | Accés Web",
+    "clientes": "Clients"
+
 }
