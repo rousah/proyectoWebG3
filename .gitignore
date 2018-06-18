@@ -1,0 +1,5 @@
+.DS_Store
+node_modules/
+cultisense.db
+.idea
+public/test.html

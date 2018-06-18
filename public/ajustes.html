@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie-edge">
+    <title>CULTISENSE | Ajustes</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/botones.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/navbar-alerts.css">
+    <script type="text/javascript">
+        function mostrarOcultar1() {
+            document.getElementById('up').style.display = 'block';
+            document.getElementById('down').style.display = 'none';
+        }
+
+        function mostrarOcultar2() {
+            document.getElementById('down').style.display = 'block';
+            document.getElementById('up').style.display = 'none';
+        }
+
+        function mostrarOcultar3() {
+            document.getElementById('up2').style.display = 'block';
+            document.getElementById('down2').style.display = 'none';
+        }
+
+        function mostrarOcultar4() {
+            document.getElementById('down2').style.display = 'block';
+            document.getElementById('up2').style.display = 'none';
+        }
+
+    </script>
+
+</head>
+
+<style>
+    #C {
+        width: 80%;
+        height: auto;
+    }
+
+    body {
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .navbar {
+        padding: 0;
+    }
+
+    .titulo {
+        color: #55c5ff;
+        font-weight: 700;
+        margin-bottom: 0;
+        display: none;
+    }
+
+    h6 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-top: 1rem;
+    }
+
+    i {
+        width: 20px;
+        height: 20px;
+    }
+
+    .datos-cuenta,
+    .datos-personales {
+        border: solid 1px #eee;
+        border-radius: 15px;
+        padding: 1rem;
+    }
+
+    /* .cambiar-pass {
+        background-color: #eee;
+    } */
+
+    header nav a {
+        max-width: inherit;
+    }
+
+    #up {
+        display: none;
+    }
+
+    #up2 {
+        display: none;
+    }
+
+    @media (max-width: 767.98px) {
+        .titulo {
+            display: block;
+        }
+
+        .navbar-collapse {
+            background-color: #55c5ff;
+            padding: 0.5rem 1rem;
+        }
+
+        footer span {
+            font-size: 0.6rem;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .datos-cuenta {
+            height: 450px;
+        }
+    }
+
+    /* SLIDER */
+
+    .slider {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 15px;
+        border-radius: 5px;
+        background: #d3d3d3;
+        outline: none;
+        opacity: 2;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+    }
+
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #3F9482;
+        cursor: pointer;
+    }
+
+    .slider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #4CAF50;
+        cursor: pointer;
+    }
+
+    input[type=range] {
+        -webkit-appearance: none;
+    }
+
+    input[type=range]::-webkit-slider-runnable-track {
+        width:         300px;
+        height:        5px;
+        background:    #ddd;
+        border:        none;
+        border-radius: 3px;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border:             none;
+        height:             16px;
+        width:              16px;
+        border-radius:      50%;
+        background:         #3F9482;
+        margin-top:         -4px;
+    }
+
+    input[type=range]:focus {
+        outline: none;
+    }
+
+    input[type=range]:focus::-webkit-slider-runnable-track {
+        background: #ccc;
+    }
+
+</style>
+
+<body id="bootstrap-overwrite">
+
+    <header class="encabezado">
+        <nav class="navbar navbar-dark navbar-expand-md bg-dark">
+            <a class="navbar-brand" href="#" style="width: 50px; margin: 0.5rem 1rem;"><img id="C" src="images/logo_C.svg"></a>
+            <a href="#">
+                <h4 class="titulo">Ajustes</h4>
+            </a>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation" style="margin: 0.5rem 1rem;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse" id="navbarsExample01">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="listaSondas.html"><i class="fas fa-map-marker-alt"></i> Mapa</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link itemsMenu dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-bell"></i> <span id="alerts-link">Alertas</span></a>
+                        <ul class="dropdown-menu notify-drop py-0">
+                            <!-- end notify title -->
+                            <!-- notify content -->
+                            <div class="drop-content" id="alert-list">
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="soporte-tecnico.html"><i class="fas fa-question-circle"></i> Soporte Técnico</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link itemsMenu" href="#"><i class="fas fa-cog"></i> Ajustes<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" onclick="localStorage.clear()"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+
+    <div class="container d-lg-flex p-0">
+        <div class="cuenta col-lg-6 mx-lg-1">
+            <h6>Datos cuenta:</h6>
+            <div class="datos-cuenta d-flex justify-content-between row">
+                <section id="datos-cuenta" class="col-12 d-flex justify-content-between p-0">
+                    <form class="col-md-12">
+                        <div class="form-group row d-flex justify-content-between align-items-center">
+                            <label for="placeholder-email" class="col-form-label bold col-5 p-0" data-i18n="correo">E-mail:</label>
+                            <div class="col-7 p-0">
+                                <input type="text" readonly class="form-control-plaintext" id="placeholder-email" value="hola@email.es">
+                            </div>
+                        </div>
+                    </form>
+                </section>
+                <section id="datos-password" class="p-0 col-12 d-flex flex-row align-items-center align-items-lg-start justify-space-between">
+                    <div class="col-5 m-0 p-0">
+                        <span class="text-left p-0">Contraseña:</span>
+                    </div>
+                    <div class="cambiar-pass d-none d-lg-block d-xl-block col-7 p-0">
+                        <form id="password-form">
+                            <div class="form-group">
+                                <label for="old_password" data-i18n="contrasenya-antigua" class="bold">Contraseña antigua:</label>
+                                <input type="password" class="form-control" id="old_password" name="old_password" required>
+
+                            </div>
+                            <div class="form-group">
+                                <label id="new_password" data-i18n="contrasenya-nueva" class="bold">Contraseña nueva:</label>
+                                <input type="password" class="form-control" id="new_password" name="new_password" required>
+                            </div>
+                            <div class="form-group">
+                                <label id="re_new_password" class="bold" data-i18n="repetir-contrasenya">Repetir contraseña nueva:</label>
+                                <input type="password" class="form-control" id="re_new_password" name="re_new_password" required>
+                            </div>
+                            <div class="boton justify-content-center d-flex" id="botones">
+                                <button class="cult-btn btn btn-outline-primary align-self-end d-flex" role="button" type="submit">Cambiar</button>
+                            </div>
+                            <div style="display: none" class="alert alert-success my-lg-2" id="password-success-alert" role="alert" data-i18n="pass-changed">
+                                ¡Su contraseña se ha cambiado!
+                            </div>
+                            <div style="display: none" class="alert alert-danger my-lg-2" id="password-error-alert" role="alert" data-i18n="error">
+                                ¡Error!
+                            </div>
+                        </form>
+                    </div>
+                    <div class="d-flex col-6 p-0 d-lg-none d-xl-none">
+                        <!-- Button trigger modal contraseña-->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#passModal">
+                            Cambiar <i class="fas fa-lock"></i>
+                        </button>
+                    </div>
+                    <!-- Modal contraseña-->
+                    <div class="modal fade" id="passModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Cambiar contraseña</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                                <div class="modal-body justify-content-center d-flex">
+                                    <form id="password-form_modal" class="col-12 col-sm-10">
+                                        <div class="form-group">
+                                            <label for="old_password_modal" data-i18n="contrasenya-antigua" class="bold">Contraseña antigua:</label>
+                                            <input type="password" class="form-control" id="old_password_modal" name="old_password_modal" required>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label id="new_password_modal" data-i18n="contrasenya-nueva" class="bold">Contraseña nueva:</label>
+                                            <input type="password" class="form-control" id="new_password_modal" name="new_password_modal" required>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label id="re_new_password_modal" class="bold" data-i18n="repetir-contrasenya">Repetir contraseña nueva:</label>
+                                            <input type="password" class="form-control" id="re_new_password_modal" name="re_new_password_modal" required>
+                                        </div>
+                                        <div class="modal-footer d-flex justify-content-right col-12">
+                                            <div class="boton" id="botones">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                <button class="cult-btn btn btn-outline-primary" role="button" type="submit">Cambiar</button>
+                                            </div>
+                                        </div>
+                                        <div style="display: none" class="alert alert-success" id="password-success-alert" role="alert" data-i18n="pass-changed">
+                                            ¡Su contraseña se ha cambiado!
+                                        </div>
+                                        <div style="display: none" class="alert alert-danger" id="password-error-alert" role="alert" data-i18n="error">
+                                            ¡Error!
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="col-lg-6 mx-lg-2">
+            <div id="accordion">
+                <div id="headingDatos">
+                    <h6 class="d-flex align-items-center">Datos personales <button data-toggle="collapse" data-target="#collapseDatos" aria-expanded="true" aria-controls="collapseDatos" style="background: none; border: 0"><i class="fas fa-angle-down ml-1 btn btn-primary p-0 m-0" id='down' style="font-size: 1.5rem;" onclick="mostrarOcultar1()"></i><i class="fas fa-angle-up ml-1 btn btn-primary p-0 m-0" id='up' style="font-size: 1.5rem;"onclick="mostrarOcultar2()"></i></button></h6>
+                </div>
+                <div class="datos-personales justify-content-between row mr-lg-1 collapse hide" id="collapseDatos" aria-labelledby="headingDatos" data-parent="#accordion">
+                    <section id="datos-personales" class="col-12 d-flex justify-content-between p-0">
+                        <form class="col-12">
+                            <div class="form-group row d-flex justify-content-between align-items-center">
+                                <label for="placeholder-firstname" class="col-form-label bold col-6 p-0" data-i18n="name">Nombre:</label>
+                                <div class="col-6 p-0">
+                                    <input type="text" readonly class="form-control-plaintext" id="placeholder-firstname">
+                                </div>
+                            </div>
+                            <div class="form-group row d-flex justify-content-between align-items-center">
+                                <label for="placeholder-lastname" class="col-6 p-0 col-form-label" data-i18n="surname">Apellido:</label>
+                                <div class="col-6 p-0">
+                                    <input type="text" readonly class="form-control-plaintext" id="placeholder-lastname">
+                                </div>
+                            </div>
+                            <div class="form-group row d-flex justify-content-between align-items-center ">
+                                <label for="placeholder-sexo" class="col-6 p-0 col-form-label" data-i18n="sex">Sexo:</label>
+                                <div class="col-6 p-0">
+                                    <input type="text" readonly class="form-control-plaintext" id="placeholder-sexo">
+                                </div>
+                            </div>
+                            <div class="form-group row d-flex justify-content-between align-items-center ">
+                                <label for="placeholder-pais" class="col-6 p-0 col-form-label" data-i18n="pais">País:</label>
+                                <div class="col-6 p-0">
+                                    <input type="text" readonly class="form-control-plaintext" id="placeholder-pais">
+                                </div>
+                            </div>
+                            <div class="form-group row d-flex justify-content-between align-items-center ">
+                                <label for="placeholder-ciudad" class="col-6 p-0 col-form-label" data-i18n="city">Ciudad:</label>
+                                <div class="col-6 p-0">
+                                    <input type="text" readonly class="form-control-plaintext" id="placeholder-ciudad">
+                                </div>
+                            </div>
+                            <div class="form-group row d-flex justify-content-between align-items-center ">
+                                <label for="placeholder-direccion" class="col-6 p-0 col-form-label" data-i18n="street">Dirección:</label>
+                                <div class="col-6 p-0">
+                                    <input type="text" readonly class="form-control-plaintext" id="placeholder-direccion">
+                                </div>
+                            </div>
+                            <div class="form-group row d-flex justify-content-between align-items-center ">
+                                <label for="placeholder-cod-postal" class="col-6 p-0 col-form-label" data-i18n="zip">Código postal:</label>
+                                <div class="col-6 p-0">
+                                    <input type="text" readonly class="form-control-plaintext" id="placeholder-cod-postal">
+                                </div>
+                            </div>
+                            <div class="form-group row d-flex justify-content-between align-items-center my-0">
+                                <label for="placeholder-telefono" class="col-6 p-0 col-form-label" data-i18n="phone">Número de teléfono:</label>
+                                <div class="col-6 p-0">
+                                    <input type="text" readonly class="form-control-plaintext" id="placeholder-telefono">
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+                <div id="headingAlertas">
+                    <h6 class="d-flex align-items-center">Alertas
+                        <p class="pl-2"><span id="alerts-status" class="d-none"> <div id="campana">
+                            <i class="far fa-bell" id="alert-bell"></i>
+                        </div></span></p><button data-toggle="collapse" data-target="#collapseAlertas" aria-expanded="true" aria-controls="collapseAlertas" style="background: none; border: 0"><i class="fas fa-angle-down ml-1 btn btn-primary p-0 m-0" id='down2' style="font-size: 1.5rem;" onclick="mostrarOcultar3()"></i><i class="fas fa-angle-up ml-1 btn btn-primary p-0 m-0" id='up2' style="font-size: 1.5rem;"onclick="mostrarOcultar4()"></i></button></h6>
+                </div>
+                <div class="datos-personales justify-content-between row mr-lg-1 collapse hide" id="collapseAlertas" aria-labelledby="headingAlertas" data-parent="#accordion">
+                    <!-- ALERTAS -->
+                    <div class="d-flex align-items-center ">
+                        <input type="checkbox" id="alerts-box">
+                        <p style="margin-top: 1rem;" class="px-2"> Habilitar/deshabilitar </p>
+                        <button class="btn btn-outline-primary col-4 col-md-2 col-lg-2" id="save-alerts" onclick="save_user()">Guardar</button>
+                    </div>
+
+                    <div id="sensor-alerts">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer" role="contentinfo">
+        <span>Copyright © 2018 Cultisense<br>Todos los derechos reservados | Términos de uso</span>
+        <div>
+            <img src="images/logo_facebook.svg" alt="logoFacebook">
+            <img src="images/logo_twitter.svg" alt="logoTwitter">
+        </div>
+    </footer>
+
+    <script>
+
+
+    </script>
+    <script src="js/lib/jquery-3.3.1.js"></script>
+    <script src="js/lib/popper.min.js" crossorigin="anonymous"></script>
+    <script src="js/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/mi-perfil.js"></script>
+    <script src="js/lib/toastr.min.js"></script>
+    <script src="js/alertas.js"></script>
+    <script src="js/alertas-example-functions.js"></script>
+
+
+    <!-- Localization start-->
+    <script src="js/lib/i18n/jquery.i18n.js"></script>
+    <script src="js/lib/i18n/jquery.i18n.messagestore.js"></script>
+    <script src="js/lib/i18n/jquery.i18n.parser.js"></script>
+    <script src="js/localize.js" type="text/javascript"></script>
+    <!-- Localization end-->
+
+</body>
+
+</html>

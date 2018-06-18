@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie-edge">
+    <title>CULTISENSE | Mis Datos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/botones.css">
+    <link rel="stylesheet" href="css/banner.css">
+
+</head>
+<style>
+    body {
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    header {
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .bold {
+        font-weight: 700;
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    .container {
+        margin-top: 2rem;
+    }
+
+    #botones {
+        display: flex;
+        justify-content: center;
+        margin: 1rem auto;
+    }
+
+</style>
+
+<body id="bootstrap-overwrite">
+    <header class="encabezado">
+        <div id="icono">
+            <img src="images/user.svg" alt="icono perfil">
+        </div>
+        <div id="titulo">
+            <h1 data-i18n="mis-datos">Mis Datos</h1>
+        </div>
+
+    </header>
+
+
+    <div class="offset-md-3 col-md-12 container">
+        <section id="datos-cuenta">
+            <form class="col-md-8">
+                <div class="form-group row email">
+                    <label for="placeholder-email" class="col-sm-4 col-form-label bold" data-i18n="correo">Correo electrónico</label>
+                    <div class="col-sm-8">
+                        <input type="text" readonly class="form-control-plaintext" id="placeholder-email" value="hola@email.es">
+                    </div>
+                </div>
+            </form>
+        </section>
+        <section id="datos-password">
+            <p class="col-sm-12" data-i18n="datos-password-note"><b>Es necesario cambiar su contraseña.</b></p>
+            <form id="password-form" class="col-md-6 col-sm-8">
+                <div class="form-group">
+                    <label for="old_password" data-i18n="contrasenya-antigua" class="bold">Contraseña antigua:</label>
+                    <input type="password" class="form-control" id="old_password" name="old_password" required>
+
+                </div>
+                <div class="form-group">
+                    <label id="new_password" data-i18n="contrasenya-nueva" class="bold">Contraseña nueva:</label>
+                    <input type="password" class="form-control" id="new_password" name="new_password" required>
+
+                </div>
+                <div class="form-group">
+                    <label id="re_new_password" class="bold" data-i18n="repetir-contrasenya">Repetir contraseña nueva:</label>
+                    <input type="password" class="form-control" id="re_new_password" name="re_new_password" required>
+
+                </div>
+                <div class="boton" id="botones">
+                    <button data-i18n="send" class="cult-btn btn btn-outline-primary" role="button" type="submit"> Send </button>
+                </div>
+
+
+                <div style="display: none" class="alert alert-success" id="password-success-alert" role="alert" data-i18n="pass-changed" on="habilitar()">
+                    ¡Su contraseña se ha cambiado!
+                </div>
+
+                <script>
+                    function habilitar() {
+                        document.getElementById("continuar").disabled = false;
+                    }
+
+                </script>
+                <div style="display: none" class="alert alert-danger" id="password-error-alert" role="alert" data-i18n="error">
+                    ¡Error!
+                </div>
+            </form>
+
+        </section>
+
+        <section id="datos-personales">
+            <form class="col-md-8">
+                <div class="form-group row name">
+                    <label for="placeholder-firstname" class="col-sm-4 col-form-label bold" data-i18n="name">Nombre:</label>
+                    <div class="col-sm-8">
+                        <input type="text" readonly class="form-control-plaintext" id="placeholder-firstname">
+                    </div>
+                </div>
+                <div class="form-group row ">
+                    <label for="placeholder-lastname" class="col-sm-4 col-form-label bold" data-i18n="surname">Apellido:</label>
+                    <div class="col-sm-8">
+                        <input type="text" readonly class="form-control-plaintext" id="placeholder-lastname">
+                    </div>
+                </div>
+                <div class="form-group row ">
+                    <label for="placeholder-sexo" class="col-sm-4 col-form-label bold" data-i18n="sex">Sexo:</label>
+                    <div class="col-sm-8">
+                        <input type="text" readonly class="form-control-plaintext" id="placeholder-sexo">
+                    </div>
+                </div>
+                <div class="form-group row ">
+                    <label for="placeholder-pais" class="col-sm-4 col-form-label bold" data-i18n="pais">País:</label>
+                    <div class="col-sm-8">
+                        <input type="text" readonly class="form-control-plaintext" id="placeholder-pais">
+                    </div>
+                </div>
+                <div class="form-group row ">
+                    <label for="placeholder-ciudad" class="col-sm-4 col-form-label bold" data-i18n="city">Ciudad:</label>
+                    <div class="col-sm-8">
+                        <input type="text" readonly class="form-control-plaintext" id="placeholder-ciudad">
+                    </div>
+                </div>
+                <div class="form-group row ">
+                    <label for="placeholder-direccion" class="col-sm-4 col-form-label bold" data-i18n="street">Dirección:</label>
+                    <div class="col-sm-8">
+                        <input type="text" readonly class="form-control-plaintext" id="placeholder-direccion">
+                    </div>
+                </div>
+                <div class="form-group row ">
+                    <label for="placeholder-cod-postal" class="col-sm-4 col-form-label bold" data-i18n="zip">Código postal:</label>
+                    <div class="col-sm-8">
+                        <input type="text" readonly class="form-control-plaintext" id="placeholder-cod-postal">
+                    </div>
+                </div>
+                <div class="form-group row ">
+                    <label for="placeholder-telefono" class="col-sm-4 col-form-label bold" data-i18n="phone">Número de teléfono:</label>
+                    <div class="col-sm-8">
+                        <input type="text" readonly class="form-control-plaintext" id="placeholder-telefono">
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <!--<section id="foto-de-perfil" class="usuario">
+            <div class="col-md-8"><b data-i18n="foto">Foto de perfil:</b></div>
+            <div class="input-group mb-3 col-md-6">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" data-i18n="upload">Upload</span>
+                </div>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="inputGroupFile01">
+                    <label class="custom-file-label" for="inputGroupFile01" data-i18n="file">Choose file</label>
+                </div>
+            </div>
+        </section>-->
+
+    </div>
+    <div class="usuario col-md-6" id="botones">
+        <a href="listaSondas.html"><button data-i18n="Continuar" class="cult-btn btn btn-outline-primary botonDeshabilitado" role="button" type="submit" id="continuar" disabled> Continuar </button></a>
+    </div>
+
+    <div>
+        <div class="dropdown text-center">
+            <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="languageMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Language
+      </button>
+            <div class="dropdown-menu" id="languageMenu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" value="en" data-i18n="english">English</a>
+                <a class="dropdown-item" value="es" data-i18n="spanish">Español</a>
+                <a class="dropdown-item" value="ca-es" data-i18n="catalan">Catalá</a>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./js/member.js"></script>
+
+    <!-- Localization start-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.4/jquery.i18n.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.4/jquery.i18n.messagestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.i18n/1.0.4/jquery.i18n.parser.js"></script>
+    <script src="js/localize.js" type="text/javascript"></script>
+    <!-- Localization end-->
+
+</body>
+
+</html>

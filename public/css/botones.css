@@ -1,0 +1,22 @@
+#bootstrap-overwrite .btn {
+    background-color: #3F9482;
+    color: white;
+    border: none;
+}
+
+#bootstrap-overwrite .btn:hover {
+    background-color: #52C4AE;
+    color: white;
+    border: none;
+}
+
+#bootstrap-overwrite .botonDeshabilitado:hover {
+    background-color: #3F9482;
+    color: white;
+    border: none;
+}
+
+.botonescentrados {
+    display: flex;
+    justify-content: center;
+}

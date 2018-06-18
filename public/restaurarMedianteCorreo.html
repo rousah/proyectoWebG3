@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <! -- anchura pantalla del dispositivo -- !>
+    <meta http-equiv="x-ua-compatible" content="ie-edge">
+    <! -- para que se vea bien en internet explorer y microsoft edge -- !>
+    <title>CULTISENSE | Restaurar mediante Correo</title>
+
+    <style>
+        .restaurarMedianteCorreo {
+            text-align: center;
+            max-width: 450px;
+            margin: 0 auto;
+            justify-content: space-around;
+
+
+        }
+
+        .textoExplicatorio {
+            text-align: center;
+            max-width: 210px;
+            max-height: 90px;
+            margin: 0 auto;
+            display: flex;
+
+        }
+
+
+        .introducir_Correo {
+            align-content: left;
+            max-width: 300px;
+            max-height: 90px;
+            margin: 0 auto;
+            display: flex;
+
+        }
+
+
+        .botonMandar {
+            align-content: center;
+            max-width: 120px;
+            max-height: 40px;
+            margin: 30px auto;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        /*
+        .segunda_pag {
+            max-width: 120px;
+            margin: 200px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mensaje_exito {
+            color: darkgreen;
+        }
+*/
+
+        #bootstrap-overwrite .btn {
+            background-color: #3F9482;
+            color: white;
+            border: none;
+        }
+
+        #bootstrap-overwrite .img-thumbnail {
+            border: none;
+            width: 10%;
+
+        }
+
+        @font-face {
+            font-family: Montserrat-Light;
+            src: url(fonts/Montserrat-Light.ttf);
+        }
+
+        @font-face {
+            font-family: Montserrat-Bold;
+            src: url(fonts/Montserrat-Bold.ttf);
+        }
+
+        p {
+            font-family: Montserrat-Light;
+        }
+
+        label {
+            font-family: Montserrat-Bold;
+        }
+
+    </style>
+    <link rel="stylesheet" href="css/botones.css">
+
+</head>
+
+
+<body id="bootstrap-overwrite">
+    <section>
+        <header class="restaurarMedianteCorreo">
+            <h1><br>
+                <font size=5>Restaurar contraseña mediante correo electrónico</font>
+            </h1>
+
+        </header>
+        <br>
+
+        <div class="textoExplicatorio">
+            <p>Introduzca su correo electrónico y le mandaremos una contraseña por e-mail</p>
+        </div>
+        <br>
+
+        <div class="form-wrapper offset-md-3 col-md-6">
+
+            <form method="GET" action="restaurarMedianteCorreo-segundapag.html">
+                <div class="introducir_Correo">
+                    <input type="email" class="form-control" placeholder="E-mail" name="correo" size="30" required>
+                </div>
+
+
+                <div class="botonMandar">
+                    <button class="btn btn-outline-primary" type="submit" name="mandar">Enviar</button>
+                </div>
+                <div style="text-align: center; font-size: 0.7rem; margin: 1rem; justify-content: center;"><a href="inicioSesion.html"><span>Volver al inicio de sesión</span></a></div>
+
+
+            </form>
+        </div>
+
+    </section>
+
+    <!--
+    <section class="segunda_pag" id='oculto' style='display:none;'>
+        <h2 class="mensaje_exito">
+            <font size=35>¡Éxito!</font>
+        </h2>
+        <br>
+
+
+        <a class="btn btn-outline-primary" role="button" data-i18n="clientes" href="index.html">Volver al menú principal</a>
+    </section>
+-->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

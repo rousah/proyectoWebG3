@@ -1,0 +1,57 @@
+header {
+    background-color: #363A3F;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    display: flex;
+    height: 55px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#icono {
+    flex-basis: 0;
+    flex: 0 1 75px;
+    padding: 1rem;
+}
+
+#iconoGTI {
+    flex-basis: 0;
+    flex: 0 0 110px;
+    /* top right bottom left */
+    padding: 2rem 0rem 2rem 0.5rem;
+    margin: 0;
+}
+
+#botonClientes {
+    width: 30%;
+}
+
+#iconoCultisense {
+    flex-basis: 0;
+    flex: 0 0 50px;
+    /* top right bottom left */
+    padding: 0.5rem 0.5rem 0.5rem 0rem;
+    margin: 0;
+}
+
+#titulo {
+    padding: 1rem;
+}
+
+header div img {
+    width: 100%;
+}
+
+.logoPropio {
+    flex-basis: 0;
+    flex: 0 1 20px;
+    margin: 1rem;
+}
+
+#logocultisense {
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+}
